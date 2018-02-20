@@ -1,6 +1,7 @@
 # ja-translation-todo
 
-Resources which we can contribute to translation into Japanese / 日本語への翻訳でコントリビュートできるGitHubのリポジトリリスト
+Resources which we can contribute to translation into Japanese  
+日本語への翻訳でコントリビュートできるGitHubのリポジトリリスト
 
 If you have any repositories you would like to translate into Japanese language, feel free to add and make pull request.
 
@@ -87,7 +88,7 @@ If you have any repositories you would like to translate into Japanese language,
 - 文章量: 少
 - Star: 2,995
 
-## コマンドラインツール
+## Command Line Tools
 
 ### [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
 
@@ -155,7 +156,7 @@ If you have any repositories you would like to translate into Japanese language,
 - 文章量: 多
 - Star: 2,632
 
-## その他
+## Other
 
 ### [what-happens-when](https://github.com/alex/what-happens-when)
 
@@ -211,7 +212,3 @@ If you have any repositories you would like to translate into Japanese language,
 - 状態: 中国だけがある
 - 文章量: 中
 - Star: 5,644
-
-# ライセンス
-
-MIT
