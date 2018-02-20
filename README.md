@@ -3,11 +3,22 @@
 Resources which we can contribute to translation into Japanese  
 日本語への翻訳でコントリビュートできるGitHubのリポジトリリスト
 
-If you have any repositories you would like to translate into Japanese language, feel free to add and make pull request.
+If you have any repositories you would like to translate into Japanese language, feel free to make issues.
 
 注意）開始年月は最初のIssueとかで調べているので適当です。
 
 ## JavaScript
+
+### [d3](https://github.com/d3/d3)
+
+- 概要: JavaScriptのデータビジュアライゼーションライブラリ
+- 作者: [d3](https://github.com/d3)
+- 開始年月: 2011/02
+- ライセンス: BSD 3-Clause "New" or "Revised" License
+- やり方: 日本版は、公式 wiki を直接編集
+- 状態: 各国ある、フォークして自分のレポジトリでwikiを編集したり、新規レポでwiki作ったり、公式を直接書いたり。日本はほぼ進んでない。
+- 文章量: 多
+- Star: 72,645
 
 ### [standard](https://github.com/standard/standard)
 
@@ -169,27 +180,38 @@ If you have any repositories you would like to translate into Japanese language,
 - 文章量: 少
 - Star: 20,245
 
-### [front-end-interview-handbook](https://github.com/yangshun/front-end-interview-handbook)
-
-- 概要: [Front-end Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions) の解答集
-- 作者: [Yangshun Tay](https://github.com/yangshun)  Front End @facebook
-- 開始年月: 2018/02
-- ライセンス: MIT
-- やり方: 専用フォルダがある（チームに入れてもらって直接プッシュ）
-- 状態: 日中韓で進行中
-- 文章量: 中
-- Star: 6,997
-
 ### [tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook)
 
 - 概要: アルゴリズムの学習と行動面接対策
-- 作者: [Yangshun Tay](https://github.com/yangshun)  Front End @facebook
+- 作者: [Yangshun Tay](https://github.com/yangshun)
 - 開始年月: 2017/09
 - ライセンス: MIT
 - やり方: 多分専用のフォルダ作ってくれる
 - 状態: 何も進んでない
 - 文章量: 中
 - Star: 18,299
+
+### [coding-interview-university](https://github.com/yhay81/coding-interview-university)
+
+- 概要: ソフトウェアエンジニアになるためのコンピュータサイエンス学習
+- 作者: [John Washam](https://github.com/jwasham)
+- 開始年月: 2016/10
+- ライセンス: MIT
+- やり方: 専用フォルダがある(translations/README-xx.md)
+- 状態: １２ヶ国語あるのに、日本はない。
+- 文章量: 中
+- Star: 15,645
+
+### [front-end-interview-handbook](https://github.com/yangshun/front-end-interview-handbook)
+
+- 概要: [Front-end Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions) の解答集
+- 作者: [Yangshun Tay](https://github.com/yangshun)
+- 開始年月: 2018/02
+- ライセンス: MIT
+- やり方: 専用フォルダがある（チームに入れてもらって直接プッシュ）
+- 状態: 日中韓で進行中
+- 文章量: 中
+- Star: 6,997
 
 ### [Begin-Latex-in-minutes](https://github.com/luongvo209/Begin-Latex-in-minutes)
 
