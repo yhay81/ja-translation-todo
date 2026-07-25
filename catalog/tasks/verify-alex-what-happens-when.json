@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-alex-what-happens-when",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "alex/what-happens-when の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for alex/what-happens-when"
+  },
+  "project": {
+    "repository": "alex/what-happens-when",
+    "url": "https://github.com/alex/what-happens-when",
+    "category": "Other",
+    "summary_ja": "「google.comってアドレスバーに入れてエンター押した時に何が起きてるでしょう。」に対する答え",
+    "license": "[Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/)"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/alex/what-happens-when",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "「google.comってアドレスバーに入れてエンター押した時に何が起きてるでしょう。」に対する答え",
+    "作者": "[Alex Gaynor](https://github.com/alex)",
+    "開始年月": "2013/11",
+    "ライセンス": "[Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/)",
+    "やり方": "リポジトリ別に作ってリンクをプルリク",
+    "状態": "中国だけある",
+    "文章量": "少",
+    "Star": "42,591"
+  }
+}

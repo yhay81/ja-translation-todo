@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-git-tips-tips",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "git-tips/tips の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for git-tips/tips"
+  },
+  "project": {
+    "repository": "git-tips/tips",
+    "url": "https://github.com/git-tips/tips",
+    "category": "Command Line Tools",
+    "summary_ja": "よく使われているGitの使い方",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/git-tips/tips",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "よく使われているGitの使い方",
+    "作者": "[git-tips](https://github.com/git-tips)",
+    "開始年月": "2015/07",
+    "ライセンス": "MIT",
+    "やり方": "全体書き換え、リンクだけプルリク",
+    "状態": "中国、ロシア、ベトナムがある",
+    "文章量": "少",
+    "Star": "21,683"
+  }
+}

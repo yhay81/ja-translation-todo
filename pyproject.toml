@@ -1,0 +1,43 @@
+[build-system]
+requires = ["uv_build>=0.11,<0.12"]
+build-backend = "uv_build"
+
+[project]
+name = "ja-translation-todo"
+version = "0.1.0"
+description = "Evidence-backed Japanese OSS translation task registry for humans and AI agents"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [{ name = "Yusuke Hayashi" }]
+dependencies = [
+  "hayate>=0.8.0,<0.9",
+  "hayate-mcp>=0.6.0,<0.7",
+  "hayate-openapi>=0.1.0,<0.2",
+]
+
+[dependency-groups]
+dev = [
+  "jsonschema>=4.25",
+  "pytest>=8.3",
+  "pytest-asyncio>=0.25",
+  "ruff>=0.12",
+  "uvicorn>=0.35",
+  "workers-py>=1.15",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.uv.build-backend]
+module-name = "translation_hub"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+extend-exclude = ["src/translation_hub/generated_catalog.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]

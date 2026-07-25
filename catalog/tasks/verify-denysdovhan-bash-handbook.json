@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-denysdovhan-bash-handbook",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "denysdovhan/bash-handbook の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for denysdovhan/bash-handbook"
+  },
+  "project": {
+    "repository": "denysdovhan/bash-handbook",
+    "url": "https://github.com/denysdovhan/bash-handbook",
+    "category": "Command Line Tools",
+    "summary_ja": "Bashを学びたいけど、のめり込みすぎたくない人用",
+    "license": "[CC 4.0](https://creativecommons.org/licenses/by/4.0/)"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/denysdovhan/bash-handbook",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "Bashを学びたいけど、のめり込みすぎたくない人用",
+    "作者": "[Denys Dovhan](https://github.com/denysdovhan)",
+    "開始年月": "2015/12",
+    "ライセンス": "[CC 4.0](https://creativecommons.org/licenses/by/4.0/)",
+    "やり方": "専用のフォルダがある",
+    "状態": "韓国中国台湾ポルトガルがある",
+    "文章量": "中",
+    "Star": "6,039"
+  }
+}

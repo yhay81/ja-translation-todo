@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-progit-progit2",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "progit/progit2 の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for progit/progit2"
+  },
+  "project": {
+    "repository": "progit/progit2",
+    "url": "https://github.com/progit/progit2",
+    "category": "Command Line Tools",
+    "summary_ja": "Pro Git の第2版",
+    "license": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/progit/progit2",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "Pro Git の第2版",
+    "作者": "[Pro Git Book](https://github.com/progit)",
+    "開始年月": "2013/12",
+    "ライセンス": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License",
+    "やり方": "[専用のレポジトリ](https://github.com/progit/progit2-ja)がある",
+    "状態": "日本語あり（progit2-ja / 最終更新: 2022/10）",
+    "文章量": "多",
+    "Star": "6,369"
+  }
+}

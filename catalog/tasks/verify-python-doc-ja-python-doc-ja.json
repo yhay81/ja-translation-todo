@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-python-doc-ja-python-doc-ja",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "python-doc-ja/python-doc-ja の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for python-doc-ja/python-doc-ja"
+  },
+  "project": {
+    "repository": "python-doc-ja/python-doc-ja",
+    "url": "https://github.com/python-doc-ja/python-doc-ja",
+    "category": "Python",
+    "summary_ja": "Python ドキュメント日本語訳プロジェクト",
+    "license": "PSF License"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/python-doc-ja/python-doc-ja",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "Python ドキュメント日本語訳プロジェクト",
+    "作者": "[python-doc-ja](https://github.com/python-doc-ja)",
+    "開始年月": "2015/05",
+    "ライセンス": "PSF License",
+    "やり方": "Transifex で翻訳（手順: https://github.com/python-doc-ja/python-doc-ja/wiki/HowToTransifex）",
+    "状態": "日本語あり（翻訳進行中）",
+    "文章量": "多",
+    "Star": "148"
+  }
+}

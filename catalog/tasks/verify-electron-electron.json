@@ -1,0 +1,67 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-electron-electron",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "electron/electron の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for electron/electron"
+  },
+  "project": {
+    "repository": "electron/electron",
+    "url": "https://github.com/electron/electron",
+    "category": "JavaScript",
+    "summary_ja": "クロスプラットフォームJavaScriptアプリ作成",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/electron/electron",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "クロスプラットフォームJavaScriptアプリ作成",
+    "開始年月": "2013/04",
+    "ライセンス": "MIT",
+    "やり方": "Crowdin",
+    "状態": "日本26%",
+    "文章量": "多",
+    "Star": "119,569"
+  }
+}

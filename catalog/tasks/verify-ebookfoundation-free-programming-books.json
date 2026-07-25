@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-ebookfoundation-free-programming-books",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "EbookFoundation/free-programming-books の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for EbookFoundation/free-programming-books"
+  },
+  "project": {
+    "repository": "EbookFoundation/free-programming-books",
+    "url": "https://github.com/EbookFoundation/free-programming-books",
+    "category": "Other",
+    "summary_ja": "フリーのプログラミング書籍リスト",
+    "license": "Creative Commons Attribution 4.0 International License"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "フリーのプログラミング書籍リスト",
+    "作者": "[Alex Gaynor](https://github.com/alex)",
+    "開始年月": "2013/10",
+    "ライセンス": "Creative Commons Attribution 4.0 International License",
+    "やり方": "専用ファイルがある。",
+    "状態": "日本もそこそこ更新されている。翻訳というよりは、日本語資料のまとめ。ポッドキャスト版やコース版は日本のない。",
+    "文章量": "少",
+    "Star": "379,635"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-d3-d3",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "d3/d3 の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for d3/d3"
+  },
+  "project": {
+    "repository": "d3/d3",
+    "url": "https://github.com/d3/d3",
+    "category": "JavaScript",
+    "summary_ja": "JavaScriptのデータビジュアライゼーションライブラリ",
+    "license": "ISC"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/d3/d3",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "JavaScriptのデータビジュアライゼーションライブラリ",
+    "作者": "[d3](https://github.com/d3)",
+    "開始年月": "2010/09",
+    "ライセンス": "ISC",
+    "やり方": "日本版は、公式 wiki を直接編集",
+    "状態": "各国ある、フォークして自分のレポジトリでwikiを編集したり、新規レポでwiki作ったり、公式を直接書いたり。日本はほぼ進んでない。",
+    "文章量": "多",
+    "Star": "112,085"
+  }
+}
