@@ -2,6 +2,12 @@ name = "ja-translation-todo"
 main = "entry.py"
 compatibility_date = "2026-07-25"
 compatibility_flags = ["python_workers"]
+workers_dev = false
+preview_urls = false
+
+[[routes]]
+pattern = "ja.yusuke-hayashi.com"
+custom_domain = true
 
 [assets]
 directory = "./public"

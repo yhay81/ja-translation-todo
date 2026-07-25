@@ -5,7 +5,7 @@ OSSの日本語化機会を、人間とAIエージェントが安全に発見・
 従来のMarkdown一覧を、証拠・鮮度・自動化可能範囲を持つ構造化catalogへ移行しています。古い情報は
 自動的に翻訳対象とせず、まず `verification` タスクとして再検証します。
 
-**公開サービス:** [ja-translation-todo.yusuke8h.workers.dev](https://ja-translation-todo.yusuke8h.workers.dev)
+**公開サービス:** [ja.yusuke-hayashi.com](https://ja.yusuke-hayashi.com)
 
 ## 提供する入口
 
