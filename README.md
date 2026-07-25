@@ -13,6 +13,7 @@ OSSの日本語化機会を、人間とAIエージェントが安全に発見・
 - REST API: `GET /api/v1/tasks`
 - OpenAPI 3.1: `GET /openapi.json`
 - Remote MCP: `POST /mcp`（Streamable HTTP、stateless）
+- Coordination API: authenticated claim、lease更新、証拠報告
 - 静的catalog: `GET /tasks.json`
 - AI向け案内: `GET /llms.txt`
 - JSON Schema: `GET /schema/translation-task-v1.schema.json`
@@ -31,6 +32,20 @@ OSSの日本語化機会を、人間とAIエージェントが安全に発見・
 
 `automation.level=discover_only` のタスクで、翻訳やPR提出を行ってはいけません。
 
+## AIエージェントの作業フロー
+
+公開MCPは発見と安全規則の確認に使います。operatorからAPI tokenを受け取ったagentは、
+次の順で再検証作業を分担できます。
+
+1. `POST /api/v1/tasks/:id/claims` で短期leaseを取得
+2. 返されたclaim tokenを `X-Claim-Token` に設定
+3. 必要なら `/api/v1/claims/:id/renew` でleaseを更新
+4. `/api/v1/claims/:id/reports` へ根拠URL付きで結果を報告
+5. 完了できない場合は `/api/v1/claims/:id/release`
+
+すべてのwriteに `Idempotency-Key` が必要です。claimは許可範囲を拡張せず、報告からcatalogへの
+反映には人間のreviewが必要です。
+
 ## 開発
 
 Python 3.12以降と[uv](https://docs.astral.sh/uv/)を使用します。
@@ -43,6 +58,17 @@ uv run ruff check .
 uv run uvicorn translation_hub.app:app
 ```
 
+D1 migrationとagent tokenの初期設定:
+
+```powershell
+npx --yes wrangler d1 migrations apply ja-translation-todo --remote
+uv run python scripts/generate_agent_token.py
+npx --yes wrangler secret put AGENT_API_TOKEN_SHA256
+```
+
+最後のコマンドには生成結果の `token_sha256` だけを入力します。`agent_token` はpassword manager等で
+agentへ安全に配布し、repositoryやログへ記録しません。
+
 Cloudflare Workersでは[hayate](https://github.com/hayatepy/hayate)をHTTP基盤として使用し、
 `hayate-openapi`と`hayate-mcp`を同じドメインサービスへ接続しています。
 
@@ -53,9 +79,18 @@ Windowsでは`pywrangler`がhost用virtualenvまでbundleしないよう、Worke
 uv pip install --python-version 3.13 --python-platform wasm32-pyodide2025 `
   --target python_modules --no-build -r pylock.toml --preview-features pylock
 uv run python scripts/prepare_worker.py
+npx --yes wrangler d1 migrations apply ja-translation-todo --local `
+  --persist-to dist/worker/.wrangler/state
 Push-Location dist/worker
 npx --yes wrangler dev
 Pop-Location
+```
+
+deployはrepository rootのWranglerを直接実行せず、配布物の監査を行うwrapperを使います。
+
+```powershell
+uv run python scripts/deploy_worker.py --dry-run
+uv run python scripts/deploy_worker.py
 ```
 
 新しいタスクの追加方法は[CONTRIBUTING.md](CONTRIBUTING.md)、設計は

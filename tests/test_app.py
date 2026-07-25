@@ -15,6 +15,7 @@ async def test_health_and_api_discovery():
     assert body["capabilities"] == {
         "read": True,
         "claim": False,
+        "lease_renewal": False,
         "result_reporting": False,
     }
     assert body["links"]["mcp"] == "/mcp"
@@ -54,6 +55,13 @@ async def test_openapi_describes_task_routes():
     assert document["openapi"] == "3.1.1"
     assert "/api/v1/tasks" in document["paths"]
     assert "/api/v1/tasks/{id}/bundle" in document["paths"]
+    assert "/api/v1/tasks/{id}/claims" in document["paths"]
+    assert "/api/v1/claims/{id}/reports" in document["paths"]
+    claim_operation = document["paths"]["/api/v1/tasks/{id}/claims"]["post"]
+    claim_schema = claim_operation["requestBody"]["content"]["application/json"]["schema"]
+    assert set(claim_schema["required"]) == {"agent_id", "catalog_revision"}
+    report_operation = document["paths"]["/api/v1/claims/{id}/reports"]["post"]
+    assert "requestBody" in report_operation
 
 
 async def test_mcp_lists_registry_tools_without_a_session():

@@ -31,3 +31,11 @@ uv run ruff check .
 `discover_only` で許可されるのは、公開情報の調査と証拠付きcatalog更新です。upstreamへのコメント、
 Issue作成、PR提出は含みません。外部操作を伴う場合は、タスクの `allowed_actions` とupstream方針を
 必ず確認してください。
+
+## Agentによる検証報告
+
+Agentはtask bundleの `automation.allowed_actions` を確認してからclaimします。claimは作業予約であり、
+翻訳・Issue・PR作成の許可ではありません。`discover_only` の報告に外部writeを含めるとAPIが拒否します。
+
+報告された根拠はそのまま正本へ反映しません。人間がURL、観測日、upstreamの権限者、既存作業を確認し、
+必要な場合だけ `catalog/tasks/*.json` を更新します。

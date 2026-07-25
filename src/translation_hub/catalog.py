@@ -86,6 +86,7 @@ def task_bundle(task: dict[str, Any]) -> dict[str, Any]:
         "links": {
             "self": f"/api/v1/tasks/{task['id']}",
             "bundle": f"/api/v1/tasks/{task['id']}/bundle",
+            "claim": f"/api/v1/tasks/{task['id']}/claims",
             "repository": task["project"]["url"],
         },
     }
