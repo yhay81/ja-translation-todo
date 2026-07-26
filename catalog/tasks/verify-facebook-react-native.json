@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-facebook-react-native",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "facebook/react-native の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for facebook/react-native"
+  },
+  "project": {
+    "repository": "facebook/react-native",
+    "url": "https://github.com/facebook/react-native",
+    "category": "JavaScript",
+    "summary_ja": "React でネイティブアプリを作るフレームワーク",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/facebook/react-native",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "React でネイティブアプリを作るフレームワーク",
+    "作者": "[facebook](https://github.com/facebook/)",
+    "開始年月": "2015/01",
+    "ライセンス": "MIT",
+    "やり方": "完璧に作ってリリースできたらリンク貼ってくれるかも。[参考](https://github.com/facebook/react-native/issues/1168)",
+    "状態": "どこの国もできてない？",
+    "文章量": "多",
+    "Star": "124,927"
+  }
+}

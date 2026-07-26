@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-standard-standard",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "standard/standard の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for standard/standard"
+  },
+  "project": {
+    "repository": "standard/standard",
+    "url": "https://github.com/standard/standard",
+    "category": "JavaScript",
+    "summary_ja": "JavaScript の標準的なスタイルガイドで、リンターで、フォーマッター",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/standard/standard",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "JavaScript の標準的なスタイルガイドで、リンターで、フォーマッター",
+    "作者": "[standard](https://github.com/standard)",
+    "開始年月": "2015/01",
+    "ライセンス": "MIT",
+    "やり方": "docs/README-ja.md, docs/RULES-ja.md を更新してプルリク",
+    "状態": "日本語あり",
+    "文章量": "中",
+    "Star": "29,409"
+  }
+}

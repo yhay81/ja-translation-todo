@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/yhay81/ja-translation-todo/raw/master/schema/translation-task-v1.schema.json",
+  "title": "Japanese OSS translation task",
+  "description": "A versioned, evidence-backed work bundle for humans and AI agents.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "kind",
+    "status",
+    "title",
+    "project",
+    "source",
+    "target",
+    "permissions",
+    "automation",
+    "evidence",
+    "validation",
+    "credit",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "translation-task/v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 120
+    },
+    "kind": {
+      "enum": ["verification", "translation", "maintenance"]
+    },
+    "status": {
+      "enum": [
+        "needs_verification",
+        "ready",
+        "ask_first",
+        "in_progress",
+        "blocked",
+        "done",
+        "stale"
+      ]
+    },
+    "title": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ja"],
+      "properties": {
+        "ja": {"type": "string", "minLength": 1},
+        "en": {"type": ["string", "null"]}
+      }
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "url", "category", "summary_ja"],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "pattern": "^[^/\\s]+/[^/\\s]+$"
+        },
+        "url": {"type": "string", "format": "uri"},
+        "category": {"type": "string", "minLength": 1},
+        "summary_ja": {"type": "string"},
+        "license": {"type": ["string", "null"]}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["revision", "paths"],
+      "properties": {
+        "revision": {"type": ["string", "null"]},
+        "paths": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["locale", "paths"],
+      "properties": {
+        "locale": {"const": "ja-JP"},
+        "paths": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["translation", "ai_assistance", "pull_request"],
+      "properties": {
+        "translation": {
+          "enum": ["unknown", "explicit", "implied", "forbidden"]
+        },
+        "ai_assistance": {
+          "enum": ["unknown", "explicit", "disclose", "forbidden"]
+        },
+        "pull_request": {
+          "enum": ["unknown", "allowed", "ask_first", "forbidden"]
+        }
+      }
+    },
+    "automation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "allowed_actions"],
+      "properties": {
+        "level": {
+          "enum": [
+            "discover_only",
+            "draft_only",
+            "draft_pr",
+            "pr_allowed",
+            "maintenance_allowed",
+            "blocked"
+          ]
+        },
+        "allowed_actions": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "kind", "observed_at", "note_ja"],
+        "properties": {
+          "url": {"type": "string", "format": "uri"},
+          "kind": {
+            "enum": [
+              "repository",
+              "translation_policy",
+              "ai_policy",
+              "issue",
+              "pull_request",
+              "contributing",
+              "validation"
+            ]
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "note_ja": {"type": "string"}
+        }
+      }
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "description_ja"],
+        "properties": {
+          "kind": {
+            "enum": ["command", "structure", "terminology", "semantic_review"]
+          },
+          "command": {"type": ["string", "null"]},
+          "description_ja": {"type": "string"}
+        }
+      }
+    },
+    "credit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expected", "public_attribution"],
+      "properties": {
+        "expected": {
+          "enum": [
+            "unknown",
+            "commit_author",
+            "co_author",
+            "contributors_page",
+            "acknowledgement",
+            "external_link"
+          ]
+        },
+        "public_attribution": {"type": "boolean"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["revision", "imported_from", "imported_at", "last_verified_at"],
+      "properties": {
+        "revision": {"type": "integer", "minimum": 1},
+        "imported_from": {"type": ["string", "null"]},
+        "imported_at": {"type": "string", "format": "date"},
+        "last_verified_at": {"type": ["string", "null"], "format": "date"}
+      }
+    },
+    "legacy": {
+      "type": ["object", "null"],
+      "additionalProperties": {
+        "type": ["string", "null"]
+      }
+    }
+  }
+}

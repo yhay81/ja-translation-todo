@@ -1,0 +1,68 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-chartjs-chart-js",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "chartjs/Chart.js の日本語化参加方法を再検証",
+    "en": "Re-verify the Japanese translation workflow for chartjs/Chart.js"
+  },
+  "project": {
+    "repository": "chartjs/Chart.js",
+    "url": "https://github.com/chartjs/Chart.js",
+    "category": "JavaScript",
+    "summary_ja": "シンプルなチャートライブラリ",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/chartjs/Chart.js",
+      "kind": "repository",
+      "observed_at": "2025-12-31",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": "docs/legacy-list.md",
+    "imported_at": "2026-07-25",
+    "last_verified_at": null
+  },
+  "legacy": {
+    "概要": "シンプルなチャートライブラリ",
+    "作者": "[Chart.js](https://github.com/chartjs)",
+    "開始年月": "2013/03",
+    "ライセンス": "MIT",
+    "やり方": "翻訳ページを作ってリンクだけプルリク。[中国語のプルリク](https://github.com/chartjs/Chart.js/pull/4281)参照",
+    "状態": "中国語だけリンク作ってもらっている。翻訳フォルダはメンテナがいないという理由で却下。",
+    "文章量": "中",
+    "Star": "66,943"
+  }
+}
