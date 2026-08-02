@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-weblateorg-weblate",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Weblate 本体UIの日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "WeblateOrg/weblate",
+    "url": "https://github.com/WeblateOrg/weblate",
+    "category": "Other",
+    "summary_ja": "OSS翻訳プラットフォームWeblate自身のUI翻訳。Hosted Weblate上で受付が完全に制度化されており日本語も対象。未翻訳・要レビュー文字列への貢献機会がある。",
+    "license": "GPL-3.0-or-later"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/WeblateOrg/weblate",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "weblate",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "ui_strings",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

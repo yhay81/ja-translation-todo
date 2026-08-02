@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-matplotlib-matplotlib",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Matplotlib のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "matplotlib/matplotlib",
+    "url": "https://github.com/matplotlib/matplotlib",
+    "category": "Python",
+    "summary_ja": "Python 標準の可視化ライブラリ。公式ドキュメントの日本語訳や受け入れ経路は現状なく、Scientific Python 翻訳基盤への追加提案など交渉から始める必要がある。",
+    "license": null
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/matplotlib/matplotlib",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "negotiated",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

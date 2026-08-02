@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-huggingface-course",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Hugging Face NLP Course のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "huggingface/course",
+    "url": "https://github.com/huggingface/course",
+    "category": "Learning",
+    "summary_ja": "Transformers を学ぶ公式無料コース。言語別 issue（日本語は #114）で章単位に分担する翻訳体制が制度化されており、chapters/ja の未訳章を翻訳して PR できる。",
+    "license": "Apache-2.0"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/huggingface/course",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "tutorial"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

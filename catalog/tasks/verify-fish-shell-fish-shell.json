@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-fish-shell-fish-shell",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "fish shell メッセージカタログの日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "fish-shell/fish-shell",
+    "url": "https://github.com/fish-shell/fish-shell",
+    "category": "Command Line Tools",
+    "summary_ja": "ユーザーフレンドリーな対話的シェル。gettextベースの翻訳基盤(poファイル)を持ちPRで翻訳を受け入れる。日本語カタログの新規整備・拡充の機会がある。",
+    "license": "GPL-2.0-only"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/fish-shell/fish-shell",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "ui_strings",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

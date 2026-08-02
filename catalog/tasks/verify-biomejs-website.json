@@ -1,0 +1,98 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-biomejs-website",
+  "kind": "verification",
+  "status": "ready",
+  "title": {
+    "ja": "Biome 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "biomejs/website",
+    "url": "https://github.com/biomejs/website",
+    "category": "JavaScript",
+    "summary_ja": "Rust 製 JS ツールチェーン Biome の公式サイトは Starlight の i18n で多言語化され、src/content/docs/ja/ に日本語訳を直接 PR できる。CONTRIBUTING で翻訳貢献が歓迎されており、日本語訳は存在するが 2026-02 以降更新が止まっていて追従・未翻訳ページの余地が大きい。",
+    "license": null
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "src/content/docs/"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "src/content/docs/ja/"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "allowed"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/biomejs/website",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。英語原文は src/content/docs/ 直下 (デフォルトロケール)、ロケール別に es/fr/ja/pl/pt-BR/ru/uk/zh-CN のディレクトリがあり、upstream は 2026-07-22 まで活発に更新。"
+    },
+    {
+      "url": "https://github.com/biomejs/website/blob/main/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "CONTRIBUTING に「We welcome any kind contribution that could help translating Biome documentation」と明記。翻訳状況は Lunaria ダッシュボードで追跡し、対応言語は astro.config.mjs と lunaria.config.json で管理。新規ページの PR では pnpm build:no-og でのビルド確認と、未翻訳ページは英語版へリンクすることが求められる。AI 利用方針の明記はなし。"
+    },
+    {
+      "url": "https://github.com/biomejs/biome/issues/880",
+      "kind": "issue",
+      "observed_at": "2026-08-02",
+      "note_ja": "「☂️ Translate the website in Japanese」傘 issue (closed)。1ページずつ担当する方式で日本語翻訳が公式に開始された経緯があり、nissy-dev / unvalley / TaKO8Ki 氏らが参加していた。"
+    },
+    {
+      "url": "https://github.com/biomejs/website/commits/main/src/content/docs/ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "ja 配下の最終更新は 2026-02-18「feat(ja): update more outdated Japanese documentation」。調査日から直近90日以内の日本語翻訳コミットはなく、日本語チームは inactive と判定。重複作業のリスクは低い。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/biomejs/website",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/biomejs/biome/issues/880"
+  }
+}

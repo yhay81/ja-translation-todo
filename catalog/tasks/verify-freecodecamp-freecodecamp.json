@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-freecodecamp-freecodecamp",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "freeCodeCamp カリキュラムの日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "freeCodeCamp/freeCodeCamp",
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+    "category": "Learning",
+    "summary_ja": "世界最大級の無料プログラミング学習カリキュラム。Crowdinによる翻訳制度が確立しており日本語版も公開済み。未翻訳のカリキュラムや新規教材の翻訳・校正に継続的に参加できる。",
+    "license": "BSD-3-Clause"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "tutorial"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

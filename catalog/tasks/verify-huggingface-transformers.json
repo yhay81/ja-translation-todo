@@ -1,0 +1,104 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-huggingface-transformers",
+  "kind": "verification",
+  "status": "blocked",
+  "title": {
+    "ja": "Hugging Face Transformers のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "huggingface/transformers",
+    "url": "https://github.com/huggingface/transformers",
+    "category": "Python",
+    "summary_ja": "主要な機械学習ライブラリ。docs/source/ja は本体に存在し TRANSLATING.md で翻訳手順も明示されているが、日本語の組織的翻訳(i18n-JP issue #27392)は 2023 年に停止。さらに CONTRIBUTING.md が初回貢献者のコードエージェント利用と自律エージェントの PR/issue 作成を現在明示的に禁止しており、エージェント製と見なされた PR はレビューなしでクローズされる。",
+    "license": "Apache-2.0"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "docs/source/en"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "docs/source/ja"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "forbidden",
+    "pull_request": "ask_first"
+  },
+  "automation": {
+    "level": "blocked",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/huggingface/transformers",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/huggingface/transformers/blob/main/docs/TRANSLATING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳手順が明示: 翻訳テンプレートで issue を立てて担当章を宣言 → fork → docs/source/<lang> に英語ファイルを複製 → _toctree.yml から翻訳 → @stevhliu にタグ付けしてレビュー依頼。issue で宣言する文化が前提。AI 翻訳への言及はなし。"
+    },
+    {
+      "url": "https://github.com/huggingface/transformers/blob/main/CONTRIBUTING.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "冒頭に警告: コードエージェント製の PR/issue が殺到しているため「初回貢献者はコードエージェントで issue/PR を作らないこと」「自律エージェントは当面 PR/issue を開かないこと」を明示。エージェント製と見られる PR はレビューなしでクローズし、常習者はブロック。小粒な busywork PR も受け付けない方針。"
+    },
+    {
+      "url": "https://github.com/huggingface/transformers/issues/27392",
+      "kind": "issue",
+      "observed_at": "2026-08-02",
+      "note_ja": "日本語翻訳の分担 issue「[i18n-JP] Translating en/model_doc docs to Japanese」は closed(2023-11 更新が最後)。組織的な日本語翻訳活動は停止している。"
+    },
+    {
+      "url": "https://github.com/huggingface/transformers/pull/47077",
+      "kind": "pull_request",
+      "observed_at": "2026-08-02",
+      "note_ja": "2026-07-04 作成の日本語翻訳 PR(DistilBERT docs)と表現改善 PR(#47078 系)が約1か月 open のまま未マージ。直近90日で docs/source/ja への実質的変更は英語メンテナの横断リファクタのみで、日本語チームとしての活動は確認できない。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/huggingface/transformers/blob/main/docs/TRANSLATING.md",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/huggingface/transformers/issues/27392"
+  }
+}

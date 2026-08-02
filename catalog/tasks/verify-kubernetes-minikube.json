@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-kubernetes-minikube",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "minikube CLIメッセージの日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "kubernetes/minikube",
+    "url": "https://github.com/kubernetes/minikube",
+    "category": "Infrastructure",
+    "summary_ja": "ローカルKubernetes実行ツール。CLI出力メッセージの翻訳基盤(translations/ja.json)があり日本語が公式対象。make extractで未翻訳文字列を抽出して貢献できる。",
+    "license": "Apache-2.0"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/kubernetes/minikube",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "ui_strings",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

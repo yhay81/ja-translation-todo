@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-denoland-docs",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Deno 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "denoland/docs",
+    "url": "https://github.com/denoland/docs",
+    "category": "JavaScript",
+    "summary_ja": "Deno の公式ドキュメントリポジトリ denoland/docs (Lume 製) は活発だが公式日本語版はなく、過去の和訳は個人プロジェクトで停滞。公式への i18n 提案または公認翻訳の交渉が機会となる。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/denoland/docs",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "negotiated",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

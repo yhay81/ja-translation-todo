@@ -1,0 +1,101 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-vitejs-vite",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "Vite 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "vitejs/vite",
+    "url": "https://github.com/vitejs/vite",
+    "category": "JavaScript",
+    "summary_ja": "Vite 公式ドキュメントの日本語訳リポジトリ vitejs/docs-ja が vitejs 組織下にあり、翻訳ガイド付きで運用中。本家更新への追従翻訳タスクが継続的に発生している。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "docs"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "guide",
+      "config",
+      "blog",
+      "changes"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "allowed"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/vitejs/vite",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/vitejs/docs-ja/blob/main/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳参加ガイドあり。issue の翻訳タスクに「対応します!」とコメントして宣言し、メンテナのアサイン後にフォークして PR を送る方式。文体(ですます調)・用語統一・原文と行数を揃える等の詳細ルールあり。AI/機械翻訳への言及はなし。"
+    },
+    {
+      "url": "https://github.com/vitejs/docs-ja/issues",
+      "kind": "issue",
+      "observed_at": "2026-08-02",
+      "note_ja": "本家 docs の更新ごとに翻訳タスク issue が起票され(yuki-no による追従運用)、宣言式でアサインされる。着手前に issue で重複確認が必要。"
+    },
+    {
+      "url": "https://github.com/vitejs/docs-ja/commits/main",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "直近コミット・merged PR 2026-07-31(直近90日以内に多数)。日本語チームは活発に本家へ追従中。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/vitejs/docs-ja",
+    "translation_repo": "vitejs/docs-ja"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "fork_hosted",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/vitejs/docs-ja"
+  }
+}

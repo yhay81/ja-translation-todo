@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-pandas-dev-pandas",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "pandas 公式サイトのドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "pandas-dev/pandas",
+    "url": "https://github.com/pandas-dev/pandas",
+    "category": "Python",
+    "summary_ja": "データ分析ライブラリ pandas。PR #61220 で Scientific Python Translations の Crowdin 基盤にウェブサイト翻訳が組み込まれ、日本語翻訳に新規参入できる状態にある。",
+    "license": "BSD-3-Clause"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/pandas-dev/pandas",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

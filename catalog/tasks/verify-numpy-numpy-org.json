@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-numpy-numpy-org",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "NumPy 公式サイトのドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "numpy/numpy.org",
+    "url": "https://github.com/numpy/numpy.org",
+    "category": "Python",
+    "summary_ja": "数値計算ライブラリ NumPy の公式サイト。Scientific Python の Crowdin で翻訳が制度化され、日本語版が既に公開済み。新規コンテンツの翻訳と維持に参加できる。",
+    "license": null
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/numpy/numpy.org",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

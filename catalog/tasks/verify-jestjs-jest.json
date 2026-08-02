@@ -1,0 +1,109 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-jestjs-jest",
+  "kind": "verification",
+  "status": "ready",
+  "title": {
+    "ja": "Jest 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "jestjs/jest",
+    "url": "https://github.com/jestjs/jest",
+    "category": "JavaScript",
+    "summary_ja": "Jest のドキュメントサイト jestjs.io は Crowdin (jest-v2 プロジェクト) で公式に翻訳を受け付けており、日本語ロケールは本番サイト jestjs.io/ja/ にデプロイ済み。翻訳率の向上と最新版への追従が機会になる。翻訳は Crowdin 経由のみで、リポジトリへの直接 PR は経路ではない。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "docs/",
+      "website/versioned_docs/"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "forbidden"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/jestjs/jest",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://crowdin.com/project/jest",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "旧 Crowdin プロジェクトは「DEPRECATED: read-only, please submit translations to jest-v2!」と明記されており、jest-v2 への翻訳提出が公式に案内されている。"
+    },
+    {
+      "url": "https://github.com/jestjs/jest/blob/main/crowdin.yaml",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリ直下に crowdin.yaml があり、docs/blog の翻訳が Crowdin で公式運用されている。翻訳ファイルは Crowdin 同期のため、翻訳内容の直接 PR は受付経路ではない。AI 利用方針の記載は確認できず。"
+    },
+    {
+      "url": "https://crowdin.com/project/jest-v2",
+      "kind": "platform",
+      "observed_at": "2026-08-02",
+      "note_ja": "現行の公式翻訳プラットフォーム。公開プロジェクトで日本語ロケールが有効(crowdin.com/project/jest-v2/ja が存在)。"
+    },
+    {
+      "url": "https://jestjs.io/ja/",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "日本語ロケールが本番サイトにデプロイ済みで 8 言語の切替が可能。組織化された日本語チームは確認できず、Crowdin 上の個人貢献ベース。"
+    },
+    {
+      "url": "https://github.com/jestjs/jest/issues/15758",
+      "kind": "issue",
+      "observed_at": "2026-08-02",
+      "note_ja": "2025-07 のロケール追加問い合わせ issue(closed)。日本語の進行中作業や重複する翻訳 issue は確認できなかった。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "contributors_page",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": "https://crowdin.com/project/jest-v2",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": "https://crowdin.com/project/jest-v2/ja"
+  }
+}

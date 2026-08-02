@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-nushell-nushell-github-io",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Nushell Book の日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "nushell/nushell.github.io",
+    "url": "https://github.com/nushell/nushell.github.io",
+    "category": "Command Line Tools",
+    "summary_ja": "構造化データ志向のシェルNushellの公式ブック・サイト。リポジトリ内にja翻訳ディレクトリがあり直接PRで貢献可能。日本語版は未翻訳・更新遅れの章が多い。",
+    "license": null
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/nushell/nushell.github.io",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "book",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "book"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

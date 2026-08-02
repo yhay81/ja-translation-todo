@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-php-doc-en",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "PHP マニュアル日本語版 (php/doc-ja) の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "php/doc-en",
+    "url": "https://github.com/php/doc-en",
+    "category": "Other",
+    "summary_ja": "PHP公式マニュアルの日本語訳はphp org公認のdoc-jaリポジトリで管理され、GitHub PRで翻訳・追従更新を受け付ける。英語版doc-enとの差分追従作業が恒常的に存在する。",
+    "license": "CC-BY-3.0"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/php/doc-en",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "php/doc-ja"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

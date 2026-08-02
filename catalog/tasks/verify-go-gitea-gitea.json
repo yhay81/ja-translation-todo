@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-go-gitea-gitea",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Gitea UI文字列の日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "go-gitea/gitea",
+    "url": "https://github.com/go-gitea/gitea",
+    "category": "Infrastructure",
+    "summary_ja": "セルフホスト型Gitサービス。UI翻訳はCrowdin(translate.gitea.com)で制度化され日本語も進行中。未翻訳文字列の翻訳・既存訳の改善に継続的な貢献機会がある。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/go-gitea/gitea",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "ui_strings",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

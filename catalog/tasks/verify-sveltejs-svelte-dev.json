@@ -1,0 +1,92 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-sveltejs-svelte-dev",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "Svelte 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "sveltejs/svelte.dev",
+    "url": "https://github.com/sveltejs/svelte.dev",
+    "category": "JavaScript",
+    "summary_ja": "Svelte/SvelteKit 公式サイト svelte.dev の日本語版 svelte.jp を Svelte Japan コミュニティが svelte-jp/svelte.dev で運営。upstream 同期が 2026 年も継続する活発なチームで、未着手 issue に「翻訳者募集中」ラベルを付けて翻訳者を募集している。着手前に issue での宣言と運営の確認が必須。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "apps/svelte.dev/content/"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "apps/svelte.dev/content/"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "ask_first"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/sveltejs/svelte.dev",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/svelte-jp/svelte.dev/blob/main/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳貢献を歓迎する明示的ガイドあり。未着手 issue の「翻訳者募集中」ラベルにコメントで宣言し、運営の確認後に着手して issue 番号付きで PR を出す方式。誤訳報告や改善提案も受付。AI/機械翻訳の明示的な方針記載はなし。"
+    },
+    {
+      "url": "https://api.github.com/repos/svelte-jp/svelte.dev/commits?per_page=5",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "直近コミットは 2026-05-19 の upstream 同期 PR マージ(調査日から約75日以内)。svelte/kit/cli ドキュメントの同期が継続しており日本語チームは活発。参加窓口は Svelte 日本の Discord #ドキュメント翻訳 チャンネル。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "commit_author",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "svelte-jp/svelte.dev"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/svelte-jp/svelte.dev"
+  }
+}

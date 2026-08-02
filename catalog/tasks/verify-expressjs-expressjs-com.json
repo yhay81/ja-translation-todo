@@ -1,0 +1,102 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-expressjs-expressjs-com",
+  "kind": "verification",
+  "status": "ready",
+  "title": {
+    "ja": "Express 公式サイト日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "expressjs/expressjs.com",
+    "url": "https://github.com/expressjs/expressjs.com",
+    "category": "JavaScript",
+    "summary_ja": "Express 公式サイトは多言語対応で日本語ページを持ち、翻訳は Crowdin (express.crowdin.com/website) に一本化されている。既存訳は AI 翻訳ベースのため、精度・品質改善の貢献が公式に歓迎されている。",
+    "license": null
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "src/content/pages/en/",
+      "src/content/docs/en/",
+      "src/i18n/ui/en.json"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "src/content/pages/ja/",
+      "src/content/docs/ja/",
+      "src/i18n/ui/ja.json"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "forbidden"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/expressjs/expressjs.com",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。サイトは 2026 年にリデザインされ (PR #2197 で10言語の UI 言語切替を実装)、crowdin.yml で en → 各言語 (ja 含む) の同期パスが定義されている。"
+    },
+    {
+      "url": "https://github.com/expressjs/expressjs.com/blob/gh-pages/docs/i18n.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "i18n ガイドに「Translation contributions must be made through Crowdin, not directly to the repository」と明記。リポジトリへの直接編集は Crowdin 同期で上書きされる。ja は対応言語リストに含まれ、参加は express.crowdin.com/website で join 申請 → Crowdin エディタで翻訳する手順。"
+    },
+    {
+      "url": "https://github.com/expressjs/expressjs.com/blob/gh-pages/docs/i18n.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "同ガイドに「Since AI translations can be imperfect, we welcome community contributions to improve translation accuracy and quality」とあり、既存訳はプロジェクト側の AI 翻訳ベース。コミュニティによる品質改善を歓迎する立場で、貢献者の AI 利用可否そのものの明示はない (implied 判定)。"
+    },
+    {
+      "url": "https://github.com/expressjs/expressjs.com/pull/2145",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "「i18n: new crowdin translations」が 2026-01-04 にマージされ Crowdin 同期は稼働中。ただし専任の日本語翻訳チームは確認できず、Crowdin コミュニティ運用のため japanese_team は none と判定。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": "https://express.crowdin.com/website",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  }
+}

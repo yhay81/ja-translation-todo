@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-microsoft-playwright",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Playwright ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "microsoft/playwright",
+    "url": "https://github.com/microsoft/playwright",
+    "category": "JavaScript",
+    "summary_ja": "E2E テストの標準となった Playwright のドキュメント (playwright.dev, Docusaurus 製) は英語のみ。i18n 計画の issue が存在し、日本語翻訳の受け入れ可否をメンテナと交渉する機会がある。",
+    "license": "Apache-2.0"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/playwright",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 5,
+    "factors": {
+      "volume": "large",
+      "workflow": "negotiated",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

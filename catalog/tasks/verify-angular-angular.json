@@ -1,0 +1,98 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-angular-angular",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "Angular 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "angular/angular",
+    "url": "https://github.com/angular/angular",
+    "category": "JavaScript",
+    "summary_ja": "Angular 公式ドキュメントの日本語版 angular.jp を管理する angular/angular-ja。CONTRIBUTING と Discord の翻訳チャンネルで作業手順が整備され、未翻訳ページの翻訳協力を継続的に募集している。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "adev/src/content"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "adev-ja"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "explicit",
+    "pull_request": "allowed"
+  },
+  "automation": {
+    "level": "draft_pr",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/angular/angular",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/angular/angular-ja/blob/main/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳協力を明示的に募集。新規翻訳は Translation Checkout のイシューを作成しテンプレートに従って宣言してから着手。軽微な修正のみ直接 PR 可。対象は adev-ja 配下(origin は angular/angular の submodule、原文 xxx.en.md と翻訳 .md を管理)。"
+    },
+    {
+      "url": "https://github.com/angular/angular-ja/blob/main/CONTRIBUTING.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "Gemini API を使った AI 翻訳を公式に導入(詳細は TRANSLATION_WITH_AI.md)。機械翻訳をベースに人手で修正するアプローチが推奨されている。"
+    },
+    {
+      "url": "https://github.com/angular/angular-ja/commits/main",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "直近 merged PR 2026-07-20 (guide/aria/combobox の日本語訳) など直近90日以内に翻訳 PR がマージされており、日本語チームは活発。Discord の #翻訳 チャンネルで議論が進行。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/angular/angular-ja",
+    "translation_repo": "angular/angular-ja"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/angular/angular-ja"
+  }
+}

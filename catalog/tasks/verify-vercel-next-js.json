@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-vercel-next-js",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Next.js ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "vercel/next.js",
+    "url": "https://github.com/vercel/next.js",
+    "category": "JavaScript",
+    "summary_ja": "Next.js 公式ドキュメントには公式 i18n がなく、非公式の Nextjs-ja-translation コミュニティが翻訳サイトを運営してきた。旧版ベースで停滞気味のため、再活性化や新方式の確認 (ask_first) が必要。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/vercel/next.js",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "Nextjs-ja-translation/Nextjs-ja-translation-docs"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 5,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

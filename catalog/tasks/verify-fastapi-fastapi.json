@@ -1,0 +1,105 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-fastapi-fastapi",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "FastAPI のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "fastapi/fastapi",
+    "url": "https://github.com/fastapi/fastapi",
+    "category": "Python",
+    "summary_ja": "Python の高速 Web フレームワーク。2026年から翻訳は FastAPI チーム運営の LLM パイプラインが docs/ja を自動生成・更新する体制に移行し、コミュニティは llm-prompt.md の改善提案とネイティブレビューで参加する。手作業の翻訳 PR は受付経路ではない。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "docs/en/docs"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "docs/ja/docs",
+      "docs/ja/llm-prompt.md"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "explicit",
+    "pull_request": "ask_first"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/fastapi/fastapi",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://fastapi.tiangolo.com/translations/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳は言語別プロンプトを使って FastAPI チームが LLM で自動生成する方針。コミュニティは各言語の llm-prompt.md への提案(ネイティブ1名以上の承認が必要)と生成訳のレビューで参加し、直接の翻訳 PR は手順として案内されていない。新言語追加はネイティブ3名以上の Discussion 宣言とチーム承認が前提。"
+    },
+    {
+      "url": "https://tiangolo.com/open-source/contributing/",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "AI ツールの利用自体は許容だが「意味のある人間の介入・判断」が必須。自動生成 PR やレビューコストが人間の投入労力を上回る低努力 PR はフラグ後クローズ、常習者はブロックと明記。"
+    },
+    {
+      "url": "https://github.com/fastapi/fastapi/pull/14701",
+      "kind": "pull_request",
+      "observed_at": "2026-08-02",
+      "note_ja": "2026-01-11 マージ。翻訳貢献ドキュメントを LLM 生成体制に合わせて刷新した PR。以後、訳文の改善はプロンプト修正 PR を推奨する運用に変わった。"
+    },
+    {
+      "url": "https://github.com/fastapi/fastapi/pull/15998",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "docs/ja は自動パイプラインで約2週間ごとに更新されており、直近では 2026-07-15 に ja 訳更新がマージ(update-outdated)。日本語はレビュー体制付きの稼働言語。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://fastapi.tiangolo.com/translations/",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "small",
+      "workflow": "negotiated",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://fastapi.tiangolo.com/translations/"
+  }
+}

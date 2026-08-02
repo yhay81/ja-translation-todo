@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-python-cpython",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Python 公式ドキュメント日本語訳 (python-docs-ja) の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "python/cpython",
+    "url": "https://github.com/python/cpython",
+    "category": "Python",
+    "summary_ja": "Python公式ドキュメントの日本語訳はpython org公認のpython-docs-jaで運営され、Transifexで翻訳を受け付ける制度化された体制。新バージョン追従の未翻訳分が常にある。",
+    "license": "Python-2.0"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/python/cpython",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "transifex",
+    "platform_url": null,
+    "translation_repo": "python/python-docs-ja"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

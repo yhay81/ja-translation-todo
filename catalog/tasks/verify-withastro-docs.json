@@ -1,0 +1,98 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-withastro-docs",
+  "kind": "verification",
+  "status": "blocked",
+  "title": {
+    "ja": "Astro 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "withastro/docs",
+    "url": "https://github.com/withastro/docs",
+    "category": "JavaScript",
+    "summary_ja": "Astro のドキュメントは同一リポジトリ内で多言語化されており、日本語も対象言語。i18n ガイドと翻訳進捗ダッシュボード、Discord の i18n チームがあり、未翻訳・要更新ページに直接 PR できる。ただし自動/機械翻訳の PR は明示的に不受理。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "src/content/docs/en"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "src/content/docs/ja"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "forbidden",
+    "pull_request": "allowed"
+  },
+  "automation": {
+    "level": "blocked",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/withastro/docs",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://contribute.docs.astro.build/guides/i18n/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "日本語は公式の対象言語。まず Discord の言語チャンネル参加を強く推奨し、Translation Tracker (i18n.docs.astro.build) で状況確認のうえ直接 PR 可。PR タイトルは i18n(ja): 形式、1 PR は2〜3ページまでの小規模を推奨。コミュニティ相互レビュー後にメンテナが最終判断。"
+    },
+    {
+      "url": "https://contribute.docs.astro.build/guides/i18n/",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "「We do not accept automated/machine translations」と明記。自動/機械翻訳の PR は受け付けず、人間による翻訳のみ受理。AI 主体の自動翻訳ワークフローは不可。"
+    },
+    {
+      "url": "https://github.com/withastro/docs/commits/main/src/content/docs/ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "src/content/docs/ja への直近コミット 2026-07-02(直近90日以内)。日本語翻訳チームの活動は継続中。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://contribute.docs.astro.build/guides/i18n/",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://i18n.docs.astro.build"
+  }
+}

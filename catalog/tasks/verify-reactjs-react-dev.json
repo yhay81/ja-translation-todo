@@ -1,0 +1,104 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-reactjs-react-dev",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "React 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "reactjs/react.dev",
+    "url": "https://github.com/reactjs/react.dev",
+    "category": "JavaScript",
+    "summary_ja": "React の新公式ドキュメント react.dev の日本語版。公式の翻訳専用リポジトリ reactjs/ja.react.dev が活発に稼働しており、Wiki で参加手順が整備されている。未翻訳・更新追従の作業余地がある。",
+    "license": "CC-BY-4.0"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "src/content"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "src/content"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "explicit",
+    "pull_request": "allowed"
+  },
+  "automation": {
+    "level": "draft_pr",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/reactjs/react.dev",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/reactjs/ja.react.dev/wiki",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳参加手順を Wiki で公開。未翻訳記事は Issue #452 で事前宣言し、原則1週間以内に PR を作成するルール。重複時は先に宣言した人を優先。翻訳スタイルガイド・訳語統一ページあり。"
+    },
+    {
+      "url": "https://github.com/reactjs/ja.react.dev/wiki",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "ChatGPT Markdown Translator を翻訳作業のスタート地点として公式に利用。ただし AI 翻訳は80点程度で誤訳を含むため人手チェック必須、自動翻訳のみの PR はレビュー対象外になり得ると明記。"
+    },
+    {
+      "url": "https://github.com/reactjs/ja.react.dev/issues/452",
+      "kind": "issue",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳進捗チェックリスト issue (open)。着手宣言の窓口で、既存作業の重複確認にも使用される。"
+    },
+    {
+      "url": "https://github.com/reactjs/ja.react.dev/commits/main",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "直近コミット 2026-06-20、merged PR も 2026-06-20 に複数あり(直近90日以内)。日本語チームは活発。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/reactjs/ja.react.dev",
+    "translation_repo": "reactjs/ja.react.dev"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/reactjs/ja.react.dev"
+  }
+}

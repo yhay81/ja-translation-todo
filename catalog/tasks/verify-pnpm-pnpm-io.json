@@ -1,0 +1,90 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-pnpm-pnpm-io",
+  "kind": "verification",
+  "status": "ready",
+  "title": {
+    "ja": "pnpm 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "pnpm/pnpm.io",
+    "url": "https://github.com/pnpm/pnpm.io",
+    "category": "JavaScript",
+    "summary_ja": "pnpm の公式サイト pnpm.io (Docusaurus 製) は Crowdin で翻訳を受け付けており、日本語プロジェクトページが存在する。日本語版サイトも公開済みで、翻訳率向上・追従の余地がある。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "docs/"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "forbidden"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/pnpm/pnpm.io",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。英語原文は docs/ 配下で、2026-07-31 に pnpm 12 対応 (#850) など upstream は活発。翻訳ファイルはリポジトリに置かず Crowdin から同期する運用。"
+    },
+    {
+      "url": "https://translate.pnpm.io",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "公式サイトのフッターと言語メニューに「翻訳に協力する / Help Us Translate」として translate.pnpm.io (Crowdin) への公募リンクがある。Crowdin に日本語言語 (crowdin.com/project/pnpm/ja) が開設済みで、参加は Crowdin 上で行う。リポジトリへの直接 PR は翻訳経路ではない (明示的禁止文言ではなく運用上 Crowdin 経由のみ)。AI 利用方針の明記は確認できず。"
+    },
+    {
+      "url": "https://github.com/pnpm/pnpm.io/pull/795",
+      "kind": "pull_request",
+      "observed_at": "2026-08-02",
+      "note_ja": "「chore: decouple Crowdin sync from Vercel build」(2026-05-12 作成, open)。Crowdin 同期パイプラインが現在も運用中であることを確認。日本語チームの直近90日の個別活動は Crowdin 側の統計が取得できず未確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": "https://translate.pnpm.io",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": "https://crowdin.com/project/pnpm/ja"
+  }
+}

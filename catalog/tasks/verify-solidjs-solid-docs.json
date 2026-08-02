@@ -1,0 +1,99 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-solidjs-solid-docs",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "SolidJS 公式ドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "solidjs/solid-docs",
+    "url": "https://github.com/solidjs/solid-docs",
+    "category": "JavaScript",
+    "summary_ja": "SolidJS の新公式ドキュメントは CONTRIBUTING.md に新規言語追加と翻訳の手順が明文化されており、src/routes/{locale} へ日本語訳を直接 PR できる建て付け。ただし現時点で src/routes にロケールディレクトリは一つも存在せず、翻訳ロケールのマージ実績が確認できないため、日本語ロケール立ち上げはメンテナへの事前相談が妥当。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "src/routes/"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "src/routes/ja/",
+      "src/i18n/dictionaries/ja/ui.ts"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "allowed"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/solidjs/solid-docs",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。英語原文は src/routes/ 直下 ((0)concepts 〜 (3)configuration, reference, solid-router, solid-start, solid-meta, v2)。src/routes 直下にロケールディレクトリ (ja / pt-br 等) は現存しない。"
+    },
+    {
+      "url": "https://github.com/solidjs/solid-docs/blob/main/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "CONTRIBUTING に新言語追加手順が明文化 (src/i18n/dictionaries/{locale}/ui.ts の辞書作成、barrel file と scripts/collections/index.mjs への追加、最低限 src/routes/{locale}/index.mdx の作成)。既存言語への追加は src/routes/{locale} に同一構造で置く。「We can't accept half translated entries」と部分翻訳は不可、ネイティブスピーカーのレビュー推薦を強く歓迎。AI/機械翻訳の方針は明記なし。"
+    },
+    {
+      "url": "https://github.com/solidjs/solid-docs/pull/762",
+      "kind": "pull_request",
+      "observed_at": "2026-08-02",
+      "note_ja": "「docs(translation): Add spanish UI translations」は 2025-03-08 に close され、現在の main に翻訳ロケールはマージされていない。翻訳基盤 (i18n ルーティング #494、Lunaria #572) は導入済みだが v2 ディレクトリなど再編中で、新ロケール受け入れの実勢が不明なため ask_first と判定。"
+    },
+    {
+      "url": "https://github.com/solidjs/solid-docs/issues?q=japanese",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリ内の issue/PR を japanese / 日本語で検索して 0 件。日本語ロケール・日本語チームとも存在せず (none)、重複作業はない。着手時は issue または Discord でメンテナ合意を得てから開始する。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/solidjs/solid-docs",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-django-django",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "Django のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "django/django",
+    "url": "https://github.com/django/django",
+    "category": "Python",
+    "summary_ja": "Python の代表的 Web フレームワーク。ドキュメント翻訳は Transifex の django-docs プロジェクトで制度化され、日本語は約73%まで翻訳済み。参加には Transifex の日本語チーム加入(コーディネーター承認)が前提で、翻訳の直接 PR は受け付けない。",
+    "license": "BSD-3-Clause"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "docs"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "disclose",
+    "pull_request": "forbidden"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/django/django",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://docs.djangoproject.com/en/dev/internals/contributing/localizing/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳は Transifex 経由で貢献する方針が明文化。i18n フォーラムで自己紹介 → Transifex で言語チームに参加申請 → コーディネーター承認後に翻訳、という手順。ドキュメント翻訳も同じ仕組みで、docs/intro/* が全訳されると docs.djangoproject.com/<lang>/ で公開される。翻訳の直接 PR は経路でない(formats.py のみ main への PR)。"
+    },
+    {
+      "url": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/#ai-assisted-contributions",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "AI 支援の貢献は「どのツールを何に使ったかの開示」と「全出力の人間による検証」が必須。未検証の AI 生成コンテンツはメンテナンス負担として明確に問題視されている。"
+    },
+    {
+      "url": "https://explore.transifex.com/django/django-docs/",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "Transifex の django-docs プロジェクトで日本語は 73% 翻訳済み(上位言語)。プロジェクト全体の直近活動は観測日の2日前で継続稼働中。日本語チームは Transifex 上に存在し、docs.djangoproject.com/ja/ が公開維持されている(ja 単独の90日活動量は Transifex 非公開のため間接確認)。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "transifex",
+    "platform_url": "https://explore.transifex.com/django/django-docs/",
+    "translation_repo": "django/django-docs-translations"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://explore.transifex.com/django/django-docs/"
+  }
+}

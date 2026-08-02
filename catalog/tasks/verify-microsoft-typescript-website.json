@@ -1,0 +1,104 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-microsoft-typescript-website",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "TypeScript 公式サイト日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "microsoft/TypeScript-Website",
+    "url": "https://github.com/microsoft/TypeScript-Website",
+    "category": "JavaScript",
+    "summary_ja": "typescriptlang.org のハンドブック等の翻訳は専用リポジトリ TypeScript-Website-Localizations で受け付けている。docs/documentation/ja/ に同一パスで訳文を置いて PR する方式で、日本語は未翻訳分が多い。ただし翻訳リポジトリは最終マージが2023年で、2026年のPRも未レビューのまま滞留しており、着手前にメンテナの応答性確認が必要。",
+    "license": null
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "docs/documentation/en/"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "docs/documentation/ja/"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "allowed"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/microsoft/TypeScript-Website",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/microsoft/TypeScript-Website-Localizations",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "README に翻訳手順を明記: yarn pull-en で英語ファイルを取得し、同一パス構造で ja フォルダに訳文を置いて PR。yarn lint で検証。日本語 (ja) は正式サポート言語で、言語オーナーには self-merge 権限がある。AI/機械翻訳の言及はなし。"
+    },
+    {
+      "url": "https://api.github.com/repos/microsoft/TypeScript-Website-Localizations",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳リポジトリは archived=false だが pushed_at は 2024-07-24、既定ブランチの最終マージは 2023-06。open issues 84 件でメンテナンスが停滞している。"
+    },
+    {
+      "url": "https://github.com/microsoft/TypeScript-Website-Localizations/pulls",
+      "kind": "pull_request",
+      "observed_at": "2026-08-02",
+      "note_ja": "オープン PR は 2026-05〜06 作成のポルトガル語翻訳 6 件のみで、約 2 か月レビューされずに滞留。日本語の進行中 PR は無く重複リスクは低いが、PR がマージされる見込みを issue で確認してから着手すべき。"
+    }
+  ],
+  "validation": [
+    {
+      "kind": "command",
+      "command": "yarn lint",
+      "description_ja": "翻訳リポジトリ同梱の lint で訳文ファイルの構造を検証する。"
+    }
+  ],
+  "credit": {
+    "expected": "commit_author",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "microsoft/TypeScript-Website-Localizations"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  }
+}

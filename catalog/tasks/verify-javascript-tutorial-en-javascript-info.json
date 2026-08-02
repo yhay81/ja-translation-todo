@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-javascript-tutorial-en-javascript-info",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "javascript.info (現代のJavaScriptチュートリアル) のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "javascript-tutorial/en.javascript.info",
+    "url": "https://github.com/javascript-tutorial/en.javascript.info",
+    "category": "JavaScript",
+    "summary_ja": "定番のモダンJavaScript学習サイト。同一org配下に公式日本語リポジトリがあり、英語版更新への追従や未翻訳章の翻訳PRを直接受け付ける制度化された体制がある。",
+    "license": null
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/javascript-tutorial/en.javascript.info",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "javascript-tutorial/ja.javascript.info"
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "tutorial"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

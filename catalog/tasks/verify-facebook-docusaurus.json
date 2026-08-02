@@ -1,0 +1,103 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-facebook-docusaurus",
+  "kind": "verification",
+  "status": "ready",
+  "title": {
+    "ja": "Docusaurus 公式サイト日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "facebook/docusaurus",
+    "url": "https://github.com/facebook/docusaurus",
+    "category": "JavaScript",
+    "summary_ja": "Docusaurus 本体サイト docusaurus.io の翻訳は Crowdin (Docusaurus-v2) で運用され、日本語ロケールが Crowdin 上で有効化済み。ただし docusaurus.io/ja/ は未デプロイ(404)で、翻訳率が本番追加の閾値に達しておらず、日本語の翻訳活動は停滞中。テーマ既定訳のみリポジトリへの PR で受付。",
+    "license": "MIT"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "website/docs/",
+      "website/i18n/en/"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "disclose",
+    "pull_request": "allowed"
+  },
+  "automation": {
+    "level": "draft_pr",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/facebook/docusaurus",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/facebook/docusaurus/issues/3526",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "公式の翻訳募集 issue(open、2020-10 作成・2023-05 更新)。Crowdin に登録して Docusaurus-v2 プロジェクトに参加し、website/i18n/en > community > docs の優先順で翻訳、10%以上翻訳でロケールがステージングに追加される方式を明記。"
+    },
+    {
+      "url": "https://github.com/facebook/docusaurus/blob/main/CONTRIBUTING.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "「AI-assisted PRs」セクションあり: AI 生成コードの利用は歓迎だが、相当部分が AI 生成の場合は PR 説明での開示が必要。提出者が内容に責任を持ち、テスト通過を確認すること。大規模な無断変更は却下されうる。"
+    },
+    {
+      "url": "https://crowdin.com/project/docusaurus-v2/ja",
+      "kind": "platform",
+      "observed_at": "2026-08-02",
+      "note_ja": "Crowdin 上に日本語(ja)翻訳プロジェクトが存在し参加可能。"
+    },
+    {
+      "url": "https://docusaurus.io/ja/",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "docusaurus.io/ja/ は 404 で本番未デプロイ。日本語の翻訳活動は本番追加の閾値に達しておらず停滞していると判断。進行中の日本語作業との重複リスクは低い。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "contributors_page",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": "https://crowdin.com/project/docusaurus-v2",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": "https://crowdin.com/project/docusaurus-v2/ja"
+  }
+}

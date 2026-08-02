@@ -1,0 +1,98 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-huggingface-diffusers",
+  "kind": "verification",
+  "status": "ask_first",
+  "title": {
+    "ja": "Hugging Face Diffusers のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "huggingface/diffusers",
+    "url": "https://github.com/huggingface/diffusers",
+    "category": "Python",
+    "summary_ja": "画像生成など拡散モデルのライブラリ。docs/source/ja に 2023 年追加のクイックツアー等が残るが以後の実質更新はなく、英語ドキュメントとの乖離が大きい。docs/TRANSLATING.md の手順(issue で担当章を宣言 → fork → 翻訳 PR)に従えば未訳ページの翻訳 PR を出せるが、着手前に issue での宣言とメンテナ反応の確認が前提。",
+    "license": "Apache-2.0"
+  },
+  "source": {
+    "revision": null,
+    "paths": [
+      "docs/source/en"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "docs/source/ja"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "ask_first"
+  },
+  "automation": {
+    "level": "draft_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/huggingface/diffusers",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/huggingface/diffusers/blob/main/docs/TRANSLATING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-02",
+      "note_ja": "翻訳手順が明示: 「🌐 Translating a New Language?」テンプレートで issue を立てて担当章をコメント宣言 → fork → docs/source/<lang> に英語ファイルを複製 → _toctree.yml から翻訳 → メンテナ(@patrickvonplaten 等)へレビュー依頼。AI/機械翻訳への言及はなし。"
+    },
+    {
+      "url": "https://github.com/huggingface/diffusers/pull/5478",
+      "kind": "pull_request",
+      "observed_at": "2026-08-02",
+      "note_ja": "日本語ドキュメント追加 PR「Japanese docs」は 2023-10-22 にマージ済み。以後の日本語翻訳 PR は 2023-11 の sdxl 参照追加が最後で、重複しうる進行中の日本語作業は確認されない。"
+    },
+    {
+      "url": "https://github.com/huggingface/diffusers/commits/main/docs/source/ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-02",
+      "note_ja": "docs/source/ja の直近コミット(2026-07 の JAX/Flax 削除・dtype 変更など)はすべて英語メンテナによる横断メンテで、日本語翻訳者コミュニティとしての活動は 2023 年以降観測されない。日本語チームは実質不在。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 2,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": "2026-08-02"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/huggingface/diffusers/blob/main/docs/TRANSLATING.md",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  }
+}

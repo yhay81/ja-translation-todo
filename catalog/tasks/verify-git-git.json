@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-git-git",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "Git本体(po/ja)のメッセージ日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "git/git",
+    "url": "https://github.com/git/git",
+    "category": "Command Line Tools",
+    "summary_ja": "Git本体のCLIメッセージ翻訳。git-l10n/git-poリポジトリでpo/ja.poが管理され、PRベースの確立したl10nワークフローがある。新版リリースごとに未翻訳分の更新機会がある。",
+    "license": "GPL-2.0-only"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/git/git",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "git-l10n/git-po"
+  },
+  "content_type": "ui_strings",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

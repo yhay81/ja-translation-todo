@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-pytorch-tutorials",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "PyTorch Tutorials のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "pytorch/tutorials",
+    "url": "https://github.com/pytorch/tutorials",
+    "category": "Python",
+    "summary_ja": "PyTorch 公式チュートリアル集。既存の日本語訳はコミュニティのフォーク（1.8 時点）で止まっており、最新版への追随や公式への受け入れ経路の交渉余地がある。",
+    "license": "BSD-3-Clause"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/pytorch/tutorials",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "YutaroOgawa/pytorch_tutorials_jp"
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "tutorial"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}

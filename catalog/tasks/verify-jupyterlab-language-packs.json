@@ -1,0 +1,76 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-jupyterlab-language-packs",
+  "kind": "verification",
+  "status": "needs_verification",
+  "title": {
+    "ja": "JupyterLab UI（言語パック）のドキュメント日本語化の検証",
+    "en": null
+  },
+  "project": {
+    "repository": "jupyterlab/language-packs",
+    "url": "https://github.com/jupyterlab/language-packs",
+    "category": "Python",
+    "summary_ja": "JupyterLab エコシステムの UI 文字列翻訳。Crowdin で制度化され、翻訳が自動 PR として language-packs に取り込まれ ja-JP パックとして PyPI 配布される。",
+    "license": "BSD-3-Clause"
+  },
+  "source": {
+    "revision": null,
+    "paths": []
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "permissions": {
+    "translation": "unknown",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/jupyterlab/language-packs",
+      "kind": "repository",
+      "observed_at": "2026-08-02",
+      "note_ja": "リポジトリの存在と活動を確認。"
+    }
+  ],
+  "validation": [],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-08-02",
+    "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "ui_strings",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  }
+}
