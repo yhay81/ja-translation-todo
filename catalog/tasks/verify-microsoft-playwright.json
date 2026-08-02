@@ -47,7 +47,7 @@
       "url": "https://github.com/microsoft/playwright.dev/issues/410",
       "kind": "issue",
       "observed_at": "2026-08-03",
-      "note_ja": "過去に docs の i18n 計画を尋ね日本語翻訳者としての協力を申し出た issue（2021年）が存在したが、現在は取得不可（HTTP 410 Gone）。GitHub の issue 検索でも playwright.dev に翻訳・i18n 関連の issue は見つからず、翻訳受付経路・方針は確認できない。"
+      "note_ja": "過去に docs の i18n 計画を尋ね日本語翻訳者としての協力を申し出た issue（2021年）が存在したが、現在は取得不可(2026-08-03 訂正: WebFetch で確認したところ実際は HTTP 404 Not Found であり、当初記載の 410 Gone は誤り)。いずれにせよ取得不可であることに変わりはない。GitHub の issue 検索でも playwright.dev に翻訳・i18n 関連の issue は見つからず、翻訳受付経路・方針は確認できない。"
     },
     {
       "url": "https://api.github.com/repos/microsoft/playwright",
@@ -62,10 +62,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

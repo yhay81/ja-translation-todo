@@ -47,19 +47,19 @@
       "url": "https://github.com/mrdoob/three.js/pull/30748",
       "kind": "translation_policy",
       "observed_at": "2026-08-03",
-      "note_ja": "PR「Remove old docs.」(2025-03-18 マージ) で旧ドキュメントを削除し JSDoc 生成に移行。PR 本文に「the new docs support no i18n anymore」と明記され、ja を含む翻訳ドキュメントはリポジトリから削除された。"
+      "note_ja": "(2026-08-03 訂正) PR「Remove old docs.」(2025-03-18 マージ) 本文に「the new docs support no i18n anymore」との記載を確認。ただしこの PR は 2025-03-21 に一旦 revert (PR #30773) されており、最終的な JSDoc ベースへの移行は 2025年10〜11月頃の別の作業を経て完了したとみられる。本 PR 単独では「削除済み」の直接的な根拠として不十分だが、他の evidence (issue #24984、現行 docs/ ツリー) と合わせて i18n 廃止の結論を支持。"
     },
     {
       "url": "https://github.com/mrdoob/three.js/issues/24984",
       "kind": "issue",
       "observed_at": "2026-08-03",
-      "note_ja": "「Offloading the Hosting and Maintenance of the Non-English Docs」。非英語ドキュメントの保守をリポジトリ外へ移す方針の議論で、メンテナが「the way translations were managed/authored in this repository was just not scalable」と表明。2026-07-10 にクローズ。"
+      "note_ja": "(2026-08-03 訂正) 「Offloading the Hosting and Maintenance of the Non-English Docs」。非英語ドキュメントの保守をリポジトリ外へ移す方針の議論であることは確認できたが、「the way translations were managed/authored in this repository was just not scalable」という引用文は再確認では裏付けられず、WestLangley による「is not an efficient use of the three.js maintainers' time」という別の文言が確認された(同一 issue 内の別コメントの可能性あり)。議論のテーマ自体は妥当。2026-07-10 にクローズ。"
     },
     {
       "url": "https://github.com/mrdoob/three.js/tree/dev/docs",
       "kind": "repository",
       "observed_at": "2026-08-03",
-      "note_ja": "現行の docs/ および manual/ は英語のみでロケールディレクトリなし。リポジトリ自体はアーカイブされておらず活発 (最終 push 2026-08-01)、Star 114,177。"
+      "note_ja": "(2026-08-03 訂正) 現行の docs/ および manual/ は英語のみでロケールディレクトリなしと記載していたが、再確認の WebFetch で取得したディレクトリ一覧 (pages/scenes/scripts/styles等) からはロケールディレクトリの有無を積極的に確認できなかった(否定もされていない)。リポジトリ自体はアーカイブされておらず活発 (最終 push 2026-08-01)、Star 114,177。"
     }
   ],
   "validation": [],
@@ -68,7 +68,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": "2026-08-03"

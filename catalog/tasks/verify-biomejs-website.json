@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-biomejs-website",
   "kind": "verification",
-  "status": "ready",
+  "status": "needs_verification",
   "title": {
     "ja": "Biome 公式ドキュメント日本語化の検証",
     "en": null
@@ -63,7 +63,7 @@
       "url": "https://github.com/biomejs/website/commits/main/src/content/docs/ja",
       "kind": "team_activity",
       "observed_at": "2026-08-02",
-      "note_ja": "ja 配下の最終更新は 2026-02-18「feat(ja): update more outdated Japanese documentation」。調査日から直近90日以内の日本語翻訳コミットはなく、日本語チームは inactive と判定。重複作業のリスクは低い。"
+      "note_ja": "(2026-08-03 訂正) 当初 2026-02-18 が最終更新でinactiveと記載していたが、再確認したところ ja 配下の実際の最終コミットは 2026-07-22 (#4383, src/content/docs/ja/reference/configuration.mdx を更新) であり、調査日から11日前=直近90日以内の活動があった。日本語チームは active の可能性が高く、重複作業のリスク評価は要再確認。"
     }
   ],
   "validation": [],
@@ -72,10 +72,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
@@ -92,7 +92,7 @@
     }
   },
   "community": {
-    "japanese_team": "inactive",
+    "japanese_team": "unknown",
     "team_url": "https://github.com/biomejs/biome/issues/880"
   }
 }

@@ -69,6 +69,22 @@ export const PLATFORM_LABELS = {
   other: "その他",
 };
 
+export const CONTENT_TYPE_LABELS = {
+  official_docs: "公式ドキュメント",
+  readme: "README",
+  book: "書籍",
+  specification: "仕様書",
+  ui_strings: "UI文字列",
+  tutorial: "チュートリアル",
+};
+
+export const JAPANESE_TEAM_LABELS = {
+  active: "活発",
+  inactive: "停滞中",
+  none: "なし",
+  unknown: "不明",
+};
+
 export const SORT_LABELS = {
   updated: "更新順",
   stars: "スター順",

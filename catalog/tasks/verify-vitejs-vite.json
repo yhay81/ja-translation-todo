@@ -60,7 +60,7 @@
       "url": "https://github.com/vitejs/docs-ja/issues",
       "kind": "issue",
       "observed_at": "2026-08-02",
-      "note_ja": "本家 docs の更新ごとに翻訳タスク issue が起票され(yuki-no による追従運用)、宣言式でアサインされる。着手前に issue で重複確認が必要。"
+      "note_ja": "（2026-08-03 再検証）GitHub Search API で確認したところ累計issue数は1000件超で、直近（2026-07-31作成、#2757等）も作成後1〜2時間程度で closed になっており、open issue が常に0件に近いのはissueが即座に消化されているため。本家 docs の更新ごとに翻訳タスク issue が起票され(yuki-no による追従運用)、宣言式でアサインされる運用は継続していると確認。着手前に issue 検索で重複確認が必要。"
     },
     {
       "url": "https://github.com/vitejs/docs-ja/commits/main",
@@ -75,10 +75,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

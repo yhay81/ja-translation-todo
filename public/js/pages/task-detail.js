@@ -8,6 +8,8 @@ import {
   PERMISSION_LABELS,
   PERMISSION_FIELD_LABELS,
   PLATFORM_LABELS,
+  CONTENT_TYPE_LABELS,
+  JAPANESE_TEAM_LABELS,
   starsOf,
   fmtStars,
 } from "../labels.js";
@@ -189,7 +191,10 @@ function view(t) {
                   )
                 : "",
             )}
-            ${kvRow("コンテンツ種別", t.content_type ? esc(t.content_type) : "")}
+            ${kvRow(
+              "コンテンツ種別",
+              t.content_type ? esc(CONTENT_TYPE_LABELS[t.content_type] || t.content_type) : "",
+            )}
             ${kvRow(
               "翻訳プラットフォーム",
               workflow.platform
@@ -206,8 +211,8 @@ function view(t) {
               "日本語チーム",
               community.japanese_team
                 ? community.team_url
-                  ? `<a href="${esc(community.team_url)}" target="_blank" rel="noopener noreferrer">あり</a>`
-                  : "あり"
+                  ? `<a href="${esc(community.team_url)}" target="_blank" rel="noopener noreferrer">${esc(JAPANESE_TEAM_LABELS[community.japanese_team] || community.japanese_team)}</a>`
+                  : esc(JAPANESE_TEAM_LABELS[community.japanese_team] || community.japanese_team)
                 : "",
             )}
             ${kvRow("対象locale", t.target?.locale ? `<code>${esc(t.target.locale)}</code>` : "")}

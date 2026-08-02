@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-tensorflow-tensorflow",
   "kind": "verification",
-  "status": "ask_first",
+  "status": "needs_verification",
   "title": {
     "ja": "TensorFlow ドキュメント翻訳 (docs-l10n) への日本語参加の検証",
     "en": "Verify the Japanese translation workflow for TensorFlow docs via docs-l10n"
@@ -69,7 +69,7 @@
       "url": "https://github.com/tensorflow/docs-l10n/pulls?q=is%3Apr+is%3Amerged",
       "kind": "pull_request",
       "observed_at": "2026-08-03",
-      "note_ja": "merged PR を確認。翻訳 PR の merge は 2024-04 の #737（ポルトガル語）が最後で、2026-03 の merge はインフラ保守（gsutil 移行）のみ。翻訳受け入れの停滞を示しており、着手前にメンテナへの確認が必要。"
+      "note_ja": "（2026-08-03 再検証）merged PR を GitHub Search API で再確認したところ、#737（2024-04・ポルトガル語）は見つからず、直近の翻訳系 merged PR は #707[JA]/#708[ES]/#709[PT-BR]/#711[KO]/#712[ZH-CN]（いずれも2023-08-16〜17）、その後 #716（2023-10-19、Fix actions）であり、2026-03 の merge は #745-#751 のインフラ保守（gsutil→gcloud storage 移行）のみ。当初の note_ja が挙げていた「#737 2024-04 ポルトガル語」という具体的な最終翻訳PRの主張は誤りだったため訂正。翻訳PR自体が2023年半ば以降mergeされていない停滞状況という結論は変わらず。"
     }
   ],
   "validation": [],
@@ -78,7 +78,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": "2026-08-03"

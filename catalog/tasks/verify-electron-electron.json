@@ -73,7 +73,7 @@
       "url": "https://github.com/electron/i18n",
       "kind": "repository",
       "observed_at": "2026-08-03",
-      "note_ja": "旧翻訳リポジトリ electron/i18n は 2022-08 にアーカイブ済み。現行の翻訳経路は electron/website + Crowdin であり、こちらへ PR を送ってはいけない。"
+      "note_ja": "旧翻訳リポジトリ electron/i18n はアーカイブ済み(2026-08-03 訂正: アーカイブ日は GitHub 上で「Aug 2, 2026」と表示されており、当初記載の 2022-08 は誤り。正確なアーカイブ日は未確定だが、少なくとも現時点でアーカイブ済みであることは確認済み)。現行の翻訳経路は electron/website + Crowdin であり、こちらへ PR を送ってはいけない。"
     }
   ],
   "validation": [],
@@ -82,7 +82,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": "2026-08-03"

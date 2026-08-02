@@ -57,7 +57,7 @@
       "url": "https://github.com/reactjs/react.dev/issues/4135",
       "kind": "issue",
       "observed_at": "2026-08-03",
-      "note_ja": "react.dev の README「Translation」節から参照される翻訳体制の窓口 issue。翻訳は言語ごとの公式フォーク(日本語は reactjs/ja.react.dev)で進める方式。"
+      "note_ja": "(2026-08-03 訂正) react.dev の README「Translation」節から参照される翻訳体制の窓口 issue。ただし issue 本文自体には「日本語は reactjs/ja.react.dev で進める」という明示的な紐づけ記載は確認できておらず、この結論は react.dev の Translations ページ等の他の情報源と合わせて判断したもの。"
     },
     {
       "url": "https://github.com/reactjs/ja.react.dev/wiki",
@@ -75,7 +75,7 @@
       "url": "https://github.com/reactjs/ja.react.dev/commits/main",
       "kind": "team_activity",
       "observed_at": "2026-08-03",
-      "note_ja": "日本語フォークは最終 push 2026-08-01、merged PR 2026-06-20 など直近90日以内の活動を確認。日本語チームは活発で、主要ページの翻訳はほぼ全量カバー済み。参加窓口は ja.react.dev の Wiki と進捗管理 issue。"
+      "note_ja": "(2026-08-03 訂正) 当初「最終 push 2026-08-01」と記載していたが、再確認したところ実際の最新コミットは 2026-06-20 (PR #948 マージ)。それでも調査日から約44日前であり直近90日以内の活動に該当し、日本語チームは活発と判断。参加窓口は ja.react.dev の Wiki と進捗管理 issue。"
     }
   ],
   "validation": [],
@@ -84,7 +84,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": "2026-08-03"

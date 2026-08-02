@@ -63,7 +63,7 @@
       "url": "https://crowdin.com/project/starship-prompt",
       "kind": "platform",
       "observed_at": "2026-08-03",
-      "note_ja": "公式翻訳プラットフォーム。日本語ロケール (ja) が有効で、誰でも Crowdin アカウントで参加できる。"
+      "note_ja": "(2026-08-03 訂正) 公式翻訳プラットフォーム。再確認では WebFetch がログイン必須の動的ページを正しくレンダリングできず、言語追加用テンプレートらしき内容が取得され、日本語ロケール有効化の直接確認はできなかった。ただし CONTRIBUTING.md の記載および PR #7549 (docs/ja-JP への Crowdin 同期、2026-06-28 マージ) から、日本語ロケールが実運用されていることは他の evidence で裏付けられている。"
     },
     {
       "url": "https://github.com/starship/starship/pull/7549",
@@ -78,7 +78,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
     "last_verified_at": "2026-08-03"

@@ -63,7 +63,7 @@
       "url": "https://github.com/jwasham/coding-interview-university/commits/main",
       "kind": "team_activity",
       "observed_at": "2026-08-03",
-      "note_ja": "リポジトリの最終 push は 2025-08-28。以後も PR の triage (close) は行われているがコンテンツのマージは停滞気味で、日本語チームは不在・日本語訳は1年半以上未更新。応答性が不確実なため着手前に issue での確認を推奨。"
+      "note_ja": "(2026-08-03 訂正) 当初「最終 push 2025-08-28」と記載していたが、再確認 (WebFetch) では取得できた最新コミットは 2024-12-05 であり、日付が一致しなかった。WebFetch のページネーション制約で最新コミットを取得できていない可能性もあり、実際の最終 push 日は未確定。日本語チームは不在・日本語訳は長期未更新という結論自体は他の根拠(README-ja.md 最終更新 2024-12)と整合するが、リポジトリ全体の活動状況・応答性はこの evidence だけでは確認できていない。着手前に issue での確認を推奨。"
     }
   ],
   "validation": [],
@@ -72,7 +72,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": "2026-08-03"

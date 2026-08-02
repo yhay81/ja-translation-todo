@@ -69,7 +69,7 @@
       "url": "https://github.com/open-telemetry/opentelemetry.io/issues?q=label%3Alang%3Aja",
       "kind": "issue",
       "observed_at": "2026-08-03",
-      "note_ja": "lang:ja ラベルでページ単位の翻訳タスクissueが管理されており、ここが参加窓口。着手前にissueで重複確認・宣言する運用。"
+      "note_ja": "(2026-08-03 訂正) lang:ja ラベルでページ単位の翻訳タスクが管理され、ここが参加窓口という結論は他の情報と整合するが、再確認では本クエリ(issues検索)の取得結果がPR(prefix PR#)中心で、issue単位での確認は取れなかった。lang:jaラベルでの翻訳タスク管理・重複確認という運用自体は妥当と判断されるが、issue/PRの構成比は要再確認。着手前にラベル検索で重複確認・宣言する運用。"
     }
   ],
   "validation": [],
@@ -78,7 +78,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
     "last_verified_at": "2026-08-03"
