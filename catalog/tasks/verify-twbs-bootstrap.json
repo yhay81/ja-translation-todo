@@ -2,33 +2,35 @@
   "schema_version": "translation-task/v1",
   "id": "verify-twbs-bootstrap",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
-    "ja": "twbs/bootstrap の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for twbs/bootstrap"
+    "ja": "Bootstrap ドキュメントの日本語コミュニティ翻訳の検証",
+    "en": "Verify the Japanese community translation status for Bootstrap docs"
   },
   "project": {
     "repository": "twbs/bootstrap",
     "url": "https://github.com/twbs/bootstrap",
     "category": "CSS",
-    "summary_ja": "CSS フレームワーク",
+    "summary_ja": "CSS フレームワーク。公式ドキュメントに「Translations」ページがあり、翻訳は公式サポート外でコミュニティが自らホストし、チームはリンク掲載のみ行う方式。日本語は getbootstrap.jp（LY Corporation 運営）が最新 v5.3.8 を全量カバーしており、既に活発に維持されている。",
     "license": "MIT License"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "site/src/content/docs"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +44,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/twbs/bootstrap",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "最終 push 2026-08-01、Star 約17.5万、アーカイブなし。README に翻訳への言及はなく、方針は公式サイトの Translations ページにある。"
+    },
+    {
+      "url": "https://getbootstrap.com/docs/5.3/about/translations/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式ドキュメントの「Translations」ページに、翻訳は公式サポート外でコミュニティがホストし、Bootstrap チームは組織・ホストせずリンク掲載のみ行うと明記。新規またはより良い翻訳はリンク追加の PR で提案できる。翻訳コンテンツ自体を本体リポジトリに入れる経路はない（fork ホスト方式）。"
+    },
+    {
+      "url": "https://getbootstrap.jp/",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語版 getbootstrap.jp は公式 Translations ページからリンクされており、LY Corporation が運営。最新安定版 v5.3.8 のドキュメントを全量カバーしており、日本語翻訳は既に活発に維持されている。新規参加はまず運営側への連絡が必要。"
     }
   ],
   "validation": [],
@@ -50,10 +70,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "CSS フレームワーク",
@@ -64,5 +84,27 @@
     "状態": "日本は昔誰かがやってたが、リンク切れ。",
     "文章量": "多",
     "Star": "173,873"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://getbootstrap.com/docs/5.3/about/translations/",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://getbootstrap.jp/"
+  },
+  "metrics": {
+    "stars": 174555,
+    "observed_at": "2026-08-03"
   }
 }

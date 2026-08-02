@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-denysdovhan-bash-handbook",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "stale",
   "title": {
-    "ja": "denysdovhan/bash-handbook の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for denysdovhan/bash-handbook"
+    "ja": "bash-handbook 日本語訳(上流停滞・未マージの日本語PRあり)",
+    "en": "Japanese translation of bash-handbook (upstream dormant, unmerged Japanese PR exists)"
   },
   "project": {
     "repository": "denysdovhan/bash-handbook",
     "url": "https://github.com/denysdovhan/bash-handbook",
     "category": "Command Line Tools",
-    "summary_ja": "Bashを学びたいけど、のめり込みすぎたくない人用",
+    "summary_ja": "Bash 入門ハンドブック。README から各言語版(pt-BR / zh-CN / zh-TW / ko)へリンクし、translations/ 配下に翻訳を置く方式で、日本語版は未収録。2024-10 に日本語訳 PR #133 が提出されたが未マージのまま放置され、リポジトリ自体も 2024-02 以降更新がなく停滞している。",
     "license": "[CC 4.0](https://creativecommons.org/licenses/by/4.0/)"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "README.md"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "translations/ja/"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +46,30 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/bash-handbook",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブはされていないが最終 push は 2024-02-05 で約2年半停滞。既定ブランチ master、Star 約6,072。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/bash-handbook#translations",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "README に pt-BR / zh-CN / zh-TW / ko の翻訳リンクと「Request another translation」(issue 起票で翻訳を依頼する導線)があり、translations/ 配下に各言語版を置く方式。日本語は未収録。AI 利用への言及はない。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/bash-handbook/issues/111",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "2021-03 起票の日本語翻訳リクエスト issue が open のままメンテナの応答なし。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/bash-handbook/pull/133",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "2024-10-05 提出の「Add Japanese translation」PR が未マージのまま open。メンテナの反応が確認できず、受付経路が事実上機能していないため stale と判定。"
     }
   ],
   "validation": [],
@@ -50,10 +78,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "Bashを学びたいけど、のめり込みすぎたくない人用",
@@ -64,5 +92,27 @@
     "状態": "韓国中国台湾ポルトガルがある",
     "文章量": "中",
     "Star": "6,039"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "tutorial"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 6072,
+    "observed_at": "2026-08-03"
   }
 }

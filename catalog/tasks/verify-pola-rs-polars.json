@@ -11,12 +11,14 @@
     "repository": "pola-rs/polars",
     "url": "https://github.com/pola-rs/polars",
     "category": "Python",
-    "summary_ja": "Rust 製の高速 DataFrame ライブラリ。ユーザーガイドの日本語訳はコミュニティの polars-ja/docs-ja が担っており、翻訳の追随・拡充や公式化の交渉余地がある。",
+    "summary_ja": "Rust 製の高速 DataFrame ライブラリ。本家に公式の翻訳受付方針は確認できず、ユーザーガイドの日本語訳はコミュニティの polars-ja/docs-ja が担っていたが2024年7月以降停滞。翻訳の追随・再活性化や公式化の交渉余地があるものの、確立した貢献経路は未確認。",
     "license": "MIT"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "docs"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -40,8 +42,14 @@
     {
       "url": "https://github.com/pola-rs/polars",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは活発(最終push 2026-08-01、非archived、MIT)。issue検索では翻訳・日本語化に関する方針や受付窓口は見当たらず、公式のローカライズ制度は確認できない。"
+    },
+    {
+      "url": "https://github.com/polars-ja/docs-ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "コミュニティ日本語訳リポジトリ polars-ja/docs-ja の最終pushは2024-07-02で1年以上停滞。活発な日本語チームは確認できない。"
     }
   ],
   "validation": [],
@@ -69,8 +77,12 @@
       "domain": "framework_docs"
     }
   },
+  "metrics": {
+    "stars": 39163,
+    "observed_at": "2026-08-03"
+  },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/polars-ja/docs-ja"
   }
 }

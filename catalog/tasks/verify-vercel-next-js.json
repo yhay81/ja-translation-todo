@@ -11,12 +11,14 @@
     "repository": "vercel/next.js",
     "url": "https://github.com/vercel/next.js",
     "category": "JavaScript",
-    "summary_ja": "Next.js 公式ドキュメントには公式 i18n がなく、非公式の Nextjs-ja-translation コミュニティが翻訳サイトを運営してきた。旧版ベースで停滞気味のため、再活性化や新方式の確認 (ask_first) が必要。",
+    "summary_ja": "Next.js 公式ドキュメントには公式の翻訳・i18n 受付方針がなく、非公式の Nextjs-ja-translation コミュニティが翻訳サイトを運営してきたが、翻訳リポジトリは 2023-04 を最後に停止。現行 docs（App Router 世代）への公式な翻訳経路は確認できず、着手には Vercel 側への確認か新体制の立ち上げが必要。",
     "license": "MIT"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "docs"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -42,6 +44,18 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://nextjs.org/docs/community/contribution-guide",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式 Docs 貢献ガイド（2026-06-23 更新）を確認したが、翻訳・localization・i18n への言及はなく、公式の翻訳受付方針は確認できない。docs のソースは vercel/next.js の docs/ 配下（実体は private リポジトリから同期）で、英語での改善 PR のみ想定されている。"
+    },
+    {
+      "url": "https://github.com/Nextjs-ja-translation/Nextjs-ja-translation-docs",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "非公式日本語翻訳リポジトリ（Star 162）の最終 push は 2023-04-02 で3年以上停止（アーカイブはされていない）。旧世代ドキュメントがベースのため、現行の App Router 世代 docs には追従していない。日本語チームは休眠状態。"
     }
   ],
   "validation": [],
@@ -70,7 +84,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/Nextjs-ja-translation/Nextjs-ja-translation-docs"
+  },
+  "metrics": {
+    "stars": 141225,
+    "observed_at": "2026-08-03"
   }
 }

@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-k88hudson-git-flight-rules",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "k88hudson/git-flight-rules の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for k88hudson/git-flight-rules"
+    "ja": "Git Flight Rules 日本語訳 (README_ja.md) の更新",
+    "en": "Update the Japanese translation (README_ja.md) of Git Flight Rules"
   },
   "project": {
     "repository": "k88hudson/git-flight-rules",
     "url": "https://github.com/k88hudson/git-flight-rules",
     "category": "Command Line Tools",
-    "summary_ja": "間違った時にすべきことのガイド",
-    "license": "Creative Commons Attribution Share Alike 4.0"
+    "summary_ja": "Git で問題が起きたときの対処法ガイド。CONTRIBUTE.md で翻訳を明示的に受け付けており、公式には GitLocalize 経由が案内されているが、GitLocalize プロジェクトの対象言語に日本語は未設定のため、日本語は README_ja.md への直接 PR が実績のある経路 (2024-03、2026-06 にマージ実績)。リポジトリは現在も保守されており、英語版 (2026-07 更新) への追従が機会。",
+    "license": "CC-BY-SA-4.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "README.md"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "README_ja.md"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +46,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/k88hudson/git-flight-rules/blob/master/CONTRIBUTE.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "CONTRIBUTE.md の Translation 節で GitLocalize (gitlocalize.com/repo/598) 経由の翻訳手順を明記。コミュニティのモデレーターがレビュー済み翻訳を PR として送る体制。AI 利用への言及はなし。"
+    },
+    {
+      "url": "https://gitlocalize.com/repo/598",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "GitLocalize プロジェクトは存在するが、対象言語は es/fr/id/ko/pt-BR/ru/tr/zh-CN で日本語は未設定。日本語の更新は README_ja.md への直接 PR が実績のある経路で、GitLocalize への ja 追加を依頼する選択肢もある。"
+    },
+    {
+      "url": "https://github.com/k88hudson/git-flight-rules/pull/379",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "2026-06-04 マージ。README_ja.md を含む翻訳ファイルの欠落セクションを補う PR で、メンテナ (RichardLitt) が現在も PR を継続的にマージしている (2025-10、2026-07 にもマージあり)。進行中の日本語翻訳 PR・重複作業はなし。README_ja の日本語コミュニティによる実質更新は 2024-03 が最後で、英語版との差分追従が未着手領域。"
     }
   ],
   "validation": [],
@@ -50,10 +72,32 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://gitlocalize.com/repo/598",
+    "translation_repo": null
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "small",
+      "workflow": "direct_pr",
+      "domain": "tutorial"
+    }
+  },
+  "metrics": {
+    "stars": 42592,
+    "observed_at": "2026-08-03"
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
   },
   "legacy": {
     "概要": "間違った時にすべきことのガイド",

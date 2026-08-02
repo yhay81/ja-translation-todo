@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-denysdovhan-wtfjs",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "denysdovhan/wtfjs の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for denysdovhan/wtfjs"
+    "ja": "wtfjs README の日本語訳を作成",
+    "en": "Create the Japanese README translation for wtfjs"
   },
   "project": {
     "repository": "denysdovhan/wtfjs",
     "url": "https://github.com/denysdovhan/wtfjs",
     "category": "JavaScript",
-    "summary_ja": "不思議で面白い JavaScript のサンプルのリスト",
+    "summary_ja": "JavaScript の奇妙で面白い挙動を集めた人気リポジトリ。CONTRIBUTING が「翻訳が欲しければ自分で作って PR を送る」ことを明示しており、README-<lang>.md 形式で8言語版が既に存在する。日本語版 README は未作成で、進行中の日本語 PR もないため新規参入の余地がある。ネイティブスピーカーによる検証が推奨されている。",
     "license": "WTFPL"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "README.md"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "README-ja.md"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,18 +46,36 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/wtfjs",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "最終 push 2026-07-03 と活発。Star 約37,675。既存の言語版は README-fr-fr / hi / it-it / kr / pl-pl / pt-br / si / zh-cn の8種で、日本語版(README-ja.md)は存在しない。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/wtfjs/blob/master/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "「If you want a translation, please, make one. Issues with translation requests will be closed in favor of PRs.」と翻訳 PR を明示的に歓迎。送付前に既存の翻訳 PR の有無を確認し、ネイティブスピーカーによる検証を求める記載あり。AI 利用への言及はない。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/wtfjs/issues/125",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "2019 年の日本語翻訳リクエスト issue(Translation Request: Japanese)は 2021 年に close 済みだが、対応する日本語版 README は現在も存在せず、進行中の重複作業は確認できなかった。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "不思議で面白い JavaScript のサンプルのリスト",
@@ -64,5 +86,27 @@
     "状態": "中国語がプルリク送ってる途中",
     "文章量": "中",
     "Star": "37,547"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "readme",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "tutorial"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 37675,
+    "observed_at": "2026-08-03"
   }
 }

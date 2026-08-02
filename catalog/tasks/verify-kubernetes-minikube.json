@@ -2,9 +2,9 @@
   "schema_version": "translation-task/v1",
   "id": "verify-kubernetes-minikube",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "minikube CLIメッセージの日本語化の検証",
+    "ja": "minikube CLIメッセージの日本語化（translations/ja.json）",
     "en": null
   },
   "project": {
@@ -20,15 +20,17 @@
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "translations/ja.json"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +44,24 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://minikube.sigs.k8s.io/docs/contrib/translations/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式コントリビュートガイドが翻訳手順を明記。translations/ 配下のロケール別 JSON（ja.json は既存対象言語）に英語文字列をキー・訳文を値として追加し、make extract で未翻訳文字列を抽出、go test で構文検証して PR を送る。AI 利用への言及はなし。"
+    },
+    {
+      "url": "https://github.com/kubernetes/minikube/commits/master/translations/ja.json",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "ja.json は minikube-bot による文字列抽出更新が直近90日内に複数回（2026-08-01、07-09 ほか）。専任の日本語チームはなく個人 PR ベースで、抽出更新のたびに未翻訳文字列が発生するため着手余地がある。"
+    },
+    {
+      "url": "https://api.github.com/repos/kubernetes/minikube",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "master ブランチが活発（最終 push 2026-08-01）、Star 31,999、Apache-2.0、アーカイブされていないことを確認。"
     }
   ],
   "validation": [],
@@ -50,27 +70,31 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/kubernetes/minikube",
     "translation_repo": null
   },
   "content_type": "ui_strings",
   "difficulty": {
-    "score": 3,
+    "score": 2,
     "factors": {
       "volume": "medium",
       "workflow": "direct_pr",
-      "domain": "framework_docs"
+      "domain": "tutorial"
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "none",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 31999,
+    "observed_at": "2026-08-03"
   }
 }

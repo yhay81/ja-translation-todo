@@ -2,17 +2,17 @@
   "schema_version": "translation-task/v1",
   "id": "verify-javascript-tutorial-en-javascript-info",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "javascript.info (現代のJavaScriptチュートリアル) のドキュメント日本語化の検証",
-    "en": null
+    "ja": "javascript.info (現代のJavaScriptチュートリアル) 日本語版の残り翻訳と上流追従",
+    "en": "Complete and sync the Japanese translation of javascript.info"
   },
   "project": {
     "repository": "javascript-tutorial/en.javascript.info",
     "url": "https://github.com/javascript-tutorial/en.javascript.info",
     "category": "JavaScript",
-    "summary_ja": "定番のモダンJavaScript学習サイト。同一org配下に公式日本語リポジトリがあり、英語版更新への追従や未翻訳章の翻訳PRを直接受け付ける制度化された体制がある。",
-    "license": null
+    "summary_ja": "定番のモダンJavaScript学習サイト。同一org配下の公式日本語リポジトリ ja.javascript.info (公開済み・翻訳率約90%) へ直接 PR する制度化された体制がある。ただし日本語メンテナの活動は2024年11月で止まっており、PR レビューの停滞やメンテナ引き継ぎの申し出が必要になる可能性がある。",
+    "license": "CC-BY-NC-4.0 ベースの独自ライセンス (再利用は要許諾)"
   },
   "source": {
     "revision": null,
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,22 +42,40 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://javascript.info/translate",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式の翻訳手順ページ。言語ごとの専用リポジトリ (ja は javascript-tutorial/ja.javascript.info) に PR を送り、各言語のメンテナがレビュー・マージする体制。日本語は翻訳率約90%で公開済み。停滞した翻訳は issue でメンテナ引き継ぎを申し出られる。AI 利用への言及はなし。"
+    },
+    {
+      "url": "https://github.com/javascript-tutorial/ja.javascript.info/commits/master",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語リポジトリの人間によるマージは 2024-11-13 が最後 (直近90日は bot の Sync PR のみ)。日本語チームは停滞状態で、メンテナのレビュー再開または引き継ぎが前提になる。"
+    },
+    {
+      "url": "https://github.com/javascript-tutorial/ja.javascript.info/pulls",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "open PR は3件のみ (2026-07 のタイポ修正・記事更新と bot の Sync PR) でレビュー待ち。日本語の大規模な進行中翻訳・重複作業は確認できず、未翻訳章 (約10%) と upstream 追従が未着手領域として残っている。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "contributors_page",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://javascript.info/translate",
     "translation_repo": "javascript-tutorial/ja.javascript.info"
   },
   "content_type": "tutorial",
@@ -69,8 +87,12 @@
       "domain": "tutorial"
     }
   },
+  "metrics": {
+    "stars": 25394,
+    "observed_at": "2026-08-03"
+  },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/javascript-tutorial/ja.javascript.info"
   }
 }

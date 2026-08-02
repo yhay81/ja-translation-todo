@@ -11,7 +11,7 @@
     "repository": "hakimel/reveal.js",
     "url": "https://github.com/hakimel/reveal.js",
     "category": "JavaScript",
-    "summary_ja": "HTML 製のプレゼン（スライド）フレームワーク https://revealjs.com",
+    "summary_ja": "HTML 製のプレゼン（スライド）フレームワーク。ドキュメントは revealjs.com に英語のみで提供され、リポジトリに CONTRIBUTING や i18n 体制はなく、翻訳受付方針も見つからない。公式ドキュメントサイトのソースの翻訳受け入れ経路は現時点で不明。",
     "license": "MIT"
   },
   "source": {
@@ -40,6 +40,18 @@
     {
       "url": "https://github.com/hakimel/reveal.js",
       "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは非アーカイブで活動継続(最終 push 2026-05-21、Star 72,069、MIT)。CONTRIBUTING.md は存在しない(404)。"
+    },
+    {
+      "url": "https://github.com/hakimel/reveal.js/blob/master/README.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "README はデモ・ドキュメント(revealjs.com)への案内のみで、翻訳・ローカライズへの言及なし。リポジトリ内に docs の i18n 基盤や他言語版も見当たらず、翻訳受付方針は確認できなかった。判断材料不足のため needs_verification を維持。"
+    },
+    {
+      "url": "https://github.com/hakimel/reveal.js",
+      "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
     }
@@ -54,6 +66,28 @@
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 72069,
+    "observed_at": "2026-08-03"
   },
   "legacy": {
     "概要": "HTML 製のプレゼン（スライド）フレームワーク https://revealjs.com",

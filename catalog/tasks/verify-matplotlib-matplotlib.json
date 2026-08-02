@@ -12,7 +12,7 @@
     "url": "https://github.com/matplotlib/matplotlib",
     "category": "Python",
     "summary_ja": "Python 標準の可視化ライブラリ。公式ドキュメントの日本語訳や受け入れ経路は現状なく、Scientific Python 翻訳基盤への追加提案など交渉から始める必要がある。",
-    "license": null
+    "license": "PSF-based (Matplotlib License)"
   },
   "source": {
     "revision": null,
@@ -42,6 +42,18 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://scientific-python-translations.github.io/translate/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "Scientific Python Translations（Crowdin、日本語対象あり、参加は Discord #translation 経由）の対象プロジェクトは Pandas/NumPy/Xarray/SciPy/Zarr/NetworkX で、matplotlib は含まれていない。matplotlib 本体・matplotlib.org にもドキュメント翻訳の受付方針は見つからず、日本語化の受け入れ経路は未確立のまま。"
+    },
+    {
+      "url": "https://api.github.com/repos/matplotlib/matplotlib",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "main ブランチが活発（最終 push 2026-08-01）、Star 23,057、アーカイブされていないことを確認。ライセンスは PSF ベースの独自ライセンス（GitHub API 上は SPDX 未分類）。"
     }
   ],
   "validation": [],
@@ -72,5 +84,9 @@
   "community": {
     "japanese_team": "unknown",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 23057,
+    "observed_at": "2026-08-03"
   }
 }

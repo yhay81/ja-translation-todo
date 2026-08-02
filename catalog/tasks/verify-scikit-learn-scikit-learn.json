@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-scikit-learn-scikit-learn",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
     "ja": "scikit-learn のドキュメント日本語化の検証",
     "en": null
@@ -11,7 +11,7 @@
     "repository": "scikit-learn/scikit-learn",
     "url": "https://github.com/scikit-learn/scikit-learn",
     "category": "Python",
-    "summary_ja": "機械学習ライブラリの定番。公式の日本語訳はないが、Discussion #28105 でサイト翻訳が議論されており、Scientific Python 基盤への合流を含め交渉の余地がある。",
+    "summary_ja": "機械学習ライブラリの定番。公式ドキュメントは英語のみだが、related_projects でコミュニティ翻訳(中国語・ペルシャ語・スペイン語・韓国語)を公認掲載しており日本語は未着手。立ち上げは issue / Discussion での事前相談が前提。",
     "license": "BSD-3-Clause"
   },
   "source": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
     "pull_request": "unknown"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +42,24 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/related_projects.html",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式ドキュメントの Translations 節に中国語・ペルシャ語・スペイン語・韓国語のコミュニティ翻訳を掲載。「翻訳はコミュニティのイニシアティブであり公式の管理外」「公式ドキュメントは英語版のみ」と明記。外部ホストのコミュニティ翻訳は容認されており、日本語は未掲載で空きがある。"
+    },
+    {
+      "url": "https://github.com/scikit-learn/scikit-learn/discussions/28105",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "サイト主要ページの多言語化 (Crowdin, Quansight/CZI 提案) の Discussion。メンテナは好意的だったが最終コメントは 2024-02-27 で停滞し、公式の翻訳受付制度は未整備のまま。過去の中国語翻訳 (#13400) も issue で許可を求める文化。"
+    },
+    {
+      "url": "https://github.com/orgs/Scientific-Python-Translations/repositories",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "Scientific-Python-Translations org (numpy.org / scipy.org / pandas 等の翻訳基盤) に scikit-learn は含まれておらず、同基盤経由の翻訳ルートも現状存在しない。"
     }
   ],
   "validation": [],
@@ -50,10 +68,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
@@ -70,7 +88,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "none",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 66852,
+    "observed_at": "2026-08-03"
   }
 }

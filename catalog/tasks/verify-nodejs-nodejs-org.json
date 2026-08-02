@@ -2,33 +2,39 @@
   "schema_version": "translation-task/v1",
   "id": "verify-nodejs-nodejs-org",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "nodejs/nodejs.org の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for nodejs/nodejs.org"
+    "ja": "Node.js 公式サイト (nodejs.org) の Crowdin 日本語翻訳",
+    "en": "Japanese translation of the Node.js website via Crowdin"
   },
   "project": {
     "repository": "nodejs/nodejs.org",
     "url": "https://github.com/nodejs/nodejs.org",
     "category": "JavaScript",
-    "summary_ja": "Node.js 公式サイト（nodejs.org）",
+    "summary_ja": "Node.js 公式サイト (nodejs.org)。翻訳は Crowdin プロジェクト nodejs-web に一本化され、ja ロケールが有効。翻訳結果は自動 crowdin sync PR でリポジトリへ反映される。Learn ページ等の新規・更新コンテンツの日本語化に Crowdin 経由で参加できる。",
     "license": "MIT"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "apps/site/pages/en/",
+      "packages/i18n/src/locales/en.json"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "apps/site/pages/ja/",
+      "packages/i18n/src/locales/ja.json"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +48,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "「We use Crowdin to translate the Node.js Website」と明記。参加手順は Crowdin プロジェクト nodejs-web への join 申請 → 言語選択 → 翻訳。翻訳は Crowdin 翻訳者が担うとされ、翻訳コンテンツをリポジトリへ直接 PR する経路は案内されていない (pull_request: forbidden 判定)。"
+    },
+    {
+      "url": "https://github.com/nodejs/nodejs.org",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず活発 (最終 push 2026-08-02)。packages/i18n/src/config.json で ja が enabled、apps/site/pages/ja が存在。crowdin.yml で apps/site/pages/en/**/*.md → 各ロケールへの同期パスを定義 (blog と download の一部は翻訳対象外)。"
+    },
+    {
+      "url": "https://github.com/nodejs/nodejs.org/pull/9014",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "自動「[automated]: crowdin sync」PR が 2026-07-24 にマージされ同期は稼働中。ja ページも 2026-07-10 マージの sync (#8956) で更新されており、日本語翻訳は直近 90 日で活動あり (japanese_team: active)。open PR にも #9053 の sync が存在し重複作業の恐れは低い。"
     }
   ],
   "validation": [],
@@ -50,10 +74,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "Node.js 公式サイト（nodejs.org）",
@@ -64,5 +88,27 @@
     "状態": "日本語あり",
     "文章量": "中",
     "Star": "6,771"
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": "https://crowdin.com/project/nodejs-web",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://crowdin.com/project/nodejs-web"
+  },
+  "metrics": {
+    "stars": 6859,
+    "observed_at": "2026-08-03"
   }
 }

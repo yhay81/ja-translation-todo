@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-jstherightway-js-the-right-way",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "jstherightway/js-the-right-way の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for jstherightway/js-the-right-way"
+    "ja": "JS: The Right Way 日本語版 (i18n/ja-jp) の新規追加",
+    "en": "Add a Japanese translation (i18n/ja-jp) to JS: The Right Way"
   },
   "project": {
     "repository": "jstherightway/js-the-right-way",
     "url": "https://github.com/jstherightway/js-the-right-way",
     "category": "JavaScript",
-    "summary_ja": "JSの良い方法のリファレンス",
-    "license": "[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)"
+    "summary_ja": "JS のベストプラクティスをまとめたリファレンスサイト。i18n/README.md で翻訳貢献を明示的に歓迎しており、en-us ディレクトリを複製して翻訳する方式で10言語が存在するが日本語は未着手。ただしマージされた PR は 2021 年が最後で、2020 年の日本語翻訳の申し出 issue も無応答のまま 2026-07 に close されており、着手前にメンテナの受け入れ意思の確認が必要。",
+    "license": "CC-BY-NC-SA-3.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "i18n/en-us"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "i18n/ja-jp"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +46,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/jstherightway/js-the-right-way/blob/master/i18n/README.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "「Do you want this project in your language? Feel free to contribute!」と明記。en-us ディレクトリを複製して翻訳し、ディレクトリ名と同名の .json を用意する方式。i18n/ 配下に10言語があり日本語 (ja-jp) は未着手。AI 利用への言及はなし。"
+    },
+    {
+      "url": "https://github.com/jstherightway/js-the-right-way/issues/332",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "2020-12 に日本語翻訳の許可を求める issue が立てられたが、メンテナの応答がないまま 2026-07-29 に close。重複する進行中の日本語作業はなし。"
+    },
+    {
+      "url": "https://github.com/jstherightway/js-the-right-way/commits/master",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "PR のマージは 2021-01 が最後。2026-07-29 に旧ドメイン整理のメンテナンスコミットがあり完全放置ではないが、翻訳 PR がレビューされるかは不明のため、issue でメンテナ合意を得てから着手すべき。"
     }
   ],
   "validation": [],
@@ -50,10 +72,32 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "tutorial"
+    }
+  },
+  "metrics": {
+    "stars": 8679,
+    "observed_at": "2026-08-03"
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
   },
   "legacy": {
     "概要": "JSの良い方法のリファレンス",

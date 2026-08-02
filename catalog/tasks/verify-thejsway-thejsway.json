@@ -2,16 +2,16 @@
   "schema_version": "translation-task/v1",
   "id": "verify-thejsway-thejsway",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "thejsway/thejsway の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for thejsway/thejsway"
+    "ja": "書籍 The JavaScript Way の日本語翻訳立ち上げの検証",
+    "en": "Verify starting a Japanese translation of The JavaScript Way"
   },
   "project": {
     "repository": "thejsway/thejsway",
     "url": "https://github.com/thejsway/thejsway",
     "category": "JavaScript",
-    "summary_ja": "モダンなJSの概要の書籍",
+    "summary_ja": "モダン JavaScript 入門書。CONTRIBUTING に翻訳ガイドラインがあり、新しい言語は issue で著者 @bpesquet に申し出ると言語別の翻訳専用リポジトリとチームを作成してもらえる方式。fr/es/pt/id/cn などは存在するが日本語は未着手。CC BY-NC-SA 4.0 のため商用利用不可。",
     "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
   },
   "source": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,18 +42,36 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/thejsway/thejsway",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず最終 push は 2025-01-30（Star 約7,900）。書籍本体は完成済みで更新は低頻度。著者の応答性は着手前の issue で確認するのが安全。"
+    },
+    {
+      "url": "https://github.com/thejsway/thejsway/blob/master/CONTRIBUTING.md#translation-guidelines",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "新しい言語の翻訳は本リポジトリに issue を立てて対象言語を明記し @bpesquet にメンションする方式。著者が共通 GitHub organization 配下に翻訳専用リポジトリと翻訳チームを作成し、以後の翻訳・改善はそのリポジトリへの PR で受け付ける。原著の著作権と CC BY-NC-SA 4.0 が翻訳にも適用される。"
+    },
+    {
+      "url": "https://github.com/orgs/thejsway/repositories",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "organization 配下に thejsway_fr / thejsway_es / thejsway_pt / thejsway_id などの翻訳リポジトリが存在するが、日本語（ja）のリポジトリはなく未着手。既存翻訳リポジトリの更新も2024年以前で全体的に低調。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "contributors_page",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "モダンなJSの概要の書籍",
@@ -64,5 +82,27 @@
     "状態": "中国、インドネシアが活動中？",
     "文章量": "多",
     "Star": "7,901"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/thejsway/thejsway/blob/master/CONTRIBUTING.md#translation-guidelines",
+    "translation_repo": null
+  },
+  "content_type": "book",
+  "difficulty": {
+    "score": 5,
+    "factors": {
+      "volume": "large",
+      "workflow": "negotiated",
+      "domain": "book"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 7884,
+    "observed_at": "2026-08-03"
   }
 }

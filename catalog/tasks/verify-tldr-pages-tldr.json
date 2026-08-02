@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-tldr-pages-tldr",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
     "ja": "tldr-pages コマンドチートシートの日本語化の検証",
     "en": null
@@ -11,24 +11,28 @@
     "repository": "tldr-pages/tldr",
     "url": "https://github.com/tldr-pages/tldr",
     "category": "Command Line Tools",
-    "summary_ja": "コマンドの簡潔なチートシート集。pages.jaディレクトリで日本語訳を受け入れており、未翻訳・更新遅れページが多数。進捗ダッシュボードで対象を特定しやすい。",
+    "summary_ja": "コマンドの簡潔なチートシート集。pages.ja ディレクトリへの直接 PR で日本語訳を受け付ける方針が CONTRIBUTING に明文化されており、日本語訳の PR も直近90日以内に merge されている。未翻訳・更新遅れページが多数あり、進捗ダッシュボード（tldri18n）で対象を特定しやすい。PR 前に CLA 署名が必要。",
     "license": "CC-BY-4.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "pages"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "pages.ja"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "translation": "explicit",
+    "ai_assistance": "disclose",
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,35 +46,69 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/tldr-pages/tldr",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "最終 push 2026-08-02、Star 約6.3万、アーカイブなし。既定ブランチ main。"
+    },
+    {
+      "url": "https://github.com/tldr-pages/tldr/blob/main/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "pages.<locale>（日本語は pages.ja）配下への直接 PR で翻訳を受け付ける方針を明文化。「自信を持って読める言語のみ翻訳・更新する」ことを要求。未翻訳・要更新ページは進捗ダッシュボード https://lukwebsforge.github.io/tldri18n/ で確認できる。本文は CC BY 4.0、PR 提出前に CLA 署名が必要。"
+    },
+    {
+      "url": "https://github.com/tldr-pages/tldr/blob/main/CONTRIBUTING.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "生成 AI による新規ページ作成は強く非推奨。翻訳では機械翻訳を参考として使ってよいが、提出前の徹底した人手校正が必須。人手レビューを経ていないと疑われる生成 AI・機械翻訳の PR はクローズされると明記。"
+    },
+    {
+      "url": "https://github.com/tldr-pages/tldr/pull/22047",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "2026-04-27 に日本語翻訳追加 PR（pbcopy, pbpaste）が merge。日本語翻訳の PR が現在も受け入れられている実例。2026-02-20 には日本語訳の一括修正 PR (#21193) も merge。"
+    },
+    {
+      "url": "https://github.com/tldr-pages/tldr/commits/main/pages.ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "pages.ja は 2026-08-01 の同期コミット (#23471) まで毎月更新が継続。直近90日以内（2026-05〜08）に複数の翻訳同期・表記統一コミットがあり、日本語まわりの活動は活発。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/tldr-pages/tldr",
     "translation_repo": null
   },
   "content_type": "official_docs",
   "difficulty": {
-    "score": 4,
+    "score": 3,
     "factors": {
       "volume": "large",
       "workflow": "direct_pr",
-      "domain": "framework_docs"
+      "domain": "tutorial"
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://lukwebsforge.github.io/tldri18n/"
+  },
+  "metrics": {
+    "stars": 63270,
+    "observed_at": "2026-08-03"
   }
 }

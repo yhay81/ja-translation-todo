@@ -11,12 +11,14 @@
     "repository": "chartjs/Chart.js",
     "url": "https://github.com/chartjs/Chart.js",
     "category": "JavaScript",
-    "summary_ja": "シンプルなチャートライブラリ",
+    "summary_ja": "シンプルなチャートライブラリ。ドキュメントは docs/ 配下(VuePress)の英語のみで i18n 機構はなく、翻訳受付方針も明文化されていない。過去にリポジトリ内への中国語訳追加 PR がメンテナ不在を理由に受け入れられなかった経緯があり、現行 README に翻訳版へのリンク節も存在しない。日本語化するならメンテナへの提案・交渉が前提。",
     "license": "MIT"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "docs/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -42,6 +44,18 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/chartjs/Chart.js",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず 2026-05-27 まで更新あり(Star 67,619、MIT)。ドキュメントは docs/ 配下の VuePress 製で英語のみ。README・CONTRIBUTING・docs/developers/contributing.md のいずれにも翻訳への言及はなく、現行 README には旧一覧にあった中国語訳リンクも見当たらない。日本語翻訳に関する open issue / PR もなし。"
+    },
+    {
+      "url": "https://github.com/chartjs/Chart.js/pull/4281",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "2017 年に docs/zhCN/ へ中国語訳を追加する PR が、リポジトリ内翻訳はメンテナ不在との理由で merge されず close された経緯(旧一覧の記載どおり)。以後も翻訳受付方針の明文化は確認できず、permissions.translation は unknown のまま。"
     }
   ],
   "validation": [],
@@ -54,6 +68,28 @@
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/chartjs/Chart.js",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "negotiated",
+      "domain": "framework_docs"
+    }
+  },
+  "metrics": {
+    "stars": 67619,
+    "observed_at": "2026-08-03"
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
   },
   "legacy": {
     "概要": "シンプルなチャートライブラリ",

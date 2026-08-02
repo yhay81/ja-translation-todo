@@ -2,16 +2,16 @@
   "schema_version": "translation-task/v1",
   "id": "verify-mdn-translated-content",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
-    "ja": "mdn/translated-content の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for mdn/translated-content"
+    "ja": "MDN Web Docs 日本語版（files/ja）の翻訳・更新に参加",
+    "en": "Contribute to the Japanese locale (files/ja) of mdn/translated-content"
   },
   "project": {
     "repository": "mdn/translated-content",
     "url": "https://github.com/mdn/translated-content",
     "category": "Other",
-    "summary_ja": "MDN Web Docs の翻訳コンテンツ（日本語含む）",
+    "summary_ja": "MDN Web Docs の翻訳リポジトリ。日本語（files/ja）は活発なロケールで、mdn/content の英語版に追従する形で PR ベースの新規翻訳・更新に参加できる。",
     "license": "複合（文章: CC-BY-SA 2.5 / コード例: CC0 など）"
   },
   "source": {
@@ -20,15 +20,17 @@
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "files/ja"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +44,30 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/mdn/translated-content/blob/main/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "翻訳は本リポジトリへの PR で受け付け（軽微な修正は GitHub UI からも可）。対象ロケールの流暢さと英語の中程度の知識、ライセンスへの同意を要件とする。AI・機械翻訳への明示的言及はなし。"
+    },
+    {
+      "url": "https://github.com/mdn/translated-content/blob/main/docs/ja/README.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語向け翻訳ガイド。「日本語版ドキュメントを執筆する際には、英語版に忠実である（内容が一致している）必要があります」と明記。日本語コミュニティの Slack #translation チャンネルや月例のもくもく会イベントが参加窓口として案内されている。"
+    },
+    {
+      "url": "https://github.com/mdn/translated-content/commits/main/files/ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "files/ja へのコミットが直近1週間で連日（2026-07-28〜08-02、新規翻訳と英語版追従更新）。日本語ロケールは活発なレビュー体制のもと継続的に維持されており、参加はコミュニティ手順に従うのが前提。"
+    },
+    {
+      "url": "https://api.github.com/repos/mdn/translated-content",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "main ブランチが活発（最終 push 2026-08-02）、Star 2,015、アーカイブされていないことを確認。"
     }
   ],
   "validation": [],
@@ -50,10 +76,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "MDN Web Docs の翻訳コンテンツ（日本語含む）",
@@ -64,5 +90,27 @@
     "状態": "日本語あり（files/ja）",
     "文章量": "多",
     "Star": "1,936"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/mdn/translated-content",
+    "translation_repo": "mdn/translated-content"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/mdn/translated-content/blob/main/docs/ja/README.md"
+  },
+  "metrics": {
+    "stars": 2015,
+    "observed_at": "2026-08-03"
   }
 }

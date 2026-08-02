@@ -11,7 +11,7 @@
     "repository": "moby/moby",
     "url": "https://github.com/moby/moby",
     "category": "Other",
-    "summary_ja": "コンテナエコシステムのための共同プロジェクト https://mobyproject.org/",
+    "summary_ja": "コンテナエコシステムのための共同プロジェクト https://mobyproject.org/ 。リポジトリ内の docs/ はエンジン開発者向け技術文書(英語のみ)で、利用者向けドキュメントは docker/docs (docs.docker.com) が担う。翻訳受付方針は確認できていない。",
     "license": "Apache 2.0"
   },
   "source": {
@@ -42,6 +42,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/moby/moby",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず開発は活発 (最終 push 2026-07-31)。Star 71,949。docs/ 配下に多言語ディレクトリはなく英語のみ。"
+    },
+    {
+      "url": "https://github.com/moby/moby/blob/master/CONTRIBUTING.md",
+      "kind": "contributing",
+      "observed_at": "2026-08-03",
+      "note_ja": "CONTRIBUTING に翻訳受付の記載なし。ドキュメントのスタイルガイドは docker/docs (docs.docker.com) を参照しており、moby 本体に翻訳プログラムは確認できない。"
+    },
+    {
+      "url": "https://github.com/moby/moby/issues?q=japanese+translation",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "issue / PR を「japanese translation」で検索してもヒットなし。日本語翻訳の既存作業・チームは確認できず。"
     }
   ],
   "validation": [],
@@ -63,5 +81,27 @@
     "状態": "",
     "文章量": "多",
     "Star": "71,290"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 71949,
+    "observed_at": "2026-08-03"
   }
 }

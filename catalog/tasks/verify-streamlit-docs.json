@@ -11,8 +11,8 @@
     "repository": "streamlit/docs",
     "url": "https://github.com/streamlit/docs",
     "category": "Python",
-    "summary_ja": "データアプリ構築フレームワークの公式ドキュメントリポジトリ。日本語版を求める issue（#102）があり運営も関心を示すが、体制は未整備で計画段階からの交渉が必要。",
-    "license": null
+    "summary_ja": "データアプリ構築フレームワークの公式ドキュメントリポジトリ。日本語版を求める issue（#102）は2021年起票のまま open で、当時 docs チームは関心を示したが、翻訳受付方針や i18n 基盤は現在も確認できず、計画段階からの交渉が必要。",
+    "license": "Apache-2.0"
   },
   "source": {
     "revision": null,
@@ -42,6 +42,18 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/streamlit/docs",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "最終 push 2026-07-22、アーカイブなし、ライセンス Apache-2.0。README に翻訳・i18n への言及はなし。"
+    },
+    {
+      "url": "https://github.com/streamlit/docs/issues/102",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語版ドキュメント要望 issue（2021年起票、international ラベル付きで open のまま）。当時 docs チームが関心を示し有志と個別連絡まで進んだが、その後の公式方針・i18n 基盤の整備は確認できない。日本語チームは存在しない。"
     }
   ],
   "validation": [],
@@ -70,7 +82,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "none",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 176,
+    "observed_at": "2026-08-03"
   }
 }

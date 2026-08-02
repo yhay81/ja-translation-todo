@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-cncf-glossary",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "CNCF Cloud Native Glossary の日本語化の検証",
-    "en": null
+    "ja": "CNCF Cloud Native Glossary の未訳用語の日本語化",
+    "en": "Localize remaining Cloud Native Glossary terms into Japanese"
   },
   "project": {
     "repository": "cncf/glossary",
     "url": "https://github.com/cncf/glossary",
     "category": "Infrastructure",
-    "summary_ja": "クラウドネイティブ用語集。日本語ローカライズチームと専用Slackチャンネルが存在し、CC BY 4.0で翻訳可能。未翻訳用語の追加や既存訳の更新で貢献できる。",
+    "summary_ja": "クラウドネイティブ用語集。LOCALIZATION.md でローカライズ手順が明文化され、日本語チーム(dev-ja ブランチ・CNCF Slack の専用チャンネル)が存在する。用語ごとに issue で担当を宣言し dev-ja へ PR、承認者 2 名の approve が必要。日本語チームの活動は 2025-12 以降止まっており、参加前に Slack での声かけが前提。コンテンツは CC BY 4.0。",
     "license": "CC-BY-4.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "content/en/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "content/ja/"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +46,30 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/cncf/glossary",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "upstream は 2026-07-27 まで活発に更新(Star 722)。原文は content/en/、日本語訳は content/ja/。コードは Apache-2.0、ドキュメントは CC BY 4.0 と README に明記。"
+    },
+    {
+      "url": "https://github.com/cncf/glossary/blob/main/LOCALIZATION.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "ローカライズ手順を明文化。既存チームへの参加は CNCF Slack の #glossary-localizations / #glossary-localization-japanese で表明し、チームの案内に従う。翻訳は言語別 dev ブランチ(日本語は dev-ja)への PR で行い、用語ごとに承認者 2 名の approve が必要。チームが不活発な場合の連絡先も明記。事前の宣言が前提のため ask_first と判定。AI 利用方針の明記はなし。"
+    },
+    {
+      "url": "https://github.com/cncf/glossary/commits/dev-ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "dev-ja ブランチの最終コミットは 2025-08-05(Sidecar Container 等の翻訳 merge)、main の content/ja への最終反映は 2025-12-16([ja] sync index.md #3605)。調査日から直近 90 日の日本語チーム活動はなく inactive。未訳用語は残っており、追従・新規翻訳の余地がある。"
+    },
+    {
+      "url": "https://github.com/cncf/glossary/issues/3509",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "「[ja] Localize `Digital Certificate` for Japanese」など、用語単位で issue を立てて担当宣言→翻訳する運用実績(2025-08 に完了)。調査時点で日本語の open な翻訳 issue / PR はなく、重複作業のリスクは低い。"
     }
   ],
   "validation": [],
@@ -50,14 +78,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/cncf/glossary",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -69,8 +97,12 @@
       "domain": "framework_docs"
     }
   },
+  "metrics": {
+    "stars": 722,
+    "observed_at": "2026-08-03"
+  },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/cncf/glossary/tree/dev-ja"
   }
 }

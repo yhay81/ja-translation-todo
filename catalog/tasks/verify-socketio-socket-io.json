@@ -2,33 +2,38 @@
   "schema_version": "translation-task/v1",
   "id": "verify-socketio-socket-io",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "socketio/socket.io の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for socketio/socket.io"
+    "ja": "Socket.IO 公式サイトへの日本語ロケール追加の打診",
+    "en": "Propose adding a Japanese locale to the Socket.IO website"
   },
   "project": {
     "repository": "socketio/socket.io",
     "url": "https://github.com/socketio/socket.io",
     "category": "JavaScript",
-    "summary_ja": "リアルタイム通信フレームワーク（Node.js） https://socket.io",
+    "summary_ja": "リアルタイム通信フレームワーク(Node.js)。ドキュメントは socketio/socket.io-website (Docusaurus) で管理され、i18n 配下に es / fr / pt-br / zh-CN のコミュニティ翻訳を直接 PR で受け入れてきた実績がある(2025-12 にスペイン語ロケール追加 PR がマージ)。日本語ロケールは未整備で文章量も多いため、着手前に issue で新ロケール追加の意向をメンテナに確認するのが妥当。明文の翻訳ガイドはない。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "8c04b08a05d3",
+    "paths": [
+      "docs/",
+      "versioned_docs/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "i18n/ja/"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,18 +47,42 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/socketio/socket.io-website",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "ドキュメント実体のリポジトリ (8c04b08a05d3, 2026-07-21 push、活動継続中)。Docusaurus 構成で docs/ が原文、i18n/ が翻訳。locales は en, es, fr, pt-br, zh-CN で日本語は未登録。"
+    },
+    {
+      "url": "https://github.com/socketio/socket.io-website/tree/main/i18n",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "CONTRIBUTING / 翻訳ガイド等の明文方針は見当たらないが、i18n ディレクトリでコミュニティ翻訳(zh-CN の更新 PR #497 等)を受け入れており、翻訳受付は implied と判断。新ロケール追加は docusaurus.config.js の変更を伴うためメンテナ合意が前提。"
+    },
+    {
+      "url": "https://github.com/socketio/socket.io-website/pull/513",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "「feat(i18n): add Spanish language support」が 2025-12-17 にマージ。コミュニティによる新ロケール追加 PR が受け入れられた直近の前例。日本語の既存作業・open PR は確認できず、重複なし。"
+    },
+    {
+      "url": "https://github.com/socketio/socket.io-website/issues/422",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "翻訳ファイルの場所を尋ねる issue (2023-11, open, 回答なし)。翻訳手順が文書化されていないことの傍証。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "リアルタイム通信フレームワーク（Node.js） https://socket.io",
@@ -63,5 +92,27 @@
     "状態": "",
     "文章量": "多",
     "Star": "62,735"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "socketio/socket.io-website"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 63182,
+    "observed_at": "2026-08-03"
   }
 }

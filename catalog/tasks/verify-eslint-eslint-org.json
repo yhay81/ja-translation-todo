@@ -2,16 +2,16 @@
   "schema_version": "translation-task/v1",
   "id": "verify-eslint-eslint-org",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "ESLint 公式ドキュメント日本語化の検証",
+    "ja": "ESLint ドキュメントの日本語サイト立ち上げ提案(要メンテナ合意)",
     "en": null
   },
   "project": {
     "repository": "eslint/eslint.org",
     "url": "https://github.com/eslint/eslint.org",
     "category": "JavaScript",
-    "summary_ja": "ESLint は公式中国語サイト zh-hans.eslint.org を持ち、言語別サイトを増やす i18n 体制がある。日本語サイトは未整備で、公式 issue 起点で ja サイト立ち上げを提案できる可能性がある。",
+    "summary_ja": "ESLint は言語別サイトを増やす i18n 体制を持ち、簡体字中国語ドキュメントサイト(eslint/zh-hans.docs.eslint.org)が公式運用されている。日本語はトップページ(ja.eslint.org)が 2022 年の issue 提案から生まれ現在も稼働中だが、ドキュメント全体の日本語サイトは未整備。zh-hans と同様に issue 提案とメンテナ合意を経て日本語ドキュメントサイトを立ち上げる余地がある。",
     "license": "MIT"
   },
   "source": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +42,30 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/eslint/eslint.org",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "最終 push 2026-08-02 と活発。ライセンスは Apache-2.0(公式サイトのリポジトリ)。アーカイブされていない。"
+    },
+    {
+      "url": "https://github.com/eslint/zh-hans.docs.eslint.org",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "簡体字中国語の公式ドキュメント翻訳サイトのリポジトリ。ESLint のリリースと同じ頻度で同期する体制で、言語別サイト方式の i18n 運用が確立している。日本語のドキュメントサイトは存在しない。AI 利用方針の記載は確認できず。"
+    },
+    {
+      "url": "https://github.com/eslint/eslint.org/issues/164",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "2022 年の「Translating in Japanese」issue が accepted され、ja.eslint.org(トップページの日本語版)が立ち上がった実績。新しい言語対応は issue 提案からメンテナ承認を経る文化のため、着手前に issue での合意が必要。"
+    },
+    {
+      "url": "https://ja.eslint.org/",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語トップページは現在も稼働し、最新のリリース情報とともに配信されている。日本語版は 2022 年に個人貢献で翻訳されたもので、以降の専任チームによる継続活動は確認できず。"
     }
   ],
   "validation": [],
@@ -50,10 +74,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
@@ -70,7 +94,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://ja.eslint.org/"
+  },
+  "metrics": {
+    "stars": 93,
+    "observed_at": "2026-08-03"
   }
 }

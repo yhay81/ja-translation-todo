@@ -42,6 +42,18 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/pytorch/tutorials/blob/main/CONTRIBUTING.md",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "本家は活発 (直近 push 2026-07-31、Star 9,264) だが、CONTRIBUTING に翻訳・多言語化に関する記載はなし。issue / PR 検索でも翻訳受付方針や公式 i18n 経路は確認できず、翻訳可否は依然不明。"
+    },
+    {
+      "url": "https://github.com/YutaroOgawa/pytorch_tutorials_jp",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "コミュニティ日本語訳 (PyTorch 1.8 時点、Google Colab ノートブック形式、Star 219) は最終更新 2021-10-14 のまま休止。活動中の日本語翻訳チームは確認できない。"
     }
   ],
   "validation": [],
@@ -70,7 +82,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/YutaroOgawa/pytorch_tutorials_jp"
+  },
+  "metrics": {
+    "stars": 9264,
+    "observed_at": "2026-08-03"
   }
 }

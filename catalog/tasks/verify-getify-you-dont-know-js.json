@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-getify-you-dont-know-js",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "getify/You-Dont-Know-JS の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for getify/You-Dont-Know-JS"
+    "ja": "You Don't Know JS (第2版) の日本語訳(要事前相談・全訳前提)",
+    "en": "Japanese translation of You Don't Know JS 2nd edition (ask first, whole-book minimum)"
   },
   "project": {
     "repository": "getify/You-Dont-Know-JS",
     "url": "https://github.com/getify/You-Dont-Know-JS",
     "category": "JavaScript",
-    "summary_ja": "JavaScriptの書籍",
+    "summary_ja": "JavaScriptの書籍シリーズ。本文への貢献は締め切られているが、第2版(既刊3冊)の外国語訳のみ明示的に受付。フォークで最低1冊を全訳→issue で言語ブランチ作成を依頼→PR でマージ→翻訳者がブランチのメンテナに昇格、という手順。無償公開・非収益化が条件。日本語ブランチは未着手。",
     "license": "Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "get-started",
+      "scope-closures",
+      "objects-classes"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,18 +46,36 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/getify/You-Dont-Know-JS",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされていない(最終push 2026-02-15)。デフォルトブランチは 2nd-ed。書籍は完結済みで本文への貢献は受付終了。ライセンスは CC BY-NC-ND 4.0 だが、翻訳は CONTRIBUTING の条件下で明示的に許可されている。"
+    },
+    {
+      "url": "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "「Translations」節で外国語訳の手順を明記: 第2版の3冊のみ対象、翻訳は本リポジトリに無償公開し収益化しないことが条件。フォークで最低1冊全訳→issue で ISO 言語コードのブランチ作成を依頼→ブランチへ PR→マージ後に翻訳者をメンテナへ昇格。第1版の新規翻訳は不可。着手前に issue での相談が必須のため ask_first。"
+    },
+    {
+      "url": "https://github.com/getify/You-Dont-Know-JS/branches",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "既存の言語ブランチは 1ed-zh-CN / 2ed-uk / 2ed-zh-CN のみで、日本語(ja)ブランチは存在しない。日本語の既存作業・重複は確認されず未着手。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "JavaScriptの書籍",
@@ -64,5 +86,27 @@
     "状態": "中国語版が別ブランチになっている",
     "文章量": "多",
     "Star": "184,187"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/getify/You-Dont-Know-JS",
+    "translation_repo": "getify/You-Dont-Know-JS"
+  },
+  "content_type": "book",
+  "difficulty": {
+    "score": 5,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "book"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 184630,
+    "observed_at": "2026-08-03"
   }
 }

@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-pandas-dev-pandas",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "pandas 公式サイトのドキュメント日本語化の検証",
+    "ja": "pandas 公式ウェブサイトの日本語翻訳 (Scientific Python Translations 経由)",
     "en": null
   },
   "project": {
     "repository": "pandas-dev/pandas",
     "url": "https://github.com/pandas-dev/pandas",
     "category": "Python",
-    "summary_ja": "データ分析ライブラリ pandas。PR #61220 で Scientific Python Translations の Crowdin 基盤にウェブサイト翻訳が組み込まれ、日本語翻訳に新規参入できる状態にある。",
+    "summary_ja": "データ分析ライブラリ pandas。ウェブサイト翻訳は Scientific Python Translations の Crowdin 基盤 (pandas-translations リポジトリ) で運用され、日本語は進捗3%と大きな未着手領域がある。参加は Scientific Python Discord の #translation チャンネルへの連絡が前提。本体リポジトリへの翻訳基盤PR (#61220, #61380) は close されており、直接PRは経路ではない。",
     "license": "BSD-3-Clause"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "web/pandas/en"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "web/pandas/ja"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -40,25 +44,49 @@
     {
       "url": "https://github.com/pandas-dev/pandas",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは活発(最終push 2026-08-02、非archived)。本体リポジトリ内に翻訳ファイルは置かれていない。"
+    },
+    {
+      "url": "https://scientific-python-translations.github.io/docs/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "Scientific Python Translations の貢献ガイド。Crowdin (scientific-python.crowdin.com) で翻訳し、参加希望者は Scientific Python Discord の #translation チャンネルで連絡する方式。言語ごとに翻訳者+査読者の2名体制を推奨。AI/機械翻訳の方針は明記なし。"
+    },
+    {
+      "url": "https://github.com/Scientific-Python-Translations/pandas-translations",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "pandas.pydata.org 翻訳の専用リポジトリ。crowdin.yml で web/pandas/en を原文に言語別ディレクトリへ同期。status.yml では日本語(ja)の進捗3%・承認0%で、es(99%)・pt-BR(98%)に比べ未着手領域が大きい。"
+    },
+    {
+      "url": "https://github.com/pandas-dev/pandas/pull/61220",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "本体への翻訳基盤導入PR「ENH: Create infrastructure for translations」は close (未マージ)。後継 #61380 も close。翻訳作業は本体への直接PRではなく Scientific Python Translations 側の Crowdin で行う。"
+    },
+    {
+      "url": "https://github.com/Scientific-Python-Translations/pandas-translations/blob/main/status.yml",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語の翻訳進捗は3%で活発な日本語チームは確認できない(担当者不在の可能性が高い)。リポジトリ自体は2026年も更新あり。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "contributors_page",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "crowdin",
-    "platform_url": null,
-    "translation_repo": null
+    "platform_url": "https://scientific-python.crowdin.com/",
+    "translation_repo": "Scientific-Python-Translations/pandas-translations"
   },
   "content_type": "official_docs",
   "difficulty": {
@@ -69,8 +97,12 @@
       "domain": "framework_docs"
     }
   },
+  "metrics": {
+    "stars": 49395,
+    "observed_at": "2026-08-03"
+  },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://scientific-python.crowdin.com/"
   }
 }

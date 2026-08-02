@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-alex-what-happens-when",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "alex/what-happens-when の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for alex/what-happens-when"
+    "ja": "what-happens-when 日本語訳の更新(既存訳・upstream とも停滞)",
+    "en": "Refresh the Japanese translation of alex/what-happens-when"
   },
   "project": {
     "repository": "alex/what-happens-when",
     "url": "https://github.com/alex/what-happens-when",
     "category": "Other",
-    "summary_ja": "「google.comってアドレスバーに入れてエンター押した時に何が起きてるでしょう。」に対する答え",
+    "summary_ja": "「google.comってアドレスバーに入れてエンター押した時に何が起きてるでしょう。」に対する答え。CC0 ライセンスで README から日本語訳リポジトリ(tettttsuo/what-happens-when-JA)が既にリンクされているが、日本語訳は 2020-12 以降、upstream 本体も 2024-08 以降停滞。更新するには既存訳リポジトリ所有者への連絡か、新規リポジトリでの再開とリンク差し替え交渉が必要。",
     "license": "[Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/)"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "README.rst"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "README.rst"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +46,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/alex/what-happens-when/blob/master/README.rst",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "README 冒頭で CC0 ライセンスを明示し、「Read this in 简体中文 / 日本語 / 한국어 / Spanish」として各言語のコミュニティ翻訳リポジトリへリンク(メンテナ未レビューの注記付き)。翻訳は別リポジトリを作りリンク追加 PR を送る方式。CC0 のため翻訳自体に許諾は不要。AI 利用方針の明記はなし。"
+    },
+    {
+      "url": "https://github.com/alex/what-happens-when/pulls",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "upstream の最終 push は 2024-08-19 で以後停滞(Star 43,266)。2025〜2026 年の open PR(フランス語訳リンク追加 #2539 等)が未マージのまま残っており、新規リンク差し替え PR がマージされるかは不確実。"
+    },
+    {
+      "url": "https://github.com/tettttsuo/what-happens-when-JA",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "README からリンクされている日本語訳リポジトリ(Star 158)の最終コミットは 2020-12-24 で停滞。upstream の 2024-08 時点の内容に追従できていない。更新には所有者への連絡、または新規リポジトリでの再開とリンク差し替えの交渉が前提となるため ask_first と判定。"
     }
   ],
   "validation": [],
@@ -50,10 +72,32 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/alex/what-happens-when",
+    "translation_repo": "tettttsuo/what-happens-when-JA"
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "small",
+      "workflow": "fork_hosted",
+      "domain": "tutorial"
+    }
+  },
+  "metrics": {
+    "stars": 43266,
+    "observed_at": "2026-08-03"
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/tettttsuo/what-happens-when-JA"
   },
   "legacy": {
     "概要": "「google.comってアドレスバーに入れてエンター押した時に何が起きてるでしょう。」に対する答え",

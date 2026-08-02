@@ -2,33 +2,35 @@
   "schema_version": "translation-task/v1",
   "id": "verify-electron-electron",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "electron/electron の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for electron/electron"
+    "ja": "Electron ドキュメントの日本語化(Crowdin)",
+    "en": "Translate Electron documentation into Japanese via Crowdin"
   },
   "project": {
     "repository": "electron/electron",
     "url": "https://github.com/electron/electron",
     "category": "JavaScript",
-    "summary_ja": "クロスプラットフォームJavaScriptアプリ作成",
+    "summary_ja": "クロスプラットフォームのデスクトップアプリを JavaScript で作るフレームワーク。ドキュメント翻訳は electron/website リポジトリと Crowdin(crowdin.com/project/electron)で公式運用されており、翻訳 PR は受け付けず Crowdin 経由のみ。日本語サイト electronjs.org/ja は稼働中だが翻訳率の向上と最新版への追従の余地がある。旧 electron/i18n リポジトリはアーカイブ済みで現行経路ではない。",
     "license": "MIT"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "docs/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,18 +44,48 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/electron/electron",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "最終 push 2026-08-02 と活発。Star 約122,289。MIT ライセンス。ドキュメント本体は docs/ 配下で、翻訳は electron/website 側の運用に従う。"
+    },
+    {
+      "url": "https://github.com/electron/website/blob/main/i18n.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "翻訳は Crowdin で管理され、翻訳の PR は開かず Crowdin 上で作業することが明記されている。API 名や JavaScript キーワードは翻訳しない等のルールあり。1,000 語以上翻訳すると Discord の #website-i18n で proofreader 申請が可能。AI 利用への言及はない。"
+    },
+    {
+      "url": "https://crowdin.com/project/electron",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "現行の公式翻訳プラットフォーム。GitHub アカウントでログインして参加できる。日本語ロケールを含む多言語で運用中。"
+    },
+    {
+      "url": "https://www.electronjs.org/ja/",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語版サイトが本番デプロイ済みで日本語コンテンツが配信されている。組織化された日本語チームは確認できず、Crowdin 上の個人貢献ベース。"
+    },
+    {
+      "url": "https://github.com/electron/i18n",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "旧翻訳リポジトリ electron/i18n は 2022-08 にアーカイブ済み。現行の翻訳経路は electron/website + Crowdin であり、こちらへ PR を送ってはいけない。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "contributors_page",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "クロスプラットフォームJavaScriptアプリ作成",
@@ -63,5 +95,27 @@
     "状態": "日本26%",
     "文章量": "多",
     "Star": "119,569"
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": "https://crowdin.com/project/electron",
+    "translation_repo": "electron/website"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": "https://crowdin.com/project/electron"
+  },
+  "metrics": {
+    "stars": 122289,
+    "observed_at": "2026-08-03"
   }
 }

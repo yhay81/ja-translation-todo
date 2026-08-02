@@ -4,8 +4,8 @@
   "kind": "verification",
   "status": "needs_verification",
   "title": {
-    "ja": "psf/requests の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for psf/requests"
+    "ja": "Requests ドキュメント日本語訳の受け皿検証(旧 requests-docs-jp は休止)",
+    "en": "Assess the current home for a Japanese translation of the Requests documentation"
   },
   "project": {
     "repository": "psf/requests",
@@ -16,7 +16,9 @@
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "docs"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -42,6 +44,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/psf/requests",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "本家は活発 (直近 push 2026-07-27、Star 54,200、アーカイブされていない)。リポジトリ内に翻訳受付方針 (TRANSLATING / i18n ガイド等) は見当たらず、公式の翻訳方針は未確認。"
+    },
+    {
+      "url": "https://github.com/requests/requests-docs-jp",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "旧一覧の「専用レポジトリ」だった日本語訳リポジトリは最終更新 2018-04-30 のまま休止 (Star 5)。日本語翻訳チームの活動は確認できない。"
+    },
+    {
+      "url": "https://github.com/psf/requests/issues/7357",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "2026-04-13 に第三者 (localizethedocs org) が Crowdin ベースの requests-docs-l10n プロジェクトを告知する open issue。メンテナの応答や公式な承認は確認できず、公式経路とは言えない。"
     }
   ],
   "validation": [],
@@ -64,5 +84,27 @@
     "状態": "日本語 docs は途中まで（requests-docs-jp / 最終更新: 2018/04）",
     "文章量": "多",
     "Star": "53,609"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "requests/requests-docs-jp"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/requests/requests-docs-jp"
+  },
+  "metrics": {
+    "stars": 54200,
+    "observed_at": "2026-08-03"
   }
 }

@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-scipy-scipy-org",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
-    "ja": "SciPy 公式サイトのドキュメント日本語化の検証",
-    "en": null
+    "ja": "SciPy 公式サイトの日本語訳維持への参加",
+    "en": "Join the Japanese translation maintenance of the SciPy website"
   },
   "project": {
     "repository": "scipy/scipy.org",
     "url": "https://github.com/scipy/scipy.org",
     "category": "Python",
-    "summary_ja": "科学計算ライブラリ SciPy の公式サイト。Scientific Python の Crowdin で翻訳され日本語は100%到達済みのため、機会は更新追随と品質改善が中心になる。",
-    "license": null
+    "summary_ja": "科学計算ライブラリ SciPy の公式サイト。Scientific Python Translations が運営する Crowdin Enterprise で公式に翻訳され、日本語ページ (scipy.org/ja) は公開済み。日本人翻訳者が登録されており、機会は英語版更新への追随と品質改善が中心。参加は Crowdin と Scientific Python Discord の #translation チャンネル経由。",
+    "license": "BSD-3-Clause"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "3f20466c12d6",
+    "paths": [
+      "content/en"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "content/ja"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "translation": "explicit",
+    "ai_assistance": "explicit",
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,23 +46,53 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/scipy/scipy.org/tree/main/content/ja",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "main ブランチ (3f20466c12d6, 2026-08-01 push) を確認。content/ja が存在し、2025-05 の日本語追加 (#641) 以降も 2026-04-13 に日本語ページの修正 (#668) がマージされている。"
+    },
+    {
+      "url": "https://scientific-python-translations.github.io/translate/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "Scientific Python Core プロジェクト群の公式翻訳ガイド。翻訳は Crowdin (scientific-python.crowdin.com) で行い、Crowdin アカウント作成後に Scientific Python Discord の #translation チャンネルで翻訳者権限を申請する手順。GitHub への直接翻訳 PR は経路として案内されていない。"
+    },
+    {
+      "url": "https://scientific-python-translations.github.io/translate/",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "Crowdin 上の自動生成サジェスト(機械翻訳)の利用に言及があり、「人間の介入と正確性のレビューが必要」と明記。機械翻訳をそのまま採用しない前提での利用は許容されている。"
+    },
+    {
+      "url": "https://scientific-python.crowdin.com/",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式翻訳プラットフォーム(Crowdin Enterprise)。scipy.org の翻訳は Scientific-Python-Translations/scipy.org-translations リポジトリ経由で本体へ同期される。"
+    },
+    {
+      "url": "https://github.com/Scientific-Python-Translations/scipy.org-translations/blob/main/translators.yml",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "翻訳者名簿の ja に AtsushiSakai、kozo2 ら日本人コントリビューターが登録済み。日本語ページは本番 (scipy.org/ja) に公開されており、日本語チームは稼働中と判断。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "contributors_page",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "crowdin",
-    "platform_url": null,
-    "translation_repo": null
+    "platform_url": "https://scientific-python.crowdin.com/",
+    "translation_repo": "Scientific-Python-Translations/scipy.org-translations"
   },
   "content_type": "official_docs",
   "difficulty": {
@@ -70,7 +104,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://github.com/Scientific-Python-Translations/scipy.org-translations/blob/main/translators.yml"
+  },
+  "metrics": {
+    "stars": 77,
+    "observed_at": "2026-08-03"
   }
 }

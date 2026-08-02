@@ -2,16 +2,16 @@
   "schema_version": "translation-task/v1",
   "id": "verify-ebookfoundation-free-programming-books",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
-    "ja": "EbookFoundation/free-programming-books の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for EbookFoundation/free-programming-books"
+    "ja": "free-programming-books 日本語リストの拡充・保守",
+    "en": "Maintain and expand the Japanese lists in free-programming-books"
   },
   "project": {
     "repository": "EbookFoundation/free-programming-books",
     "url": "https://github.com/EbookFoundation/free-programming-books",
     "category": "Other",
-    "summary_ja": "フリーのプログラミング書籍リスト",
+    "summary_ja": "フリーのプログラミング学習資料リスト。翻訳というより日本語資料リスト(books/free-programming-books-ja.md、courses/free-courses-ja.md 等)の拡充・保守が作業内容。日本語リストは 2026 年に入っても複数の貢献者により更新されており活動は継続中。CONTRIBUTING に従い直接 PR で追記できる。",
     "license": "Creative Commons Attribution 4.0 International License"
   },
   "source": {
@@ -20,15 +20,18 @@
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "books/free-programming-books-ja.md",
+      "courses/free-courses-ja.md"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,18 +45,36 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "最終 push 2026-08-01 と非常に活発。Star 約393,561。ライセンスは CC-BY-4.0。アーカイブされていない。"
+    },
+    {
+      "url": "https://github.com/EbookFoundation/free-programming-books/blob/main/docs/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "CONTRIBUTING は多言語リストを前提に運用され、冒頭で他言語版への導線を案内。言語別ファイル(*-ja.md)への追記を直接 PR で受け付けるのが標準経路。AI 利用方針の記載は確認できず。"
+    },
+    {
+      "url": "https://github.com/EbookFoundation/free-programming-books/commits/main/books/free-programming-books-ja.md",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語書籍リストは 2026-05-10・2026-07-04 にも更新があり、直近90日以内の日本語コミュニティ活動を確認。コース版 free-courses-ja.md も存在し、旧一覧の「コース版は日本語なし」は解消済み。参加窓口は CONTRIBUTING に従う直接 PR。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "フリーのプログラミング書籍リスト",
@@ -64,5 +85,27 @@
     "状態": "日本もそこそこ更新されている。翻訳というよりは、日本語資料のまとめ。ポッドキャスト版やコース版は日本のない。",
     "文章量": "少",
     "Star": "379,635"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "readme",
+  "difficulty": {
+    "score": 1,
+    "factors": {
+      "volume": "small",
+      "workflow": "direct_pr",
+      "domain": "tutorial"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/EbookFoundation/free-programming-books/blob/main/docs/CONTRIBUTING.md"
+  },
+  "metrics": {
+    "stars": 393561,
+    "observed_at": "2026-08-03"
   }
 }

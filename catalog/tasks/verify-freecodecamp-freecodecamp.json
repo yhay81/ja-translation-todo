@@ -2,33 +2,35 @@
   "schema_version": "translation-task/v1",
   "id": "verify-freecodecamp-freecodecamp",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "blocked",
   "title": {
-    "ja": "freeCodeCamp カリキュラムの日本語化の検証",
-    "en": null
+    "ja": "freeCodeCamp カリキュラム翻訳(現在は受付停止中)",
+    "en": "freeCodeCamp curriculum translation (currently paused)"
   },
   "project": {
     "repository": "freeCodeCamp/freeCodeCamp",
     "url": "https://github.com/freeCodeCamp/freeCodeCamp",
     "category": "Learning",
-    "summary_ja": "世界最大級の無料プログラミング学習カリキュラム。Crowdinによる翻訳制度が確立しており日本語版も公開済み。未翻訳のカリキュラムや新規教材の翻訳・校正に継続的に参加できる。",
+    "summary_ja": "世界最大級の無料プログラミング学習カリキュラム。かつては Crowdin による翻訳制度で日本語版も公開されたが、2026年8月時点の公式貢献ガイドは「現在カリキュラム翻訳への貢献は受け付けていない(翻訳の新しい方法を検討中)」と明記しており、コミュニティ翻訳は停止中。",
     "license": "BSD-3-Clause"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "curriculum/challenges/english"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "forbidden",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "blocked",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +44,18 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず活発(最終push 2026-08-02)。ライセンスは BSD-3-Clause。"
+    },
+    {
+      "url": "https://contribute.freecodecamp.org/how-to-translate-files/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式貢献ガイド(freeCodeCamp/contribute の how-to-translate-files)冒頭の告知で「世界言語への翻訳の新しい方法を検討中であり、当面カリキュラム翻訳への貢献は受け付けない」と明記。質問は Discord へ、他分野への貢献を案内。従来の Crowdin ワークフローは停止中。"
     }
   ],
   "validation": [],
@@ -50,10 +64,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "crowdin",
@@ -70,7 +84,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "inactive",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 453353,
+    "observed_at": "2026-08-03"
   }
 }

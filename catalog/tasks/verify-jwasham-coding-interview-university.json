@@ -2,30 +2,34 @@
   "schema_version": "translation-task/v1",
   "id": "verify-jwasham-coding-interview-university",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "jwasham/coding-interview-university の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for jwasham/coding-interview-university"
+    "ja": "Coding Interview University 日本語訳 (translations/README-ja.md) の更新",
+    "en": "Update the Japanese translation (translations/README-ja.md) of Coding Interview University"
   },
   "project": {
     "repository": "jwasham/coding-interview-university",
     "url": "https://github.com/jwasham/coding-interview-university",
     "category": "Other",
-    "summary_ja": "ソフトウェアエンジニアになるためのコンピュータサイエンス学習",
-    "license": "CC BY-SA 4.0"
+    "summary_ja": "ソフトウェアエンジニアになるためのコンピュータサイエンス学習ガイド。翻訳は translations/ フォルダで管理され日本語訳 (README-ja.md) が公開済みだが、日本語訳の実質的な更新は 2024 年が最後で英語版 (2025-08 更新) から遅れている。明文化された翻訳ガイドはなく、新規言語は issue で宣言する文化のため、大きな更新作業は issue で申し出てから着手するのが安全。",
+    "license": "CC-BY-SA-4.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "README.md"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "translations/README-ja.md"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
     "level": "discover_only",
@@ -42,6 +46,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/jwasham/coding-interview-university/blob/main/README.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "README に公開済み翻訳 (日本語含む16言語、translations/README-xx.md) と「Translations in progress」の issue 一覧が掲載されており、翻訳受け入れは実績から implied。CONTRIBUTING.md 等の明文化された翻訳ガイドや AI 利用方針はなし。新規言語は issue で宣言する文化。"
+    },
+    {
+      "url": "https://github.com/jwasham/coding-interview-university/pull/1416",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "2023 年に日本語訳の更新 PR (#1400, #1406, #1408, #1416) が連続してマージされた実績あり。README-ja.md の最終更新は 2024-12 (作者による一括修正) で、現在進行中の日本語作業・重複は確認できず。"
+    },
+    {
+      "url": "https://github.com/jwasham/coding-interview-university/commits/main",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリの最終 push は 2025-08-28。以後も PR の triage (close) は行われているがコンテンツのマージは停滞気味で、日本語チームは不在・日本語訳は1年半以上未更新。応答性が不確実なため着手前に issue での確認を推奨。"
     }
   ],
   "validation": [],
@@ -50,10 +72,32 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "tutorial",
+  "difficulty": {
+    "score": 2,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "tutorial"
+    }
+  },
+  "metrics": {
+    "stars": 357669,
+    "observed_at": "2026-08-03"
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": null
   },
   "legacy": {
     "概要": "ソフトウェアエンジニアになるためのコンピュータサイエンス学習",

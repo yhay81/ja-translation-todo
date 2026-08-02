@@ -11,7 +11,7 @@
     "repository": "nodejs/node",
     "url": "https://github.com/nodejs/node",
     "category": "JavaScript",
-    "summary_ja": "Node.js の JavaScript ランタイム https://nodejs.org",
+    "summary_ja": "Node.js の JavaScript ランタイム https://nodejs.org 。本体リポジトリの API ドキュメント (doc/) は英語のみで、翻訳の受付経路は確認できない。Node.js の翻訳活動は公式サイト (nodejs/nodejs.org) の Crowdin プロジェクトに一本化されている。",
     "license": "MIT"
   },
   "source": {
@@ -42,6 +42,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/nodejs/node",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず活発 (最終 push 2026-08-02)。Star 118,617。README / CONTRIBUTING に翻訳受付の記載なし。"
+    },
+    {
+      "url": "https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "Node.js の翻訳ポリシーは公式サイト (nodejs.org) を対象とし Crowdin (crowdin.com/project/nodejs-web) で運用。nodejs/node 本体の API ドキュメントを翻訳する受付経路の記載はない。参加するなら別タスク verify-nodejs-nodejs-org が対象。"
+    },
+    {
+      "url": "https://github.com/nodejs/i18n",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "API ドキュメント翻訳を担っていた i18n WG のリポジトリは 2023 年以降アーカイブ済み (最終 push 2023-04)。本体ドキュメント翻訳の公式チャネルは現存しない。禁止の明文はないため blocked ではなく needs_verification を維持。"
     }
   ],
   "validation": [],
@@ -63,5 +81,27 @@
     "状態": "日本語もありよく更新されている",
     "文章量": "多",
     "Star": "114,968"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 118617,
+    "observed_at": "2026-08-03"
   }
 }

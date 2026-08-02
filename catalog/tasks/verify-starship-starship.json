@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-starship-starship",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "Starship プロンプトのドキュメント日本語化の検証",
-    "en": null
+    "ja": "Starship プロンプトのドキュメント日本語訳(Crowdin)",
+    "en": "Translate Starship documentation to Japanese via Crowdin"
   },
   "project": {
     "repository": "starship/starship",
     "url": "https://github.com/starship/starship",
     "category": "Command Line Tools",
-    "summary_ja": "高速でカスタマイズ可能なクロスシェルプロンプト。Crowdin(translate.starship.rs)で翻訳受付が制度化され、docs/ja-JPも存在。未翻訳ドキュメントの更新機会がある。",
+    "summary_ja": "高速でカスタマイズ可能なクロスシェルプロンプト。翻訳は CONTRIBUTING.md で制度化されており、Crowdin (starship-prompt プロジェクト、translate.starship.rs) 経由のみ受付。docs/ja-JP は Crowdin 同期 PR で継続更新されているが、追随・改善の余地がある。翻訳ページへの直接 PR は禁止。",
     "license": "ISC"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "7946f2d9fbb0",
+    "paths": [
+      "docs/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "docs/ja-JP/"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +46,30 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/starship/starship/tree/master/docs/ja-JP",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "最新リビジョン 7946f2d9fbb0 (2026-07-30) を確認。docs/ 配下に ja-JP を含む 25 以上のロケールディレクトリがあり、日本語訳がリポジトリ内で管理されている。"
+    },
+    {
+      "url": "https://github.com/starship/starship/blob/master/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "「Crowdin Translated Pages」節で、翻訳ページは Crowdin (crowdin.com/project/starship-prompt) で管理され、直接編集(PR)は空白や絵文字の変更でも不可、翻訳や修正は Crowdin サイトで行うよう明記。"
+    },
+    {
+      "url": "https://crowdin.com/project/starship-prompt",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式翻訳プラットフォーム。日本語ロケール (ja) が有効で、誰でも Crowdin アカウントで参加できる。"
+    },
+    {
+      "url": "https://github.com/starship/starship/pull/7549",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "「docs(i18n): new Crowdin updates」が 2026-06-28 にマージされ docs/ja-JP も更新。Crowdin からの同期が直近90日以内も継続しており、日本語翻訳は稼働中。専任チームではなく Crowdin 上の個人貢献ベース。"
     }
   ],
   "validation": [],
@@ -50,14 +78,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "crowdin",
-    "platform_url": null,
+    "platform_url": "https://crowdin.com/project/starship-prompt",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -70,7 +98,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://crowdin.com/project/starship-prompt/ja"
+  },
+  "metrics": {
+    "stars": 59193,
+    "observed_at": "2026-08-03"
   }
 }

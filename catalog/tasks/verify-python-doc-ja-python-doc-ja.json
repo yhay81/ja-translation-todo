@@ -2,16 +2,16 @@
   "schema_version": "translation-task/v1",
   "id": "verify-python-doc-ja-python-doc-ja",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
-    "ja": "python-doc-ja/python-doc-ja の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for python-doc-ja/python-doc-ja"
+    "ja": "Python ドキュメント日本語訳プロジェクト (python-doc-ja) への参加",
+    "en": "Join the python-doc-ja Japanese translation project for the Python documentation"
   },
   "project": {
     "repository": "python-doc-ja/python-doc-ja",
     "url": "https://github.com/python-doc-ja/python-doc-ja",
     "category": "Python",
-    "summary_ja": "Python ドキュメント日本語訳プロジェクト",
+    "summary_ja": "Python 公式ドキュメント日本語訳プロジェクトの調整ハブ。翻訳は Transifex (python-doc/python-newest) で行い、参加連絡は Python.jp Discord の #python-doc-ja チャンネル。PO ファイル本体は python/python-docs-ja に保存される。",
     "license": "PSF License"
   },
   "source": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "translation": "explicit",
+    "ai_assistance": "disclose",
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +42,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/python-doc-ja/python-doc-ja",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "README に参加手順を明示。Python.jp Discord の #python-doc-ja チャンネル(または Google Groups)で連絡し、Transifex (python-doc/python-newest) の翻訳チームに追加してもらう。翻訳手順は wiki の HowToTransifex。Python 3.13 対応で翻訳率 65% 超と記載。翻訳成果物は PSF ライセンスで公開。"
+    },
+    {
+      "url": "https://github.com/python-doc-ja/python-doc-ja/commits/master",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "このリポジトリ自体の直近コミットは 2025-01-27(issue テンプレート整備)だが、役割は issue・wiki による調整ハブ。翻訳作業自体は Transifex 上で行われ、成果物は python/python-docs-ja に同期される。"
+    },
+    {
+      "url": "https://github.com/python/python-docs-ja/commits/3.14",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "Transifex からの自動同期コミットがほぼ毎日実行され、直近 2026-08-02 のコミットも .po に実質的な差分(+824/-1115)を含む。日本語翻訳チームは直近90日以内も継続的に活動中。devguide にもコーディネーター (cocoatomo / atsuoishimoto) が公式掲載されている。"
     }
   ],
   "validation": [],
@@ -50,10 +68,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "Python ドキュメント日本語訳プロジェクト",
@@ -64,5 +82,27 @@
     "状態": "日本語あり（翻訳進行中）",
     "文章量": "多",
     "Star": "148"
+  },
+  "workflow": {
+    "platform": "transifex",
+    "platform_url": "https://app.transifex.com/python-doc/python-newest/",
+    "translation_repo": "python/python-docs-ja"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/python-doc-ja/python-doc-ja"
+  },
+  "metrics": {
+    "stars": 151,
+    "observed_at": "2026-08-03"
   }
 }

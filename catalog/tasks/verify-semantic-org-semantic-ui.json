@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-semantic-org-semantic-ui",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "stale",
   "title": {
-    "ja": "Semantic-Org/Semantic-UI の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for Semantic-Org/Semantic-UI"
+    "ja": "Semantic UI の日本語化検証(上流の開発停滞)",
+    "en": "Verify Japanese translation opportunity for Semantic-UI (upstream dormant)"
   },
   "project": {
     "repository": "Semantic-Org/Semantic-UI",
     "url": "https://github.com/Semantic-Org/Semantic-UI",
     "category": "CSS",
-    "summary_ja": "自然言語の考え方を取り入れた UI コンポーネントフレームワーク https://semantic-ui.com",
+    "summary_ja": "自然言語の考え方を取り入れた UI コンポーネントフレームワーク https://semantic-ui.com 。最終リリースは 2.5.0 (2022-10) で、本体の最終コミットも 2024-11 と開発が停滞しており、公式の翻訳受付方針や i18n 体制も確認できない。コミュニティは後継フォークの Fomantic-UI に移っており、現時点では翻訳タスクとしての実効性が低い。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "597843ab84d5",
     "paths": []
   },
   "target": {
@@ -42,6 +42,18 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/Semantic-Org/Semantic-UI/releases",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブはされていないが、最終リリースは 2.5.0 (2022-10-06)、最終 push は 2024-11-27 (597843ab84d5) で開発は事実上停止。CONTRIBUTING や docs リポジトリ (Semantic-Org/Semantic-UI-Docs) にも翻訳受付方針は見当たらない。"
+    },
+    {
+      "url": "https://github.com/Semantic-Org/Semantic-UI/issues/577",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "過去の中国語訳は公式体制ではなく非公式ミラーサイトで行われ、広告問題が指摘されていた (2014)。公式の翻訳ワークフローが存在した形跡はない。"
     }
   ],
   "validation": [],
@@ -50,10 +62,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "自然言語の考え方を取り入れた UI コンポーネントフレームワーク https://semantic-ui.com",
@@ -63,5 +75,27 @@
     "状態": "",
     "文章量": "",
     "Star": "51,180"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "negotiated",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 51035,
+    "observed_at": "2026-08-03"
   }
 }

@@ -11,7 +11,7 @@
     "repository": "golang/go",
     "url": "https://github.com/golang/go",
     "category": "Other",
-    "summary_ja": "プログラミング言語 Go",
+    "summary_ja": "プログラミング言語 Go。本体リポジトリおよび go.dev に翻訳を受け入れる公式の仕組みは確認できず、非英語リソースは Go Wiki の NonEnglish ページで外部コミュニティ翻訳としてリンクされる形。旧一覧記載の日本語サイト golang.jp は更新停止。公式に貢献できる翻訳経路は現時点で不明。",
     "license": "BSD 3-Clause"
   },
   "source": {
@@ -40,6 +40,18 @@
     {
       "url": "https://github.com/golang/go",
       "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは非アーカイブで活発(最終 push 2026-08-01、Star 135,474、BSD-3-Clause)。リポジトリ内にドキュメント翻訳を受け入れる i18n 体制は見当たらない。"
+    },
+    {
+      "url": "https://go.dev/wiki/NonEnglish",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "Go Wiki の NonEnglish ページが非英語の学習リソース・翻訳を外部サイトへのリンク集として掲載する形式。golang/go 本体や go.dev に翻訳を取り込む公式手順・受付方針は確認できず、翻訳受付の可否は不明のまま。"
+    },
+    {
+      "url": "https://github.com/golang/go",
+      "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
     }
@@ -54,6 +66,28 @@
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": null
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 5,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "specification"
+    }
+  },
+  "community": {
+    "japanese_team": "unknown",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 135474,
+    "observed_at": "2026-08-03"
   },
   "legacy": {
     "概要": "プログラミング言語 Go",

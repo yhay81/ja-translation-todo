@@ -2,9 +2,9 @@
   "schema_version": "translation-task/v1",
   "id": "verify-keycloak-keycloak",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "Keycloak UI・メッセージの日本語化の検証",
+    "ja": "Keycloak UI・メッセージの日本語化（Weblate）",
     "en": null
   },
   "project": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +42,30 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/keycloak/keycloak/blob/main/docs/translation.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "UI・エラーメッセージの翻訳を Weblate（推奨）または GitHub PR の2経路で受け付けると明記。サポート言語は Weblate 上で未翻訳キーを直接追加でき、未サポート言語は2名のボランティアと Keycloak チームの承認が必要。メンテナー向けに Google Translate や Claude での抜き取り確認が案内されており、AI は検証用途の言及のみで貢献者向けの利用可否は明記なし。"
+    },
+    {
+      "url": "https://github.com/keycloak/keycloak/blob/main/.github/language-maintainers.yml",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語（ja）は公式サポート言語として登録され、メンテナー4名（y-tabata, wadahiro, tnorimat, k-tamura）が在籍。"
+    },
+    {
+      "url": "https://www.keycloak.org/translations",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "翻訳状況ページ（統計は毎日更新、最終更新 2026-08-02）で日本語カバレッジは Account UI 99%・ログイン 94%・Admin UI 83%・Admin backend 62%。Admin 系を中心に未翻訳文字列が残っており着手余地がある。"
+    },
+    {
+      "url": "https://api.github.com/repos/keycloak/keycloak",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "main ブランチが活発（最終 push 2026-08-02）、Star 35,953、Apache-2.0、アーカイブされていないことを確認。"
     }
   ],
   "validation": [],
@@ -50,14 +74,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "weblate",
-    "platform_url": null,
+    "platform_url": "https://hosted.weblate.org/projects/keycloak/",
     "translation_repo": null
   },
   "content_type": "ui_strings",
@@ -70,7 +94,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://github.com/keycloak/keycloak/blob/main/.github/language-maintainers.yml"
+  },
+  "metrics": {
+    "stars": 35953,
+    "observed_at": "2026-08-03"
   }
 }

@@ -42,6 +42,18 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/microsoft/playwright.dev/issues/410",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "過去に docs の i18n 計画を尋ね日本語翻訳者としての協力を申し出た issue（2021年）が存在したが、現在は取得不可（HTTP 410 Gone）。GitHub の issue 検索でも playwright.dev に翻訳・i18n 関連の issue は見つからず、翻訳受付経路・方針は確認できない。"
+    },
+    {
+      "url": "https://api.github.com/repos/microsoft/playwright",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "main ブランチが活発（最終 push 2026-07-31）、Star 93,839、Apache-2.0、アーカイブされていないことを確認。playwright.dev のドキュメントは引き続き英語のみで、翻訳受付方針は見つからない。"
     }
   ],
   "validation": [],
@@ -72,5 +84,9 @@
   "community": {
     "japanese_team": "unknown",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 93839,
+    "observed_at": "2026-08-03"
   }
 }

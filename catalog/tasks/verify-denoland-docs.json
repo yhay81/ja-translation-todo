@@ -16,7 +16,11 @@
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "runtime/",
+      "deploy/",
+      "examples/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -24,7 +28,7 @@
   },
   "permissions": {
     "translation": "unknown",
-    "ai_assistance": "unknown",
+    "ai_assistance": "explicit",
     "pull_request": "unknown"
   },
   "automation": {
@@ -42,6 +46,24 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/denoland/docs",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "docs.deno.com のソース(Lume 製)。runtime/ deploy/ examples/ など全コンテンツが英語のみで、i18n 機構・翻訳ディレクトリは存在しない。2026-07-30 まで活発に更新(Star 199、MIT)。翻訳・localization に関する issue / PR は見つからなかった。"
+    },
+    {
+      "url": "https://github.com/denoland/docs/blob/main/README.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "README の Contribution 節では、小さな修正は main へ直接 PR、大きな変更は先に issue で提案する方針が示されているが、翻訳の受け入れについての言及はなし。日本語化には公式への i18n 提案・交渉が必要で、permissions.translation は unknown のまま。"
+    },
+    {
+      "url": "https://github.com/denoland/docs/blob/main/AGENTS.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "AGENTS.md で「agents and contributors」向けの作業ルール(deno fmt / lint / task test / build:light の実行、プロジェクト構成)を明文化しており、AI エージェントによる貢献自体は前提として受け入れられている。"
     }
   ],
   "validation": [],
@@ -57,7 +79,7 @@
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/denoland/docs",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -69,8 +91,12 @@
       "domain": "framework_docs"
     }
   },
+  "metrics": {
+    "stars": 199,
+    "observed_at": "2026-08-03"
+  },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "none",
     "team_url": null
   }
 }

@@ -4,19 +4,21 @@
   "kind": "verification",
   "status": "needs_verification",
   "title": {
-    "ja": "facebook/react-native の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for facebook/react-native"
+    "ja": "React Native ドキュメント日本語化の再検証(公式の翻訳受付経路が見つからない)",
+    "en": "Re-verify Japanese translation options for React Native docs (no official translation channel found)"
   },
   "project": {
-    "repository": "facebook/react-native",
-    "url": "https://github.com/facebook/react-native",
+    "repository": "react/react-native",
+    "url": "https://github.com/react/react-native",
     "category": "JavaScript",
-    "summary_ja": "React でネイティブアプリを作るフレームワーク",
+    "summary_ja": "React でネイティブアプリを作るフレームワーク。リポジトリは facebook org から react org へ移管済み。ドキュメントは react/react-native-website(旧 facebook/react-native-website)で管理されるが、i18n 設定や Crowdin 等の翻訳受付経路は現存しない。2024 年の日本語翻訳提案 issue もメンテナの応答がないまま stale クローズされており、翻訳を受け付ける公式方針は確認できていない。",
     "license": "MIT"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "docs/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -42,6 +44,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/react/react-native",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは facebook/react-native から react org へ移管済み(full_name: react/react-native、旧 URL はリダイレクト)。最終 push 2026-08-02 と活発。Star 約126,271。MIT ライセンス。"
+    },
+    {
+      "url": "https://github.com/react/react-native-website",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式ドキュメントサイト(reactnative.dev)のリポジトリ。トップレベルに i18n / Crowdin / 翻訳関連の設定ファイルは存在せず、README にも翻訳への言及がない。"
+    },
+    {
+      "url": "https://github.com/react/react-native-website/issues/4367",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "2024-11 の Docusaurus i18n による日本語翻訳統合の提案 issue は、メンテナの応答がないまま bot により 2025-02 に stale クローズ。翻訳受付の公式経路・方針は確認できず、判断材料不足のため needs_verification を維持。"
     }
   ],
   "validation": [],
@@ -64,5 +84,27 @@
     "状態": "どこの国もできてない？",
     "文章量": "多",
     "Star": "124,927"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "negotiated",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 126271,
+    "observed_at": "2026-08-03"
   }
 }

@@ -2,16 +2,16 @@
   "schema_version": "translation-task/v1",
   "id": "verify-mrdoob-three-js",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "blocked",
   "title": {
-    "ja": "mrdoob/three.js の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for mrdoob/three.js"
+    "ja": "three.js ドキュメントの日本語化(リポジトリ内の翻訳受付は終了)",
+    "en": "three.js docs Japanese translation (in-repo translations discontinued)"
   },
   "project": {
     "repository": "mrdoob/three.js",
     "url": "https://github.com/mrdoob/three.js",
     "category": "JavaScript",
-    "summary_ja": "JavaScript の 3D ライブラリ https://threejs.org/",
+    "summary_ja": "JavaScript の 3D ライブラリ https://threejs.org/ 。2025-03 に旧ドキュメントが JSDoc ベースの自動生成 docs へ置き換えられ、多言語対応 (i18n) は廃止された。ja を含む翻訳ドキュメントはリポジトリから削除済みで、本体リポジトリでの翻訳貢献は受け付けられていない。",
     "license": "MIT"
   },
   "source": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "forbidden",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "blocked",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +42,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/pull/30748",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "PR「Remove old docs.」(2025-03-18 マージ) で旧ドキュメントを削除し JSDoc 生成に移行。PR 本文に「the new docs support no i18n anymore」と明記され、ja を含む翻訳ドキュメントはリポジトリから削除された。"
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/issues/24984",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "「Offloading the Hosting and Maintenance of the Non-English Docs」。非英語ドキュメントの保守をリポジトリ外へ移す方針の議論で、メンテナが「the way translations were managed/authored in this repository was just not scalable」と表明。2026-07-10 にクローズ。"
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/tree/dev/docs",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "現行の docs/ および manual/ は英語のみでロケールディレクトリなし。リポジトリ自体はアーカイブされておらず活発 (最終 push 2026-08-01)、Star 114,177。"
     }
   ],
   "validation": [],
@@ -50,10 +68,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "JavaScript の 3D ライブラリ https://threejs.org/",
@@ -63,5 +81,27 @@
     "状態": "",
     "文章量": "多",
     "Star": "110,091"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 114177,
+    "observed_at": "2026-08-03"
   }
 }

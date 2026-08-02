@@ -11,7 +11,7 @@
     "repository": "yangshun/tech-interview-handbook",
     "url": "https://github.com/yangshun/tech-interview-handbook",
     "category": "Other",
-    "summary_ja": "アルゴリズムの学習と行動面接対策",
+    "summary_ja": "アルゴリズムの学習と行動面接対策のハンドブック。リポジトリは活発だが翻訳・多言語化の受付方針は文書化されておらず、i18n の仕組みも見当たらない。過去の翻訳 PR は未マージでクローズされており、日本語化にはメンテナへの打診と合意形成が前提となる。受付可否の判断材料が不足。",
     "license": "MIT"
   },
   "source": {
@@ -40,8 +40,20 @@
     {
       "url": "https://github.com/yangshun/tech-interview-handbook",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず main ブランチが活発 (最終 push 2026-07-29、141,486 stars、MIT)。トップレベルに i18n / 翻訳用ディレクトリは見当たらない。"
+    },
+    {
+      "url": "https://github.com/yangshun/tech-interview-handbook/blob/main/CONTRIBUTING.md",
+      "kind": "contributing",
+      "observed_at": "2026-08-03",
+      "note_ja": "CONTRIBUTING に翻訳・多言語化への言及なし (issue での事前相談・スタイル・行動規範のみ)。AGENTS.md も開発ツール (Vite+) の操作手順のみで AI 貢献や翻訳の方針は含まない。翻訳受付方針は不明のまま。"
+    },
+    {
+      "url": "https://github.com/yangshun/tech-interview-handbook/issues/148",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "他言語版の提供を求める issue (2022 年更新) が open のままメンテナの回答なし。過去のスペイン語翻訳 PR (#75, #98) は未マージでクローズ。日本語の既存作業・進行中の翻訳は見当たらない。"
     }
   ],
   "validation": [],
@@ -64,5 +76,27 @@
     "状態": "何も進んでない",
     "文章量": "中",
     "Star": "136,508"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "book",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "medium",
+      "workflow": "negotiated",
+      "domain": "book"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 141486,
+    "observed_at": "2026-08-03"
   }
 }

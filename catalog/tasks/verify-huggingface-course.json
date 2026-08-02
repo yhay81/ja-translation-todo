@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-huggingface-course",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
     "ja": "Hugging Face NLP Course のドキュメント日本語化の検証",
     "en": null
@@ -11,24 +11,28 @@
     "repository": "huggingface/course",
     "url": "https://github.com/huggingface/course",
     "category": "Learning",
-    "summary_ja": "Transformers を学ぶ公式無料コース。言語別 issue（日本語は #114）で章単位に分担する翻訳体制が制度化されており、chapters/ja の未訳章を翻訳して PR できる。",
+    "summary_ja": "Transformers を学ぶ公式無料コース。README の翻訳ガイドで、言語別 issue(日本語は #114)にコメントして担当章を宣言 → fork → chapters/ja に英語ファイルを複製して翻訳 → PR という手順が制度化されている。日本語は WIP のまま未訳章が多く残るが、issue での調整・メンテナ応答は直近90日なく停滞気味のため、着手前に issue #114 で宣言して応答を確認するのが前提。",
     "license": "Apache-2.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "chapters/en"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "chapters/ja"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -37,6 +41,24 @@
     ]
   },
   "evidence": [
+    {
+      "url": "https://github.com/huggingface/course",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは非アーカイブで活動継続(最終 push 2026-07-06、Star 4,102、既定ブランチ main、Apache-2.0)。README の言語表で日本語は WIP、担当者として @hiromu166 らが記載。"
+    },
+    {
+      "url": "https://github.com/huggingface/course/blob/main/README.md#translating-the-course-into-your-language",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "翻訳手順を明示: 言語別 issue を確認し(なければ Translation テンプレートで作成)、担当したい章をコメントで宣言してリストに載せてもらう → Discord の言語チャンネルで調整 → fork → chapters/en を chapters/<lang> に複製し _toctree.yml から翻訳 → PR。issue で宣言する文化が前提。AI 翻訳への言及はなし。"
+    },
+    {
+      "url": "https://github.com/huggingface/course/issues/114",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語翻訳の調整 issue「Translate to Japanese」は open(コメント46件)。有志の参加表明は 2025-08-30、2025-12-30 にもあるがコーディネータ(@hiromu166)の応答は 2025-04 が最後で、直近90日の調整活動なし。chapters/ja の直近変更も全言語一括のスクリプト修正(2026-05-05)のみで、組織的な日本語翻訳は停滞中。open の日本語翻訳 PR は 0 件で重複リスクは低い。"
+    },
     {
       "url": "https://github.com/huggingface/course",
       "kind": "repository",
@@ -50,14 +72,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/huggingface/course/blob/main/README.md#translating-the-course-into-your-language",
     "translation_repo": null
   },
   "content_type": "tutorial",
@@ -70,7 +92,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/huggingface/course/issues/114"
+  },
+  "metrics": {
+    "stars": 4102,
+    "observed_at": "2026-08-03"
   }
 }

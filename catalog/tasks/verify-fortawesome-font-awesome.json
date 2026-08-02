@@ -2,16 +2,16 @@
   "schema_version": "translation-task/v1",
   "id": "verify-fortawesome-font-awesome",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "blocked",
   "title": {
-    "ja": "FortAwesome/Font-Awesome の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for FortAwesome/Font-Awesome"
+    "ja": "Font Awesome は翻訳の受付経路がなく対象外",
+    "en": "Font Awesome has no translation contribution path"
   },
   "project": {
     "repository": "FortAwesome/Font-Awesome",
     "url": "https://github.com/FortAwesome/Font-Awesome",
     "category": "CSS",
-    "summary_ja": "アイコン font セット",
+    "summary_ja": "アイコン font セット。リポジトリは別所で生成された成果物の配布用で、貢献はバグ報告と機能要望の issue のみ受付。ドキュメントは商用サイト fontawesome.com にあり、コミュニティ翻訳を受け入れる仕組みが存在しない。",
     "license": "複合"
   },
   "source": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "forbidden",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "blocked",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +42,24 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/FortAwesome/Font-Awesome",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブはされていない(最終push 2026-07-15)。リポジトリの内容はフォント・SVG・メタデータ等の生成物で、翻訳可能なドキュメントを含まない。"
+    },
+    {
+      "url": "https://github.com/FortAwesome/Font-Awesome/blob/7.x/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "CONTRIBUTING は「issue はバグ報告と機能要望のみ受付」「ファイルは別所で生成されており PR を master に直接マージしない」と明記。翻訳貢献を受け付ける経路が存在しないため、翻訳タスクとしては成立しない。"
+    },
+    {
+      "url": "https://github.com/FortAwesome/Font-Awesome/issues/5893",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイトの多言語化を求める issue「[Website] Translation to other languages」は 2025-08 にクローズ済み。コミュニティ翻訳の受け皿は用意されていない。"
     }
   ],
   "validation": [],
@@ -50,10 +68,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "アイコン font セット",
@@ -64,5 +82,27 @@
     "状態": "翻訳についての議論例あり（参考: https://github.com/FortAwesome/Font-Awesome/pull/7360）",
     "文章量": "中",
     "Star": "76,150"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "negotiated",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "none",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 76798,
+    "observed_at": "2026-08-03"
   }
 }

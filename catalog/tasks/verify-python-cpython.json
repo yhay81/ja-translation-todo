@@ -2,9 +2,9 @@
   "schema_version": "translation-task/v1",
   "id": "verify-python-cpython",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
-    "ja": "Python 公式ドキュメント日本語訳 (python-docs-ja) の検証",
+    "ja": "Python 公式ドキュメント日本語訳 (python-docs-ja) への参加",
     "en": null
   },
   "project": {
@@ -16,19 +16,21 @@
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "Doc"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "translation": "explicit",
+    "ai_assistance": "disclose",
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +44,30 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://devguide.python.org/documentation/translations/translating/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "devguide が言語別の公式翻訳チームを掲載。日本語チームはコーディネーター cocoatomo / atsuoishimoto、リポジトリ python/python-docs-ja。PO ファイルを Transifex (python-doc/python-newest) 経由で翻訳する制度化された受付体制。"
+    },
+    {
+      "url": "https://github.com/python/python-docs-ja/blob/3.14/.github/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "python-docs-ja は Transifex から生成された .po の保存用で、直接 PR は受け付けない(マージしても Transifex に反映されないため)。誤訳報告などの issue は python-doc-ja/python-doc-ja に集約。参加は Python.jp Discord の #python-doc-ja チャンネルで連絡し Transifex チームに追加してもらう。"
+    },
+    {
+      "url": "https://devguide.python.org/documentation/translations/translating/",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "「機械翻訳のみに頼らないこと。作業の高速化には有用だが不正確・誤解を招く結果を生むことがあり、人間によるレビューが必要」と明記。AI/機械翻訳は人間の検証を条件に補助利用が許容される。"
+    },
+    {
+      "url": "https://github.com/python/python-docs-ja/commits/3.14",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "Transifex からの自動同期コミットがほぼ毎日実行され、直近 2026-08-02 のコミットも .po に実質的な差分(+824/-1115、6ファイル)を含む。日本語翻訳チームは直近90日以内も継続的に活動中。"
     }
   ],
   "validation": [],
@@ -50,14 +76,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "transifex",
-    "platform_url": null,
+    "platform_url": "https://app.transifex.com/python-doc/python-newest/",
     "translation_repo": "python/python-docs-ja"
   },
   "content_type": "official_docs",
@@ -70,7 +96,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://github.com/python/python-docs-ja"
+  },
+  "metrics": {
+    "stars": 74013,
+    "observed_at": "2026-08-03"
   }
 }

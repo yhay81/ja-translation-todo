@@ -2,17 +2,17 @@
   "schema_version": "translation-task/v1",
   "id": "verify-w3c-wai-website",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "W3C WAI ウェブサイト (チュートリアル等) の日本語化の検証",
-    "en": null
+    "ja": "W3C WAI ウェブサイト (チュートリアル等) の日本語訳ボランティア",
+    "en": "Volunteer Japanese translations for the W3C WAI website"
   },
   "project": {
     "repository": "w3c/wai-website",
     "url": "https://github.com/w3c/wai-website",
     "category": "Web Platform",
-    "summary_ja": "W3C WAIのアクセシビリティ学習リソース群。WAIはボランティア翻訳の制度化されたプロセスを持ち、GitHub上のリソース単位で日本語訳を登録・PR提出できる。日本語訳は少なく機会が大きい。",
-    "license": null
+    "summary_ja": "W3C WAI のアクセシビリティ学習リソース群。WAI はボランティア翻訳の制度化されたプロセスを持ち、リソース単位で事前に W3C の許可を得たうえで GitHub PR として日本語訳を提出できる。日本語訳は一部リソースのみで機会が大きいが、着手前の意思表明 (メール or issue) が必須。",
+    "license": "W3C Document License"
   },
   "source": {
     "revision": null,
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -40,24 +40,36 @@
     {
       "url": "https://github.com/w3c/wai-website",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず main ブランチが活発 (最終 push 2026-07-31、144 stars)。"
+    },
+    {
+      "url": "https://www.w3.org/WAI/about/translating/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "WAI 公式の翻訳ボランティア手順。翻訳開始前に W3C へ許可を求めることが必須 (メーリングリストへのメールまたは該当リポジトリでの GitHub issue)。ファイルは GitHub から取得して編集し、PR またはスタッフ経由で提出。公開前にボランティアとスタッフのレビューあり。W3C Document License の再配布条件への同意が必要。機械翻訳 / AI への言及はなし。"
+    },
+    {
+      "url": "https://github.com/w3c/wai-website/pull/838",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語訳 PR「[In Progress] Japanese – Introduction to Web Accessibility」が open (最終更新 2026-04-23)。ほかに #1173 (open) や #1023 / #986 (2024 年に merge) など日本語ボランティアの実績あり。同一リソースへの重複着手を避けるため、着手前に既存 PR の確認が必要。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "acknowledgement",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://www.w3.org/WAI/about/translating/",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -70,7 +82,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "inactive",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 144,
+    "observed_at": "2026-08-03"
   }
 }

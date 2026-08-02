@@ -2,33 +2,35 @@
   "schema_version": "translation-task/v1",
   "id": "verify-vuejs-docs",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
-    "ja": "vuejs/docs の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for vuejs/docs"
+    "ja": "Vue 3 公式ドキュメント日本語版 (docs-ja) への翻訳参加",
+    "en": "Contribute to the Japanese translation of the Vue 3 docs (vuejs-translations/docs-ja)"
   },
   "project": {
     "repository": "vuejs/docs",
     "url": "https://github.com/vuejs/docs",
     "category": "JavaScript",
-    "summary_ja": "Vue 3 の公式ドキュメント",
+    "summary_ja": "Vue 3 の公式ドキュメント。日本語版は vuejs-translations/docs-ja (ja.vuejs.org) で公式に維持されており、日本語チームが活発に upstream へ追随中。参加は docs-ja 側の issue / PR で行う。新規言語の翻訳受付は停止しているが、既存チームの維持・貢献は継続している。",
     "license": "CC BY 4.0（画像除く）"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "src/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -40,20 +42,32 @@
     {
       "url": "https://github.com/vuejs/docs",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず main ブランチが活発 (最終 push 2026-07-31、3,233 stars)。"
+    },
+    {
+      "url": "https://github.com/vuejs-translations/guidelines/blob/main/README.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "vuejs-translations の公式ガイドライン。新規言語の翻訳受付は停止中だが、既存翻訳チームの維持は継続を認めており、日本語は docs-ja として公式一覧に掲載済み。1 言語 1 リポジトリで issue / PR により管理し、Ryu-Cho 等で upstream 同期を自動化する方式。AI 翻訳の品質向上への言及はあるが、貢献者の AI 利用を制限する規定はない。"
+    },
+    {
+      "url": "https://github.com/vuejs-translations/docs-ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語翻訳リポジトリ docs-ja は最終 push 2026-07-31 で直近 90 日以内の活動を確認。日本語チームが活発に全体をカバーしており、新規参加はこのリポジトリの issue / PR が窓口。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "Vue 3 の公式ドキュメント",
@@ -64,5 +78,27 @@
     "状態": "日本語あり（ja.vuejs.org）",
     "文章量": "多",
     "Star": "3,167"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": "vuejs-translations/docs-ja"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/vuejs-translations/docs-ja"
+  },
+  "metrics": {
+    "stars": 3233,
+    "observed_at": "2026-08-03"
   }
 }

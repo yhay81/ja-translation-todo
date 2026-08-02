@@ -42,6 +42,24 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/storybookjs/storybook/tree/next/docs",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "next ブランチ (2026-08-01 push、活動活発、Star 約90,700) を確認。docs/ は英語のみでロケールディレクトリや i18n 設定は存在しない。"
+    },
+    {
+      "url": "https://github.com/storybookjs/storybook/tree/next/docs/contribute",
+      "kind": "contributing",
+      "observed_at": "2026-08-03",
+      "note_ja": "貢献ガイド (docs/contribute) にはコード・ドキュメント・フレームワーク貢献の手順のみで、翻訳の受付経路や i18n 方針の記載はない。"
+    },
+    {
+      "url": "https://github.com/storybookjs/storybook/issues?q=is%3Aissue+translation+documentation",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "issue 検索でもドキュメント翻訳の公式方針・進行中の日本語化作業は確認できず。翻訳可否をメンテナに確認する材料が揃っておらず、needs_verification を維持。"
     }
   ],
   "validation": [],
@@ -70,7 +88,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "none",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 90748,
+    "observed_at": "2026-08-03"
   }
 }

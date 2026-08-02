@@ -2,16 +2,16 @@
   "schema_version": "translation-task/v1",
   "id": "verify-git-git",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "Git本体(po/ja)のメッセージ日本語化の検証",
-    "en": null
+    "ja": "Git 本体メッセージの日本語翻訳を新規立ち上げ(po/ja.po 未整備)",
+    "en": "Bootstrap Japanese translation of Git core messages (no po/ja.po yet)"
   },
   "project": {
     "repository": "git/git",
     "url": "https://github.com/git/git",
     "category": "Command Line Tools",
-    "summary_ja": "Git本体のCLIメッセージ翻訳。git-l10n/git-poリポジトリでpo/ja.poが管理され、PRベースの確立したl10nワークフローがある。新版リリースごとに未翻訳分の更新機会がある。",
+    "summary_ja": "Git本体のCLIメッセージ翻訳。l10n は git-l10n/git-po リポジトリでコーディネータが調整する確立したワークフローがあるが、2026年8月時点で po/ja.po と日本語チームは存在しない。新規言語としてフォークで ja.po を用意しコーディネータへ pull 依頼する立ち上げの機会。分量は大きい(数千メッセージ)。",
     "license": "GPL-2.0-only"
   },
   "source": {
@@ -20,15 +20,17 @@
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "po/ja.po"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "translation": "explicit",
+    "ai_assistance": "explicit",
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_pr",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,22 +44,52 @@
       "kind": "repository",
       "observed_at": "2026-08-02",
       "note_ja": "リポジトリの存在と活動を確認。"
+    },
+    {
+      "url": "https://github.com/git/git",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "アーカイブされておらず活発(最終push 2026-07-31)。git-l10n/git-po も 2026-06-28 に push があり稼働中。"
+    },
+    {
+      "url": "https://github.com/git/git/blob/master/po/README.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "po/README.md が l10n の公式手順を明記: 翻訳は l10n コーディネータの git-l10n/git-po で調整。新規言語はリポジトリをフォークして po/XX.po を用意しコーディネータに pull を依頼する。複数貢献者がいる場合はチームリーダーを指名して調整する文化のため、着手前の調整が前提(ask_first)。"
+    },
+    {
+      "url": "https://github.com/git-l10n/git-po/blob/master/po/AGENTS.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "po/AGENTS.md に AI エージェント向けの l10n 作業手順書があり、AI 利用は任意としつつ pot 更新・翻訳・レビュー等の housekeeping 作業での利用を明示的に想定。ヘッダエントリを編集しない、用語集コメントに従う等の品質規則あり。"
+    },
+    {
+      "url": "https://github.com/git-l10n/git-po/blob/master/po/TEAMS",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "TEAMS ファイルに日本語チームの登録はなく、po/ ディレクトリに ja.po も存在しない(bg/ca/de/el/es/fr/ga/id/is/it/ko/pl/pt_PT/ru/sv/tr/uk/vi/zh_CN/zh_TW のみ)。git-l10n/git-po に日本語関連の open issue/PR もなく、既存作業との重複なし。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "command",
+      "command": "msgfmt --check --statistics po/ja.po",
+      "description_ja": "gettext の msgfmt で po ファイルの構文と翻訳率を検証する。"
+    }
+  ],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/git-l10n/git-po",
     "translation_repo": "git-l10n/git-po"
   },
   "content_type": "ui_strings",
@@ -65,12 +97,16 @@
     "score": 4,
     "factors": {
       "volume": "large",
-      "workflow": "direct_pr",
+      "workflow": "negotiated",
       "domain": "framework_docs"
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "none",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 62347,
+    "observed_at": "2026-08-03"
   }
 }

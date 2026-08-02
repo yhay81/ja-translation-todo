@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-tensorflow-tensorflow",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "tensorflow/tensorflow の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for tensorflow/tensorflow"
+    "ja": "TensorFlow ドキュメント翻訳 (docs-l10n) への日本語参加の検証",
+    "en": "Verify the Japanese translation workflow for TensorFlow docs via docs-l10n"
   },
   "project": {
     "repository": "tensorflow/tensorflow",
     "url": "https://github.com/tensorflow/tensorflow",
     "category": "Python",
-    "summary_ja": "機械学習ライブラリ",
+    "summary_ja": "機械学習ライブラリ。ドキュメント翻訳は本体ではなく tensorflow/docs-l10n で受け付けており、GitLocalize 経由の貢献と Google CLA 署名が明文化されている。日本語は GitLocalize 上で約94%まで進んでいるが、翻訳 PR の merge は 2024-04 を最後に停滞しており、着手前にメンテナへ受け入れ状況の確認が必要。",
     "license": "Apache 2.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "site/en"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "site/ja"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,6 +46,30 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "本体リポジトリは活発（最終 push 2026-08-02、Star 約19.7万、アーカイブなし）。ドキュメント翻訳は本体ではなく tensorflow/docs-l10n が窓口。"
+    },
+    {
+      "url": "https://github.com/tensorflow/docs-l10n",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "README にコミュニティ翻訳の受付方針を明文化。GitLocalize 経由での PR・レビューを推奨し、Google CLA 署名が必須。公式サポート言語はサイト指標や需要で決まり、メンテナンスされない言語は削除され得る。公式サポート外言語は community branch 扱いで tensorflow.org には掲載されない。"
+    },
+    {
+      "url": "https://gitlocalize.com/repo/4592",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "GitLocalize 上に日本語チーム（モデレーター・貢献者）が存在し、日本語の進捗は約94%。ただし直近90日の日本語翻訳活動は確認できず、実質的には停滞している。"
+    },
+    {
+      "url": "https://github.com/tensorflow/docs-l10n/pulls?q=is%3Apr+is%3Amerged",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "merged PR を確認。翻訳 PR の merge は 2024-04 の #737（ポルトガル語）が最後で、2026-03 の merge はインフラ保守（gsutil 移行）のみ。翻訳受け入れの停滞を示しており、着手前にメンテナへの確認が必要。"
     }
   ],
   "validation": [],
@@ -50,10 +78,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "機械学習ライブラリ",
@@ -64,5 +92,27 @@
     "状態": "翻訳で貢献する方法を問い合わせるイシューが複数立っているが、公式回答待ち。",
     "文章量": "多",
     "Star": "193,131"
+  },
+  "workflow": {
+    "platform": "gitlocalize",
+    "platform_url": "https://gitlocalize.com/repo/4592",
+    "translation_repo": "tensorflow/docs-l10n"
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "large",
+      "workflow": "platform",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": "https://gitlocalize.com/repo/4592"
+  },
+  "metrics": {
+    "stars": 196664,
+    "observed_at": "2026-08-03"
   }
 }

@@ -11,12 +11,14 @@
     "repository": "pallets/flask",
     "url": "https://github.com/pallets/flask",
     "category": "Python",
-    "summary_ja": "軽量 Web フレームワーク。公式の翻訳受け入れはなく、既存日本語訳はフォーク（msiz07/flask-docs-ja、2.2.x 相当）で停滞。最新版への更新や体制整備の機会がある。",
+    "summary_ja": "軽量 Web フレームワーク。公式の翻訳受け入れ制度はなく、過去のissueでもメンテナは翻訳の公式化に消極的。既存日本語訳フォーク(msiz07/flask-docs-ja)は長期停滞しており、貢献経路が確立していない。",
     "license": "BSD-3-Clause"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "docs"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -40,8 +42,20 @@
     {
       "url": "https://github.com/pallets/flask",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは活発(最終push 2026-07-30、非archived)。CONTRIBUTING や docs にドキュメント翻訳の受付方針は見当たらず、公式の翻訳窓口は確認できない。"
+    },
+    {
+      "url": "https://github.com/pallets/flask/issues/1023",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "「About flask docs translations」(2014)でメンテナが翻訳の公式化に否定的な見解(レビュー不能・陳腐化の懸念)を表明。以後も公式翻訳制度は設けられていない。"
+    },
+    {
+      "url": "https://github.com/msiz07/flask-docs-ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "コミュニティ日本語訳フォーク msiz07/flask-docs-ja の GitHub 上の最終pushは2019-12-08で長期停滞。活発な日本語チームは確認できない。"
     }
   ],
   "validation": [],
@@ -69,8 +83,12 @@
       "domain": "framework_docs"
     }
   },
+  "metrics": {
+    "stars": 72019,
+    "observed_at": "2026-08-03"
+  },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/msiz07/flask-docs-ja"
   }
 }

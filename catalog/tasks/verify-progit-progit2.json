@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-progit-progit2",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "progit/progit2 の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for progit/progit2"
+    "ja": "Pro Git 第2版 日本語訳 (progit2-ja) の更新・再活性化",
+    "en": "Update and revive the Japanese translation of Pro Git (2nd edition)"
   },
   "project": {
     "repository": "progit/progit2",
     "url": "https://github.com/progit/progit2",
     "category": "Command Line Tools",
-    "summary_ja": "Pro Git の第2版",
-    "license": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License"
+    "summary_ja": "Git 公式書籍 Pro Git 第2版。翻訳は言語別リポジトリによる分散管理で、日本語版は progit/progit2-ja が担当し git-scm.com に掲載される。TRANSLATING.md は既存翻訳プロジェクトへの参加時に issue で自己紹介して相談するよう明記。日本語リポジトリは2022年10月以降停滞しており、本家更新への追従・再活性化の余地が大きい。",
+    "license": "CC-BY-NC-SA-3.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "book"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "book"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -40,20 +44,32 @@
     {
       "url": "https://github.com/progit/progit2",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-08-03",
+      "note_ja": "本家リポジトリは維持されている(最終push 2026-05-25、非archived、Star 6,545)。ライセンスは CC BY-NC-SA 3.0。"
+    },
+    {
+      "url": "https://github.com/progit/progit2/blob/main/TRANSLATING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "翻訳は言語別リポジトリの分散管理と明記。既存プロジェクト(日本語は progit/progit2-ja)がある言語は、そのリポジトリで issue を開いて自己紹介し手伝える箇所を相談する方式。AsciiDoc 記法の維持など翻訳ガイドラインあり。AI利用への言及はなし。"
+    },
+    {
+      "url": "https://github.com/progit/progit2-ja/commits/master",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本語版 progit2-ja の最終コミットは2022-10-16(誤訳・typo修正)で3年以上停滞。日本語チームは事実上休眠状態のため、着手前に issue でメンテナへの連絡・合意が必要。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "Pro Git の第2版",
@@ -64,5 +80,27 @@
     "状態": "日本語あり（progit2-ja / 最終更新: 2022/10）",
     "文章量": "多",
     "Star": "6,369"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/progit/progit2-ja",
+    "translation_repo": "progit/progit2-ja"
+  },
+  "content_type": "book",
+  "difficulty": {
+    "score": 5,
+    "factors": {
+      "volume": "large",
+      "workflow": "fork_hosted",
+      "domain": "book"
+    }
+  },
+  "metrics": {
+    "stars": 6545,
+    "observed_at": "2026-08-03"
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/progit/progit2-ja"
   }
 }

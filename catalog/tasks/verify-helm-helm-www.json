@@ -2,33 +2,38 @@
   "schema_version": "translation-task/v1",
   "id": "verify-helm-helm-www",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "helm/helm-www の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for helm/helm-www"
+    "ja": "Helm 公式ドキュメント(helm.sh)の日本語訳を i18n/ja へ PR する",
+    "en": "Translate the Helm documentation site into Japanese via PRs to i18n/ja"
   },
   "project": {
     "repository": "helm/helm-www",
     "url": "https://github.com/helm/helm-www",
     "category": "Command Line Tools",
-    "summary_ja": "Helm 公式サイト/ドキュメント（helm.sh）",
+    "summary_ja": "Helm 公式サイト/ドキュメント(helm.sh)。community/localization.md でローカライズ手順が明文化されており、Docusaurus の i18n/<言語コード> 配下を翻訳して helm-www へ直接 PR する方式(DCO signoff 必須)。日本語ロケール(ja)は有効化済みだが、日本語固有の実質的な翻訳更新は 2025-10 が最後で停滞しており、未訳・追従遅れの領域に貢献余地がある。",
     "license": "MIT"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "docs/",
+      "i18n/en/"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "i18n/ja/"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -37,6 +42,24 @@
     ]
   },
   "evidence": [
+    {
+      "url": "https://github.com/helm/helm-www",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは非アーカイブで活発(最終 push 2026-07-29、Star 229、既定ブランチ main、MIT)。サイトは Docusaurus 構成で i18n/<lang> 配下にロケール別コンテンツを持つ。"
+    },
+    {
+      "url": "https://github.com/helm/helm-www/blob/main/community/localization.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "ローカライズガイド。「翻訳はドキュメントと同じプロセスで、helm-www への pull request として提出しサイト管理チームがレビューする」「i18n/<言語コード> 配下に翻訳を配置」「小さく始めて徐々に拡大してよい」「全コミットに DCO signoff が必要」と明示。AI 利用への言及はなし。"
+    },
+    {
+      "url": "https://github.com/helm/helm-www/commits/main/i18n/ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "i18n/ja の直近コミット(2026-05〜07)はメンテナによるバージョン表記更新のみで、日本語固有の翻訳更新は 2025-10-17 の [ja] sync が最後。GitHub 検索でも open の日本語関連 issue/PR は 0 件で、進行中の日本語作業との重複リスクは低い。組織的な日本語チームは確認できず停滞中。"
+    },
     {
       "url": "https://github.com/helm/helm-www",
       "kind": "repository",
@@ -50,10 +73,32 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/helm/helm-www/blob/main/community/localization.md",
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 4,
+    "factors": {
+      "volume": "large",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 229,
+    "observed_at": "2026-08-03"
   },
   "legacy": {
     "概要": "Helm 公式サイト/ドキュメント（helm.sh）",

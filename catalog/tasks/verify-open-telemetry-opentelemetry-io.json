@@ -2,33 +2,37 @@
   "schema_version": "translation-task/v1",
   "id": "verify-open-telemetry-opentelemetry-io",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
-    "ja": "OpenTelemetry公式サイトのドキュメント日本語化の検証",
+    "ja": "OpenTelemetry 公式サイトの日本語ローカライズへの参加",
     "en": null
   },
   "project": {
     "repository": "open-telemetry/opentelemetry.io",
     "url": "https://github.com/open-telemetry/opentelemetry.io",
     "category": "Infrastructure",
-    "summary_ja": "CNCFの可観測性フレームワークOpenTelemetryの公式サイト。ja localization制度が整備され日本語版が公開中。未翻訳・更新遅れページへの継続的な貢献余地が大きい。",
+    "summary_ja": "CNCFの可観測性フレームワークOpenTelemetryの公式サイト。ja localization制度が整備され日本語版が公開中。日本語チームは直近90日で100件超のコミットと非常に活発だが、未翻訳・更新遅れページが多く残り、issue駆動で新規貢献者の参加を受け付けている。",
     "license": "CC-BY-4.0"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "content/en"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "content/ja"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "translation": "explicit",
+    "ai_assistance": "disclose",
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_pr",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -40,37 +44,65 @@
     {
       "url": "https://github.com/open-telemetry/opentelemetry.io",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは活発(最終push 2026-08-02、非archived、ライセンス CC-BY-4.0)。content/ja に日本語版を同一リポジトリで管理。"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/contributing/localization/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式のローカライズガイドあり。翻訳貢献を明示的に歓迎し、小さなPRでの段階的提出、コード・リンク等は翻訳しない等のルールを定める。各ロケールの承認者(approvers)がレビューし、日本語(ja)は確立済みロケールとして例示されている。"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/contributing/localization/",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "OpenTelemetry/Linux Foundationのポリシーに従い、AIツール使用時はPRのチェックボックスで開示し、生成訳を自らレビュー・検証することが必須。理解できない言語の翻訳提出は禁止。"
+    },
+    {
+      "url": "https://github.com/open-telemetry/opentelemetry.io/commits/main/content/ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "content/ja への直近90日のコミットは100件以上(2026-08-02にも [ja] 翻訳追加マージあり)。日本語ローカライズチームは非常に活発。"
+    },
+    {
+      "url": "https://github.com/open-telemetry/opentelemetry.io/issues?q=label%3Alang%3Aja",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "lang:ja ラベルでページ単位の翻訳タスクissueが管理されており、ここが参加窓口。着手前にissueで重複確認・宣言する運用。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/open-telemetry/opentelemetry.io",
     "translation_repo": null
   },
   "content_type": "official_docs",
   "difficulty": {
-    "score": 4,
+    "score": 3,
     "factors": {
       "volume": "large",
       "workflow": "direct_pr",
       "domain": "framework_docs"
     }
   },
+  "metrics": {
+    "stars": 942,
+    "observed_at": "2026-08-03"
+  },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://github.com/open-telemetry/opentelemetry.io/issues?q=label%3Alang%3Aja"
   }
 }

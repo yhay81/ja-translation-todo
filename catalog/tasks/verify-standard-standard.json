@@ -2,33 +2,39 @@
   "schema_version": "translation-task/v1",
   "id": "verify-standard-standard",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
-    "ja": "standard/standard の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for standard/standard"
+    "ja": "JavaScript Standard Style の日本語ドキュメント更新",
+    "en": "Update the Japanese docs (README-ja / RULES-ja) of standard/standard"
   },
   "project": {
     "repository": "standard/standard",
     "url": "https://github.com/standard/standard",
     "category": "JavaScript",
-    "summary_ja": "JavaScript の標準的なスタイルガイドで、リンターで、フォーマッター",
+    "summary_ja": "JavaScript の標準的なスタイルガイド・リンター・フォーマッター。README が10言語の翻訳版(docs/README-*.md, RULES-*.md)へリンクしており、翻訳は同リポジトリへの直接 PR で維持される。docs/README-ja.md と docs/RULES-ja.md は存在するが、日本語の実質的な更新は2022年以降止まっており、英語版への追随更新が機会。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "753309b21bfd",
+    "paths": [
+      "README.md",
+      "docs/RULES-en.md"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "docs/README-ja.md",
+      "docs/RULES-ja.md"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,18 +48,36 @@
       "kind": "repository",
       "observed_at": "2025-12-31",
       "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+    },
+    {
+      "url": "https://github.com/standard/standard/tree/master/docs",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "master (753309b21bfd, 2025-07-11 push) を確認。docs/ に ja を含む10言語の README/RULES 翻訳が同居。リポジトリ自体の活動は 2025-07 が最後で緩やか。"
+    },
+    {
+      "url": "https://github.com/standard/standard#readme",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "明文の翻訳ガイドはないが、README 冒頭の言語スイッチャーが「日本語 (Japanese)」として docs/README-ja.md へリンクしており、翻訳版は一次コンテンツとして直接 PR で受け入れ・維持されてきた(旧一覧でも「docs/README-ja.md, docs/RULES-ja.md を更新してプルリク」と案内)。"
+    },
+    {
+      "url": "https://github.com/standard/standard/commits/master/docs/README-ja.md",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "README-ja.md の履歴を確認。日本語の実質的な翻訳更新は 2022-01 (#1754) が最後で、2025-07 の変更はメンテナによる整形のみ。open の日本語関連 PR / issue は見当たらず、重複作業なし。英語版との差分追随が未着手領域。"
     }
   ],
   "validation": [],
   "credit": {
-    "expected": "unknown",
+    "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "JavaScript の標準的なスタイルガイドで、リンターで、フォーマッター",
@@ -64,5 +88,27 @@
     "状態": "日本語あり",
     "文章量": "中",
     "Star": "29,409"
+  },
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
+  },
+  "content_type": "official_docs",
+  "difficulty": {
+    "score": 3,
+    "factors": {
+      "volume": "medium",
+      "workflow": "direct_pr",
+      "domain": "framework_docs"
+    }
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": null
+  },
+  "metrics": {
+    "stars": 29429,
+    "observed_at": "2026-08-03"
   }
 }

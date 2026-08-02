@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-go-gitea-gitea",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "in_progress",
   "title": {
     "ja": "Gitea UI文字列の日本語化の検証",
     "en": null
@@ -11,24 +11,28 @@
     "repository": "go-gitea/gitea",
     "url": "https://github.com/go-gitea/gitea",
     "category": "Infrastructure",
-    "summary_ja": "セルフホスト型Gitサービス。UI翻訳はCrowdin(translate.gitea.com)で制度化され日本語も進行中。未翻訳文字列の翻訳・既存訳の改善に継続的な貢献機会がある。",
+    "summary_ja": "セルフホスト型 Git サービス。UI 翻訳は公式 Crowdin(translate.gitea.com)に一本化され、リポジトリ内の locale ファイルへの手動 PR は禁止(同期で上書きされる)。日本語(ja-JP)は 2026-08 時点でも数日おきに Crowdin から同期されており活発に進行中。参加は Crowdin 上で未翻訳文字列の翻訳・既存訳の改善という形になる。",
     "license": "MIT"
   },
   "source": {
     "revision": null,
-    "paths": []
+    "paths": [
+      "options/locale/locale_en-US.json"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "options/locale/locale_ja-JP.json"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "translation": "explicit",
+    "ai_assistance": "disclose",
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -37,6 +41,36 @@
     ]
   },
   "evidence": [
+    {
+      "url": "https://github.com/go-gitea/gitea",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "リポジトリは非アーカイブで活発(最終 push 2026-08-02、Star 57,169、既定ブランチ main、MIT)。"
+    },
+    {
+      "url": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md#translation",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "「翻訳作業はすべて Crowdin(translate.gitea.com)で行う。リポジトリで維持するのは英語のみで、他言語の locale を手動更新してはならない(同期で上書きされる)。翻訳率が約25%に達した言語がリポジトリへ同期され次リリースに含まれる」と明示。"
+    },
+    {
+      "url": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md#ai-contribution-policy",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "AI 支援による貢献は歓迎だが、責任ある利用と明確な開示が必須。提出前のレビュー・テスト、内容を自分で説明・修正できること、AI での返信禁止を条件とし、未開示や低品質な AI 生成物はクローズされうる。"
+    },
+    {
+      "url": "https://translate.gitea.com/",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式翻訳プラットフォーム(Crowdin)。参加はここから行う。"
+    },
+    {
+      "url": "https://github.com/go-gitea/gitea/commits/main/options/locale/locale_ja-JP.json",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "locale_ja-JP.json への Crowdin 同期コミットが 2026-07-15 / 07-17 / 07-26 / 07-29 / 08-01 と数日おきに継続しており、直近90日で日本語翻訳が活発に更新されている。重複を避けるには Crowdin 上の未翻訳分を担当するのがよい。"
+    },
     {
       "url": "https://github.com/go-gitea/gitea",
       "kind": "repository",
@@ -50,14 +84,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "crowdin",
-    "platform_url": null,
+    "platform_url": "https://translate.gitea.com/",
     "translation_repo": null
   },
   "content_type": "ui_strings",
@@ -70,7 +104,11 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://translate.gitea.com/"
+  },
+  "metrics": {
+    "stars": 57169,
+    "observed_at": "2026-08-03"
   }
 }
