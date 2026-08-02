@@ -2,19 +2,21 @@
 
 OSSの日本語化機会を、人間とAIエージェントが安全に発見・検証・実行するための公開レジストリです。
 
-従来のMarkdown一覧を、証拠・鮮度・自動化可能範囲を持つ構造化catalogへ移行しています。古い情報は
-自動的に翻訳対象とせず、まず `verification` タスクとして再検証します。
+サービスは読み取り専用で、カタログの正本はこのリポジトリの `catalog/tasks/*.json` です。
+更新はPull Requestだけを経路とし、メンテナのレビューを経て本番(Cloudflare D1)へ反映されます。
+古い情報は自動的に翻訳対象とせず、まず `verification` タスクとして再検証します。
 
-**公開サービス:** [ja.yusuke-hayashi.com](https://ja.yusuke-hayashi.com)
+**公開サービス:** [ja.yhay81.com](https://ja.yhay81.com)
+(旧ドメイン ja.yusuke-hayashi.com は301リダイレクト)
 
 ## 提供する入口
 
-- Web UI: 翻訳機会の検索、状態、根拠、AIが許可された操作の確認
-- REST API: `GET /api/v1/tasks`
+- Web UI: 検索・フィルタ・統計、タスク詳細(OGP対応)
+- REST API v2: `GET /api/v2/tasks`(v1は410 Gone)
 - OpenAPI 3.1: `GET /openapi.json`
-- Remote MCP: `POST /mcp`（Streamable HTTP、stateless）
-- Coordination API: authenticated claim、lease更新、証拠報告
-- 静的catalog: `GET /tasks.json`
+- Remote MCP: `POST /mcp`(Streamable HTTP、stateless)
+- 全件コレクション: `GET /tasks.json`
+- Atomフィード: `GET /feeds/tasks.atom`
 - AI向け案内: `GET /llms.txt`
 - JSON Schema: `GET /schema/translation-task-v1.schema.json`
 
@@ -25,26 +27,23 @@ OSSの日本語化機会を、人間とAIエージェントが安全に発見・
 | `needs_verification` | 旧情報または根拠不足。公開情報の調査だけ可能 |
 | `ready` | 翻訳許可、対象revision、検証方法、重複状況を確認済み |
 | `ask_first` | upstreamとの事前調整が必要 |
-| `in_progress` | 有効なclaimまたは既存作業がある |
+| `in_progress` | 既存作業がある |
 | `blocked` | 方針、権限、技術上の理由で進められない |
 | `done` | 翻訳が取り込まれた |
 | `stale` | 根拠の有効期限を過ぎた |
 
 `automation.level=discover_only` のタスクで、翻訳やPR提出を行ってはいけません。
+判定規則の詳細は [docs/verification-playbook.md](docs/verification-playbook.md) を参照。
 
-## AIエージェントの作業フロー
+## タスクを更新するには(人間・AIエージェント共通)
 
-公開MCPは発見と安全規則の確認に使います。operatorからAPI tokenを受け取ったagentは、
-次の順で再検証作業を分担できます。
+1. 公開情報だけでタスクを検証する(翻訳方針、AI方針、日本語チーム、既存作業、対象revision)
+2. 重複を避けるため、タスクidを含むopen PR/issueを先に確認する
+3. `catalog/tasks/<id>.json` を編集し、根拠を `evidence` に記録してPRを送る
+4. AI利用はPR本文で開示する。CIがスキーマを検証し、メンテナがレビューする
+   (`ready` への昇格は必ず人間レビューを経ます)
 
-1. `POST /api/v1/tasks/:id/claims` で短期leaseを取得
-2. 返されたclaim tokenを `X-Claim-Token` に設定
-3. 必要なら `/api/v1/claims/:id/renew` でleaseを更新
-4. `/api/v1/claims/:id/reports` へ根拠URL付きで結果を報告
-5. 完了できない場合は `/api/v1/claims/:id/release`
-
-すべてのwriteに `Idempotency-Key` が必要です。claimは許可範囲を拡張せず、報告からcatalogへの
-反映には人間のreviewが必要です。
+詳細は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
 ## 開発
 
@@ -52,27 +51,27 @@ Python 3.12以降と[uv](https://docs.astral.sh/uv/)を使用します。
 
 ```powershell
 uv sync
-uv run python scripts/build_catalog.py
+uv run python scripts/build_catalog.py   # catalog/tasks/*.json のスキーマ検証
 uv run pytest -q
 uv run ruff check .
-uv run uvicorn translation_hub.app:app
 ```
 
-D1 migrationとagent tokenの初期設定:
+### D1セットアップとカタログ反映
 
 ```powershell
 npx --yes wrangler d1 migrations apply ja-translation-todo --remote
-uv run python scripts/generate_agent_token.py
-npx --yes wrangler secret put AGENT_API_TOKEN_SHA256
+uv run python scripts/seed_catalog.py --apply --remote
 ```
 
-最後のコマンドには生成結果の `token_sha256` だけを入力します。`agent_token` はpassword manager等で
-agentへ安全に配布し、repositoryやログへ記録しません。
+`catalog/tasks/*.json`(git)が正本で、D1は配信用ランタイムストアです。
+PRをmergeしたら seed を再実行して本番へ反映します。
+
+### ローカル実行(Windows)
 
 Cloudflare Workersでは[hayate](https://github.com/hayatepy/hayate)をHTTP基盤として使用し、
 `hayate-openapi`と`hayate-mcp`を同じドメインサービスへ接続しています。
 
-Windowsでは`pywrangler`がhost用virtualenvまでbundleしないよう、Worker用wheelを準備した後に
+`pywrangler`がhost用virtualenvをbundleしないよう、Worker用wheelを準備した後に
 クリーンな配布ディレクトリからWranglerを実行します。
 
 ```powershell
@@ -81,10 +80,13 @@ uv pip install --python-version 3.13 --python-platform wasm32-pyodide2025 `
 uv run python scripts/prepare_worker.py
 npx --yes wrangler d1 migrations apply ja-translation-todo --local `
   --persist-to dist/worker/.wrangler/state
+uv run python scripts/seed_catalog.py --apply --local
 Push-Location dist/worker
 npx --yes wrangler dev
 Pop-Location
 ```
+
+### デプロイ
 
 deployはrepository rootのWranglerを直接実行せず、配布物の監査を行うwrapperを使います。
 
@@ -93,6 +95,5 @@ uv run python scripts/deploy_worker.py --dry-run
 uv run python scripts/deploy_worker.py
 ```
 
-新しいタスクの追加方法は[CONTRIBUTING.md](CONTRIBUTING.md)、設計は
-[docs/architecture.md](docs/architecture.md)を参照してください。2025年までの旧一覧は
+設計は[docs/architecture.md](docs/architecture.md)を参照してください。2025年までの旧一覧は
 [docs/legacy-list.md](docs/legacy-list.md)に保存しています。

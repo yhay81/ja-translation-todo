@@ -6,6 +6,10 @@ workers_dev = false
 preview_urls = false
 
 [[routes]]
+pattern = "ja.yhay81.com"
+custom_domain = true
+
+[[routes]]
 pattern = "ja.yusuke-hayashi.com"
 custom_domain = true
 
@@ -18,20 +22,15 @@ run_worker_first = [
   "/healthz",
   "/mcp",
   "/openapi.json",
+  "/tasks.json",
+  "/tasks/*",
+  "/feeds/*",
 ]
 
 [[d1_databases]]
 binding = "DB"
 database_name = "ja-translation-todo"
 database_id = "36b0932a-e87b-46b6-ab61-7ee5e8e32f2b"
-
-[[ratelimits]]
-name = "WRITE_RATE_LIMITER"
-namespace_id = "811381"
-
-  [ratelimits.simple]
-  limit = 30
-  period = 60
 
 [observability]
 enabled = true

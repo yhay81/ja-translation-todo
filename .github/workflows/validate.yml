@@ -1,0 +1,23 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install dependencies
+        run: uv sync
+      - name: Validate catalog
+        run: uv run python scripts/build_catalog.py --check
+      - name: Tests
+        run: uv run pytest -q
+      - name: Lint
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .

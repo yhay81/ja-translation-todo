@@ -3,137 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="証拠に基づくOSS日本語化タスクを、人間とAIエージェントへ。">
-    <title>ja-translation-todo — OSS日本語化レーダー</title>
-    <link rel="stylesheet" href="/styles.css">
-    <script type="module" src="/app.js"></script>
+    <meta name="description" content="OSSの日本語化タスクを、人間とAIエージェントが安全に発見・検証・実行するための公開レジストリ。">
+    <title>ja-translation-todo — OSS日本語化タスクレジストリ</title>
+    <!--ssr:head-->
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link rel="alternate" type="application/atom+xml" href="/feeds/tasks.atom" title="タスク更新フィード">
+    <script>
+      // FOUC回避: 保存済みテーマを描画前に適用する
+      (function () {
+        try {
+          var t = localStorage.getItem("tt:theme");
+          if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+        } catch (e) { /* localStorage不可でも動作継続 */ }
+      })();
+    </script>
+    <script type="module" src="/js/main.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="ja-translation-todo home">
-        <span class="brand-mark" aria-hidden="true">訳</span>
-        <span>ja-translation-todo</span>
-      </a>
-      <nav aria-label="主要リンク">
-        <a href="/openapi.json">API</a>
-        <a href="/llms.txt">AI向け</a>
-        <a href="https://github.com/yhay81/ja-translation-todo">GitHub</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <p class="eyebrow">OSS JAPANESE TRANSLATION REGISTRY</p>
-        <h1>翻訳できる、ではなく。<br><em>今、どう支援できるか。</em></h1>
-        <p class="hero-copy">
-          翻訳方針、既存作業、検証方法を証拠付きで整理。人間とAIが、
-          メンテナの負担を増やさず日本語化へ参加するためのレーダーです。
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#tasks">タスクを探す</a>
-          <button class="button secondary" id="copy-mcp" type="button">MCP URLをコピー</button>
-        </div>
-      </section>
-
-      <section class="metrics" aria-label="catalog overview">
-        <article><strong id="metric-total">—</strong><span>登録タスク</span></article>
-        <article><strong id="metric-ready">—</strong><span>実行可能</span></article>
-        <article><strong id="metric-verify">—</strong><span>再検証待ち</span></article>
-      </section>
-
-      <section class="principle">
-        <div>
-          <p class="eyebrow">SAFETY FIRST</p>
-          <h2>不明なら、翻訳しない。</h2>
-        </div>
-        <p>
-          <code>discover_only</code> は公開情報の調査だけを許可します。
-          upstreamの許可、対象revision、重複作業が確認されて初めて、
-          タスクは <code>ready</code> になります。
-        </p>
-      </section>
-
-      <section class="task-section" id="tasks">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">CATALOG</p>
-            <h2>支援の入口を探す</h2>
-          </div>
-          <p id="result-count" aria-live="polite">読み込み中…</p>
-        </div>
-
-        <form class="filters" id="filters">
-          <label class="search">
-            <span class="sr-only">キーワード</span>
-            <input id="query" name="q" type="search" placeholder="repository、技術、キーワード">
-          </label>
-          <label>
-            <span class="sr-only">状態</span>
-            <select id="status" name="status">
-              <option value="">すべての状態</option>
-              <option value="ready">実行可能</option>
-              <option value="needs_verification">要再検証</option>
-              <option value="ask_first">要事前相談</option>
-              <option value="in_progress">進行中</option>
-              <option value="blocked">停止中</option>
-              <option value="done">完了</option>
-              <option value="stale">期限切れ</option>
-            </select>
-          </label>
-          <label>
-            <span class="sr-only">種類</span>
-            <select id="kind" name="kind">
-              <option value="">すべての種類</option>
-              <option value="translation">新規翻訳</option>
-              <option value="maintenance">翻訳保守</option>
-              <option value="verification">方針の再検証</option>
-            </select>
-          </label>
-        </form>
-
-        <div class="task-grid" id="task-grid" aria-live="polite"></div>
-      </section>
-
-      <section class="machine">
-        <div>
-          <p class="eyebrow">FOR AGENTS</p>
-          <h2>READMEを解析しなくていい。</h2>
-          <p>
-            完全なtask bundleをREST、静的JSON、Remote MCPから取得できます。
-            すべて同じschemaとautomation policyを返します。
-          </p>
-        </div>
-        <pre><code>GET /api/v1/tasks?status=ready
-GET /api/v1/tasks/:id/bundle
-POST /mcp
-GET /tasks.json</code></pre>
-      </section>
-    </main>
-
-    <footer>
-      <p>Maintained by <a href="https://github.com/yhay81">@yhay81</a> · Built with <a href="https://github.com/hayatepy/hayate">Hayate</a></p>
-      <p id="catalog-revision"></p>
-    </footer>
-
-    <dialog id="task-dialog">
-      <button class="dialog-close" type="button" aria-label="閉じる">×</button>
-      <div id="task-detail"></div>
-    </dialog>
-
-    <template id="task-template">
-      <article class="task-card">
-        <div class="card-topline">
-          <span class="status"></span>
-          <span class="kind"></span>
-        </div>
-        <h3></h3>
-        <p class="summary"></p>
-        <dl>
-          <div><dt>自動化</dt><dd class="automation"></dd></div>
-          <div><dt>翻訳許可</dt><dd class="permission"></dd></div>
-        </dl>
-        <button type="button" class="card-action">詳細を見る <span aria-hidden="true">↗</span></button>
-      </article>
-    </template>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+    <header class="site-header" id="site-header"></header>
+    <main id="main" class="site-main" tabindex="-1"></main>
+    <footer class="site-footer" id="site-footer"></footer>
+    <noscript><p class="noscript-note">このサイトの表示にはJavaScriptが必要です。機械可読な一覧は <a href="/llms.txt">/llms.txt</a> と <a href="/openapi.json">/openapi.json</a> を参照してください。</p></noscript>
+    <!--ssr:data-->
   </body>
 </html>

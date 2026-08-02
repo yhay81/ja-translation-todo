@@ -1,0 +1,200 @@
+/* pages.css — ページ固有のレイアウト */
+
+/* 一覧ページ */
+.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.hero h1 {
+  margin-bottom: var(--space-1);
+}
+
+.hero .hero-copy {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.result-line {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin: var(--space-4) 0 var(--space-3);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.result-line .revision {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  overflow-wrap: anywhere;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+
+/* 詳細ページ */
+.detail-back {
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: var(--space-3);
+}
+
+.detail-header {
+  margin-bottom: var(--space-5);
+}
+
+.detail-header .badge-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+}
+
+.detail-header .repo-link {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.detail-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .detail-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-main, .detail-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.permission-table td:first-child {
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.permission-symbol {
+  display: inline-flex;
+  width: 1.6em;
+  height: 1.6em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-inset);
+  border: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-right: var(--space-2);
+}
+
+.permission-forbidden .permission-symbol {
+  background: var(--status-blocked-bg);
+  color: var(--status-blocked-fg);
+  border-color: var(--status-blocked-border);
+}
+
+.permission-explicit .permission-symbol,
+.permission-allowed .permission-symbol,
+.permission-disclose .permission-symbol {
+  background: var(--status-ready-bg);
+  color: var(--status-ready-fg);
+  border-color: var(--status-ready-border);
+}
+
+.permission-ask_first .permission-symbol {
+  background: var(--status-ask_first-bg);
+  color: var(--status-ask_first-fg);
+  border-color: var(--status-ask_first-border);
+}
+
+.validation-item {
+  margin-bottom: var(--space-3);
+}
+
+.validation-item pre {
+  margin: var(--space-1) 0;
+}
+
+.validation-item .validation-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+details.legacy-details summary {
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+details.legacy-details pre {
+  margin-top: var(--space-2);
+}
+
+/* 統計ページ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+/* about ページ */
+.about-page section {
+  margin-bottom: var(--space-6);
+}
+
+.about-page .mcp-block {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-page .mcp-block pre {
+  flex: 1 1 320px;
+  margin: 0;
+}
+
+/* 404 */
+.notfound-page {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+}
+
+.notfound-page .code {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}

@@ -1,0 +1,288 @@
+/* tokens.css — デザイントークン(ライト/ダーク両対応) */
+
+:root {
+  /* スペーシング(4pxベース) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* 角丸・影 */
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 16px;
+  --radius-full: 999px;
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-2: 0 4px 16px rgba(15, 23, 42, 0.10);
+  --shadow-3: 0 12px 32px rgba(15, 23, 42, 0.16);
+
+  /* タイポグラフィ(システムフォントのみ・Webフォント禁止) */
+  --font-sans: "Inter", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", "Meiryo",
+    system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", "Consolas", monospace;
+
+  --focus-ring: 0 0 0 3px var(--accent-ring);
+}
+
+/* ---- ライトテーマの値(既定) ---- */
+:root {
+  color-scheme: light;
+
+  --bg: #f6f7f9;
+  --bg-raised: #ffffff;
+  --bg-inset: #edeff3;
+  --border: #d8dce4;
+  --border-strong: #b9c0cc;
+  --text: #1b2330;
+  --text-muted: #5b6575;
+  --text-faint: #8a93a3;
+
+  --accent: #2f5fe0;
+  --accent-strong: #2149b8;
+  --accent-soft: #e4eafb;
+  --accent-contrast: #ffffff;
+  --accent-ring: rgba(47, 95, 224, 0.35);
+
+  --danger: #c02b33;
+  --danger-soft: #fbe4e5;
+  --success: #1a7f37;
+
+  /* status 7色(色+ラベルで表現、色のみに依存しない) */
+  --status-ready-bg: #e0f3e5;
+  --status-ready-fg: #17692f;
+  --status-ready-border: #a4d8b1;
+
+  --status-needs_verification-bg: #fcf1cf;
+  --status-needs_verification-fg: #7d6002;
+  --status-needs_verification-border: #e6d182;
+
+  --status-ask_first-bg: #fdeadb;
+  --status-ask_first-fg: #a34d08;
+  --status-ask_first-border: #f0c29a;
+
+  --status-in_progress-bg: #e0ebfd;
+  --status-in_progress-fg: #1d55c4;
+  --status-in_progress-border: #a8c4f4;
+
+  --status-blocked-bg: #fbe2e3;
+  --status-blocked-fg: #b1242c;
+  --status-blocked-border: #efabb0;
+
+  --status-done-bg: #e5ece7;
+  --status-done-fg: #48604f;
+  --status-done-border: #bfcec4;
+
+  --status-stale-bg: #eaedf1;
+  --status-stale-fg: #5f6875;
+  --status-stale-border: #ccd3dc;
+
+  /* チャート用カテゴリカルパレット */
+  --chart-1: #2f5fe0;
+  --chart-2: #1a7f37;
+  --chart-3: #b4530a;
+  --chart-4: #7c4bc9;
+  --chart-5: #0d7f8c;
+  --chart-6: #b12468;
+  --chart-7: #8a6a00;
+  --chart-8: #636c79;
+}
+
+/* ---- ダークテーマの値(OS設定追従) ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --bg: #12151b;
+    --bg-raised: #1a1f27;
+    --bg-inset: #0d1015;
+    --border: #333b48;
+    --border-strong: #4a5464;
+    --text: #e6e9ee;
+    --text-muted: #a3adbd;
+    --text-faint: #717c8e;
+
+    --accent: #7c9bf0;
+    --accent-strong: #a2b9f5;
+    --accent-soft: #22304f;
+    --accent-contrast: #0e1524;
+    --accent-ring: rgba(124, 155, 240, 0.45);
+
+    --danger: #ef7a80;
+    --danger-soft: #46242a;
+    --success: #62c37f;
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.45);
+    --shadow-3: 0 12px 32px rgba(0, 0, 0, 0.55);
+
+    --status-ready-bg: #16321f;
+    --status-ready-fg: #7fd497;
+    --status-ready-border: #2c5b3a;
+
+    --status-needs_verification-bg: #37300f;
+    --status-needs_verification-fg: #e3c65a;
+    --status-needs_verification-border: #5d5120;
+
+    --status-ask_first-bg: #3a2612;
+    --status-ask_first-fg: #eda766;
+    --status-ask_first-border: #64431f;
+
+    --status-in_progress-bg: #1a2a4a;
+    --status-in_progress-fg: #8fb2f4;
+    --status-in_progress-border: #2e4a7c;
+
+    --status-blocked-bg: #401d20;
+    --status-blocked-fg: #ef8f94;
+    --status-blocked-border: #6d3237;
+
+    --status-done-bg: #232b26;
+    --status-done-fg: #9db3a4;
+    --status-done-border: #3c4a41;
+
+    --status-stale-bg: #232830;
+    --status-stale-fg: #99a3b2;
+    --status-stale-border: #3d4553;
+
+    --chart-1: #7c9bf0;
+    --chart-2: #62c37f;
+    --chart-3: #eda766;
+    --chart-4: #b596ec;
+    --chart-5: #5fc4d2;
+    --chart-6: #ec86b5;
+    --chart-7: #e3c65a;
+    --chart-8: #99a3b2;
+  }
+}
+
+/* ---- 手動切替: data-theme が OS 設定より優先 ---- */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f6f7f9;
+  --bg-raised: #ffffff;
+  --bg-inset: #edeff3;
+  --border: #d8dce4;
+  --border-strong: #b9c0cc;
+  --text: #1b2330;
+  --text-muted: #5b6575;
+  --text-faint: #8a93a3;
+
+  --accent: #2f5fe0;
+  --accent-strong: #2149b8;
+  --accent-soft: #e4eafb;
+  --accent-contrast: #ffffff;
+  --accent-ring: rgba(47, 95, 224, 0.35);
+
+  --danger: #c02b33;
+  --danger-soft: #fbe4e5;
+  --success: #1a7f37;
+
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-2: 0 4px 16px rgba(15, 23, 42, 0.10);
+  --shadow-3: 0 12px 32px rgba(15, 23, 42, 0.16);
+
+  --status-ready-bg: #e0f3e5;
+  --status-ready-fg: #17692f;
+  --status-ready-border: #a4d8b1;
+
+  --status-needs_verification-bg: #fcf1cf;
+  --status-needs_verification-fg: #7d6002;
+  --status-needs_verification-border: #e6d182;
+
+  --status-ask_first-bg: #fdeadb;
+  --status-ask_first-fg: #a34d08;
+  --status-ask_first-border: #f0c29a;
+
+  --status-in_progress-bg: #e0ebfd;
+  --status-in_progress-fg: #1d55c4;
+  --status-in_progress-border: #a8c4f4;
+
+  --status-blocked-bg: #fbe2e3;
+  --status-blocked-fg: #b1242c;
+  --status-blocked-border: #efabb0;
+
+  --status-done-bg: #e5ece7;
+  --status-done-fg: #48604f;
+  --status-done-border: #bfcec4;
+
+  --status-stale-bg: #eaedf1;
+  --status-stale-fg: #5f6875;
+  --status-stale-border: #ccd3dc;
+
+  --chart-1: #2f5fe0;
+  --chart-2: #1a7f37;
+  --chart-3: #b4530a;
+  --chart-4: #7c4bc9;
+  --chart-5: #0d7f8c;
+  --chart-6: #b12468;
+  --chart-7: #8a6a00;
+  --chart-8: #636c79;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #12151b;
+  --bg-raised: #1a1f27;
+  --bg-inset: #0d1015;
+  --border: #333b48;
+  --border-strong: #4a5464;
+  --text: #e6e9ee;
+  --text-muted: #a3adbd;
+  --text-faint: #717c8e;
+
+  --accent: #7c9bf0;
+  --accent-strong: #a2b9f5;
+  --accent-soft: #22304f;
+  --accent-contrast: #0e1524;
+  --accent-ring: rgba(124, 155, 240, 0.45);
+
+  --danger: #ef7a80;
+  --danger-soft: #46242a;
+  --success: #62c37f;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 12px 32px rgba(0, 0, 0, 0.55);
+
+  --status-ready-bg: #16321f;
+  --status-ready-fg: #7fd497;
+  --status-ready-border: #2c5b3a;
+
+  --status-needs_verification-bg: #37300f;
+  --status-needs_verification-fg: #e3c65a;
+  --status-needs_verification-border: #5d5120;
+
+  --status-ask_first-bg: #3a2612;
+  --status-ask_first-fg: #eda766;
+  --status-ask_first-border: #64431f;
+
+  --status-in_progress-bg: #1a2a4a;
+  --status-in_progress-fg: #8fb2f4;
+  --status-in_progress-border: #2e4a7c;
+
+  --status-blocked-bg: #401d20;
+  --status-blocked-fg: #ef8f94;
+  --status-blocked-border: #6d3237;
+
+  --status-done-bg: #232b26;
+  --status-done-fg: #9db3a4;
+  --status-done-border: #3c4a41;
+
+  --status-stale-bg: #232830;
+  --status-stale-fg: #99a3b2;
+  --status-stale-border: #3d4553;
+
+  --chart-1: #7c9bf0;
+  --chart-2: #62c37f;
+  --chart-3: #eda766;
+  --chart-4: #b596ec;
+  --chart-5: #5fc4d2;
+  --chart-6: #ec86b5;
+  --chart-7: #e3c65a;
+  --chart-8: #99a3b2;
+}

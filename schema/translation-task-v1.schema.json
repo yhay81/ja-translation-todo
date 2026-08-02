@@ -148,7 +148,9 @@
               "issue",
               "pull_request",
               "contributing",
-              "validation"
+              "validation",
+              "platform",
+              "team_activity"
             ]
           },
           "observed_at": {
@@ -207,6 +209,71 @@
       "type": ["object", "null"],
       "additionalProperties": {
         "type": ["string", "null"]
+      }
+    },
+    "difficulty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "factors"],
+      "properties": {
+        "score": {"type": "integer", "minimum": 1, "maximum": 5},
+        "factors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["volume", "workflow", "domain"],
+          "properties": {
+            "volume": {"enum": ["small", "medium", "large"]},
+            "workflow": {
+              "enum": ["platform", "direct_pr", "fork_hosted", "negotiated"]
+            },
+            "domain": {
+              "enum": ["tutorial", "framework_docs", "specification", "book"]
+            }
+          }
+        }
+      }
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "platform_url", "translation_repo"],
+      "properties": {
+        "platform": {
+          "enum": ["github", "crowdin", "transifex", "weblate", "gitlocalize", "other"]
+        },
+        "platform_url": {"type": ["string", "null"], "format": "uri"},
+        "translation_repo": {
+          "type": ["string", "null"],
+          "pattern": "^[^/\\s]+/[^/\\s]+$"
+        }
+      }
+    },
+    "community": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["japanese_team", "team_url"],
+      "properties": {
+        "japanese_team": {"enum": ["active", "inactive", "none", "unknown"]},
+        "team_url": {"type": ["string", "null"], "format": "uri"}
+      }
+    },
+    "content_type": {
+      "enum": [
+        "official_docs",
+        "readme",
+        "book",
+        "specification",
+        "ui_strings",
+        "tutorial"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stars", "observed_at"],
+      "properties": {
+        "stars": {"type": ["integer", "null"], "minimum": 0},
+        "observed_at": {"type": "string", "format": "date"}
       }
     }
   }
