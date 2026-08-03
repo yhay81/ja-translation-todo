@@ -1,98 +1,98 @@
 {
-  "schema_version": "translation-task/v1",
-  "id": "verify-php-doc-en",
-  "kind": "verification",
-  "status": "ready",
-  "title": {
-    "ja": "PHP マニュアル日本語版 (php/doc-ja) への翻訳・追従貢献",
-    "en": null
-  },
-  "project": {
-    "repository": "php/doc-en",
-    "url": "https://github.com/php/doc-en",
-    "category": "Other",
-    "summary_ja": "PHP公式マニュアルの日本語訳はphp org公認のdoc-jaリポジトリで管理され、GitHub PRで翻訳・追従更新を受け付ける(PR・コミットログとも日本語可)。未訳部分をまとめて翻訳するPRの手順もCONTRIBUTINGに明記されており、英語版doc-enとの差分追従・未訳追加の作業が恒常的に存在する。",
-    "license": "CC-BY-3.0"
-  },
-  "source": {
-    "revision": null,
-    "paths": []
-  },
-  "target": {
-    "locale": "ja-JP",
-    "paths": []
-  },
-  "permissions": {
-    "translation": "explicit",
-    "ai_assistance": "unknown",
-    "pull_request": "allowed"
-  },
   "automation": {
-    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
       "report_evidence"
-    ]
-  },
-  "evidence": [
-    {
-      "url": "https://github.com/php/doc-en",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "英語版(原文)リポジトリは活発(最終push 2026-08-02、非archived)。日本語版はここを master として追従する。"
-    },
-    {
-      "url": "https://github.com/php/doc-ja/blob/master/CONTRIBUTING.md",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "翻訳貢献手順を明記: 誤りの修正はfork+PR、未訳ドキュメントはdoc-enから該当docbookをコピーして翻訳しPRを送る方式。PR本文・コミットログとも日本語で問題なしと明言。言語機能とPHP同梱拡張以外は基本メンテナンスしない方針。AI利用への言及はなし。"
-    },
-    {
-      "url": "https://github.com/php/doc-ja/blob/master/README.md",
-      "kind": "contributing",
-      "observed_at": "2026-08-03",
-      "note_ja": "README で PR/issue による報告・翻訳追加を案内。未訳部分の翻訳追加者向けセクションとメンテナ募集の案内あり。"
-    },
-    {
-      "url": "https://github.com/php/doc-ja/pulls?q=is%3Apr+is%3Amerged",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "直近90日で多数のPRがマージされ(2026-08-01にも doc-en 同期PRがマージ)、メンテナが毎日レベルで doc-en へ追従中。日本語チームは非常に活発だが、未訳モジュールの翻訳追加は歓迎されている。"
-    }
-  ],
-  "validation": [],
-  "credit": {
-    "expected": "commit_author",
-    "public_attribution": true
-  },
-  "provenance": {
-    "revision": 2,
-    "imported_from": null,
-    "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
-  },
-  "workflow": {
-    "platform": "github",
-    "platform_url": "https://github.com/php/doc-ja",
-    "translation_repo": "php/doc-ja"
-  },
-  "content_type": "official_docs",
-  "difficulty": {
-    "score": 3,
-    "factors": {
-      "volume": "large",
-      "workflow": "direct_pr",
-      "domain": "framework_docs"
-    }
-  },
-  "metrics": {
-    "stars": 595,
-    "observed_at": "2026-08-03"
+    ],
+    "level": "draft_only"
   },
   "community": {
     "japanese_team": "active",
     "team_url": "https://github.com/php/doc-ja"
+  },
+  "content_type": "official_docs",
+  "credit": {
+    "expected": "commit_author",
+    "public_attribution": true
+  },
+  "difficulty": {
+    "factors": {
+      "domain": "framework_docs",
+      "volume": "large",
+      "workflow": "direct_pr"
+    },
+    "score": 3
+  },
+  "evidence": [
+    {
+      "kind": "repository",
+      "note_ja": "英語版(原文)リポジトリは活発(最終push 2026-08-02、非archived)。日本語版はここを master として追従する。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/php/doc-en"
+    },
+    {
+      "kind": "translation_policy",
+      "note_ja": "翻訳貢献手順を明記: 誤りの修正はfork+PR、未訳ドキュメントはdoc-enから該当docbookをコピーして翻訳しPRを送る方式。PR本文・コミットログとも日本語で問題なしと明言。言語機能とPHP同梱拡張以外は基本メンテナンスしない方針。AI利用への言及はなし。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/php/doc-ja/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "kind": "contributing",
+      "note_ja": "README で PR/issue による報告・翻訳追加を案内。未訳部分の翻訳追加者向けセクションとメンテナ募集の案内あり。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/php/doc-ja/blob/master/README.md"
+    },
+    {
+      "kind": "team_activity",
+      "note_ja": "直近90日で多数のPRがマージされ(2026-08-01にも doc-en 同期PRがマージ)、メンテナが毎日レベルで doc-en へ追従中。日本語チームは非常に活発だが、未訳モジュールの翻訳追加は歓迎されている。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/php/doc-ja/pulls?q=is%3Apr+is%3Amerged"
+    }
+  ],
+  "id": "verify-php-doc-en",
+  "kind": "verification",
+  "metrics": {
+    "observed_at": "2026-08-03",
+    "stars": 595
+  },
+  "permissions": {
+    "ai_assistance": "unknown",
+    "pull_request": "allowed",
+    "translation": "explicit"
+  },
+  "project": {
+    "category": "PHP",
+    "license": "CC-BY-3.0",
+    "repository": "php/doc-en",
+    "summary_ja": "PHP公式マニュアルの日本語訳はphp org公認のdoc-jaリポジトリで管理され、GitHub PRで翻訳・追従更新を受け付ける(PR・コミットログとも日本語可)。未訳部分をまとめて翻訳するPRの手順もCONTRIBUTINGに明記されており、英語版doc-enとの差分追従・未訳追加の作業が恒常的に存在する。",
+    "url": "https://github.com/php/doc-en"
+  },
+  "provenance": {
+    "imported_at": "2026-08-02",
+    "imported_from": null,
+    "last_verified_at": "2026-08-03",
+    "revision": 3
+  },
+  "schema_version": "translation-task/v1",
+  "source": {
+    "paths": [],
+    "revision": null
+  },
+  "status": "ready",
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "title": {
+    "en": null,
+    "ja": "PHP マニュアル日本語版 (php/doc-ja) への翻訳・追従貢献"
+  },
+  "validation": [],
+  "workflow": {
+    "platform": "github",
+    "platform_url": "https://github.com/php/doc-ja",
+    "translation_repo": "php/doc-ja"
   }
 }

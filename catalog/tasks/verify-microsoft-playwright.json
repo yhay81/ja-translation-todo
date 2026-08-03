@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-microsoft-playwright",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
     "ja": "Playwright ドキュメント日本語化の検証",
     "en": null
@@ -11,7 +11,7 @@
     "repository": "microsoft/playwright",
     "url": "https://github.com/microsoft/playwright",
     "category": "JavaScript",
-    "summary_ja": "E2E テストの標準となった Playwright のドキュメント (playwright.dev, Docusaurus 製) は英語のみ。i18n 計画の issue が存在し、日本語翻訳の受け入れ可否をメンテナと交渉する機会がある。",
+    "summary_ja": "E2E テストの標準となった Playwright のドキュメント (playwright.dev) は英語のみ。2025 年の issue #37825 でメンテナが「公式翻訳の維持計画はないがコミュニティ主導の翻訳を妨げるものはない」と回答しており、日本語翻訳はコミュニティ運営(自前ホスティング)前提でメンテナと相談してから始める形になる。",
     "license": "Apache-2.0"
   },
   "source": {
@@ -23,9 +23,9 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "forbidden"
   },
   "automation": {
     "level": "discover_only",
@@ -54,6 +54,12 @@
       "kind": "repository",
       "observed_at": "2026-08-03",
       "note_ja": "main ブランチが活発（最終 push 2026-07-31）、Star 93,839、Apache-2.0、アーカイブされていないことを確認。playwright.dev のドキュメントは引き続き英語のみで、翻訳受付方針は見つからない。"
+    },
+    {
+      "url": "https://github.com/microsoft/playwright/issues/37825",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "日本からの貢献者が「Playwright ドキュメントの日本語翻訳プロジェクトを始めたい」と提案した issue #37825(2025-10-20 close, completed)で、メンテナ(MEMBER, Skn0tt)が「We don't maintain any translations of our docs and have no plans to start doing so」「I don't see anything that speaks against you starting a community-driven translation. I'll discuss it with the rest of the team though」と回答。公式翻訳の受け入れはないが、コミュニティ主導の翻訳は否定されておらず、開始前にメンテナと相談する余地がある。同文の重複 issue #37826 も存在。"
     }
   ],
   "validation": [],
@@ -62,7 +68,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
     "last_verified_at": "2026-08-03"
@@ -77,7 +83,7 @@
     "score": 5,
     "factors": {
       "volume": "large",
-      "workflow": "negotiated",
+      "workflow": "fork_hosted",
       "domain": "framework_docs"
     }
   },

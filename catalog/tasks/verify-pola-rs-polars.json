@@ -50,6 +50,18 @@
       "kind": "team_activity",
       "observed_at": "2026-08-03",
       "note_ja": "コミュニティ日本語訳リポジトリ polars-ja/docs-ja の最終pushは2024-07-02で1年以上停滞。活発な日本語チームは確認できない。"
+    },
+    {
+      "url": "https://docs.pola.rs/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式ドキュメントサイトに言語切替や翻訳版へのリンク、localization への言及はなし。英語のみ。"
+    },
+    {
+      "url": "https://github.com/pola-rs/polars-book-cn",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式 org (pola-rs) 配下に中国語訳リポジトリ polars-book-cn が存在 (Star 30) するが最終 push 2024-01-02 で停滞。org が過去にコミュニティ翻訳リポジトリを受け入れた前例はあるものの、日本語版はなく、公式の翻訳受付経路は確認できなかった (2026-08-03)。"
     }
   ],
   "validation": [],
@@ -58,10 +70,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

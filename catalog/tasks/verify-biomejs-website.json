@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-biomejs-website",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
     "ja": "Biome 公式ドキュメント日本語化の検証",
     "en": null
@@ -64,6 +64,12 @@
       "kind": "team_activity",
       "observed_at": "2026-08-02",
       "note_ja": "(2026-08-03 訂正) 当初 2026-02-18 が最終更新でinactiveと記載していたが、再確認したところ ja 配下の実際の最終コミットは 2026-07-22 (#4383, src/content/docs/ja/reference/configuration.mdx を更新) であり、調査日から11日前=直近90日以内の活動があった。日本語チームは active の可能性が高く、重複作業のリスク評価は要再確認。"
+    },
+    {
+      "url": "https://biomejs.dev/ja/",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイト側を確認。言語切替に English / Español / Français / 日本語 / 简体中文 / Polski / Português / Українська / Русский が並び、日本語版が公式サイト上で公開・配信されている。翻訳は Starlight の i18n として本体サイトに統合済みで、受付経路(src/content/docs/ja/ への直接 PR)が実運用されていることを裏付ける。明示的な翻訳歓迎方針 + direct PR + 未翻訳/追従待ちページありのため ready を提案(確定は人間レビュー)。"
     }
   ],
   "validation": [],
@@ -72,7 +78,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 3,
+    "revision": 4,
     "imported_from": null,
     "imported_at": "2026-08-02",
     "last_verified_at": "2026-08-03"
@@ -92,7 +98,7 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "active",
     "team_url": "https://github.com/biomejs/biome/issues/880"
   }
 }

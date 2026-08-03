@@ -64,6 +64,18 @@
       "kind": "ai_policy",
       "observed_at": "2026-08-03",
       "note_ja": "AGENTS.md で「agents and contributors」向けの作業ルール(deno fmt / lint / task test / build:light の実行、プロジェクト構成)を明文化しており、AI エージェントによる貢献自体は前提として受け入れられている。"
+    },
+    {
+      "url": "https://docs.deno.com/",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイト側を再調査。docs.deno.com に言語切替や翻訳版へのリンクはなく、フッターは Deno Docs / Services Docs / Community / Help & Feedback / Company の英語リンクのみで localization への言及もない。"
+    },
+    {
+      "url": "https://github.com/deno-ja",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "denoland org には docs 翻訳・i18n 系リポジトリはなく、日本語コミュニティとして deno-ja (Deno Japan Users Group) org が存在するが、公式 docs の翻訳リポジトリではなくランディングページ (deno-ja.deno.dev) の最終 push は 2023-09-23。denoland/docs の issue / PR にも translation / localization / japanese の該当なし。結論: 公式の翻訳受付経路は確認できなかった(2026-08-03)。needs_verification を維持。"
     }
   ],
   "validation": [],
@@ -72,10 +84,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

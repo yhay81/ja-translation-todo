@@ -56,6 +56,18 @@
       "kind": "team_activity",
       "observed_at": "2026-08-03",
       "note_ja": "非公式日本語翻訳リポジトリ（Star 162）の最終 push は 2023-04-02 で3年以上停止（アーカイブはされていない）。旧世代ドキュメントがベースのため、現行の App Router 世代 docs には追従していない。日本語チームは休眠状態。"
+    },
+    {
+      "url": "https://nextjs.org/docs",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式 docs トップに言語切替や翻訳版へのリンクは存在せず、英語のみ。Internationalization ガイドはアプリ開発者向け機能の解説で、docs 自体の翻訳とは無関係。"
+    },
+    {
+      "url": "https://github.com/vercel/next.js/discussions",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "GitHub Discussions を「docs translation / translate documentation japanese」で検索したが、docs 翻訳の提案・受付に関するスレッドは確認できず（ヒットは i18n ルーティング等の機能に関する議論のみ）。公式の翻訳受付経路は確認できなかった（2026-08-03）。needs_verification を維持。"
     }
   ],
   "validation": [],

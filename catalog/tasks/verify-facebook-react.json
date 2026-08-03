@@ -75,7 +75,7 @@
       "url": "https://github.com/reactjs/ja.react.dev/commits/main",
       "kind": "team_activity",
       "observed_at": "2026-08-03",
-      "note_ja": "(2026-08-03 訂正) 当初「最終 push 2026-08-01」と記載していたが、再確認したところ実際の最新コミットは 2026-06-20 (PR #948 マージ)。それでも調査日から約44日前であり直近90日以内の活動に該当し、日本語チームは活発と判断。参加窓口は ja.react.dev の Wiki と進捗管理 issue。"
+      "note_ja": "(2026-08-03 訂正) 当初「最終 push 2026-08-01」と記載していたが、再確認したところ実際の最新コミットは 2026-06-20 (PR #948 マージ)。(2026-08-03 再確認: 最新コミットは 2026-06-20 の「Merge pull request #947 from largearth/patch-2」であり、PR 番号は #948 ではなく #947。日付と活発判断は変わらない。)それでも調査日から約44日前であり直近90日以内の活動に該当し、日本語チームは活発と判断。参加窓口は ja.react.dev の Wiki と進捗管理 issue。"
     }
   ],
   "validation": [],
@@ -84,7 +84,7 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 3,
+    "revision": 4,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
     "last_verified_at": "2026-08-03"

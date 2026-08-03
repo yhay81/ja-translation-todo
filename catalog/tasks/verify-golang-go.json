@@ -1,102 +1,114 @@
 {
-  "schema_version": "translation-task/v1",
-  "id": "verify-golang-go",
-  "kind": "verification",
-  "status": "needs_verification",
-  "title": {
-    "ja": "golang/go の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for golang/go"
-  },
-  "project": {
-    "repository": "golang/go",
-    "url": "https://github.com/golang/go",
-    "category": "Other",
-    "summary_ja": "プログラミング言語 Go。本体リポジトリおよび go.dev に翻訳を受け入れる公式の仕組みは確認できず、非英語リソースは Go Wiki の NonEnglish ページで外部コミュニティ翻訳としてリンクされる形。旧一覧記載の日本語サイト golang.jp は更新停止。公式に貢献できる翻訳経路は現時点で不明。",
-    "license": "BSD 3-Clause"
-  },
-  "source": {
-    "revision": null,
-    "paths": []
-  },
-  "target": {
-    "locale": "ja-JP",
-    "paths": []
-  },
-  "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
-  },
   "automation": {
-    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
       "report_evidence"
-    ]
-  },
-  "evidence": [
-    {
-      "url": "https://github.com/golang/go",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "リポジトリは非アーカイブで活発(最終 push 2026-08-01、Star 135,474、BSD-3-Clause)。リポジトリ内にドキュメント翻訳を受け入れる i18n 体制は見当たらない。"
-    },
-    {
-      "url": "https://go.dev/wiki/NonEnglish",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "Go Wiki の NonEnglish ページが非英語の学習リソース・翻訳を外部サイトへのリンク集として掲載する形式。golang/go 本体や go.dev に翻訳を取り込む公式手順・受付方針は確認できず、翻訳受付の可否は不明のまま。"
-    },
-    {
-      "url": "https://github.com/golang/go",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    }
-  ],
-  "validation": [],
-  "credit": {
-    "expected": "unknown",
-    "public_attribution": true
-  },
-  "provenance": {
-    "revision": 1,
-    "imported_from": "docs/legacy-list.md",
-    "imported_at": "2026-07-25",
-    "last_verified_at": null
-  },
-  "workflow": {
-    "platform": "github",
-    "platform_url": null,
-    "translation_repo": null
-  },
-  "content_type": "official_docs",
-  "difficulty": {
-    "score": 5,
-    "factors": {
-      "volume": "large",
-      "workflow": "fork_hosted",
-      "domain": "specification"
-    }
+    ],
+    "level": "discover_only"
   },
   "community": {
     "japanese_team": "unknown",
     "team_url": null
   },
-  "metrics": {
-    "stars": 135474,
-    "observed_at": "2026-08-03"
+  "content_type": "official_docs",
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
   },
+  "difficulty": {
+    "factors": {
+      "domain": "specification",
+      "volume": "large",
+      "workflow": "fork_hosted"
+    },
+    "score": 5
+  },
+  "evidence": [
+    {
+      "kind": "repository",
+      "note_ja": "リポジトリは非アーカイブで活発(最終 push 2026-08-01、Star 135,474、BSD-3-Clause)。リポジトリ内にドキュメント翻訳を受け入れる i18n 体制は見当たらない。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/golang/go"
+    },
+    {
+      "kind": "translation_policy",
+      "note_ja": "Go Wiki の NonEnglish ページが非英語の学習リソース・翻訳を外部サイトへのリンク集として掲載する形式。golang/go 本体や go.dev に翻訳を取り込む公式手順・受付方針は確認できず、翻訳受付の可否は不明のまま。",
+      "observed_at": "2026-08-03",
+      "url": "https://go.dev/wiki/NonEnglish"
+    },
+    {
+      "kind": "repository",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。",
+      "observed_at": "2025-12-31",
+      "url": "https://github.com/golang/go"
+    },
+    {
+      "kind": "translation_policy",
+      "note_ja": "issue #34063(ロシア語翻訳の提案、2019-09-04 close)で Go チームメンバー(ALTree)が「Go team doesn't directly host and/or maintain Go tour and documentation translations. The official source of truth is the English version; translations are welcome but you'll have to host them yourself.」と回答。翻訳自体は歓迎だが自前ホスティングが前提で、本体リポジトリへの翻訳 PR は受け付けない方針が明示されている。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/golang/go/issues/34063"
+    },
+    {
+      "kind": "team_activity",
+      "note_ja": "Go Wiki NonEnglish の Japanese セクションには外部の日本語リソースとして A Tour of Go 日本語版(go-tour-jp.appspot.com)と CodeReviewComments 翻訳の2件のみ掲載。ドキュメント全体の日本語翻訳プロジェクトは掲載されていない。",
+      "observed_at": "2026-08-03",
+      "url": "https://go.dev/wiki/NonEnglish"
+    }
+  ],
+  "id": "verify-golang-go",
+  "kind": "verification",
   "legacy": {
-    "概要": "プログラミング言語 Go",
-    "作者": "[Go](https://github.com/golang)",
-    "開始年月": "2014/08",
-    "ライセンス": "BSD 3-Clause",
+    "Star": "131,672",
     "やり方": "サイトを作成してリンクをプルリク。",
-    "状態": "リンクされている[日本語サイト](http://golang.jp/)は更新されていない。",
+    "ライセンス": "BSD 3-Clause",
+    "作者": "[Go](https://github.com/golang)",
     "文章量": "多",
-    "Star": "131,672"
+    "概要": "プログラミング言語 Go",
+    "状態": "リンクされている[日本語サイト](http://golang.jp/)は更新されていない。",
+    "開始年月": "2014/08"
+  },
+  "metrics": {
+    "observed_at": "2026-08-03",
+    "stars": 135474
+  },
+  "permissions": {
+    "ai_assistance": "unknown",
+    "pull_request": "forbidden",
+    "translation": "implied"
+  },
+  "project": {
+    "category": "Go",
+    "license": "BSD 3-Clause",
+    "repository": "golang/go",
+    "summary_ja": "プログラミング言語 Go。本体リポジトリおよび go.dev に翻訳を受け入れる公式の仕組みは確認できず、非英語リソースは Go Wiki の NonEnglish ページで外部コミュニティ翻訳としてリンクされる形。旧一覧記載の日本語サイト golang.jp は更新停止。公式に貢献できる翻訳経路は現時点で不明。",
+    "url": "https://github.com/golang/go"
+  },
+  "provenance": {
+    "imported_at": "2026-07-25",
+    "imported_from": "docs/legacy-list.md",
+    "last_verified_at": "2026-08-03",
+    "revision": 3
+  },
+  "schema_version": "translation-task/v1",
+  "source": {
+    "paths": [],
+    "revision": null
+  },
+  "status": "ask_first",
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "title": {
+    "en": "Re-verify the Japanese translation workflow for golang/go",
+    "ja": "golang/go の日本語化参加方法を再検証"
+  },
+  "validation": [],
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
   }
 }

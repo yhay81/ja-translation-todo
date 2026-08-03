@@ -53,13 +53,25 @@
       "url": "https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md",
       "kind": "translation_policy",
       "observed_at": "2026-08-03",
-      "note_ja": "Node.js の翻訳ポリシーは公式サイト (nodejs.org) を対象とし Crowdin (crowdin.com/project/nodejs-web) で運用。nodejs/node 本体の API ドキュメントを翻訳する受付経路の記載はない。参加するなら別タスク verify-nodejs-nodejs-org が対象。"
+      "note_ja": "Node.js の翻訳ポリシーは公式サイト (nodejs.org) を対象とし Crowdin (crowdin.com/project/nodejs-web) で運用。nodejs/node 本体の API ドキュメントを翻訳する受付経路の記載はない。参加するなら別タスク verify-nodejs-nodejs-org が対象。(2026-08-03 再確認: 同文書は API docs について「The API docs are too expansive, and versioned, to be translated」と明記しており、本体 API ドキュメントは翻訳対象外であることが明文化されている)"
     },
     {
       "url": "https://github.com/nodejs/i18n",
       "kind": "repository",
       "observed_at": "2026-08-03",
       "note_ja": "API ドキュメント翻訳を担っていた i18n WG のリポジトリは 2023 年以降アーカイブ済み (最終 push 2023-04)。本体ドキュメント翻訳の公式チャネルは現存しない。禁止の明文はないため blocked ではなく needs_verification を維持。"
+    },
+    {
+      "url": "https://nodejs.org/en/about",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイトの About ページとフッターを確認したが、翻訳・ローカライズ・Crowdin への言及や日本語版へのリンクはなし。API ドキュメント翻訳の案内も見当たらない。"
+    },
+    {
+      "url": "https://github.com/nodejs/node/tree/main/doc/contributing",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "(2026-08-03 再確認: 文書数は51件。翻訳・i18n 関連文書がない点は変わらず) doc/contributing 配下の文書一覧 (約40件) に翻訳・i18n 関連の文書はなく、CONTRIBUTING.md / pull-requests.md にも翻訳や AI 利用に関する方針の記載は見当たらない。issue 検索 (translation japanese) も 0 件。公式の翻訳受付経路は確認できなかった (2026-08-03)。"
     }
   ],
   "validation": [],
@@ -68,10 +80,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "Node.js の JavaScript ランタイム https://nodejs.org",

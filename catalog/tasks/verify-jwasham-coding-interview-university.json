@@ -1,112 +1,112 @@
 {
-  "schema_version": "translation-task/v1",
+  "automation": {
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ],
+    "level": "discover_only"
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": null
+  },
+  "content_type": "tutorial",
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "difficulty": {
+    "factors": {
+      "domain": "tutorial",
+      "volume": "medium",
+      "workflow": "direct_pr"
+    },
+    "score": 2
+  },
+  "evidence": [
+    {
+      "kind": "repository",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。",
+      "observed_at": "2025-12-31",
+      "url": "https://github.com/jwasham/coding-interview-university"
+    },
+    {
+      "kind": "translation_policy",
+      "note_ja": "README に公開済み翻訳 (日本語含む16言語、translations/README-xx.md) と「Translations in progress」の issue 一覧が掲載されており、翻訳受け入れは実績から implied。CONTRIBUTING.md 等の明文化された翻訳ガイドや AI 利用方針はなし。新規言語は issue で宣言する文化。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/jwasham/coding-interview-university/blob/main/README.md"
+    },
+    {
+      "kind": "pull_request",
+      "note_ja": "2023 年に日本語訳の更新 PR (#1400, #1406, #1408, #1416) が連続してマージされた実績あり。README-ja.md の最終更新は 2024-12 (作者による一括修正) で、現在進行中の日本語作業・重複は確認できず。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/jwasham/coding-interview-university/pull/1416"
+    },
+    {
+      "kind": "team_activity",
+      "note_ja": "(2026-08-03 訂正) 当初「最終 push 2025-08-28」と記載していたが、再確認 (WebFetch) では取得できた最新コミットは 2024-12-05 であり、日付が一致しなかった。WebFetch のページネーション制約で最新コミットを取得できていない可能性もあり、実際の最終 push 日は未確定。日本語チームは不在・日本語訳は長期未更新という結論自体は他の根拠(README-ja.md 最終更新 2024-12)と整合するが、リポジトリ全体の活動状況・応答性はこの evidence だけでは確認できていない。着手前に issue での確認を推奨。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/jwasham/coding-interview-university/commits/main"
+    }
+  ],
   "id": "verify-jwasham-coding-interview-university",
   "kind": "verification",
-  "status": "ask_first",
-  "title": {
-    "ja": "Coding Interview University 日本語訳 (translations/README-ja.md) の更新",
-    "en": "Update the Japanese translation (translations/README-ja.md) of Coding Interview University"
+  "legacy": {
+    "Star": "335,429",
+    "やり方": "専用フォルダがある(translations/README-xx.md)",
+    "ライセンス": "CC BY-SA 4.0",
+    "作者": "[John Washam](https://github.com/jwasham)",
+    "文章量": "中",
+    "概要": "ソフトウェアエンジニアになるためのコンピュータサイエンス学習",
+    "状態": "日本語あり（translations/README-ja.md）",
+    "開始年月": "2016/06"
+  },
+  "metrics": {
+    "observed_at": "2026-08-03",
+    "stars": 357669
+  },
+  "permissions": {
+    "ai_assistance": "unknown",
+    "pull_request": "allowed",
+    "translation": "implied"
   },
   "project": {
+    "category": "Learning",
+    "license": "CC-BY-SA-4.0",
     "repository": "jwasham/coding-interview-university",
-    "url": "https://github.com/jwasham/coding-interview-university",
-    "category": "Other",
     "summary_ja": "ソフトウェアエンジニアになるためのコンピュータサイエンス学習ガイド。翻訳は translations/ フォルダで管理され日本語訳 (README-ja.md) が公開済みだが、日本語訳の実質的な更新は 2024 年が最後で英語版 (2025-08 更新) から遅れている。明文化された翻訳ガイドはなく、新規言語は issue で宣言する文化のため、大きな更新作業は issue で申し出てから着手するのが安全。",
-    "license": "CC-BY-SA-4.0"
+    "url": "https://github.com/jwasham/coding-interview-university"
   },
+  "provenance": {
+    "imported_at": "2026-07-25",
+    "imported_from": "docs/legacy-list.md",
+    "last_verified_at": "2026-08-03",
+    "revision": 4
+  },
+  "schema_version": "translation-task/v1",
   "source": {
-    "revision": null,
     "paths": [
       "README.md"
-    ]
+    ],
+    "revision": null
   },
+  "status": "ask_first",
   "target": {
     "locale": "ja-JP",
     "paths": [
       "translations/README-ja.md"
     ]
   },
-  "permissions": {
-    "translation": "implied",
-    "ai_assistance": "unknown",
-    "pull_request": "allowed"
+  "title": {
+    "en": "Update the Japanese translation (translations/README-ja.md) of Coding Interview University",
+    "ja": "Coding Interview University 日本語訳 (translations/README-ja.md) の更新"
   },
-  "automation": {
-    "level": "discover_only",
-    "allowed_actions": [
-      "inspect_public_metadata",
-      "find_translation_policy",
-      "find_existing_work",
-      "report_evidence"
-    ]
-  },
-  "evidence": [
-    {
-      "url": "https://github.com/jwasham/coding-interview-university",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    },
-    {
-      "url": "https://github.com/jwasham/coding-interview-university/blob/main/README.md",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "README に公開済み翻訳 (日本語含む16言語、translations/README-xx.md) と「Translations in progress」の issue 一覧が掲載されており、翻訳受け入れは実績から implied。CONTRIBUTING.md 等の明文化された翻訳ガイドや AI 利用方針はなし。新規言語は issue で宣言する文化。"
-    },
-    {
-      "url": "https://github.com/jwasham/coding-interview-university/pull/1416",
-      "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "2023 年に日本語訳の更新 PR (#1400, #1406, #1408, #1416) が連続してマージされた実績あり。README-ja.md の最終更新は 2024-12 (作者による一括修正) で、現在進行中の日本語作業・重複は確認できず。"
-    },
-    {
-      "url": "https://github.com/jwasham/coding-interview-university/commits/main",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "(2026-08-03 訂正) 当初「最終 push 2025-08-28」と記載していたが、再確認 (WebFetch) では取得できた最新コミットは 2024-12-05 であり、日付が一致しなかった。WebFetch のページネーション制約で最新コミットを取得できていない可能性もあり、実際の最終 push 日は未確定。日本語チームは不在・日本語訳は長期未更新という結論自体は他の根拠(README-ja.md 最終更新 2024-12)と整合するが、リポジトリ全体の活動状況・応答性はこの evidence だけでは確認できていない。着手前に issue での確認を推奨。"
-    }
-  ],
   "validation": [],
-  "credit": {
-    "expected": "unknown",
-    "public_attribution": true
-  },
-  "provenance": {
-    "revision": 3,
-    "imported_from": "docs/legacy-list.md",
-    "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
   "workflow": {
     "platform": "github",
     "platform_url": null,
     "translation_repo": null
-  },
-  "content_type": "tutorial",
-  "difficulty": {
-    "score": 2,
-    "factors": {
-      "volume": "medium",
-      "workflow": "direct_pr",
-      "domain": "tutorial"
-    }
-  },
-  "metrics": {
-    "stars": 357669,
-    "observed_at": "2026-08-03"
-  },
-  "community": {
-    "japanese_team": "inactive",
-    "team_url": null
-  },
-  "legacy": {
-    "概要": "ソフトウェアエンジニアになるためのコンピュータサイエンス学習",
-    "作者": "[John Washam](https://github.com/jwasham)",
-    "開始年月": "2016/06",
-    "ライセンス": "CC BY-SA 4.0",
-    "やり方": "専用フォルダがある(translations/README-xx.md)",
-    "状態": "日本語あり（translations/README-ja.md）",
-    "文章量": "中",
-    "Star": "335,429"
   }
 }

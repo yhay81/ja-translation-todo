@@ -54,6 +54,24 @@
       "kind": "issue",
       "observed_at": "2026-08-03",
       "note_ja": "日本語版ドキュメント要望 issue（2021年起票、international ラベル付きで open のまま）。当時 docs チームが関心を示し有志と個別連絡まで進んだが、その後の公式方針・i18n 基盤の整備は確認できない。日本語チームは存在しない。"
+    },
+    {
+      "url": "https://docs.streamlit.io/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式 docs サイトのフッターは Home / Contact / Community(forum) / GitHub / SNS のみで、言語切替や翻訳・localization への言及はなし。サイト側にも翻訳受付経路は存在しない。"
+    },
+    {
+      "url": "https://github.com/streamlit/30days-i18n",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "streamlit org 配下に「30 Days of Streamlit」のコミュニティ翻訳リポジトリがあり、日本語を含む11言語の README が存在。過去にコミュニティ翻訳を受け入れた実績はあるが、対象はチャレンジ企画のコンテンツで docs 本体ではなく、最終 push は 2024-10-16 で停滞。"
+    },
+    {
+      "url": "https://github.com/streamlit/docs",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイト・org 配下リポジトリ・issue を横断して調査したが、docs 本体の公式な翻訳受付経路は確認できなかった（2026-08-03）。needs_verification を維持。"
     }
   ],
   "validation": [],

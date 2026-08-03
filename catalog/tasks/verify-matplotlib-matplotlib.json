@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-matplotlib-matplotlib",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "blocked",
   "title": {
     "ja": "Matplotlib のドキュメント日本語化の検証",
     "en": null
@@ -11,7 +11,7 @@
     "repository": "matplotlib/matplotlib",
     "url": "https://github.com/matplotlib/matplotlib",
     "category": "Python",
-    "summary_ja": "Python 標準の可視化ライブラリ。公式ドキュメントの日本語訳や受け入れ経路は現状なく、Scientific Python 翻訳基盤への追加提案など交渉から始める必要がある。",
+    "summary_ja": "Python 標準の可視化ライブラリ。README 繁体字中国語訳の PR がメンテナ合議で却下され、「複数言語のドキュメントは維持しない」との決定が明言された。Scientific Python Translations の対象にも matplotlib は含まれておらず、リポジトリへの翻訳貢献は現状受け付けられない。PR テンプレートには AI 利用の開示欄がある。",
     "license": "PSF-based (Matplotlib License)"
   },
   "source": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "translation": "forbidden",
+    "ai_assistance": "disclose",
+    "pull_request": "forbidden"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "blocked",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -54,6 +54,18 @@
       "kind": "repository",
       "observed_at": "2026-08-03",
       "note_ja": "main ブランチが活発（最終 push 2026-08-01）、Star 23,057、アーカイブされていないことを確認。ライセンスは PSF ベースの独自ライセンス（GitHub API 上は SPDX 未分類）。"
+    },
+    {
+      "url": "https://github.com/matplotlib/matplotlib/pull/31460",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "README の繁体字中国語訳 PR #31460 はマージされず close。メンテナ story645 は「メンテナが読めない言語の文書は検証も更新もできない」と難色を示し、timhoffm が「the decision is that we are not going to maintain multiple languages of development docs, which includes the README」と最終判断を明言。melissawm は Scientific Python translation effort への参加を代替として案内したが、同基盤の対象に matplotlib は含まれていない。"
+    },
+    {
+      "url": "https://github.com/matplotlib/matplotlib/pull/31124",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "PR テンプレートに AI 利用開示(AI disclosure)欄を追加する PR #31124 が 2026-02-25 にマージ済み。貢献時は AI 利用の開示が求められる。"
     }
   ],
   "validation": [],
@@ -62,10 +74,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

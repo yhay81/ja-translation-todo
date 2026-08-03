@@ -1,112 +1,112 @@
 {
-  "schema_version": "translation-task/v1",
+  "automation": {
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ],
+    "level": "draft_only"
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://kubernetes.io/ja/docs/contribute/localization/"
+  },
+  "content_type": "official_docs",
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "difficulty": {
+    "factors": {
+      "domain": "framework_docs",
+      "volume": "large",
+      "workflow": "direct_pr"
+    },
+    "score": 3
+  },
+  "evidence": [
+    {
+      "kind": "repository",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。",
+      "observed_at": "2025-12-31",
+      "url": "https://github.com/kubernetes/website"
+    },
+    {
+      "kind": "translation_policy",
+      "note_ja": "SIG Docs のローカライゼーションガイド。日本語（ja）は既存ローカライゼーションで、既存言語への貢献は kubernetes/website をフォークして PR を送る。1つの PR は単一言語に限定する等の規則あり。参加窓口は Slack #sig-docs-localizations および日本語チャンネル、レビューは @kubernetes/sig-docs-ja-* チームが担当。AI 利用への言及はなし。",
+      "observed_at": "2026-08-03",
+      "url": "https://kubernetes.io/docs/contribute/localization/"
+    },
+    {
+      "kind": "team_activity",
+      "note_ja": "content/ja への翻訳コミットが直近90日内に多数（2026-08-01 の用語集翻訳、07-31・07-26 の翻訳・更新マージなど）。日本語チームが活発に新規翻訳と英語版追従を継続しており、参加はチームの手順に従うのが前提。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/kubernetes/website/commits/main/content/ja"
+    },
+    {
+      "kind": "repository",
+      "note_ja": "main ブランチが活発（最終 push 2026-08-02）、Star 5,331、CC-BY-4.0、アーカイブされていないことを確認。",
+      "observed_at": "2026-08-03",
+      "url": "https://api.github.com/repos/kubernetes/website"
+    }
+  ],
   "id": "verify-kubernetes-website",
   "kind": "verification",
-  "status": "in_progress",
-  "title": {
-    "ja": "Kubernetes 公式ドキュメント（content/ja）の日本語翻訳に参加",
-    "en": "Contribute to the Japanese localization (content/ja) of kubernetes/website"
+  "legacy": {
+    "Star": "5,130",
+    "やり方": "翻訳ガイド: https://github.com/kubernetes/website/blob/main/content/en/docs/contribute/localization.md （日本語は content/ja 配下）",
+    "ライセンス": "CC BY 4.0",
+    "作者": "[kubernetes](https://github.com/kubernetes)",
+    "文章量": "多",
+    "概要": "Kubernetes 公式サイト/ドキュメント",
+    "状態": "日本語あり（content/ja）",
+    "開始年月": "2016/02"
+  },
+  "metrics": {
+    "observed_at": "2026-08-03",
+    "stars": 5331
+  },
+  "permissions": {
+    "ai_assistance": "unknown",
+    "pull_request": "allowed",
+    "translation": "explicit"
   },
   "project": {
+    "category": "Infrastructure",
+    "license": "CC-BY-4.0",
     "repository": "kubernetes/website",
-    "url": "https://github.com/kubernetes/website",
-    "category": "Other",
     "summary_ja": "Kubernetes 公式サイト/ドキュメント。SIG Docs の日本語ローカライゼーションチームが content/ja を活発に維持しており、kubernetes/website への PR で翻訳・更新に参加できる。",
-    "license": "CC-BY-4.0"
+    "url": "https://github.com/kubernetes/website"
   },
+  "provenance": {
+    "imported_at": "2026-07-25",
+    "imported_from": "docs/legacy-list.md",
+    "last_verified_at": "2026-08-03",
+    "revision": 3
+  },
+  "schema_version": "translation-task/v1",
   "source": {
-    "revision": null,
     "paths": [
       "content/en"
-    ]
+    ],
+    "revision": null
   },
+  "status": "in_progress",
   "target": {
     "locale": "ja-JP",
     "paths": [
       "content/ja"
     ]
   },
-  "permissions": {
-    "translation": "explicit",
-    "ai_assistance": "unknown",
-    "pull_request": "allowed"
+  "title": {
+    "en": "Contribute to the Japanese localization (content/ja) of kubernetes/website",
+    "ja": "Kubernetes 公式ドキュメント（content/ja）の日本語翻訳に参加"
   },
-  "automation": {
-    "level": "draft_only",
-    "allowed_actions": [
-      "inspect_public_metadata",
-      "find_translation_policy",
-      "find_existing_work",
-      "report_evidence"
-    ]
-  },
-  "evidence": [
-    {
-      "url": "https://github.com/kubernetes/website",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    },
-    {
-      "url": "https://kubernetes.io/docs/contribute/localization/",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "SIG Docs のローカライゼーションガイド。日本語（ja）は既存ローカライゼーションで、既存言語への貢献は kubernetes/website をフォークして PR を送る。1つの PR は単一言語に限定する等の規則あり。参加窓口は Slack #sig-docs-localizations および日本語チャンネル、レビューは @kubernetes/sig-docs-ja-* チームが担当。AI 利用への言及はなし。"
-    },
-    {
-      "url": "https://github.com/kubernetes/website/commits/main/content/ja",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "content/ja への翻訳コミットが直近90日内に多数（2026-08-01 の用語集翻訳、07-31・07-26 の翻訳・更新マージなど）。日本語チームが活発に新規翻訳と英語版追従を継続しており、参加はチームの手順に従うのが前提。"
-    },
-    {
-      "url": "https://api.github.com/repos/kubernetes/website",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "main ブランチが活発（最終 push 2026-08-02）、Star 5,331、CC-BY-4.0、アーカイブされていないことを確認。"
-    }
-  ],
   "validation": [],
-  "credit": {
-    "expected": "unknown",
-    "public_attribution": true
-  },
-  "provenance": {
-    "revision": 2,
-    "imported_from": "docs/legacy-list.md",
-    "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "Kubernetes 公式サイト/ドキュメント",
-    "作者": "[kubernetes](https://github.com/kubernetes)",
-    "開始年月": "2016/02",
-    "ライセンス": "CC BY 4.0",
-    "やり方": "翻訳ガイド: https://github.com/kubernetes/website/blob/main/content/en/docs/contribute/localization.md （日本語は content/ja 配下）",
-    "状態": "日本語あり（content/ja）",
-    "文章量": "多",
-    "Star": "5,130"
-  },
   "workflow": {
     "platform": "github",
     "platform_url": "https://github.com/kubernetes/website",
     "translation_repo": null
-  },
-  "content_type": "official_docs",
-  "difficulty": {
-    "score": 3,
-    "factors": {
-      "volume": "large",
-      "workflow": "direct_pr",
-      "domain": "framework_docs"
-    }
-  },
-  "community": {
-    "japanese_team": "active",
-    "team_url": "https://kubernetes.io/ja/docs/contribute/localization/"
-  },
-  "metrics": {
-    "stars": 5331,
-    "observed_at": "2026-08-03"
   }
 }

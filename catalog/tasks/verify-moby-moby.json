@@ -1,107 +1,119 @@
 {
-  "schema_version": "translation-task/v1",
-  "id": "verify-moby-moby",
-  "kind": "verification",
-  "status": "needs_verification",
-  "title": {
-    "ja": "moby/moby の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for moby/moby"
-  },
-  "project": {
-    "repository": "moby/moby",
-    "url": "https://github.com/moby/moby",
-    "category": "Other",
-    "summary_ja": "コンテナエコシステムのための共同プロジェクト https://mobyproject.org/ 。リポジトリ内の docs/ はエンジン開発者向け技術文書(英語のみ)で、利用者向けドキュメントは docker/docs (docs.docker.com) が担う。翻訳受付方針は確認できていない。",
-    "license": "Apache 2.0"
-  },
-  "source": {
-    "revision": null,
-    "paths": []
-  },
-  "target": {
-    "locale": "ja-JP",
-    "paths": []
-  },
-  "permissions": {
-    "translation": "unknown",
-    "ai_assistance": "unknown",
-    "pull_request": "unknown"
-  },
   "automation": {
-    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
       "report_evidence"
-    ]
-  },
-  "evidence": [
-    {
-      "url": "https://github.com/moby/moby",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    },
-    {
-      "url": "https://github.com/moby/moby",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブされておらず開発は活発 (最終 push 2026-07-31)。Star 71,949。docs/ 配下に多言語ディレクトリはなく英語のみ。"
-    },
-    {
-      "url": "https://github.com/moby/moby/blob/master/CONTRIBUTING.md",
-      "kind": "contributing",
-      "observed_at": "2026-08-03",
-      "note_ja": "CONTRIBUTING に翻訳受付の記載なし。ドキュメントのスタイルガイドは docker/docs (docs.docker.com) を参照しており、moby 本体に翻訳プログラムは確認できない。"
-    },
-    {
-      "url": "https://github.com/moby/moby/issues?q=japanese+translation",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "issue / PR を「japanese translation」で検索してもヒットなし。日本語翻訳の既存作業・チームは確認できず。"
-    }
-  ],
-  "validation": [],
-  "credit": {
-    "expected": "unknown",
-    "public_attribution": true
-  },
-  "provenance": {
-    "revision": 1,
-    "imported_from": "docs/legacy-list.md",
-    "imported_at": "2026-07-25",
-    "last_verified_at": null
-  },
-  "legacy": {
-    "概要": "コンテナエコシステムのための共同プロジェクト https://mobyproject.org/",
-    "開始年月": "2013/01",
-    "ライセンス": "Apache 2.0",
-    "やり方": "",
-    "状態": "",
-    "文章量": "多",
-    "Star": "71,290"
-  },
-  "workflow": {
-    "platform": "github",
-    "platform_url": null,
-    "translation_repo": null
-  },
-  "content_type": "official_docs",
-  "difficulty": {
-    "score": 4,
-    "factors": {
-      "volume": "large",
-      "workflow": "direct_pr",
-      "domain": "framework_docs"
-    }
+    ],
+    "level": "discover_only"
   },
   "community": {
     "japanese_team": "none",
     "team_url": null
   },
+  "content_type": "official_docs",
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "difficulty": {
+    "factors": {
+      "domain": "framework_docs",
+      "volume": "large",
+      "workflow": "direct_pr"
+    },
+    "score": 4
+  },
+  "evidence": [
+    {
+      "kind": "repository",
+      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。",
+      "observed_at": "2025-12-31",
+      "url": "https://github.com/moby/moby"
+    },
+    {
+      "kind": "repository",
+      "note_ja": "アーカイブされておらず開発は活発 (最終 push 2026-07-31)。Star 71,949。docs/ 配下に多言語ディレクトリはなく英語のみ。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/moby/moby"
+    },
+    {
+      "kind": "contributing",
+      "note_ja": "CONTRIBUTING に翻訳受付の記載なし。ドキュメントのスタイルガイドは docker/docs (docs.docker.com) を参照しており、moby 本体に翻訳プログラムは確認できない。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/moby/moby/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "kind": "issue",
+      "note_ja": "issue / PR を「japanese translation」で検索してもヒットなし。日本語翻訳の既存作業・チームは確認できず。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/moby/moby/issues?q=japanese+translation"
+    },
+    {
+      "kind": "contributing",
+      "note_ja": "利用者向けドキュメントを担う docker/docs (docs.docker.com) の CONTRIBUTING.md にも翻訳・ローカライズ・多言語対応への言及は一切なし。英語での執筆とサイトビルド手順のみが対象。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/docker/docs/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "kind": "translation_policy",
+      "note_ja": "moby 本体・docker/docs のいずれにも公式の翻訳受付経路は確認できなかった(2026-08-03 再調査)。moby の docs/ はエンジン開発者向け英語文書のみで、docker/docs 側にも i18n 体制・翻訳受付方針は見当たらない。判断材料不足のため needs_verification を維持。(2026-08-03 再確認: docker/docs リポジトリ直下に i18n ディレクトリが存在することを確認。ただし README・CONTRIBUTING に翻訳・多言語対応の説明や受付方針はなく、翻訳受付経路が未確認である結論は変わらない)",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/docker/docs"
+    }
+  ],
+  "id": "verify-moby-moby",
+  "kind": "verification",
+  "legacy": {
+    "Star": "71,290",
+    "やり方": "",
+    "ライセンス": "Apache 2.0",
+    "文章量": "多",
+    "概要": "コンテナエコシステムのための共同プロジェクト https://mobyproject.org/",
+    "状態": "",
+    "開始年月": "2013/01"
+  },
   "metrics": {
-    "stars": 71949,
-    "observed_at": "2026-08-03"
+    "observed_at": "2026-08-03",
+    "stars": 71949
+  },
+  "permissions": {
+    "ai_assistance": "unknown",
+    "pull_request": "unknown",
+    "translation": "unknown"
+  },
+  "project": {
+    "category": "Infrastructure",
+    "license": "Apache 2.0",
+    "repository": "moby/moby",
+    "summary_ja": "コンテナエコシステムのための共同プロジェクト https://mobyproject.org/ 。リポジトリ内の docs/ はエンジン開発者向け技術文書(英語のみ)で、利用者向けドキュメントは docker/docs (docs.docker.com) が担う。翻訳受付方針は確認できていない。",
+    "url": "https://github.com/moby/moby"
+  },
+  "provenance": {
+    "imported_at": "2026-07-25",
+    "imported_from": "docs/legacy-list.md",
+    "last_verified_at": "2026-08-03",
+    "revision": 3
+  },
+  "schema_version": "translation-task/v1",
+  "source": {
+    "paths": [],
+    "revision": null
+  },
+  "status": "needs_verification",
+  "target": {
+    "locale": "ja-JP",
+    "paths": []
+  },
+  "title": {
+    "en": "Re-verify the Japanese translation workflow for moby/moby",
+    "ja": "moby/moby の日本語化参加方法を再検証"
+  },
+  "validation": [],
+  "workflow": {
+    "platform": "github",
+    "platform_url": null,
+    "translation_repo": null
   }
 }

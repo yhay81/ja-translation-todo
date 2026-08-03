@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-hakimel-reveal-js",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ready",
   "title": {
     "ja": "hakimel/reveal.js の日本語化参加方法を再検証",
     "en": "Re-verify the Japanese translation workflow for hakimel/reveal.js"
@@ -11,7 +11,7 @@
     "repository": "hakimel/reveal.js",
     "url": "https://github.com/hakimel/reveal.js",
     "category": "JavaScript",
-    "summary_ja": "HTML 製のプレゼン（スライド）フレームワーク。ドキュメントは revealjs.com に英語のみで提供され、リポジトリに CONTRIBUTING や i18n 体制はなく、翻訳受付方針も見つからない。公式ドキュメントサイトのソースの翻訳受け入れ経路は現時点で不明。",
+    "summary_ja": "HTML 製のプレゼン（スライド）フレームワーク。公式ドキュメントサイトのソースは別リポジトリ reveal/revealjs.com にあり、README で翻訳貢献を歓迎、translation-guide.md に手順が明文化されている。既存翻訳は繁体字中国語のみで日本語は未着手。翻訳は revealjs.com リポジトリへの PR で受け付けられる。",
     "license": "MIT"
   },
   "source": {
@@ -23,12 +23,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "allowed"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "draft_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -47,7 +47,25 @@
       "url": "https://github.com/hakimel/reveal.js/blob/master/README.md",
       "kind": "translation_policy",
       "observed_at": "2026-08-03",
-      "note_ja": "README はデモ・ドキュメント(revealjs.com)への案内のみで、翻訳・ローカライズへの言及なし。リポジトリ内に docs の i18n 基盤や他言語版も見当たらず、翻訳受付方針は確認できなかった。判断材料不足のため needs_verification を維持。"
+      "note_ja": "本体リポジトリの README はデモ・ドキュメント(revealjs.com)への案内のみで、翻訳・ローカライズへの言及なし。翻訳の受付は本体ではなくドキュメントサイトの別リポジトリ側にある。"
+    },
+    {
+      "url": "https://github.com/reveal/revealjs.com/blob/master/translation-guide.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイトのソースリポジトリ reveal/revealjs.com に translation-guide.md があり、src/_data/locales.js への言語追加、src/_data/i18n/ の編集、言語フォルダ作成、Markdown ページとデモの翻訳という手順を明文化。README にも「If you would like to help with translations, please follow our Translation Guide」「Contributions are welcome!」と記載。"
+    },
+    {
+      "url": "https://github.com/reveal/revealjs.com/pull/63",
+      "kind": "pull_request",
+      "observed_at": "2026-08-03",
+      "note_ja": "サイトの中国語(繁体字)翻訳 PR #63 が 2024-06-04 にマージ済み。翻訳が実際に PR 経由で受け入れられた実績を確認。関連 issue #62(翻訳協力の申し出)も存在。"
+    },
+    {
+      "url": "https://github.com/reveal/revealjs.com/blob/master/src/_data/locales.js",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "locales.js に定義済みの言語は en と zh-Hant の2つのみで、日本語(ja)は未着手であることを確認。"
     },
     {
       "url": "https://github.com/hakimel/reveal.js",
@@ -62,15 +80,15 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
     "platform_url": null,
-    "translation_repo": null
+    "translation_repo": "reveal/revealjs.com"
   },
   "content_type": "official_docs",
   "difficulty": {
@@ -82,7 +100,7 @@
     }
   },
   "community": {
-    "japanese_team": "unknown",
+    "japanese_team": "none",
     "team_url": null
   },
   "metrics": {

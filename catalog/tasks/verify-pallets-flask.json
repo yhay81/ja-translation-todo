@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-pallets-flask",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "blocked",
   "title": {
     "ja": "Flask のドキュメント日本語化の検証",
     "en": null
@@ -11,7 +11,7 @@
     "repository": "pallets/flask",
     "url": "https://github.com/pallets/flask",
     "category": "Python",
-    "summary_ja": "軽量 Web フレームワーク。公式の翻訳受け入れ制度はなく、過去のissueでもメンテナは翻訳の公式化に消極的。既存日本語訳フォーク(msiz07/flask-docs-ja)は長期停滞しており、貢献経路が確立していない。",
+    "summary_ja": "軽量 Web フレームワーク。公式の翻訳受け入れ制度はなく、過去のissueでもメンテナは翻訳の公式化に消極的。さらに Pallets org 全体の CONTRIBUTING で AI 生成の PR/issue は「見つけ次第クローズ」と明示されており、AI 支援翻訳の貢献は不可。",
     "license": "BSD-3-Clause"
   },
   "source": {
@@ -26,11 +26,11 @@
   },
   "permissions": {
     "translation": "unknown",
-    "ai_assistance": "unknown",
+    "ai_assistance": "forbidden",
     "pull_request": "unknown"
   },
   "automation": {
-    "level": "discover_only",
+    "level": "blocked",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -56,6 +56,12 @@
       "kind": "team_activity",
       "observed_at": "2026-08-03",
       "note_ja": "コミュニティ日本語訳フォーク msiz07/flask-docs-ja の GitHub 上の最終pushは2019-12-08で長期停滞。活発な日本語チームは確認できない。"
+    },
+    {
+      "url": "https://github.com/pallets/.github/blob/main/CONTRIBUTING.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "Pallets org 共通 CONTRIBUTING の「AI-Generated Contributions」節に「AI-generated PRs and issues are closed on sight, without review or discussion」と明記。品質にかかわらず適用され、再オープンや手直しして再利用することも不可とされる。AI 支援での翻訳貢献は明確に禁止。"
     }
   ],
   "validation": [],
@@ -64,10 +70,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

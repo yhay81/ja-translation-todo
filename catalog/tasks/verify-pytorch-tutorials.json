@@ -54,6 +54,18 @@
       "kind": "team_activity",
       "observed_at": "2026-08-03",
       "note_ja": "コミュニティ日本語訳 (PyTorch 1.8 時点、Google Colab ノートブック形式、Star 219) は最終更新 2021-10-14 のまま休止。活動中の日本語翻訳チームは確認できない。"
+    },
+    {
+      "url": "https://github.com/PyTorchKorea/tutorials-kr",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "韓国語コミュニティ (PyTorchKorea org) のチュートリアル翻訳リポジトリは活発 (最終 push 2026-07-28、Star 380)。公式 org 外の独立コミュニティ org で継続する前例があり、日本語でも同形式の再活性化余地はあるとみられるが、本家側の受付経路ではない。"
+    },
+    {
+      "url": "https://github.com/pytorch/tutorials/issues?q=translation",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "issue / PR 検索 (translation, japanese translation) でヒットするのは機械翻訳チュートリアル自体の内容に関するもののみで、ドキュメント翻訳の受付方針や i18n 提案へのメンテナ回答は見当たらない。公式の翻訳受付経路は確認できなかった (2026-08-03)。"
     }
   ],
   "validation": [],
@@ -62,10 +74,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

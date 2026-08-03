@@ -56,6 +56,18 @@
       "kind": "pull_request",
       "observed_at": "2026-08-03",
       "note_ja": "2017 年に docs/zhCN/ へ中国語訳を追加する PR が、リポジトリ内翻訳はメンテナ不在との理由で merge されず close された経緯(旧一覧の記載どおり)。以後も翻訳受付方針の明文化は確認できず、permissions.translation は unknown のまま。"
+    },
+    {
+      "url": "https://www.chartjs.org/docs/latest/",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイト側を再調査。docs サイト(VuePress)に言語切替・翻訳版へのリンク・localization への言及はなく、フッターは最終更新日時と前後ページリンクのみ。"
+    },
+    {
+      "url": "https://github.com/orgs/chartjs/repositories",
+      "kind": "repository",
+      "observed_at": "2026-08-03",
+      "note_ja": "chartjs org のリポジトリ一覧を確認したが、docs 翻訳用・i18n 系のリポジトリは存在しない(website は www.chartjs.org リポジトリのみ)。Chart.js 本体の issue 検索でも翻訳受付に関する提案・回答は見つからなかった。結論: 公式の翻訳受付経路は確認できなかった(2026-08-03)。needs_verification を維持。"
     }
   ],
   "validation": [],
@@ -64,10 +76,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

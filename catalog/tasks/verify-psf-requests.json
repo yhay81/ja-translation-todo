@@ -62,6 +62,18 @@
       "kind": "issue",
       "observed_at": "2026-08-03",
       "note_ja": "2026-04-13 に第三者 (localizethedocs org) が Crowdin ベースの requests-docs-l10n プロジェクトを告知する open issue。メンテナの応答や公式な承認は確認できず、公式経路とは言えない。"
+    },
+    {
+      "url": "https://requests.readthedocs.io/en/latest/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式ドキュメント (v2.34.2) のトップページ・サイドバー・Contributor's Guide 目次に他言語版へのリンクや翻訳への言及はなし。"
+    },
+    {
+      "url": "https://github.com/localizethedocs/requests-docs-l10n/blob/main/languages.json",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "第三者の requests-docs-l10n は活動中 (最終 push 2026-08-03) だが、languages.json の対応言語は en_US / zh_CN / zh_TW のみで日本語は未対応。psf 側の公認も確認できず、公式の翻訳受付経路は確認できなかった (2026-08-03)。"
     }
   ],
   "validation": [],
@@ -70,10 +82,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "legacy": {
     "概要": "人間のためのHTTPリクエストのPythonライブラリ",

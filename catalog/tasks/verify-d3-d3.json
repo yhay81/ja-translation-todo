@@ -50,6 +50,18 @@
       "kind": "repository",
       "observed_at": "2026-08-03",
       "note_ja": "アーカイブされておらず 2026-05-28 まで更新あり(Star 113,316、ISC)。公式ドキュメントは docs/ 配下の VitePress 製(d3js.org)で英語のみ。CONTRIBUTING は存在せず、README・issue にも翻訳受付方針や i18n の言及は見つからなかった。旧一覧の「公式 wiki を直接編集」という方式は docs 移行後の現行リポジトリには当てはまらない。判断材料不足のため needs_verification を維持。"
+    },
+    {
+      "url": "https://d3js.org/",
+      "kind": "platform",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイト側を再調査。言語切替・翻訳版へのリンクはなく、フッターは Forum / Slack / Discussions / Releases と Observable 社の製品リンクのみ(© 2026 Mike Bostock and Observable, Inc.)。サイトは Observable 社の運営下にあり、翻訳・localization への言及はない。"
+    },
+    {
+      "url": "https://github.com/search?q=repo%3Ad3%2Fd3+translation+OR+japanese&type=issues",
+      "kind": "issue",
+      "observed_at": "2026-08-03",
+      "note_ja": "d3/d3 の issue を translation / japanese で検索したが該当 0 件で、翻訳提案へのメンテナ回答の実績も見つからなかった。結論: 公式の翻訳受付経路は確認できなかった(2026-08-03)。needs_verification を維持。(2026-08-03 再確認: 同一検索で issue 18 件がヒットし「該当 0 件」は誤り。ただし翻訳受付方針を示すメンテナ回答は確認できておらず、結論と status は変更しない)"
     }
   ],
   "validation": [],
@@ -58,10 +70,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",

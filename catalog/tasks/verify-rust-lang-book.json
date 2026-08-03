@@ -1,102 +1,102 @@
 {
-  "schema_version": "translation-task/v1",
+  "automation": {
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ],
+    "level": "draft_only"
+  },
+  "community": {
+    "japanese_team": "inactive",
+    "team_url": "https://github.com/rust-lang-ja/book-ja"
+  },
+  "content_type": "book",
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": true
+  },
+  "difficulty": {
+    "factors": {
+      "domain": "book",
+      "volume": "large",
+      "workflow": "fork_hosted"
+    },
+    "score": 5
+  },
+  "evidence": [
+    {
+      "kind": "repository",
+      "note_ja": "リポジトリの存在と活動を確認。",
+      "observed_at": "2026-08-02",
+      "url": "https://github.com/rust-lang/book"
+    },
+    {
+      "kind": "translation_policy",
+      "note_ja": "CONTRIBUTING と README の Translations 節で「We'd love help translating the book!」と翻訳を明示的に歓迎。mdBook の多言語対応待ちのため本家には取り込まれず、Translations ラベルの issue と言語別の外部リポジトリで進める方式。日本語は rust-lang-ja/book-ja が該当。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/rust-lang/book/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "kind": "repository",
+      "note_ja": "和訳リポジトリ (master-ja ブランチ、Star 346)。直接 PR を受け付けており、doc.rust-jp.rs として公開。本家 rust-lang/book は 2026-07-14 まで活発に更新されており、和訳の追従対象となる差分が存在する。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/rust-lang-ja/book-ja"
+    },
+    {
+      "kind": "team_activity",
+      "note_ja": "2026-02-14〜15 に ch13〜ch17 の和訳を最新版へ更新する PR (#261〜#265) が連続マージされたが、それ以降 2026-08-03 時点まで約5.5ヶ月コミットがない。ch18 以降の最新版追従が未着手で、レビュー体制は残るが活動は停滞気味(直近90日の活動なし)。",
+      "observed_at": "2026-08-03",
+      "url": "https://github.com/rust-lang-ja/book-ja/pulls?q=is%3Apr+is%3Amerged"
+    }
+  ],
   "id": "verify-rust-lang-book",
   "kind": "verification",
-  "status": "ready",
-  "title": {
-    "ja": "The Rust Programming Language (rust-lang-ja/book-ja) の和訳更新",
-    "en": null
+  "metrics": {
+    "observed_at": "2026-08-03",
+    "stars": 18119
+  },
+  "permissions": {
+    "ai_assistance": "unknown",
+    "pull_request": "allowed",
+    "translation": "explicit"
   },
   "project": {
+    "category": "Rust",
+    "license": "MIT OR Apache-2.0",
     "repository": "rust-lang/book",
-    "url": "https://github.com/rust-lang/book",
-    "category": "Other",
     "summary_ja": "Rust公式書籍The Book。日本語訳はrust-lang-jaコミュニティのbook-jaで運営され、原書改訂への追従翻訳や校正のPRを受け付ける。doc.rust-jp.rsとして公開されている。",
-    "license": "MIT OR Apache-2.0"
+    "url": "https://github.com/rust-lang/book"
   },
+  "provenance": {
+    "imported_at": "2026-08-02",
+    "imported_from": null,
+    "last_verified_at": "2026-08-03",
+    "revision": 3
+  },
+  "schema_version": "translation-task/v1",
   "source": {
-    "revision": null,
     "paths": [
       "src"
-    ]
+    ],
+    "revision": null
   },
+  "status": "ready",
   "target": {
     "locale": "ja-JP",
     "paths": [
       "src"
     ]
   },
-  "permissions": {
-    "translation": "explicit",
-    "ai_assistance": "unknown",
-    "pull_request": "allowed"
+  "title": {
+    "en": null,
+    "ja": "The Rust Programming Language (rust-lang-ja/book-ja) の和訳更新"
   },
-  "automation": {
-    "level": "draft_only",
-    "allowed_actions": [
-      "inspect_public_metadata",
-      "find_translation_policy",
-      "find_existing_work",
-      "report_evidence"
-    ]
-  },
-  "evidence": [
-    {
-      "url": "https://github.com/rust-lang/book",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://github.com/rust-lang/book/blob/main/CONTRIBUTING.md",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "CONTRIBUTING と README の Translations 節で「We'd love help translating the book!」と翻訳を明示的に歓迎。mdBook の多言語対応待ちのため本家には取り込まれず、Translations ラベルの issue と言語別の外部リポジトリで進める方式。日本語は rust-lang-ja/book-ja が該当。"
-    },
-    {
-      "url": "https://github.com/rust-lang-ja/book-ja",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "和訳リポジトリ (master-ja ブランチ、Star 346)。直接 PR を受け付けており、doc.rust-jp.rs として公開。本家 rust-lang/book は 2026-07-14 まで活発に更新されており、和訳の追従対象となる差分が存在する。"
-    },
-    {
-      "url": "https://github.com/rust-lang-ja/book-ja/pulls?q=is%3Apr+is%3Amerged",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "2026-02-14〜15 に ch13〜ch17 の和訳を最新版へ更新する PR (#261〜#265) が連続マージされたが、それ以降 2026-08-03 時点まで約5.5ヶ月コミットがない。ch18 以降の最新版追従が未着手で、レビュー体制は残るが活動は停滞気味(直近90日の活動なし)。"
-    }
-  ],
   "validation": [],
-  "credit": {
-    "expected": "unknown",
-    "public_attribution": true
-  },
-  "provenance": {
-    "revision": 2,
-    "imported_from": null,
-    "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
-  },
   "workflow": {
     "platform": "github",
     "platform_url": "https://github.com/rust-lang-ja/book-ja",
     "translation_repo": "rust-lang-ja/book-ja"
-  },
-  "content_type": "book",
-  "difficulty": {
-    "score": 5,
-    "factors": {
-      "volume": "large",
-      "workflow": "fork_hosted",
-      "domain": "book"
-    }
-  },
-  "community": {
-    "japanese_team": "inactive",
-    "team_url": "https://github.com/rust-lang-ja/book-ja"
-  },
-  "metrics": {
-    "stars": 18119,
-    "observed_at": "2026-08-03"
   }
 }

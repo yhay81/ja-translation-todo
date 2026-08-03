@@ -2,7 +2,7 @@
   "schema_version": "translation-task/v1",
   "id": "verify-storybookjs-storybook",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
     "ja": "Storybook ドキュメント日本語化の検証",
     "en": null
@@ -11,7 +11,7 @@
     "repository": "storybookjs/storybook",
     "url": "https://github.com/storybookjs/storybook",
     "category": "JavaScript",
-    "summary_ja": "UI コンポーネント開発環境 Storybook のドキュメントは英語のみで、公式の翻訳受け入れ経路が未整備。日本のユーザー基盤が大きく、公認翻訳や i18n 導入をメンテナに打診する候補となる。",
+    "summary_ja": "UI コンポーネント開発環境 Storybook のドキュメントは英語のみ。2022年にメンテナが「翻訳はチュートリアルのみで公式 docs は対象外」と回答しており、公式チュートリアルには日本語版が存在する。docs 本体の翻訳はメンテナへの打診と合意が前提。",
     "license": "MIT"
   },
   "source": {
@@ -25,7 +25,7 @@
   "permissions": {
     "translation": "unknown",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
     "level": "discover_only",
@@ -60,6 +60,24 @@
       "kind": "issue",
       "observed_at": "2026-08-03",
       "note_ja": "issue 検索でもドキュメント翻訳の公式方針・進行中の日本語化作業は確認できず。翻訳可否をメンテナに確認する材料が揃っておらず、needs_verification を維持。"
+    },
+    {
+      "url": "https://github.com/storybookjs/storybook/issues/17287",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "韓国語への公式ドキュメント翻訳を申し出た issue（2022-01-20 close）に対し、コアメンバー shilman が「we are currently only translating the tutorials, not the official documentation at this time」と回答して close。公式 docs の翻訳は当時受け付けておらず、チュートリアルのみ翻訳対象という方針が確認できた（4年以上前の回答のため、現在の方針は再打診が必要とみられる）。"
+    },
+    {
+      "url": "https://storybook.js.org/tutorials/intro-to-storybook/",
+      "kind": "team_activity",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式チュートリアル（Intro to Storybook）は English / Español / 日本語 / Português など12言語で提供されており、日本語版が既に存在する。チュートリアル側には翻訳受け入れの実績がある。"
+    },
+    {
+      "url": "https://storybook.js.org/community/",
+      "kind": "translation_policy",
+      "observed_at": "2026-08-03",
+      "note_ja": "公式サイトの Community ページに翻訳・localization・i18n への言及はなし。docs 本体の翻訳経路は公式サイト側にも存在しない。docs 翻訳はメンテナへの打診と合意が前提のため ask_first とする。"
     }
   ],
   "validation": [],
@@ -68,10 +86,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-08-03"
   },
   "workflow": {
     "platform": "github",
