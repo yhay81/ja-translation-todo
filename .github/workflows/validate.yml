@@ -2,11 +2,9 @@ name: validate
 
 on:
   pull_request:
-  push:
-    branches: [master]
-
 jobs:
   validate:
+    timeout-minutes: 1
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
