@@ -1,8 +1,7 @@
 """Seed or update the D1 catalog from catalog/tasks/*.json.
 
-Generates one UPSERT statement per task (existing rows get task_revision+1
-and a task_revisions audit entry with change_kind 'import'), bumps
-catalog_meta, and either prints the SQL or pipes it through wrangler.
+Updates changed tasks, unpublishes removed tasks, records revision history,
+and advances catalog_meta. Writes SQL to a file for Wrangler to apply.
 
 Usage:
   uv run python scripts/seed_catalog.py --out seed.sql
@@ -50,6 +49,8 @@ def git_revision() -> str:
 
 
 def render_sql(tasks: list[dict[str, object]]) -> str:
+    if not tasks:
+        raise ValueError("refusing to seed an empty catalog")
     now = int(time.time())
     changed_by = f"seed:{git_revision()}"
     statements: list[str] = []
@@ -77,17 +78,27 @@ def render_sql(tasks: list[dict[str, object]]) -> str:
             "  repository = excluded.repository, category = excluded.category,\n"
             "  title_ja = excluded.title_ja, automation_level = excluded.automation_level,\n"
             "  search_text = excluded.search_text, payload_json = excluded.payload_json,\n"
-            f"  task_revision = tasks.task_revision + 1, updated_at = {now}\n"
-            "WHERE excluded.payload_json != tasks.payload_json;"
+            f"  published = 1, task_revision = tasks.task_revision + 1, updated_at = {now}\n"
+            "WHERE excluded.payload_json != tasks.payload_json OR tasks.published = 0;"
         )
         statements.append(
             "INSERT OR IGNORE INTO task_revisions (task_id, task_revision, payload_json,"
             " change_kind, changed_by, change_note, created_at)\n"
-            f"SELECT id, task_revision, {sql_quote(payload)}, 'import',"
+            "SELECT id, task_revision, payload_json, 'import',"
             f" {sql_quote(changed_by)}, NULL, {now}\n"
-            f"  FROM tasks WHERE id = {sql_quote(str(task['id']))}"
-            f" AND payload_json = {sql_quote(payload)};"
+            f"  FROM tasks WHERE id = {sql_quote(str(task['id']))};"
         )
+    ids = ", ".join(sql_quote(str(task["id"])) for task in tasks)
+    statements.append(
+        f"UPDATE tasks SET published = 0, task_revision = task_revision + 1, updated_at = {now}"
+        f" WHERE published = 1 AND id NOT IN ({ids});"
+    )
+    statements.append(
+        "INSERT OR IGNORE INTO task_revisions (task_id, task_revision, payload_json,"
+        " change_kind, changed_by, change_note, created_at)\n"
+        f"SELECT id, task_revision, payload_json, 'import', {sql_quote(changed_by)},"
+        " 'Removed from the source catalog', updated_at FROM tasks WHERE published = 0;"
+    )
     revision = f"cat_{now}_{secrets.token_hex(4)}"
     statements.append(
         f"UPDATE catalog_meta SET catalog_revision = {sql_quote(revision)},"
@@ -100,8 +111,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path, help="write SQL to this file")
     parser.add_argument("--apply", action="store_true", help="run via wrangler d1 execute")
-    parser.add_argument("--local", action="store_true")
-    parser.add_argument("--remote", action="store_true")
+    target = parser.add_mutually_exclusive_group()
+    target.add_argument("--local", action="store_true")
+    target.add_argument("--remote", action="store_true")
     parser.add_argument(
         "--persist-to",
         default="dist/worker/.wrangler/state",

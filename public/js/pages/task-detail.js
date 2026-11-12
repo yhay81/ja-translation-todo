@@ -262,14 +262,15 @@ function view(t) {
     </div>`;
 }
 
-export async function renderTaskDetail(outlet, params) {
+export async function renderTaskDetail(outlet, params, signal) {
   outlet.innerHTML = '<p class="page-loading">読み込み中…</p>';
 
   let bundle = readInitialData(params.id);
   if (!bundle) {
     try {
-      bundle = await api(`/api/v2/tasks/${encodeURIComponent(params.id)}`);
+      bundle = await api(`/api/v2/tasks/${encodeURIComponent(params.id)}`, { signal });
     } catch (err) {
+      if (signal.aborted) return;
       if (err.status === 404) {
         outlet.innerHTML = `
           <div class="notfound-page">
@@ -287,6 +288,7 @@ export async function renderTaskDetail(outlet, params) {
     }
   }
 
+  if (signal.aborted) return;
   document.title = `${bundle.title?.ja || bundle.id} — ja-translation-todo`;
   outlet.innerHTML = view(bundle);
   outlet.querySelector("tt-evidence-timeline").evidence = bundle.evidence || [];

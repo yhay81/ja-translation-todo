@@ -31,7 +31,7 @@ const CHART_COLORS = [
   "var(--chart-8)",
 ];
 
-export async function renderStats(outlet) {
+export async function renderStats(outlet, _params, signal) {
   document.title = "統計 — ja-translation-todo";
   outlet.innerHTML = '<p class="page-loading">読み込み中…</p>';
 
@@ -39,11 +39,13 @@ export async function renderStats(outlet) {
   try {
     stats = await getStats(true);
   } catch (err) {
+    if (signal.aborted) return;
     outlet.innerHTML = `<p class="error-state">統計を取得できませんでした: ${esc(err.message)}</p>`;
     toastError(err);
     return;
   }
 
+  if (signal.aborted) return;
   const byStatus = stats.by_status || {};
   outlet.innerHTML = `
     <h1>統計</h1>

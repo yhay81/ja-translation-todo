@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
 
@@ -11,10 +12,7 @@ from hayate import Request
 from translation_hub.app import app
 from translation_hub.catalog_store import MemoryCatalogStore
 
-SHELL_HTML = (
-    "<html><head><title>static</title><!--ssr:head--></head>"
-    "<body><div id='app'></div><!--ssr:data--></body></html>"
-)
+SHELL_HTML = (Path(__file__).resolve().parents[1] / "public/index.html").read_text(encoding="utf-8")
 
 
 def sample_task(

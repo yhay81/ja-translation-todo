@@ -53,13 +53,13 @@ async def api_v1_gone(c: Context):
 @app.on("POST", "/mcp")
 @app.on("DELETE", "/mcp")
 async def mcp_route(c: Context):
-    from hayate_mcp import McpMount
+    from hayate_mcp import WorkerMcpMount
 
     from .mcp_server import build_server
 
     # Stateless transport: the server is bound to this request's env so MCP
     # tools read the same D1-backed catalog as the REST API.
-    mount = McpMount(build_server(c.env), path="/mcp", stateless=True)
+    mount = WorkerMcpMount(build_server(c.env), path="/mcp")
     return await mount.fetch(c.req)
 
 

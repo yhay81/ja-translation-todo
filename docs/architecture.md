@@ -25,10 +25,26 @@ Cloudflare Python Workers上でHayateを動かす。Static AssetsがSPAシェル
 Workerが `/api/*`、`/openapi.json`、`/mcp`、`/healthz`、`/tasks.json`、`/feeds/*`、
 `/tasks/:id`(OGPメタ+初期データ注入)を処理する。MCPは `hayate-mcp` のstateless
 Streamable HTTP transportをリクエストスコープで構築し、REST APIと同じcatalog storeを読む。
-旧ドメイン ja.yusuke-hayashi.com へのリクエストはミドルウェアで ja.yhay81.com に301する。
 
 読み取りはisolate内キャッシュ(catalog_revision一致時のみ再利用)で、D1クエリは
 リクエストあたり最小限に抑える。
+
+## 旧ドメインからの転送
+
+Workerは旧ドメインのAPIやタスク詳細へのリクエストを新ドメインに301転送する。
+トップページやCSSなどはCloudflareが直接配信するため、これらも転送するには
+`yusuke-hayashi.com` ゾーンの **Rules → Redirect Rules → Single Redirect** に次のルールを設定する。
+
+| 設定 | 値 |
+|---|---|
+| Request URL（Wildcard pattern） | `http*://ja.yusuke-hayashi.com/*` |
+| Target URL | `https://ja.yhay81.com/${2}` |
+| Status code | `301` |
+| Preserve query string | 有効 |
+
+設定後、`curl -I 'https://ja.yusuke-hayashi.com/?q=react'` で
+`Location: https://ja.yhay81.com/?q=react` を確認する。
+[Cloudflareの設定例](https://developers.cloudflare.com/rules/url-forwarding/examples/redirect-all-different-hostname/)
 
 ## 更新フロー
 

@@ -1,5 +1,6 @@
 // pages/list.js — タスク一覧ページ(フィルタ状態⇔URL 双方向同期)
 import { api, toastError } from "../api.js";
+import { replaceSearch } from "../router.js";
 import { getStats } from "../store.js";
 import { toast } from "../components/toast.js";
 import { esc } from "../labels.js";
@@ -27,11 +28,10 @@ function writeParams(values) {
     if (values[key]) sp.set(key, values[key]);
   }
   if (values.page && Number(values.page) > 1) sp.set("page", values.page);
-  const query = sp.toString();
-  history.replaceState({}, "", query ? `/?${query}` : "/");
+  replaceSearch(sp.toString());
 }
 
-export async function renderList(outlet) {
+export async function renderList(outlet, _params, signal) {
   document.title = "タスク一覧 — ja-translation-todo";
   outlet.innerHTML = `
     <section class="hero">
@@ -67,12 +67,12 @@ export async function renderList(outlet) {
   const countEl = outlet.querySelector("#result-count");
   const revisionEl = outlet.querySelector("#result-revision");
 
-  filterBar.values = readParams();
+  const initial = readParams();
+  if (initial.category) filterBar.categories = [initial.category];
+  filterBar.values = initial;
   getStats()
     .then((stats) => {
-      filterBar.categories = Object.keys(stats.by_category || {}).sort();
-      // カテゴリ選択肢の読み込み後にURLの値を再適用する
-      filterBar.values = readParams();
+      if (!signal.aborted) filterBar.categories = Object.keys(stats.by_category || {}).sort();
     })
     .catch(() => {});
 
@@ -91,8 +91,8 @@ export async function renderList(outlet) {
     const seq = ++requestSeq;
     countEl.textContent = "読み込み中…";
     try {
-      const data = await api(`/api/v2/tasks?${sp.toString()}`);
-      if (seq !== requestSeq) return; // 古いレスポンスは破棄
+      const data = await api(`/api/v2/tasks?${sp.toString()}`, { signal });
+      if (signal.aborted || seq !== requestSeq) return; // 古いレスポンスは破棄
       const items = data.items || [];
       const total = data.total ?? items.length;
 
@@ -115,7 +115,7 @@ export async function renderList(outlet) {
         : "";
       pager.update({ page, total, perPage: PER_PAGE });
     } catch (err) {
-      if (seq !== requestSeq) return;
+      if (signal.aborted || seq !== requestSeq) return;
       countEl.textContent = "読み込みに失敗しました";
       grid.innerHTML = `<p class="error-state">タスク一覧を取得できませんでした: ${esc(err.message)}</p>`;
       toastError(err);

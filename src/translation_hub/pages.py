@@ -19,7 +19,7 @@ from .catalog import task_bundle
 from .catalog_store import catalog_store_from_env
 from .common import CANONICAL_ORIGIN, env_value
 
-HEAD_MARKER = "<!--ssr:head-->"
+HEAD_BLOCK = re.compile(r"<!--ssr:head-->.*?<!--ssr:head:end-->", re.DOTALL)
 DATA_MARKER = "<!--ssr:data-->"
 
 
@@ -31,7 +31,9 @@ def register(app: Hayate) -> None:
             return c.text("service unavailable", status=503)
 
         store = catalog_store_from_env(c.env)
-        record = await store.get_record(c.req.param("id")) if store is not None else None
+        if store is None:
+            return c.text("service unavailable", status=503)
+        record = await store.get_record(c.req.param("id"))
         if record is None:
             head = _head_block(
                 title="タスクが見つかりません | ja-translation-todo",
@@ -83,16 +85,10 @@ def _head_block(*, title: str, description: str, url: str) -> str:
     )
 
 
-_STATIC_TITLE = re.compile(r"<title>.*?</title>", re.DOTALL)
-
-
 def _inject(shell: str, head: str, initial: dict[str, Any] | None) -> str:
-    # The shell ships a static <title>; drop it so the injected one wins
-    # (browsers and crawlers use the first title in the document).
-    document = _STATIC_TITLE.sub("", shell, count=1)
-    document = document.replace(HEAD_MARKER, head, 1)
+    document = HEAD_BLOCK.sub(lambda _: head, shell, count=1)
     if initial is not None:
-        payload = json.dumps(initial, ensure_ascii=False).replace("</", "<\\/")
+        payload = json.dumps(initial, ensure_ascii=False).replace("<", "\\u003c")
         document = document.replace(
             DATA_MARKER,
             f'<script type="application/json" id="initial-data">{payload}</script>',
