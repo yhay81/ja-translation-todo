@@ -149,10 +149,7 @@ def _difficulty_score(task: dict[str, Any]) -> int | None:
 
 def _sort_key(sort: str):
     if sort == "stars":
-        return lambda record: (
-            -(_stars(record["task"]) or -1),
-            record["task"]["id"],
-        )
+        return lambda record: stars_sort_key(record["task"])
     if sort == "difficulty":
         return lambda record: (
             _difficulty_score(record["task"]) or 9,
@@ -167,13 +164,20 @@ def _sort_key(sort: str):
     return lambda record: (-record["updated_at"], record["task"]["id"])
 
 
-def _stars(task: dict[str, Any]) -> int | None:
+def task_stars(task: dict[str, Any]) -> int | None:
+    """Read the observed count, falling back to numeric legacy Star entries."""
     metrics = task.get("metrics")
     if isinstance(metrics, dict) and isinstance(metrics.get("stars"), int):
         return metrics["stars"]
     legacy = task.get("legacy")
     if isinstance(legacy, dict):
         raw = legacy.get("Star")
-        if isinstance(raw, str) and raw.strip().isdigit():
+        if isinstance(raw, str) and raw.strip().isdecimal():
             return int(raw.strip())
     return None
+
+
+def stars_sort_key(task: dict[str, Any]) -> tuple[int, str]:
+    """Order by descending stars, then ID, with unmeasured counts last."""
+    stars = task_stars(task)
+    return (-stars if stars is not None else 1), task["id"]

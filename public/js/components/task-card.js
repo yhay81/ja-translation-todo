@@ -29,13 +29,13 @@ class TaskCard extends HTMLElement {
     const stars = fmtStars(starsOf(t));
     const category = t.project?.category;
     this.innerHTML = `
-      <a class="task-card" href="/tasks/${encodeURIComponent(t.id)}">
+      <article class="task-card">
         <div class="card-topline">
           <tt-status-badge status="${esc(t.status)}"></tt-status-badge>
           <span class="chip neutral">${esc(KIND_LABELS[t.kind] || t.kind)}</span>
         </div>
-        <p class="card-repo">${esc(t.project?.repository || "")}</p>
-        <h3>${esc(t.title?.ja || t.title?.en || t.id)}</h3>
+        <h2 class="card-repo"><a href="${esc(t.project.url)}" target="_blank" rel="noopener noreferrer">${esc(t.project.repository)}</a></h2>
+        <p class="card-title"><a href="/tasks/${encodeURIComponent(t.id)}">${esc(t.title?.ja || t.title?.en || t.id)}</a></p>
         <p class="card-summary">${esc(t.project?.summary_ja || "")}</p>
         <div class="card-meta">
           ${category ? `<span>${esc(category)}</span>` : ""}
@@ -43,7 +43,7 @@ class TaskCard extends HTMLElement {
           ${stars ? `<span title="GitHub stars">★ ${esc(stars)}</span>` : ""}
           <tt-automation-meter level="${esc(t.automation?.level || "")}"></tt-automation-meter>
         </div>
-      </a>`;
+      </article>`;
   }
 }
 

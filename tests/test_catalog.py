@@ -71,6 +71,17 @@ def test_sorts_and_paginates():
     assert by_difficulty["items"][0]["task"]["id"] == "verify-react"
 
 
+def test_star_sort_places_zero_above_unknown_and_keeps_default_update_order():
+    unknown = record(sample_task("a-unknown"), updated_at=40)
+    zero = record(sample_task("b-zero", metrics={"stars": 0}), updated_at=30)
+    popular = record(sample_task("c-popular", metrics={"stars": 10}), updated_at=20)
+    other_popular = record(sample_task("d-popular", metrics={"stars": 10}), updated_at=25)
+    records = [unknown, zero, other_popular, popular]
+
+    assert search_records(records, sort="stars")["items"] == [popular, other_popular, zero, unknown]
+    assert search_records(records)["items"] == [unknown, zero, other_popular, popular]
+
+
 def test_stats_aggregates():
     stats = catalog_stats(RECORDS)
     assert stats["total"] == 3

@@ -3,7 +3,7 @@ import { api, toastError } from "../api.js";
 import { replaceSearch } from "../router.js";
 import { getStats } from "../store.js";
 import { toast } from "../components/toast.js";
-import { esc } from "../labels.js";
+import { DEFAULT_LIST_SORT, esc } from "../labels.js";
 import "../components/task-card.js";
 import "../components/filter-bar.js";
 import "../components/pager.js";
@@ -14,7 +14,7 @@ const FILTER_KEYS = ["q", "status", "kind", "category", "difficulty", "platform"
 
 function readParams() {
   const sp = new URLSearchParams(location.search);
-  const values = {};
+  const values = { sort: DEFAULT_LIST_SORT };
   for (const key of [...FILTER_KEYS, "page"]) {
     const v = sp.get(key);
     if (v) values[key] = v;

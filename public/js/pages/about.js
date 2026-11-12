@@ -21,12 +21,13 @@ export async function renderAbout(outlet) {
     <div class="about-page">
       <h1>使い方</h1>
       <section>
-        <h2>ja-translation-todo とは</h2>
+        <h2>日本語訳を扱う理由</h2>
         <p>
-          OSSの日本語化タスクを、人間とAIエージェントが安全に発見・検証・実行するための公開レジストリです。
-          各タスクは「翻訳してよいか」「AIの利用は許されるか」「どこを訳すか」を
-          <strong>証拠(evidence)付き</strong>で整理しており、メンテナの負担を増やさずに参加できます。
+          このカタログは、OSSの日本語翻訳に参加したい人のためのものです。
+          同じプロジェクトでも、未訳の箇所やレビューするチームは言語ごとに異なります。
+          日本語訳に対象を絞ることで、既存の訳を確かめ、作業が重なる前に参加先を見つけられます。
         </p>
+        <p>各タスクには、翻訳の受付状況、日本語チームの窓口、AI利用の方針を、確認に使った資料とともに掲載しています。</p>
         <p>
           ソースコード: <a href="https://github.com/yhay81/ja-translation-todo" target="_blank" rel="noopener noreferrer">github.com/yhay81/ja-translation-todo</a>
         </p>

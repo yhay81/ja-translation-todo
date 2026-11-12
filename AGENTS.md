@@ -20,7 +20,7 @@
 
 ```powershell
 uv sync --locked
-uv run python scripts/build_catalog.py   # catalog/tasks の検証 + public/schema 更新
+uv run python scripts/build_catalog.py   # catalog/tasks の検証、public/schema とカテゴリ別索引の更新
 uv run pytest -q
 uv run ruff check .
 uv run ruff format --check .
