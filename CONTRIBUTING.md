@@ -18,7 +18,8 @@ uv run pytest -q
 uv run ruff check .
 ```
 
-CIでも同じ検証が走ります。mergeされた変更は、メンテナが
+生成されたカテゴリ別の索引に差分があれば、同じPRに含めます。CIは索引とカタログの一致を検証します。
+mergeされた変更は、メンテナが
 `uv run python scripts/seed_catalog.py --apply --remote` で本番へ反映します。
 
 ## `ready` に必要なもの

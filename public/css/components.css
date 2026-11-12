@@ -148,6 +148,8 @@ tt-task-card {
 }
 
 .task-card {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -177,16 +179,30 @@ tt-task-card {
 
 .task-card .card-repo {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--accent);
-  overflow-wrap: anywhere;
+  font-size: 1rem;
   margin: 0;
 }
 
-.task-card h3 {
+.task-card .card-repo a {
+  position: relative;
+  z-index: 1;
+}
+
+.task-card .card-title {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-weight: 700;
+}
+
+.task-card .card-title a {
+  color: inherit;
+}
+
+/* リポジトリ名以外のカード領域からはタスク詳細を開く。 */
+.task-card .card-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
 }
 
 .task-card .card-summary {

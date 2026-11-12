@@ -1,6 +1,8 @@
 # ja-translation-todo
 
-OSSの日本語化機会を、人間とAIエージェントが安全に発見・検証・実行するための公開レジストリです。
+OSSの日本語翻訳に参加したい人と、その調査を支援するAIエージェントのためのカタログです。
+翻訳の進み具合やレビュー担当は言語ごとに異なるため、日本語訳に対象を絞っています。
+既存の訳や日本語チームの窓口を調べ、どこで何を手伝えるかを掲載しています。
 
 サービスは読み取り専用で、カタログの正本はこのリポジトリの `catalog/tasks/*.json` です。
 更新はPull Requestだけを経路とし、メンテナのレビューを経て本番(Cloudflare D1)へ反映されます。
@@ -8,6 +10,13 @@ OSSの日本語化機会を、人間とAIエージェントが安全に発見・
 
 **公開サービス:** [ja.yhay81.com](https://ja.yhay81.com)
 (旧ドメインからの転送設定は [運用手順](docs/architecture.md#旧ドメインからの転送) を参照)
+
+## カテゴリから探す
+
+[CSS](css.md) · [JavaScript](javascript.md) · [Python](python.md) · [コマンドライン](command-line.md) · [その他の分野](others.md)
+
+各カテゴリの索引はカタログから生成され、スター数の多い順に読めます。
+[公開サイトの一覧](https://ja.yhay81.com/)では、カテゴリや参加条件で絞り込み、更新順や難易度順にも切り替えられます。
 
 ## 提供する入口
 
@@ -53,7 +62,7 @@ Python 3.12以降と[uv](https://docs.astral.sh/uv/)を使用します。
 
 ```powershell
 uv sync --locked
-uv run python scripts/build_catalog.py   # catalog/tasks/*.json のスキーマ検証
+uv run python scripts/build_catalog.py   # カタログを検証し、カテゴリ別の索引を更新
 uv run pytest -q
 uv run ruff check .
 uv run ruff format --check .

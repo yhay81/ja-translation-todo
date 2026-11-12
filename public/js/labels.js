@@ -85,9 +85,11 @@ export const JAPANESE_TEAM_LABELS = {
   unknown: "不明",
 };
 
+export const DEFAULT_LIST_SORT = "stars";
+
 export const SORT_LABELS = {
-  updated: "更新順",
   stars: "スター順",
+  updated: "更新順",
   difficulty: "難易度順",
   status: "状態順",
 };
@@ -144,7 +146,8 @@ export function fmtDateTime(value) {
 // star数: metrics.stars を優先し、旧データの legacy.Star にフォールバック
 export function starsOf(task) {
   const v = task?.metrics?.stars ?? task?.legacy?.Star ?? null;
-  return typeof v === "number" ? v : null;
+  if (typeof v === "number") return v;
+  return typeof v === "string" && /^\d+$/.test(v.trim()) ? Number(v) : null;
 }
 
 export function fmtStars(n) {

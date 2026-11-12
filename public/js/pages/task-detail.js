@@ -114,9 +114,9 @@ function view(t) {
         <span class="chip neutral">${esc(KIND_LABELS[t.kind] || t.kind)}</span>
         <tt-automation-meter level="${esc(t.automation?.level || "")}"></tt-automation-meter>
       </div>
-      <h1>${esc(t.title?.ja || t.title?.en || t.id)}</h1>
+      <h1><a class="repo-link" href="${esc(t.project.url)}" target="_blank" rel="noopener noreferrer">${esc(t.project.repository)}</a></h1>
+      <p class="detail-task-title">${esc(t.title?.ja || t.title?.en || t.id)}</p>
       ${t.title?.en && t.title?.ja ? `<p class="hero-copy">${esc(t.title.en)}</p>` : ""}
-      <p><a class="repo-link" href="${esc(t.project?.url || "#")}" target="_blank" rel="noopener noreferrer">${esc(t.project?.repository || "")}</a></p>
       ${t.project?.summary_ja ? `<p>${esc(t.project.summary_ja)}</p>` : ""}
     </header>
 
@@ -299,7 +299,10 @@ export async function renderTaskDetail(outlet, params, signal) {
   }
 
   if (signal.aborted) return;
-  document.title = `${bundle.title?.ja || bundle.id} — ja-translation-todo`;
+  const name = bundle.title?.ja || bundle.id;
+  const repo = bundle.project.repository;
+  const title = name.toLowerCase().includes(repo.toLowerCase()) ? name : `${repo} — ${name}`;
+  document.title = `${title} | ja-translation-todo`;
   outlet.innerHTML = view(bundle);
   outlet.querySelector("tt-evidence-timeline").evidence = bundle.evidence || [];
 }

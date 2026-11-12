@@ -98,8 +98,8 @@ async def test_task_page_injects_ogp_and_initial_data():
     page = await api(env, "/tasks/verify-react")
     assert page.status == 200
     html = await page.text()
-    assert "og:title" in html
-    assert "facebook/react" in html
+    title = "facebook/react の再検証 | ja-translation-todo"
+    assert f'<meta property="og:title" content="{title}">' in html
     assert 'id="initial-data"' in html
     assert html.count("<title>") == 1
     assert html.count('<meta name="description"') == 1
@@ -118,6 +118,7 @@ async def test_initial_data_keeps_html_content_inside_json():
     data = html.split('id="initial-data">', 1)[1].split("</script>", 1)[0]
     assert "<" not in data
     assert json.loads(data)["title"]["ja"] == title
+    assert "<title>example/repo — &lt;!--&lt;script&gt;" in html
 
 
 async def test_tasks_feed_renders_atom():

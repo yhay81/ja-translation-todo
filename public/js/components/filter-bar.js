@@ -4,6 +4,7 @@ import {
   STATUS_ORDER,
   KIND_LABELS,
   PLATFORM_LABELS,
+  DEFAULT_LIST_SORT,
   SORT_LABELS,
   DIFFICULTY_BAND_LABELS,
   esc,
@@ -55,8 +56,8 @@ class FilterBar extends HTMLElement {
     form.addEventListener("change", (e) => {
       if (e.target.tagName === "SELECT") this.emit();
     });
-    if (this._pendingValues) this.values = this._pendingValues;
     if (this._pendingCategories) this.categories = this._pendingCategories;
+    if (this._pendingValues) this.values = this._pendingValues;
   }
 
   disconnectedCallback() {
@@ -71,7 +72,7 @@ class FilterBar extends HTMLElement {
     }
     const form = this.querySelector("form");
     for (const name of ["q", "status", "kind", "category", "difficulty", "platform", "sort"]) {
-      form.elements[name].value = v?.[name] || (name === "sort" ? "updated" : "");
+      form.elements[name].value = v?.[name] || (name === "sort" ? DEFAULT_LIST_SORT : "");
     }
   }
 
@@ -86,7 +87,13 @@ class FilterBar extends HTMLElement {
     select.innerHTML =
       '<option value="">カテゴリ: すべて</option>' +
       (list || []).map((c) => `<option value="${esc(c)}">${esc(c)}</option>`).join("");
-    select.value = current;
+    if (current) {
+      const match = Array.from(select.options).find(
+        (option) => option.value.toLowerCase() === current.toLowerCase(),
+      );
+      if (!match) select.add(new Option(current, current));
+      select.value = match?.value ?? current;
+    }
   }
 
   read() {

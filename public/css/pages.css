@@ -71,7 +71,11 @@
 
 .detail-header .repo-link {
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+}
+
+.detail-header .detail-task-title {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .detail-columns {

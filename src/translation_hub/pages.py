@@ -46,7 +46,11 @@ def register(app: Hayate) -> None:
 
         task = record["task"]
         revision = await store.catalog_revision()
-        title = f"{task['title']['ja']} | ja-translation-todo"
+        title = task["title"]["ja"]
+        repository = task["project"]["repository"]
+        if repository.casefold() not in title.casefold():
+            title = f"{repository} — {title}"
+        title = f"{title} | ja-translation-todo"
         description = str(task["project"]["summary_ja"])[:200]
         head = _head_block(
             title=title,
