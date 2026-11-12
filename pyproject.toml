@@ -1,5 +1,5 @@
 [build-system]
-requires = ["uv_build>=0.11,<0.12"]
+requires = ["uv_build>=0.13.7,<0.14"]
 build-backend = "uv_build"
 
 [project]
@@ -11,24 +11,31 @@ requires-python = ">=3.12"
 license = { file = "LICENSE" }
 authors = [{ name = "Yusuke Hayashi" }]
 dependencies = [
-  "hayate>=0.8.0,<0.9",
-  "hayate-mcp>=0.6.0,<0.7",
-  "hayate-openapi>=0.1.0,<0.2",
+  "hayate>=0.16.0,<0.17",
+  "hayate-mcp>=0.12.1,<0.13",
+  "hayate-openapi>=0.8.2,<0.9",
+  "workers-runtime-sdk>=1.9.6; sys_platform == 'emscripten'",
 ]
 
 [dependency-groups]
 dev = [
-  "jsonschema>=4.25",
-  "pytest>=8.3",
-  "pytest-asyncio>=0.25",
-  "ruff>=0.12",
-  "uvicorn>=0.35",
-  "workers-py>=1.15",
+  "jsonschema>=4.26.0",
+  "pytest>=9.2.0",
+  "pytest-asyncio>=1.4.1.post1",
+  "ruff>=0.17.4",
+  "uvicorn>=0.54.0",
+  "workers-py>=1.17.9",
 ]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 testpaths = ["tests"]
+pythonpath = ["scripts"]
+
+[tool.uv]
+# pylock.toml resolves the separate Cloudflare Workers / Pyodide environment.
+environments = ["sys_platform != 'emscripten'"]
 
 [tool.uv.build-backend]
 module-name = "translation_hub"

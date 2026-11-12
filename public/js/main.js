@@ -104,9 +104,9 @@ function renderFooter() {
 
 // ---- ルーティング ----
 function wrap(handler) {
-  return async (outlet, params) => {
-    await handler(outlet, params);
+  return (...args) => {
     syncNavCurrent();
+    return handler(...args);
   };
 }
 

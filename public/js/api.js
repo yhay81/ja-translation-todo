@@ -2,8 +2,8 @@
 import { toast } from "./components/toast.js";
 
 // 同一オリジンAPI呼び出し。エラー時は problem+json を解釈した Error を投げる。
-export async function api(path, { method = "GET", body, headers = {} } = {}) {
-  const options = { method, headers: { ...headers } };
+export async function api(path, { method = "GET", body, headers = {}, signal } = {}) {
+  const options = { method, headers: { ...headers }, signal };
   if (body !== undefined) {
     options.headers["Content-Type"] = "application/json";
     options.body = JSON.stringify(body);

@@ -59,6 +59,10 @@ class FilterBar extends HTMLElement {
     if (this._pendingCategories) this.categories = this._pendingCategories;
   }
 
+  disconnectedCallback() {
+    clearTimeout(this._timer);
+  }
+
   // URLSearchParams 由来の値をフォームへ反映する
   set values(v) {
     if (!this._rendered) {

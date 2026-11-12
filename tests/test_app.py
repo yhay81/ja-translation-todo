@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 from helpers import api, make_env, sample_task, seed
 
 
@@ -86,10 +88,22 @@ async def test_task_page_injects_ogp_and_initial_data():
     assert "facebook/react" in html
     assert 'id="initial-data"' in html
     assert html.count("<title>") == 1
+    assert html.count('<meta name="description"') == 1
 
     missing = await api(env, "/tasks/nope")
     assert missing.status == 404
     assert "タスクが見つかりません" in await missing.text()
+
+
+async def test_initial_data_keeps_html_content_inside_json():
+    env = make_env()
+    title = "<!--<script>研究</script>-->"
+    await seed(env.CATALOG_STORE, sample_task(title={"ja": title}))
+    page = await api(env, "/tasks/verify-example-repo")
+    html = await page.text()
+    data = html.split('id="initial-data">', 1)[1].split("</script>", 1)[0]
+    assert "<" not in data
+    assert json.loads(data)["title"]["ja"] == title
 
 
 async def test_tasks_feed_renders_atom():
@@ -109,8 +123,8 @@ async def test_mcp_lists_registry_tools():
         "/mcp",
         method="POST",
         headers={
-            "accept": "application/json",
-            "mcp-protocol-version": "2025-06-18",
+            "accept": "application/json, text/event-stream",
+            "mcp-protocol-version": "2025-11-25",
         },
         json_payload={"jsonrpc": "2.0", "id": 1, "method": "tools/list"},
     )
@@ -121,6 +135,51 @@ async def test_mcp_lists_registry_tools():
         "get_translation_task",
         "get_agent_instructions",
     }
+
+
+async def test_modern_mcp_calls_all_registry_tools():
+    env = await seeded_env()
+    version = "2026-07-28"
+
+    async def call(name, arguments):
+        response = await api(
+            env,
+            "/mcp",
+            method="POST",
+            headers={
+                "accept": "application/json, text/event-stream",
+                "mcp-protocol-version": version,
+                "mcp-method": "tools/call",
+                "mcp-name": name,
+            },
+            json_payload={
+                "jsonrpc": "2.0",
+                "id": 1,
+                "method": "tools/call",
+                "params": {
+                    "_meta": {
+                        "io.modelcontextprotocol/protocolVersion": version,
+                        "io.modelcontextprotocol/clientCapabilities": {},
+                    },
+                    "name": name,
+                    "arguments": arguments,
+                },
+            },
+        )
+        assert response.status == 200
+        result = (await response.json())["result"]
+        assert not result.get("isError")
+        return json.loads(result["content"][0]["text"])
+
+    first = await call("search_translation_tasks", {"limit": 1})
+    second = await call("search_translation_tasks", {"limit": 1, "cursor": first["next_cursor"]})
+    assert [page["items"][0]["id"] for page in (first, second)] == [
+        "verify-kubernetes",
+        "verify-react",
+    ]
+    task = await call("get_translation_task", {"task_id": "verify-react"})
+    assert task == second["items"][0]
+    assert (await call("get_agent_instructions", {}))["rules"]
 
 
 async def test_openapi_describes_v2_routes():

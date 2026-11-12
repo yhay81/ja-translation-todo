@@ -247,10 +247,12 @@ class D1CatalogStore:
     async def recent_changes(self, *, limit: int = 50) -> list[dict[str, Any]]:
         result = await self._run(
             """
-            SELECT task_id, task_revision, payload_json, change_kind, changed_by,
-                   change_note, created_at
-              FROM task_revisions
-             ORDER BY created_at DESC, task_revision DESC
+            SELECT r.task_id, r.task_revision, r.payload_json, r.change_kind, r.changed_by,
+                   r.change_note, r.created_at
+              FROM task_revisions AS r
+              JOIN tasks AS t ON t.id = r.task_id
+             WHERE t.published = 1
+             ORDER BY r.created_at DESC, r.task_revision DESC, r.task_id
              LIMIT ?1
             """,
             limit,
