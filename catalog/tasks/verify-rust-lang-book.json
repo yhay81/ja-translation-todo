@@ -6,7 +6,7 @@
       "find_existing_work",
       "report_evidence"
     ],
-    "level": "draft_only"
+    "level": "discover_only"
   },
   "community": {
     "japanese_team": "inactive",
@@ -27,62 +27,68 @@
   },
   "evidence": [
     {
-      "kind": "repository",
-      "note_ja": "リポジトリの存在と活動を確認。",
-      "observed_at": "2026-08-02",
-      "url": "https://github.com/rust-lang/book"
-    },
-    {
       "kind": "translation_policy",
-      "note_ja": "CONTRIBUTING と README の Translations 節で「We'd love help translating the book!」と翻訳を明示的に歓迎。mdBook の多言語対応待ちのため本家には取り込まれず、Translations ラベルの issue と言語別の外部リポジトリで進める方式。日本語は rust-lang-ja/book-ja が該当。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/rust-lang/book/blob/main/CONTRIBUTING.md"
+      "url": "https://github.com/rust-lang/book/blob/2771df165f092a4fbb9f46b5b2e7450f19010adb/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "原書は言語別の翻訳活動を歓迎し、Translationsラベルから既存の作業を探すよう案内している。"
+    },
+    {
+      "kind": "contributing",
+      "url": "https://github.com/rust-lang-ja/book-ja/blob/5092e5395bf32a65b277c3b1cc1a81ba288c7d46/TranslationTable.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版はカタカナ表記や構文キーワード、訳語の対訳表を公開している。"
+    },
+    {
+      "kind": "pull_request",
+      "url": "https://github.com/rust-lang-ja/book-ja/pull/265",
+      "observed_at": "2026-11-13",
+      "note_ja": "第17章の更新が2月15日に取り込まれた。"
+    },
+    {
+      "kind": "issue",
+      "url": "https://github.com/rust-lang-ja/book-ja/issues/286",
+      "observed_at": "2026-11-13",
+      "note_ja": "第17章PRのフォローアップは担当者付きで未完了。作業の重複を避けるため確認が必要。"
     },
     {
       "kind": "repository",
-      "note_ja": "和訳リポジトリ (master-ja ブランチ、Star 346)。直接 PR を受け付けており、doc.rust-jp.rs として公開。本家 rust-lang/book は 2026-07-14 まで活発に更新されており、和訳の追従対象となる差分が存在する。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/rust-lang-ja/book-ja"
-    },
-    {
-      "kind": "team_activity",
-      "note_ja": "2026-02-14〜15 に ch13〜ch17 の和訳を最新版へ更新する PR (#261〜#265) が連続マージされたが、それ以降 2026-08-03 時点まで約5.5ヶ月コミットがない。ch18 以降の最新版追従が未着手で、レビュー体制は残るが活動は停滞気味(直近90日の活動なし)。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/rust-lang-ja/book-ja/pulls?q=is%3Apr+is%3Amerged"
+      "url": "https://github.com/rust-lang/book/commit/2771df165f092a4fbb9f46b5b2e7450f19010adb",
+      "observed_at": "2026-11-13",
+      "note_ja": "rust-lang/book の調査対象の原文をこのコミットで確認。"
     }
   ],
   "id": "verify-rust-lang-book",
   "kind": "verification",
   "metrics": {
-    "observed_at": "2026-08-03",
-    "stars": 18119
+    "stars": 18556,
+    "observed_at": "2026-11-13"
   },
   "permissions": {
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "allowed",
-    "translation": "explicit"
+    "pull_request": "ask_first"
   },
   "project": {
     "category": "Rust",
     "license": "MIT OR Apache-2.0",
     "repository": "rust-lang/book",
-    "summary_ja": "Rust公式書籍The Book。日本語訳はrust-lang-jaコミュニティのbook-jaで運営され、原書改訂への追従翻訳や校正のPRを受け付ける。doc.rust-jp.rsとして公開されている。",
+    "summary_ja": "日本語版の作業先は rust-lang-ja/book-ja。第17章の改訳は2月に取り込まれた。校正PRと担当者付きのフォローアップが残っているため、対訳表を参照し、対象章とレビュー予定を日本語チームに確認する。",
     "url": "https://github.com/rust-lang/book"
   },
   "provenance": {
     "imported_at": "2026-08-02",
     "imported_from": null,
-    "last_verified_at": "2026-08-03",
-    "revision": 3
+    "last_verified_at": "2026-11-13",
+    "revision": 4
   },
   "schema_version": "translation-task/v1",
   "source": {
     "paths": [
       "src"
     ],
-    "revision": null
+    "revision": "2771df165f092a4fbb9f46b5b2e7450f19010adb"
   },
-  "status": "ready",
+  "status": "ask_first",
   "target": {
     "locale": "ja-JP",
     "paths": [
@@ -90,8 +96,8 @@
     ]
   },
   "title": {
-    "en": null,
-    "ja": "The Rust Programming Language (rust-lang-ja/book-ja) の和訳更新"
+    "ja": "The Rust Programming Language の日本語改訂を調整する",
+    "en": null
   },
   "validation": [],
   "workflow": {

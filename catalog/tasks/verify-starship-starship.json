@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-starship-starship",
   "kind": "verification",
-  "status": "ready",
+  "status": "in_progress",
   "title": {
-    "ja": "Starship プロンプトのドキュメント日本語訳(Crowdin)",
-    "en": "Translate Starship documentation to Japanese via Crowdin"
+    "ja": "Starship の日本語ドキュメントを Crowdin で翻訳・校正する",
+    "en": null
   },
   "project": {
     "repository": "starship/starship",
     "url": "https://github.com/starship/starship",
     "category": "Command Line Tools",
-    "summary_ja": "高速でカスタマイズ可能なクロスシェルプロンプト。翻訳は CONTRIBUTING.md で制度化されており、Crowdin (starship-prompt プロジェクト、translate.starship.rs) 経由のみ受付。docs/ja-JP は Crowdin 同期 PR で継続更新されているが、追随・改善の余地がある。翻訳ページへの直接 PR は禁止。",
+    "summary_ja": "ガイドや設定リファレンスの日本語は Crowdin の starship-prompt で編集する。日本語ファイルは10月にも同期された。参加時はCrowdinで未訳・要校正の文字列を確認し、生成済みファイルへの直接PRは避ける。",
     "license": "ISC"
   },
   "source": {
-    "revision": "7946f2d9fbb0",
+    "revision": "622c83e8061318c1e24937a69f7a697ea00e0ef8",
     "paths": [
       "docs/"
     ]
@@ -37,39 +37,34 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/starship/starship",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://github.com/starship/starship/tree/master/docs/ja-JP",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "最新リビジョン 7946f2d9fbb0 (2026-07-30) を確認。docs/ 配下に ja-JP を含む 25 以上のロケールディレクトリがあり、日本語訳がリポジトリ内で管理されている。"
-    },
-    {
-      "url": "https://github.com/starship/starship/blob/master/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「Crowdin Translated Pages」節で、翻訳ページは Crowdin (crowdin.com/project/starship-prompt) で管理され、直接編集(PR)は空白や絵文字の変更でも不可、翻訳や修正は Crowdin サイトで行うよう明記。"
+      "url": "https://github.com/starship/starship/blob/622c83e8061318c1e24937a69f7a697ea00e0ef8/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "Crowdin管理ページは空白や絵文字を含む直接変更を禁止し、翻訳・修正をCrowdinに案内している。"
     },
     {
-      "url": "https://crowdin.com/project/starship-prompt",
-      "kind": "platform",
-      "observed_at": "2026-08-03",
-      "note_ja": "(2026-08-03 訂正) 公式翻訳プラットフォーム。再確認では WebFetch がログイン必須の動的ページを正しくレンダリングできず、言語追加用テンプレートらしき内容が取得され、日本語ロケール有効化の直接確認はできなかった。ただし CONTRIBUTING.md の記載および PR #7549 (docs/ja-JP への Crowdin 同期、2026-06-28 マージ) から、日本語ロケールが実運用されていることは他の evidence で裏付けられている。"
-    },
-    {
-      "url": "https://github.com/starship/starship/pull/7549",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "「docs(i18n): new Crowdin updates」が 2026-06-28 にマージされ docs/ja-JP も更新。Crowdin からの同期が直近90日以内も継続しており、日本語翻訳は稼働中。専任チームではなく Crowdin 上の個人貢献ベース。"
+      "url": "https://github.com/starship/starship/commit/3bf237c6c048329f5956fd61ccb0c284adac1c98",
+      "observed_at": "2026-11-13",
+      "note_ja": "10月17日のCrowdin同期でdocs/ja-JP配下も更新された。"
+    },
+    {
+      "kind": "platform",
+      "url": "https://crowdin.com/project/starship-prompt",
+      "observed_at": "2026-11-13",
+      "note_ja": "公式ガイドが指定する参加窓口。公開情報だけでは個々の日本語文字列の担当・残量は確定できない。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/starship/starship/commit/622c83e8061318c1e24937a69f7a697ea00e0ef8",
+      "observed_at": "2026-11-13",
+      "note_ja": "starship/starship の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -78,10 +73,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 3,
+    "revision": 4,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "crowdin",
@@ -102,7 +97,7 @@
     "team_url": "https://crowdin.com/project/starship-prompt/ja"
   },
   "metrics": {
-    "stars": 59193,
-    "observed_at": "2026-08-03"
+    "stars": 60716,
+    "observed_at": "2026-11-13"
   }
 }

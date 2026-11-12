@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-k88hudson-git-flight-rules",
   "kind": "verification",
-  "status": "ready",
+  "status": "ask_first",
   "title": {
-    "ja": "Git Flight Rules 日本語訳 (README_ja.md) の更新",
+    "ja": "Git Flight Rules 日本語 README の変更を確認する",
     "en": "Update the Japanese translation (README_ja.md) of Git Flight Rules"
   },
   "project": {
     "repository": "k88hudson/git-flight-rules",
     "url": "https://github.com/k88hudson/git-flight-rules",
     "category": "Command Line Tools",
-    "summary_ja": "Git で問題が起きたときの対処法ガイド。CONTRIBUTE.md で翻訳を明示的に受け付けており、公式には GitLocalize 経由が案内されているが、GitLocalize プロジェクトの対象言語に日本語は未設定のため、日本語は README_ja.md への直接 PR が実績のある経路 (2024-03、2026-06 にマージ実績)。リポジトリは現在も保守されており、英語版 (2026-07 更新) への追従が機会。",
+    "summary_ja": "貢献ガイドは GitLocalize を案内するが、公開のプロジェクト一覧に日本語は見当たらない。リポジトリの README_ja.md は2026年6月に更新された。英語版で追加・変更された項目を照合し、対応する窓口と既存の作業を確認する。",
     "license": "CC-BY-SA-4.0"
   },
   "source": {
-    "revision": null,
+    "revision": "2c33aa7d53e9f7ac28a979a3df864bd59a86c15b",
     "paths": [
       "README.md"
     ]
@@ -29,10 +29,10 @@
   "permissions": {
     "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "allowed"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,28 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/k88hudson/git-flight-rules",
+      "url": "https://github.com/k88hudson/git-flight-rules/tree/2c33aa7d53e9f7ac28a979a3df864bd59a86c15b",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/k88hudson/git-flight-rules/blob/master/CONTRIBUTE.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "CONTRIBUTE.md の Translation 節で GitLocalize (gitlocalize.com/repo/598) 経由の翻訳手順を明記。コミュニティのモデレーターがレビュー済み翻訳を PR として送る体制。AI 利用への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳ツール GitLocalize 上で対象言語・ファイルを選び、レビューを依頼する手順。"
     },
     {
       "url": "https://gitlocalize.com/repo/598",
       "kind": "platform",
-      "observed_at": "2026-08-03",
-      "note_ja": "GitLocalize プロジェクトは存在するが、対象言語は es/fr/id/ko/pt-BR/ru/tr/zh-CN で日本語は未設定。日本語の更新は README_ja.md への直接 PR が実績のある経路で、GitLocalize への ja 追加を依頼する選択肢もある。"
+      "observed_at": "2026-11-13",
+      "note_ja": "公開一覧に日本語が見当たらず、日本語ファイルの実績とガイド記載の経路が一致しない。"
     },
     {
-      "url": "https://github.com/k88hudson/git-flight-rules/pull/379",
-      "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "2026-06-04 マージ。README_ja.md を含む翻訳ファイルの欠落セクションを補う PR で、メンテナ (RichardLitt) が現在も PR を継続的にマージしている (2025-10、2026-07 にもマージあり)。進行中の日本語翻訳 PR・重複作業はなし。README_ja の日本語コミュニティによる実質更新は 2024-03 が最後で、英語版との差分追従が未着手領域。"
+      "url": "https://github.com/k88hudson/git-flight-rules/commits/master/README_ja.md",
+      "kind": "team_activity",
+      "observed_at": "2026-11-13",
+      "note_ja": "README_ja.md に対して6月4日に #379 がマージされている。"
     }
   ],
   "validation": [],
@@ -72,14 +72,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": "https://gitlocalize.com/repo/598",
+    "platform_url": "https://github.com/k88hudson/git-flight-rules/blob/master/CONTRIBUTE.md",
     "translation_repo": null
   },
   "content_type": "tutorial",
@@ -92,21 +92,11 @@
     }
   },
   "metrics": {
-    "stars": 42592,
-    "observed_at": "2026-08-03"
+    "stars": 42577,
+    "observed_at": "2026-11-13"
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "unknown",
     "team_url": null
-  },
-  "legacy": {
-    "概要": "間違った時にすべきことのガイド",
-    "作者": "[Kate Hudson](https://github.com/k88hudson)",
-    "開始年月": "2014/07",
-    "ライセンス": "Creative Commons Attribution Share Alike 4.0",
-    "やり方": "README_ja.md を更新してプルリク",
-    "状態": "日本語あり（README_ja.md）",
-    "文章量": "少",
-    "Star": "42,480"
   }
 }

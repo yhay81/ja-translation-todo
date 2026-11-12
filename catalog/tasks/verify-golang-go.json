@@ -10,9 +10,9 @@
   },
   "community": {
     "japanese_team": "unknown",
-    "team_url": null
+    "team_url": "https://github.com/atotto/go-tour-jp/pulls"
   },
-  "content_type": "official_docs",
+  "content_type": "tutorial",
   "credit": {
     "expected": "unknown",
     "public_attribution": true
@@ -27,88 +27,82 @@
   },
   "evidence": [
     {
-      "kind": "repository",
-      "note_ja": "リポジトリは非アーカイブで活発(最終 push 2026-08-01、Star 135,474、BSD-3-Clause)。リポジトリ内にドキュメント翻訳を受け入れる i18n 体制は見当たらない。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/golang/go"
-    },
-    {
+      "url": "https://go.dev/wiki/NonEnglish",
       "kind": "translation_policy",
-      "note_ja": "Go Wiki の NonEnglish ページが非英語の学習リソース・翻訳を外部サイトへのリンク集として掲載する形式。golang/go 本体や go.dev に翻訳を取り込む公式手順・受付方針は確認できず、翻訳受付の可否は不明のまま。",
-      "observed_at": "2026-08-03",
-      "url": "https://go.dev/wiki/NonEnglish"
+      "observed_at": "2026-11-13",
+      "note_ja": "Japanese の欄に A Tour of Go 日本語版を掲載。Go 本体のドキュメント全般の募集とは別の経路。"
+    },
+    {
+      "url": "https://github.com/atotto/go-tour-jp",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版リポジトリの説明は PR を歓迎。content に日本語のチュートリアルを収録する。"
+    },
+    {
+      "url": "https://github.com/atotto/go-tour-jp/pull/92",
+      "kind": "pull_request",
+      "observed_at": "2026-11-13",
+      "note_ja": "ジェネリクス章を日本語化する既存 PR は調査時に open。"
+    },
+    {
+      "url": "https://github.com/atotto/go-tour-jp/pull/91",
+      "kind": "pull_request",
+      "observed_at": "2026-11-13",
+      "note_ja": "Methods の誤訳・リンク修正も提案済み。レビューの受付可否は確認が必要。"
     },
     {
       "kind": "repository",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。",
-      "observed_at": "2025-12-31",
-      "url": "https://github.com/golang/go"
-    },
-    {
-      "kind": "translation_policy",
-      "note_ja": "issue #34063(ロシア語翻訳の提案、2019-09-04 close)で Go チームメンバー(ALTree)が「Go team doesn't directly host and/or maintain Go tour and documentation translations. The official source of truth is the English version; translations are welcome but you'll have to host them yourself.」と回答。翻訳自体は歓迎だが自前ホスティングが前提で、本体リポジトリへの翻訳 PR は受け付けない方針が明示されている。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/golang/go/issues/34063"
-    },
-    {
-      "kind": "team_activity",
-      "note_ja": "Go Wiki NonEnglish の Japanese セクションには外部の日本語リソースとして A Tour of Go 日本語版(go-tour-jp.appspot.com)と CodeReviewComments 翻訳の2件のみ掲載。ドキュメント全体の日本語翻訳プロジェクトは掲載されていない。",
-      "observed_at": "2026-08-03",
-      "url": "https://go.dev/wiki/NonEnglish"
+      "url": "https://github.com/golang/website/commit/9d2e951dbfa18c495ec14086916e413e3554dea8",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語版 A Tour of Go の原文は golang/website の _content/tour にある。記録した revision はこの文書リポジトリに対応する。"
     }
   ],
   "id": "verify-golang-go",
   "kind": "verification",
-  "legacy": {
-    "Star": "131,672",
-    "やり方": "サイトを作成してリンクをプルリク。",
-    "ライセンス": "BSD 3-Clause",
-    "作者": "[Go](https://github.com/golang)",
-    "文章量": "多",
-    "概要": "プログラミング言語 Go",
-    "状態": "リンクされている[日本語サイト](http://golang.jp/)は更新されていない。",
-    "開始年月": "2014/08"
-  },
   "metrics": {
-    "observed_at": "2026-08-03",
-    "stars": 135474
+    "stars": 448,
+    "observed_at": "2026-11-13"
   },
   "permissions": {
+    "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "forbidden",
-    "translation": "implied"
+    "pull_request": "ask_first"
   },
   "project": {
     "category": "Go",
-    "license": "BSD 3-Clause",
-    "repository": "golang/go",
-    "summary_ja": "プログラミング言語 Go。本体リポジトリおよび go.dev に翻訳を受け入れる公式の仕組みは確認できず、非英語リソースは Go Wiki の NonEnglish ページで外部コミュニティ翻訳としてリンクされる形。旧一覧記載の日本語サイト golang.jp は更新停止。公式に貢献できる翻訳経路は現時点で不明。",
-    "url": "https://github.com/golang/go"
+    "license": "BSD-3-Clause",
+    "repository": "golang/website",
+    "summary_ja": "Go 公式 Wiki が案内する日本語チュートリアルはコミュニティのフォークで保守されている。ジェネリクス章の翻訳や Methods の誤訳修正がすでに提案されているため、まず該当 PR で参加余地を確認する。",
+    "url": "https://github.com/golang/website"
   },
   "provenance": {
     "imported_at": "2026-07-25",
     "imported_from": "docs/legacy-list.md",
-    "last_verified_at": "2026-08-03",
-    "revision": 3
+    "last_verified_at": "2026-11-13",
+    "revision": 4
   },
   "schema_version": "translation-task/v1",
   "source": {
-    "paths": [],
-    "revision": null
+    "revision": "9d2e951dbfa18c495ec14086916e413e3554dea8",
+    "paths": [
+      "_content/tour"
+    ]
   },
   "status": "ask_first",
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "content"
+    ]
   },
   "title": {
-    "en": "Re-verify the Japanese translation workflow for golang/go",
-    "ja": "golang/go の日本語化参加方法を再検証"
+    "ja": "A Tour of Go 日本語版の既存提案を確認する",
+    "en": "Check existing proposals for the Japanese edition of A Tour of Go"
   },
   "validation": [],
   "workflow": {
     "platform": "github",
-    "platform_url": null,
-    "translation_repo": null
+    "platform_url": "https://github.com/atotto/go-tour-jp",
+    "translation_repo": "atotto/go-tour-jp"
   }
 }

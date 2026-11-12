@@ -1,30 +1,30 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-helm-helm-www",
-  "kind": "verification",
+  "kind": "translation",
   "status": "ready",
   "title": {
-    "ja": "Helm 公式ドキュメント(helm.sh)の日本語訳を i18n/ja へ PR する",
-    "en": "Translate the Helm documentation site into Japanese via PRs to i18n/ja"
+    "ja": "Helm 3 SDK の公式ドキュメントを日本語に訳す",
+    "en": "Translate the Helm 3 SDK guide into Japanese"
   },
   "project": {
     "repository": "helm/helm-www",
     "url": "https://github.com/helm/helm-www",
     "category": "Command Line Tools",
-    "summary_ja": "Helm 公式サイト/ドキュメント(helm.sh)。community/localization.md でローカライズ手順が明文化されており、Docusaurus の i18n/<言語コード> 配下を翻訳して helm-www へ直接 PR する方式(DCO signoff 必須)。日本語ロケール(ja)は有効化済みだが、日本語固有の実質的な翻訳更新は 2025-10 が最後で停滞しており、未訳・追従遅れの領域に貢献余地がある。",
+    "summary_ja": "Helm 3 の SDK ガイドは英語版に index.mdx と examples.mdx があり、日本語版の同じ場所に訳文はない。元のバージョンとコミットを記録し、ガイドに沿って helm-www へ翻訳 PR を送る。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "c9e03381cf50403b40cc8d98150730ea60978b96",
     "paths": [
-      "docs/",
-      "i18n/en/"
+      "versioned_docs/version-3/sdk/index.mdx",
+      "versioned_docs/version-3/sdk/examples.mdx"
     ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": [
-      "i18n/ja/"
+      "i18n/ja/docusaurus-plugin-content-docs/version-3/sdk/"
     ]
   },
   "permissions": {
@@ -38,45 +38,68 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/helm/helm-www",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "リポジトリは非アーカイブで活発(最終 push 2026-07-29、Star 229、既定ブランチ main、MIT)。サイトは Docusaurus 構成で i18n/<lang> 配下にロケール別コンテンツを持つ。"
-    },
-    {
       "url": "https://github.com/helm/helm-www/blob/main/community/localization.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "ローカライズガイド。「翻訳はドキュメントと同じプロセスで、helm-www への pull request として提出しサイト管理チームがレビューする」「i18n/<言語コード> 配下に翻訳を配置」「小さく始めて徐々に拡大してよい」「全コミットに DCO signoff が必要」と明示。AI 利用への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "言語別ディレクトリの構成と、フォークから変更 PR を提出してレビューを受ける流れを説明。"
     },
     {
-      "url": "https://github.com/helm/helm-www/commits/main/i18n/ja",
+      "url": "https://github.com/helm/helm-www/commit/596b044b14352df7ffba77413df8d3362cecda40",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "i18n/ja の直近コミット(2026-05〜07)はメンテナによるバージョン表記更新のみで、日本語固有の翻訳更新は 2025-10-17 の [ja] sync が最後。GitHub 検索でも open の日本語関連 issue/PR は 0 件で、進行中の日本語作業との重複リスクは低い。組織的な日本語チームは確認できず停滞中。"
+      "observed_at": "2026-11-13",
+      "note_ja": "8月31日に日本語ロケールに固有のリンク修正を取り込み済み。"
     },
     {
-      "url": "https://github.com/helm/helm-www",
+      "url": "https://github.com/helm/helm-www/tree/main/i18n/ja",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-11-13",
+      "note_ja": "バージョン別のドキュメントや UI 文字列を収録。作業対象のバージョンを先に揃える。"
+    },
+    {
+      "url": "https://github.com/helm/helm-www/commit/c9e03381cf50403b40cc8d98150730ea60978b96",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/helm/helm-www/tree/main/versioned_docs/version-3/sdk",
+      "observed_at": "2026-11-13",
+      "note_ja": "SDK の index.mdx と examples.mdx を確認。言語別ディレクトリの同じ版には両方とも未収録。"
+    },
+    {
+      "kind": "pull_request",
+      "url": "https://github.com/helm/helm-www/pulls",
+      "observed_at": "2026-11-13",
+      "note_ja": "公開中の14件の表題と Japanese の検索結果に、この SDK 日本語訳を扱う PR は確認できなかった。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "command",
+      "description_ja": "原文コミットを記録し、翻訳の追従状態を確認する。",
+      "command": "yarn check:i18n-drift"
+    },
+    {
+      "kind": "semantic_review",
+      "description_ja": "日本語の Helm 3 SDK ページで MDX のコード例・内部リンク・原文との対応を確認する。"
+    }
+  ],
   "credit": {
     "expected": "unknown",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -93,21 +116,11 @@
     }
   },
   "community": {
-    "japanese_team": "inactive",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://github.com/helm/helm-www/commits/main/i18n/ja"
   },
   "metrics": {
-    "stars": 229,
-    "observed_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "Helm 公式サイト/ドキュメント（helm.sh）",
-    "作者": "[helm](https://github.com/helm)",
-    "開始年月": "2015/10",
-    "ライセンス": "MIT",
-    "やり方": "i18n/ja 配下を翻訳して PR（ガイド: https://github.com/helm/helm-www/blob/main/community/localization.md）",
-    "状態": "日本語あり（i18n/ja）",
-    "文章量": "多",
-    "Star": "226"
+    "stars": 230,
+    "observed_at": "2026-11-13"
   }
 }

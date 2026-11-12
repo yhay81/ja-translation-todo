@@ -2,31 +2,29 @@
   "schema_version": "translation-task/v1",
   "id": "verify-expressjs-expressjs-com",
   "kind": "verification",
-  "status": "ready",
+  "status": "ask_first",
   "title": {
-    "ja": "Express 公式サイト日本語化の検証",
-    "en": null
+    "ja": "Express 公式サイトの日本語訳を Crowdin で校正する",
+    "en": "Proofread the Japanese Express website on Crowdin"
   },
   "project": {
     "repository": "expressjs/expressjs.com",
     "url": "https://github.com/expressjs/expressjs.com",
     "category": "JavaScript",
-    "summary_ja": "Express 公式サイトは多言語対応で日本語ページを持ち、翻訳は Crowdin (express.crowdin.com/website) に一本化されている。既存訳は AI 翻訳ベースのため、精度・品質改善の貢献が公式に歓迎されている。",
-    "license": null
+    "summary_ja": "Crowdin のプロジェクトに参加申請し、日本語を選んで訳文を提案する。公式サイトには機械翻訳も使われ、正確さを改善するコミュニティの校正を募集している。",
+    "license": "CC-BY-4.0"
   },
   "source": {
-    "revision": null,
+    "revision": "2cbcce8fdc5b31b7e5ecdbf0c80fd52e9efaa3a2",
     "paths": [
-      "src/content/pages/en/",
-      "src/content/docs/en/",
+      "src/content/docs/en",
       "src/i18n/ui/en.json"
     ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": [
-      "src/content/pages/ja/",
-      "src/content/docs/ja/",
+      "src/content/docs/ja",
       "src/i18n/ui/ja.json"
     ]
   },
@@ -36,7 +34,7 @@
     "pull_request": "forbidden"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -46,28 +44,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/expressjs/expressjs.com",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。サイトは 2026 年にリデザインされ (PR #2197 で10言語の UI 言語切替を実装)、crowdin.yml で en → 各言語 (ja 含む) の同期パスが定義されている。"
-    },
-    {
       "url": "https://github.com/expressjs/expressjs.com/blob/gh-pages/docs/i18n.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "i18n ガイドに「Translation contributions must be made through Crowdin, not directly to the repository」と明記。リポジトリへの直接編集は Crowdin 同期で上書きされる。ja は対応言語リストに含まれ、参加は express.crowdin.com/website で join 申請 → Crowdin エディタで翻訳する手順。"
+      "observed_at": "2026-11-13",
+      "note_ja": "プロジェクトへの参加申請と Crowdin エディターでの作業を案内。翻訳ファイルへの直接修正は同期で上書きされる。"
     },
     {
-      "url": "https://github.com/expressjs/expressjs.com/blob/gh-pages/docs/i18n.md",
-      "kind": "ai_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "同ガイドに「Since AI translations can be imperfect, we welcome community contributions to improve translation accuracy and quality」とあり、既存訳はプロジェクト側の AI 翻訳ベース。コミュニティによる品質改善を歓迎する立場で、貢献者の AI 利用可否そのものの明示はない (implied 判定)。"
-    },
-    {
-      "url": "https://github.com/expressjs/expressjs.com/pull/2145",
+      "url": "https://github.com/expressjs/expressjs.com/commit/4ca3fa8701629a4eb27c76a69aa6d6e294290b40",
       "kind": "team_activity",
-      "observed_at": "2026-08-02",
-      "note_ja": "「i18n: new crowdin translations」が 2026-01-04 にマージされ Crowdin 同期は稼働中。ただし専任の日本語翻訳チームは確認できず、Crowdin コミュニティ運用のため japanese_team は none と判定。"
+      "observed_at": "2026-11-13",
+      "note_ja": "10月24日に日本語ドキュメントへ Crowdin の翻訳を同期。"
+    },
+    {
+      "url": "https://github.com/expressjs/expressjs.com/blob/gh-pages/LICENSE.md",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "Express のウェブサイト資料に CC BY 4.0 を表示。"
+    },
+    {
+      "url": "https://github.com/expressjs/expressjs.com/commit/2cbcce8fdc5b31b7e5ecdbf0c80fd52e9efaa3a2",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
   "validation": [],
@@ -76,10 +74,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "crowdin",
@@ -96,7 +94,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
-    "team_url": null
+    "japanese_team": "unknown",
+    "team_url": "https://express.crowdin.com/website"
+  },
+  "metrics": {
+    "stars": 5372,
+    "observed_at": "2026-11-13"
   }
 }

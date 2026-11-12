@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-numpy-numpy-org",
   "kind": "verification",
-  "status": "ready",
+  "status": "ask_first",
   "title": {
-    "ja": "NumPy 公式サイトのドキュメント日本語化の検証",
+    "ja": "NumPy 公式サイト日本語版のレビュー対象を確認する",
     "en": null
   },
   "project": {
     "repository": "numpy/numpy.org",
     "url": "https://github.com/numpy/numpy.org",
     "category": "Python",
-    "summary_ja": "数値計算ライブラリ NumPy の公式サイト。Scientific Python の Crowdin で翻訳が制度化され、日本語版 (content/ja) が既に公開済み。新規コンテンツの翻訳と維持に Crowdin 経由で参加できる。",
+    "summary_ja": "NumPy は公式サイトの翻訳協力者を Scientific Python の翻訳チャンネルへ案内している。日本語向けの Crowdin プロジェクトと同期 PR を確認した。過去の進捗表はリアルタイムの値ではないため、未訳の有無やレビュー待ちを現地で確認してから担当する。",
     "license": "BSD-3-Clause"
   },
   "source": {
-    "revision": null,
+    "revision": "8d49b324819ed7c6b69929738e32eb4a9a49e0d8",
     "paths": [
       "content/en/"
     ]
@@ -28,11 +28,11 @@
   },
   "permissions": {
     "translation": "explicit",
-    "ai_assistance": "unknown",
+    "ai_assistance": "disclose",
     "pull_request": "forbidden"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,34 +42,34 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/numpy/numpy.org",
+      "url": "https://github.com/numpy/numpy.org/tree/8d49b324819ed7c6b69929738e32eb4a9a49e0d8",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/numpy/numpy.org/blob/main/content/en/contribute.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「Translating website content」節で numpy.org の多言語化への翻訳ボランティア参加を公式に募集 (背景は NEP 28)。手順は Scientific Python の Crowdin ガイド https://scientific-python-translations.github.io/translate/ に従い、Scientific Python Discord の translation チャンネルが窓口。翻訳は Crowdin 経由のため翻訳コンテンツの直接 PR は経路外 (pull_request: forbidden 判定)。"
+      "observed_at": "2026-11-13",
+      "note_ja": "サイトの翻訳協力者に Scientific Python の translation チャンネルへの参加を案内。"
     },
     {
       "url": "https://github.com/numpy/numpy.org/pull/856",
       "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "「Add translations for Japanese」が 2026-06-19 にマージ。.github/workflows/create-translations-pr.yml による Crowdin からの ja 同期が稼働しており、content/ja は 2026-06 にも更新されている。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語同期 PR の本文が、実際の訳文修正を行う日本語 Crowdin プロジェクトを指定。"
     },
     {
-      "url": "https://github.com/numpy/numpy.org/blob/main/content/en/teams/translations-team.toml",
+      "url": "https://github.com/numpy/numpy/blob/main/doc/source/dev/ai_policy.rst",
+      "kind": "ai_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "NumPy の規定では PR に使用ツール・用途・生成部分を記し、人が責任を負う。エージェントによる自律投稿は不可。"
+    },
+    {
+      "url": "https://github.com/Scientific-Python-Translations/numpy.org-translations/commit/89b7a3fd330187413b080d926861638d94f5060a",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "翻訳チームのページに日本語翻訳者 Atsushi Sakai (@AtsushiSakai) を含むメンバーが掲載され、ja 同期も直近 90 日以内 (2026-06-19) に活動あり (japanese_team: active)。"
-    },
-    {
-      "url": "https://github.com/numpy/numpy.org",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "main ブランチは活発 (最終 push 2026-07-04)。ライセンスは BSD-3-Clause、content/ は en, es, ja, pt の 4 言語構成。Star 125。"
+      "observed_at": "2026-11-13",
+      "note_ja": "status.yml の日本語進捗の記録は2025年5月の更新。現在の未訳件数には使えない。"
     }
   ],
   "validation": [],
@@ -78,14 +78,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "crowdin",
-    "platform_url": "https://scientific-python.crowdin.com",
+    "platform_url": "https://scientific-python.crowdin.com/u/projects/12/l/ja",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -98,11 +98,11 @@
     }
   },
   "community": {
-    "japanese_team": "active",
-    "team_url": "https://scientific-python.crowdin.com"
+    "japanese_team": "unknown",
+    "team_url": "https://scientific-python.crowdin.com/u/projects/12/l/ja"
   },
   "metrics": {
-    "stars": 125,
-    "observed_at": "2026-08-03"
+    "stars": 126,
+    "observed_at": "2026-11-13"
   }
 }

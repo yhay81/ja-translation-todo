@@ -1,29 +1,30 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-jestjs-jest",
-  "kind": "verification",
+  "kind": "translation",
   "status": "ready",
   "title": {
-    "ja": "Jest 公式ドキュメント日本語化の検証",
+    "ja": "Jest のテストガイドを Crowdin で日本語に訳す",
     "en": null
   },
   "project": {
     "repository": "jestjs/jest",
     "url": "https://github.com/jestjs/jest",
     "category": "JavaScript",
-    "summary_ja": "Jest のドキュメントサイト jestjs.io は Crowdin (jest-v2 プロジェクト) で公式に翻訳を受け付けており、日本語ロケールは本番サイト jestjs.io/ja/ にデプロイ済み。翻訳率の向上と最新版への追従が機会になる。翻訳は Crowdin 経由のみで、リポジトリへの直接 PR は経路ではない。",
+    "summary_ja": "Crowdin の Jest v2 で新しいバージョンの日本語ドキュメントを翻訳する。日本語の next 設定ガイドでは、TypeScript 設定の読み込みと @jest-config-loader の説明が英語のまま。Crowdin で該当箇所の最新の訳案・レビュー状態を確認する。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "aa88f7cf0bfc7a3a2efbfcab97914886b22d4454",
     "paths": [
-      "docs/",
-      "website/versioned_docs/"
+      "docs/Configuration.md"
     ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "website/i18n/ja/docusaurus-plugin-content-docs/current/Configuration.md"
+    ]
   },
   "permissions": {
     "translation": "explicit",
@@ -36,61 +37,68 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/jestjs/jest",
+      "url": "https://github.com/jestjs/jest/tree/aa88f7cf0bfc7a3a2efbfcab97914886b22d4454",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://crowdin.com/project/jest",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "旧 Crowdin プロジェクトは「DEPRECATED: read-only, please submit translations to jest-v2!」と明記されており、jest-v2 への翻訳提出が公式に案内されている。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/jestjs/jest/blob/main/crowdin.yaml",
       "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリ直下に crowdin.yaml があり、docs/blog の翻訳が Crowdin で公式運用されている。翻訳ファイルは Crowdin 同期のため、翻訳内容の直接 PR は受付経路ではない。AI 利用方針の記載は確認できず。"
+      "observed_at": "2026-11-13",
+      "note_ja": "同期設定に日本語の対応づけと docs、サイト UI、バージョン別ドキュメントの原文を確認。"
     },
     {
-      "url": "https://crowdin.com/project/jest-v2",
+      "url": "https://crowdin.com/project/jest-v2/ja",
       "kind": "platform",
-      "observed_at": "2026-08-02",
-      "note_ja": "現行の公式翻訳プラットフォーム。公開プロジェクトで日本語ロケールが有効(crowdin.com/project/jest-v2/ja が存在)。"
+      "observed_at": "2026-11-13",
+      "note_ja": "現行プロジェクトに日本語への翻訳参加ページがある。"
     },
     {
-      "url": "https://jestjs.io/ja/",
-      "kind": "team_activity",
-      "observed_at": "2026-08-02",
-      "note_ja": "日本語ロケールが本番サイトにデプロイ済みで 8 言語の切替が可能。組織化された日本語チームは確認できず、Crowdin 上の個人貢献ベース。"
+      "url": "https://crowdin.com/project/jest",
+      "kind": "platform",
+      "observed_at": "2026-11-13",
+      "note_ja": "旧プロジェクトは読み取り専用で、Jest v2 への投稿を案内。"
     },
     {
-      "url": "https://github.com/jestjs/jest/issues/15758",
+      "kind": "validation",
+      "url": "https://jestjs.io/ja/docs/next/configuration",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版の TypeScript 設定ローダーの段落が、英語版と同じ英文で掲載されている。"
+    },
+    {
       "kind": "issue",
-      "observed_at": "2026-08-02",
-      "note_ja": "2025-07 のロケール追加問い合わせ issue(closed)。日本語の進行中作業や重複する翻訳 issue は確認できなかった。"
+      "url": "https://github.com/jestjs/jest/issues?q=is%3Aopen+%22Japanese%22+%22configuration%22",
+      "observed_at": "2026-11-13",
+      "note_ja": "指定した機能・章名を含む日本語の既存 issue・PR を検索した時点で該当なし。タイトル・本文の検索だけでは、作業中のすべての変更を把握できない。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "structure",
+      "command": null,
+      "description_ja": "Crowdin で対象バージョンと元の MDX ファイルを選び、コードブロック、リンク、プレースホルダーを確認する。"
+    }
+  ],
   "credit": {
     "expected": "contributors_page",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "crowdin",
-    "platform_url": "https://crowdin.com/project/jest-v2",
+    "platform_url": "https://crowdin.com/project/jest-v2/ja",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -103,7 +111,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "unknown",
     "team_url": "https://crowdin.com/project/jest-v2/ja"
+  },
+  "metrics": {
+    "stars": 45473,
+    "observed_at": "2026-11-13"
   }
 }

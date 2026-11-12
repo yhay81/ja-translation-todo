@@ -4,7 +4,8 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ],
     "level": "draft_only"
   },
@@ -27,35 +28,53 @@
   },
   "evidence": [
     {
+      "url": "https://github.com/php/doc-en/tree/3e4d4fa6a24d0f04db6fa1f42905653bdd853905",
       "kind": "repository",
-      "note_ja": "英語版(原文)リポジトリは活発(最終push 2026-08-02、非archived)。日本語版はここを master として追従する。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/php/doc-en"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
+      "url": "https://github.com/php/doc-ja/blob/master/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "note_ja": "翻訳貢献手順を明記: 誤りの修正はfork+PR、未訳ドキュメントはdoc-enから該当docbookをコピーして翻訳しPRを送る方式。PR本文・コミットログとも日本語で問題なしと明言。言語機能とPHP同梱拡張以外は基本メンテナンスしない方針。AI利用への言及はなし。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/php/doc-ja/blob/master/CONTRIBUTING.md"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語で PR・コミットを送る方法と、英語版から未訳ファイルを追加する手順を案内。"
     },
     {
+      "url": "https://github.com/php/doc-ja/blob/master/README.md",
       "kind": "contributing",
-      "note_ja": "README で PR/issue による報告・翻訳追加を案内。未訳部分の翻訳追加者向けセクションとメンテナ募集の案内あり。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/php/doc-ja/blob/master/README.md"
+      "observed_at": "2026-11-13",
+      "note_ja": "管理対象を言語機能と同梱拡張を中心とする方針を掲載。"
     },
     {
+      "url": "https://github.com/php/doc-ja/commits/master",
       "kind": "team_activity",
-      "note_ja": "直近90日で多数のPRがマージされ(2026-08-01にも doc-en 同期PRがマージ)、メンテナが毎日レベルで doc-en へ追従中。日本語チームは非常に活発だが、未訳モジュールの翻訳追加は歓迎されている。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/php/doc-ja/pulls?q=is%3Apr+is%3Amerged"
+      "observed_at": "2026-11-13",
+      "note_ja": "11月9日に gettext・DOM・zlib の英語版への追従更新がマージ。"
+    },
+    {
+      "url": "https://www.php.net/manual/en/copyright.php",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "PHP マニュアルのライセンスは Creative Commons Attribution 3.0 またはそれ以降。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/php/doc-ja/tree/master/reference/pdo",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語版の reference/pdo/pdoexception/getcode.xml と同じパスは日本語版にない。"
+    },
+    {
+      "kind": "issue",
+      "url": "https://github.com/php/doc-ja/issues?q=is%3Aopen+%22PDOException%22+%22getCode%22",
+      "observed_at": "2026-11-13",
+      "note_ja": "指定した機能・章名を含む日本語の既存 issue・PR を検索した時点で該当なし。タイトル・本文の検索だけでは、作業中のすべての変更を把握できない。"
     }
   ],
   "id": "verify-php-doc-en",
-  "kind": "verification",
+  "kind": "translation",
   "metrics": {
-    "observed_at": "2026-08-03",
-    "stars": 595
+    "stars": 607,
+    "observed_at": "2026-11-13"
   },
   "permissions": {
     "ai_assistance": "unknown",
@@ -64,32 +83,42 @@
   },
   "project": {
     "category": "PHP",
-    "license": "CC-BY-3.0",
+    "license": "CC-BY-3.0-or-later",
     "repository": "php/doc-en",
-    "summary_ja": "PHP公式マニュアルの日本語訳はphp org公認のdoc-jaリポジトリで管理され、GitHub PRで翻訳・追従更新を受け付ける(PR・コミットログとも日本語可)。未訳部分をまとめて翻訳するPRの手順もCONTRIBUTINGに明記されており、英語版doc-enとの差分追従・未訳追加の作業が恒常的に存在する。",
+    "summary_ja": "英語版の PDOException::getCode ページに対応する日本語 XML が見当たらない。php/doc-ja の手順に従い、既存作業を確認して日本語リポジトリへ PR を送る。11月にも gettext・DOM・zlib の追従更新が取り込まれている。",
     "url": "https://github.com/php/doc-en"
   },
   "provenance": {
     "imported_at": "2026-08-02",
     "imported_from": null,
-    "last_verified_at": "2026-08-03",
-    "revision": 3
+    "last_verified_at": "2026-11-13",
+    "revision": 4
   },
   "schema_version": "translation-task/v1",
   "source": {
-    "paths": [],
-    "revision": null
+    "paths": [
+      "reference/pdo/pdoexception/getcode.xml"
+    ],
+    "revision": "3e4d4fa6a24d0f04db6fa1f42905653bdd853905"
   },
   "status": "ready",
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "reference/pdo/pdoexception/getcode.xml"
+    ]
   },
   "title": {
     "en": null,
-    "ja": "PHP マニュアル日本語版 (php/doc-ja) への翻訳・追従貢献"
+    "ja": "PHP マニュアルの日本語版を英語版に追従させる"
   },
-  "validation": [],
+  "validation": [
+    {
+      "kind": "structure",
+      "command": null,
+      "description_ja": "対応する英語の XML とマークアップ・参照先・英語版のリビジョンを突き合わせる。"
+    }
+  ],
   "workflow": {
     "platform": "github",
     "platform_url": "https://github.com/php/doc-ja",

@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "Vitest 公式ドキュメント日本語版 (docs-ja) 立ち上げの提案",
-    "en": "Propose a Japanese docs translation (docs-ja) for Vitest"
+    "ja": "Vitest の日本語翻訳プロジェクトを始められるか相談する",
+    "en": null
   },
   "project": {
     "repository": "vitest-dev/vitest",
     "url": "https://github.com/vitest-dev/vitest",
     "category": "JavaScript",
-    "summary_ja": "Vite 公式テストフレームワーク Vitest のドキュメントには公式 org 配下に中国語版 (docs-cn / cn.vitest.dev) があるが日本語版はない。翻訳方針の明文はなく、vitejs/docs-ja と同型の docs-ja 立ち上げをチームに提案して合意を得る必要がある。CONTRIBUTING に AI 利用ポリシーあり(開示必須)。",
+    "summary_ja": "公式組織には中国語の文書リポジトリがあるが、日本語版を新しく受け付ける案内は確認できない。初参加者は原則として approved ラベル付きIssueの担当が必要。日本語版の範囲と受け入れ先をIssueで確認する。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "47c87ebb5025010141cf8aa5dc69c5b57c10d2fa",
     "paths": [
       "docs/"
     ]
@@ -25,12 +25,12 @@
     "paths": []
   },
   "permissions": {
-    "translation": "implied",
-    "ai_assistance": "disclose",
+    "translation": "unknown",
+    "ai_assistance": "unknown",
     "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_pr",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -40,28 +40,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/vitest-dev/vitest",
       "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブされておらず main ブランチが活発 (最終 push 2026-07-31、16,895 stars、MIT)。"
+      "url": "https://github.com/orgs/vitest-dev/repositories",
+      "observed_at": "2026-11-13",
+      "note_ja": "公式組織にはdocs-cnがあるが、日本語ドキュメント専用リポジトリは見当たらなかった。"
     },
     {
-      "url": "https://github.com/vitest-dev/docs-cn",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式 org に中国語翻訳リポジトリ docs-cn (cn.vitest.dev) が存在し 2026-08-02 まで活動中、本体 README からもリンクされている。コミュニティ翻訳を org 配下で受け入れる前例だが、日本語を含む新規言語の翻訳方針の明文はなく、docs-ja 立ち上げにはチームへの提案と合意が必要。"
+      "kind": "contributing",
+      "url": "https://github.com/vitest-dev/vitest/blob/47c87ebb5025010141cf8aa5dc69c5b57c10d2fa/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "既存・承認済みの貢献者またはapprovedラベルのIssueを対象にPRを受け付け、同じIssueへの重複PRは閉じる。"
     },
     {
-      "url": "https://github.com/vitest-dev/vitest/blob/main/CONTRIBUTING.md",
       "kind": "ai_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "AI 貢献のセクションあり: AI を補助として使うことは許容されるが、issue/PR は実在の人間がテンプレートに沿って開くこと、AI 支援があれば使用ツール名を含めて PR で開示すること。人間の関与がない完全 AI 生成 PR は「maybe automated」ラベル後 3 日で自動クローズ。"
+      "url": "https://github.com/vitest-dev/vitest/blob/47c87ebb5025010141cf8aa5dc69c5b57c10d2fa/AI_POLICY.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "AIでの調査やコード生成は許容するが、やり取りは本人の言葉で行い、提出内容を説明できることが条件。訳文生成の許可は明記されていない。"
     },
     {
-      "url": "https://github.com/vitest-dev/vitest/issues?q=japanese",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "本体リポジトリで「japanese」を検索したが、日本語ドキュメント翻訳に関する issue / PR は存在せず、既存作業との重複なし (該当 3 件はいずれも依存更新 PR)。"
+      "kind": "repository",
+      "url": "https://github.com/vitest-dev/vitest/commit/47c87ebb5025010141cf8aa5dc69c5b57c10d2fa",
+      "observed_at": "2026-11-13",
+      "note_ja": "vitest-dev/vitest の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -70,14 +70,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/vitest-dev/vitest/issues",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -90,11 +90,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "unknown",
     "team_url": null
   },
   "metrics": {
-    "stars": 16895,
-    "observed_at": "2026-08-03"
+    "stars": 17375,
+    "observed_at": "2026-11-13"
   }
 }

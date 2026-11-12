@@ -4,30 +4,32 @@
   "kind": "verification",
   "status": "in_progress",
   "title": {
-    "ja": "Vue 3 公式ドキュメント日本語版 (docs-ja) への翻訳参加",
-    "en": "Contribute to the Japanese translation of the Vue 3 docs (vuejs-translations/docs-ja)"
+    "ja": "Vue 3 の既存日本語ドキュメントの同期・校正に参加する",
+    "en": null
   },
   "project": {
     "repository": "vuejs/docs",
     "url": "https://github.com/vuejs/docs",
     "category": "JavaScript",
-    "summary_ja": "Vue 3 の公式ドキュメント。日本語版は vuejs-translations/docs-ja (ja.vuejs.org) で公式に維持されており、日本語チームが活発に upstream へ追随中。参加は docs-ja 側の issue / PR で行う。新規言語の翻訳受付は停止しているが、既存チームの維持・貢献は継続している。",
-    "license": "CC BY 4.0（画像除く）"
+    "summary_ja": "新しい言語の受け付けは終了しているが、既存の日本語版は vuejs-translations/docs-ja が維持している。日本語翻訳ガイドの案内に従い、ページ翻訳は希望を伝え担当の承認を待つ。原文追従の対象はsyncラベルのIssueで確認する。",
+    "license": "CC-BY-4.0（画像を除く）"
   },
   "source": {
-    "revision": null,
+    "revision": "40aa88af0094f7bab4aaf786e55c748a6a251d88",
     "paths": [
       "src/"
     ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "src"
+    ]
   },
   "permissions": {
     "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "allowed"
+    "pull_request": "ask_first"
   },
   "automation": {
     "level": "draft_only",
@@ -35,27 +37,34 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/vuejs/docs",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブされておらず main ブランチが活発 (最終 push 2026-07-31、3,233 stars)。"
-    },
-    {
-      "url": "https://github.com/vuejs-translations/guidelines/blob/main/README.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "vuejs-translations の公式ガイドライン。新規言語の翻訳受付は停止中だが、既存翻訳チームの維持は継続を認めており、日本語は docs-ja として公式一覧に掲載済み。1 言語 1 リポジトリで issue / PR により管理し、Ryu-Cho 等で upstream 同期を自動化する方式。AI 翻訳の品質向上への言及はあるが、貢献者の AI 利用を制限する規定はない。"
+      "url": "https://github.com/vuejs-translations/guidelines/blob/23e2acc15e6750f0958871a12b12a05c0a68a30f/README.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "Vueコア文書の新言語の受け入れ停止と、既存言語は継続的な同期・保守を条件にサポートする方針を確認。"
     },
     {
-      "url": "https://github.com/vuejs-translations/docs-ja",
+      "kind": "contributing",
+      "url": "https://github.com/vuejs-translations/docs-ja/blob/edc1273e61d3f46668bd78b29d18ef04adcf5138/.github/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版でのページ担当希望、担当者の承認、一度に扱うページ数、更新時のsync Issueの扱いを説明する。"
+    },
+    {
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "日本語翻訳リポジトリ docs-ja は最終 push 2026-07-31 で直近 90 日以内の活動を確認。日本語チームが活発に全体をカバーしており、新規参加はこのリポジトリの issue / PR が窓口。"
+      "url": "https://github.com/vuejs-translations/docs-ja/commit/edc1273e61d3f46668bd78b29d18ef04adcf5138",
+      "observed_at": "2026-11-13",
+      "note_ja": "9月16日に日本語版へ文書更新が取り込まれている。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/vuejs/docs/commit/40aa88af0094f7bab4aaf786e55c748a6a251d88",
+      "observed_at": "2026-11-13",
+      "note_ja": "vuejs/docs の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -64,24 +73,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "Vue 3 の公式ドキュメント",
-    "作者": "[vuejs](https://github.com/vuejs)",
-    "開始年月": "2019/12",
-    "ライセンス": "CC BY 4.0（画像除く）",
-    "やり方": "翻訳ガイドライン: https://github.com/vuejs-translations/guidelines/blob/main/README.md （日本語: https://github.com/vuejs-translations/docs-ja）",
-    "状態": "日本語あり（ja.vuejs.org）",
-    "文章量": "多",
-    "Star": "3,167"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/vuejs-translations/docs-ja/blob/edc1273e61d3f46668bd78b29d18ef04adcf5138/.github/CONTRIBUTING.md",
     "translation_repo": "vuejs-translations/docs-ja"
   },
   "content_type": "official_docs",
@@ -98,7 +97,7 @@
     "team_url": "https://github.com/vuejs-translations/docs-ja"
   },
   "metrics": {
-    "stars": 3233,
-    "observed_at": "2026-08-03"
+    "stars": 3245,
+    "observed_at": "2026-11-13"
   }
 }

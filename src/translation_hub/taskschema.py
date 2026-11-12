@@ -205,12 +205,13 @@ def validate_task(payload: Any) -> dict[str, Any]:
     _require(isinstance(validation, list), "validation must be an array")
     for index, item in enumerate(validation):
         _require(
-            isinstance(item, dict) and set(item) == {"kind", "command", "description_ja"},
-            f"validation[{index}] must be {{kind, command, description_ja}}",
+            isinstance(item, dict)
+            and {"kind", "description_ja"} <= item.keys() <= {"kind", "command", "description_ja"},
+            f"validation[{index}] requires kind and description_ja; command is optional",
         )
         _require_enum(item["kind"], VALIDATION_KINDS, f"validation[{index}].kind")
         _require(
-            item["command"] is None or isinstance(item["command"], str),
+            item.get("command") is None or isinstance(item["command"], str),
             f"validation[{index}].command must be a string or null",
         )
         _require(

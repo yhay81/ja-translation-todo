@@ -17,7 +17,7 @@ from hayate import Context, Hayate
 
 from .catalog import task_bundle
 from .catalog_store import catalog_store_from_env
-from .common import CANONICAL_ORIGIN, env_value
+from .common import CANONICAL_ORIGIN, TASK_ALIASES, env_value
 
 HEAD_BLOCK = re.compile(r"<!--ssr:head-->.*?<!--ssr:head:end-->", re.DOTALL)
 DATA_MARKER = "<!--ssr:data-->"
@@ -26,6 +26,8 @@ DATA_MARKER = "<!--ssr:data-->"
 def register(app: Hayate) -> None:
     @app.get("/tasks/:id")
     async def task_page(c: Context):
+        if canonical_id := TASK_ALIASES.get(c.req.param("id")):
+            return c.redirect(f"/tasks/{canonical_id}{c.req.url.search or ''}", status=301)
         shell = await _shell_html(c)
         if shell is None:
             return c.text("service unavailable", status=503)

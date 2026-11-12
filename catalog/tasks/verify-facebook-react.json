@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "in_progress",
   "title": {
-    "ja": "React 公式ドキュメントの日本語化(ja.react.dev で進行中)",
-    "en": "Japanese translation of the React docs (ongoing in reactjs/ja.react.dev)"
+    "ja": "React 公式ドキュメントの日本語訳を既存チームと更新する",
+    "en": "Update the React documentation with its Japanese translation team"
   },
   "project": {
-    "repository": "facebook/react",
-    "url": "https://github.com/facebook/react",
+    "repository": "reactjs/react.dev",
+    "url": "https://github.com/reactjs/react.dev",
     "category": "JavaScript",
-    "summary_ja": "UIを作るJavaScriptライブラリ。ドキュメントは reactjs/react.dev で管理され、日本語訳は公式の言語フォーク reactjs/ja.react.dev で活発に進行中。参加手順は ja.react.dev の Wiki に整備されている。",
-    "license": "MIT"
+    "summary_ja": "react.dev の日本語版は ja.react.dev のチームが保守している。未翻訳ページは進捗 Issue で担当を宣言する。翻訳支援ツールを使った場合も全文を人が確認し、日本語チームのレビューを受ける。",
+    "license": "CC-BY-4.0"
   },
   "source": {
-    "revision": null,
+    "revision": "46a54e0592729712b7640308b53268e84fdc7c9f",
     "paths": [
       "src/content"
     ]
@@ -37,45 +37,47 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft",
+      "prepare_local_pr_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/facebook/react",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    },
-    {
-      "url": "https://github.com/facebook/react",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "本体リポジトリはアーカイブされておらず活発(最終push 2026-08-01)。ただし翻訳対象のドキュメントは reactjs/react.dev 側にあり、本体リポジトリ自体に翻訳対象はない。"
-    },
-    {
-      "url": "https://github.com/reactjs/react.dev/issues/4135",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "(2026-08-03 訂正) react.dev の README「Translation」節から参照される翻訳体制の窓口 issue。ただし issue 本文自体には「日本語は reactjs/ja.react.dev で進める」という明示的な紐づけ記載は確認できておらず、この結論は react.dev の Translations ページ等の他の情報源と合わせて判断したもの。"
-    },
-    {
       "url": "https://github.com/reactjs/ja.react.dev/wiki",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "日本語訳の参加手順を Wiki で公開。未翻訳記事は進捗管理 issue で事前宣言してから PR を作成するルール。翻訳スタイルガイド・訳語統一ページあり。ドキュメントのライセンスは CC-BY-4.0。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版の参加手順・スタイルガイドを公開。未翻訳ページの担当宣言、訳文の人手確認とレビューを求める。"
     },
     {
-      "url": "https://github.com/reactjs/ja.react.dev/wiki",
-      "kind": "ai_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "ChatGPT Markdown Translator を翻訳のスタート地点として公式に利用。ただし AI 翻訳のみの PR はレビュー対象外になり得るとされ、人手チェックが必須。"
+      "url": "https://github.com/reactjs/ja.react.dev/issues/452",
+      "kind": "issue",
+      "observed_at": "2026-11-13",
+      "note_ja": "未翻訳ページの進捗を管理。すでに担当者がいる項目は重複して訳さない。"
     },
     {
-      "url": "https://github.com/reactjs/ja.react.dev/commits/main",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "(2026-08-03 訂正) 当初「最終 push 2026-08-01」と記載していたが、再確認したところ実際の最新コミットは 2026-06-20 (PR #948 マージ)。(2026-08-03 再確認: 最新コミットは 2026-06-20 の「Merge pull request #947 from largearth/patch-2」であり、PR 番号は #948 ではなく #947。日付と活発判断は変わらない。)それでも調査日から約44日前であり直近90日以内の活動に該当し、日本語チームは活発と判断。参加窓口は ja.react.dev の Wiki と進捗管理 issue。"
+      "url": "https://github.com/reactjs/ja.react.dev/pull/1011",
+      "kind": "pull_request",
+      "observed_at": "2026-11-13",
+      "note_ja": "10月15日に日本語学習ページの文言改善が統合されており、既存訳の改善も受け付けている。"
+    },
+    {
+      "url": "https://github.com/reactjs/react.dev/blob/main/LICENSE-DOCS.md",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "react.dev のドキュメントに適用されるライセンスは CC BY 4.0。"
+    },
+    {
+      "url": "https://react.dev/community/translations",
+      "kind": "platform",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版のサイトと翻訳チームを公式の翻訳者一覧に掲載。"
+    },
+    {
+      "url": "https://github.com/reactjs/react.dev/commit/46a54e0592729712b7640308b53268e84fdc7c9f",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
   "validation": [],
@@ -84,20 +86,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 4,
+    "revision": 5,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "UIを作るJavaScriptライブラリ",
-    "作者": "[facebook](https://github.com/facebook)",
-    "開始年月": "2013/05",
-    "ライセンス": "MIT",
-    "やり方": "ドキュメント用のレポジトリは [reactjs/react.dev](https://github.com/reactjs/react.dev) 。翻訳状況は https://translations.react.dev/ を参照。",
-    "状態": "翻訳は各言語フォークで進行（詳細は https://github.com/reactjs/react.dev/issues/4135 および react.dev の Translations ページ参照）",
-    "文章量": "多",
-    "Star": "241,937 (ドキュメント: reactjs/react.dev は 11,621)"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -118,7 +110,7 @@
     "team_url": "https://github.com/reactjs/ja.react.dev"
   },
   "metrics": {
-    "stars": 246852,
-    "observed_at": "2026-08-03"
+    "stars": 11836,
+    "observed_at": "2026-11-13"
   }
 }

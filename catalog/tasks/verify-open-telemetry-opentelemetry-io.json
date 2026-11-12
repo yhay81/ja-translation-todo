@@ -1,21 +1,21 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-open-telemetry-opentelemetry-io",
-  "kind": "verification",
+  "kind": "translation",
   "status": "in_progress",
   "title": {
-    "ja": "OpenTelemetry 公式サイトの日本語ローカライズへの参加",
+    "ja": "OpenTelemetry 日本語版の翻訳 issue と原文の差分を確認する",
     "en": null
   },
   "project": {
     "repository": "open-telemetry/opentelemetry.io",
     "url": "https://github.com/open-telemetry/opentelemetry.io",
     "category": "Infrastructure",
-    "summary_ja": "CNCFの可観測性フレームワークOpenTelemetryの公式サイト。ja localization制度が整備され日本語版が公開中。日本語チームは直近90日で100件超のコミットと非常に活発だが、未翻訳・更新遅れページが多く残り、issue駆動で新規貢献者の参加を受け付けている。",
+    "summary_ja": "言語別の issue で対象を調整し、content/en の原文と対応する content/ja のページを更新する。11月にも記事や設定手順の翻訳が継続している。AI を使う場合は PR の欄で開示し、日本語を読める提出者が全訳を検証する。",
     "license": "CC-BY-4.0"
   },
   "source": {
-    "revision": null,
+    "revision": "8f456c722a677a7e10dfd6890380c34fb0230079",
     "paths": [
       "content/en"
     ]
@@ -37,39 +37,41 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft",
+      "prepare_local_pr_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/open-telemetry/opentelemetry.io",
+      "url": "https://github.com/open-telemetry/opentelemetry.io/tree/8f456c722a677a7e10dfd6890380c34fb0230079",
       "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "リポジトリは活発(最終push 2026-08-02、非archived、ライセンス CC-BY-4.0)。content/ja に日本語版を同一リポジトリで管理。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://opentelemetry.io/docs/contributing/localization/",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式のローカライズガイドあり。翻訳貢献を明示的に歓迎し、小さなPRでの段階的提出、コード・リンク等は翻訳しない等のルールを定める。各ロケールの承認者(approvers)がレビューし、日本語(ja)は確立済みロケールとして例示されている。"
+      "observed_at": "2026-11-13",
+      "note_ja": "ローカライズ時のパス、更新差分の確認、翻訳の指針を集約。"
     },
     {
       "url": "https://opentelemetry.io/docs/contributing/localization/",
       "kind": "ai_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "OpenTelemetry/Linux Foundationのポリシーに従い、AIツール使用時はPRのチェックボックスで開示し、生成訳を自らレビュー・検証することが必須。理解できない言語の翻訳提出は禁止。"
+      "observed_at": "2026-11-13",
+      "note_ja": "生成 AI を翻訳に使用した場合は PR テンプレートで開示。本人の言語能力で精査できない訳文は提出しない。"
     },
     {
       "url": "https://github.com/open-telemetry/opentelemetry.io/commits/main/content/ja",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "content/ja への直近90日のコミットは100件以上(2026-08-02にも [ja] 翻訳追加マージあり)。日本語ローカライズチームは非常に活発。"
+      "observed_at": "2026-11-13",
+      "note_ja": "11月12日に OBI の standalone 設定ページの日本語更新 #12598 が取り込まれた。"
     },
     {
       "url": "https://github.com/open-telemetry/opentelemetry.io/issues?q=label%3Alang%3Aja",
       "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "(2026-08-03 訂正) lang:ja ラベルでページ単位の翻訳タスクが管理され、ここが参加窓口という結論は他の情報と整合するが、再確認では本クエリ(issues検索)の取得結果がPR(prefix PR#)中心で、issue単位での確認は取れなかった。lang:jaラベルでの翻訳タスク管理・重複確認という運用自体は妥当と判断されるが、issue/PRの構成比は要再確認。着手前にラベル検索で重複確認・宣言する運用。"
+      "observed_at": "2026-11-13",
+      "note_ja": "lang:ja で日本語翻訳の作業中 issue を絞り込める。"
     }
   ],
   "validation": [],
@@ -78,10 +80,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 3,
+    "revision": 4,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -98,8 +100,8 @@
     }
   },
   "metrics": {
-    "stars": 942,
-    "observed_at": "2026-08-03"
+    "stars": 997,
+    "observed_at": "2026-11-13"
   },
   "community": {
     "japanese_team": "active",

@@ -4,19 +4,21 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "W3C WAI ウェブサイト (チュートリアル等) の日本語訳ボランティア",
-    "en": "Volunteer Japanese translations for the W3C WAI website"
+    "ja": "WAI の日本語未訳リストからページを選び、翻訳許可を申請する",
+    "en": null
   },
   "project": {
     "repository": "w3c/wai-website",
     "url": "https://github.com/w3c/wai-website",
     "category": "Web Platform",
-    "summary_ja": "W3C WAI のアクセシビリティ学習リソース群。WAI はボランティア翻訳の制度化されたプロセスを持ち、リソース単位で事前に W3C の許可を得たうえで GitHub PR として日本語訳を提出できる。日本語訳は一部リソースのみで機会が大きいが、着手前の意思表明 (メール or issue) が必須。",
+    "summary_ja": "日本語の進捗表には「Diverse Abilities and Barriers」など未訳ページごとに立候補リンクがある。対象資料の担当に意思を伝え、W3Cの許可を得てから指定された原稿を翻訳する。WCAGの公認訳は別の審査手続き。",
     "license": "W3C Document License"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "b0827ef85ed0c9b76ff01e887fd8bf8c3201bf79",
+    "paths": [
+      "pages/fundamentals/people/people-use-web/abilities-barriers.md"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -28,7 +30,7 @@
     "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -38,22 +40,22 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/w3c/wai-website",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブされておらず main ブランチが活発 (最終 push 2026-07-31、144 stars)。"
-    },
-    {
-      "url": "https://www.w3.org/WAI/about/translating/",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "WAI 公式の翻訳ボランティア手順。翻訳開始前に W3C へ許可を求めることが必須 (メーリングリストへのメールまたは該当リポジトリでの GitHub issue)。ファイルは GitHub から取得して編集し、PR またはスタッフ経由で提出。公開前にボランティアとスタッフのレビューあり。W3C Document License の再配布条件への同意が必要。機械翻訳 / AI への言及はなし。"
+      "url": "https://www.w3.org/WAI/about/translating/",
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳前にW3Cの許可を得て担当者から元ファイルを入手し、公開前レビューを受ける。配布条項はW3C Document License。"
     },
     {
-      "url": "https://github.com/w3c/wai-website/pull/838",
-      "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "日本語訳 PR「[In Progress] Japanese – Introduction to Web Accessibility」が open (最終更新 2026-04-23)。ほかに #1173 (open) や #1023 / #986 (2024 年に merge) など日本語ボランティアの実績あり。同一リソースへの重複着手を避けるため、着手前に既存 PR の確認が必要。"
+      "kind": "team_activity",
+      "url": "https://www.w3.org/WAI/about/translating/sitemaps/sitemap-ja/",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語の進捗表にはDiverse Abilities and Barriersなどの未訳項目に立候補リンクがある。Accessibility Principlesは日本語訳掲載済み。"
+    },
+    {
+      "url": "https://github.com/w3c/wai-website/blob/b0827ef85ed0c9b76ff01e887fd8bf8c3201bf79/pages/fundamentals/people/people-use-web/abilities-barriers.md",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語の進捗表にある Diverse Abilities and Barriers の英語ページから編集リンクをたどり、この Markdown が対応原稿であることを確認。翻訳着手には W3C の許可が必要。"
     }
   ],
   "validation": [],
@@ -62,14 +64,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": "https://www.w3.org/WAI/about/translating/",
+    "platform_url": "https://www.w3.org/WAI/about/translating/sitemaps/sitemap-ja/",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -82,11 +84,11 @@
     }
   },
   "community": {
-    "japanese_team": "inactive",
-    "team_url": null
+    "japanese_team": "unknown",
+    "team_url": "https://www.w3.org/WAI/about/translating/sitemaps/sitemap-ja/"
   },
   "metrics": {
-    "stars": 144,
-    "observed_at": "2026-08-03"
+    "stars": 154,
+    "observed_at": "2026-11-13"
   }
 }

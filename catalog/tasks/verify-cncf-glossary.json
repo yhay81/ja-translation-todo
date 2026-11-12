@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "CNCF Cloud Native Glossary の未訳用語の日本語化",
-    "en": "Localize remaining Cloud Native Glossary terms into Japanese"
+    "ja": "CNCF 用語集の未訳語を日本語チームに相談する",
+    "en": "Coordinate untranslated terms with the CNCF Japanese glossary team"
   },
   "project": {
     "repository": "cncf/glossary",
     "url": "https://github.com/cncf/glossary",
     "category": "Infrastructure",
-    "summary_ja": "クラウドネイティブ用語集。LOCALIZATION.md でローカライズ手順が明文化され、日本語チーム(dev-ja ブランチ・CNCF Slack の専用チャンネル)が存在する。用語ごとに issue で担当を宣言し dev-ja へ PR、承認者 2 名の approve が必要。日本語チームの活動は 2025-12 以降止まっており、参加前に Slack での声かけが前提。コンテンツは CC BY 4.0。",
+    "summary_ja": "英語版の cloud-native-storage.md や container-image.md に対応する同名ファイルが日本語版にない。日本語チームの Slack と Issue で対象語を相談し、dev-ja ブランチで作業する。",
     "license": "CC-BY-4.0"
   },
   "source": {
-    "revision": null,
+    "revision": "0a4dd1fdbcc83af45613717944c9d761c6e14e96",
     "paths": [
       "content/en/"
     ]
@@ -29,10 +29,10 @@
   "permissions": {
     "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "allowed"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,34 +42,34 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/cncf/glossary",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://github.com/cncf/glossary",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "upstream は 2026-07-27 まで活発に更新(Star 722)。原文は content/en/、日本語訳は content/ja/。コードは Apache-2.0、ドキュメントは CC BY 4.0 と README に明記。"
-    },
-    {
       "url": "https://github.com/cncf/glossary/blob/main/LOCALIZATION.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "ローカライズ手順を明文化。既存チームへの参加は CNCF Slack の #glossary-localizations / #glossary-localization-japanese で表明し、チームの案内に従う。翻訳は言語別 dev ブランチ(日本語は dev-ja)への PR で行い、用語ごとに承認者 2 名の approve が必要。チームが不活発な場合の連絡先も明記。事前の宣言が前提のため ask_first と判定。AI 利用方針の明記はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "既存言語チームの連絡先を確認し、言語別の開発ブランチで PR をレビューする手順。"
     },
     {
-      "url": "https://github.com/cncf/glossary/commits/dev-ja",
+      "url": "https://github.com/cncf/glossary/tree/main/content/ja",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語版と日本語版のファイル名を比較。用語名の変更・別名も着手前に確認する。"
+    },
+    {
+      "url": "https://github.com/cncf/glossary/commit/2040e2068e65d70d68b9c43c0c114656d8a3dbd4",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "dev-ja ブランチの最終コミットは 2025-08-05(Sidecar Container 等の翻訳 merge)、main の content/ja への最終反映は 2025-12-16([ja] sync index.md #3605)。調査日から直近 90 日の日本語チーム活動はなく inactive。未訳用語は残っており、追従・新規翻訳の余地がある。"
+      "observed_at": "2026-11-13",
+      "note_ja": "dev-ja の content/ja における直近の変更は2025年8月の service-mesh.md。"
     },
     {
-      "url": "https://github.com/cncf/glossary/issues/3509",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "「[ja] Localize `Digital Certificate` for Japanese」など、用語単位で issue を立てて担当宣言→翻訳する運用実績(2025-08 に完了)。調査時点で日本語の open な翻訳 issue / PR はなく、重複作業のリスクは低い。"
+      "url": "https://github.com/cncf/glossary/blob/main/README.md#license",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "用語集の文章は CC BY 4.0。"
+    },
+    {
+      "url": "https://github.com/cncf/glossary/commit/0a4dd1fdbcc83af45613717944c9d761c6e14e96",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
   "validation": [],
@@ -78,10 +78,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -98,8 +98,8 @@
     }
   },
   "metrics": {
-    "stars": 722,
-    "observed_at": "2026-08-03"
+    "stars": 729,
+    "observed_at": "2026-11-13"
   },
   "community": {
     "japanese_team": "inactive",

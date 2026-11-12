@@ -1,34 +1,34 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-tldr-pages-tldr",
-  "kind": "verification",
+  "kind": "translation",
   "status": "ready",
   "title": {
-    "ja": "tldr-pages コマンドチートシートの日本語化の検証",
-    "en": null
+    "ja": "tldr-pages の adb devices ページを日本語に翻訳する",
+    "en": "Translate the adb devices command page into Japanese"
   },
   "project": {
     "repository": "tldr-pages/tldr",
     "url": "https://github.com/tldr-pages/tldr",
     "category": "Command Line Tools",
-    "summary_ja": "コマンドの簡潔なチートシート集。pages.ja ディレクトリへの直接 PR で日本語訳を受け付ける方針が CONTRIBUTING に明文化されており、日本語訳の PR も直近90日以内に merge されている。未翻訳・更新遅れページが多数あり、進捗ダッシュボード（tldri18n）で対象を特定しやすい。PR 前に CLA 署名が必要。",
+    "summary_ja": "Android端末の一覧を表示する adb devices のページは、英語版に2つの使用例があり、日本語版にはまだない。英語版に対応する日本語ページを追加する。提出前に重複PRを再確認し、CLAに署名する。機械訳を参考にした箇所は人が校正する。",
     "license": "CC-BY-4.0"
   },
   "source": {
-    "revision": null,
+    "revision": "95c03a75306d1a664cb25628148c089d4c666bb5",
     "paths": [
-      "pages"
+      "pages/common/adb-devices.md"
     ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": [
-      "pages.ja"
+      "pages.ja/common/adb-devices.md"
     ]
   },
   "permissions": {
     "translation": "explicit",
-    "ai_assistance": "disclose",
+    "ai_assistance": "explicit",
     "pull_request": "allowed"
   },
   "automation": {
@@ -37,57 +37,73 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/tldr-pages/tldr",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://github.com/tldr-pages/tldr",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "最終 push 2026-08-02、Star 約6.3万、アーカイブなし。既定ブランチ main。"
-    },
-    {
-      "url": "https://github.com/tldr-pages/tldr/blob/main/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "pages.<locale>（日本語は pages.ja）配下への直接 PR で翻訳を受け付ける方針を明文化。「自信を持って読める言語のみ翻訳・更新する」ことを要求。未翻訳・要更新ページは進捗ダッシュボード https://lukwebsforge.github.io/tldri18n/ で確認できる。本文は CC BY 4.0、PR 提出前に CLA 署名が必要。"
+      "url": "https://github.com/tldr-pages/tldr/blob/95c03a75306d1a664cb25628148c089d4c666bb5/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語版を底本に対応する言語ディレクトリのページを編集する。CLAの署名、機械訳を参考にした場合も全文を校正することを要求。"
     },
     {
-      "url": "https://github.com/tldr-pages/tldr/blob/main/CONTRIBUTING.md",
-      "kind": "ai_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "生成 AI による新規ページ作成は強く非推奨。翻訳では機械翻訳を参考として使ってよいが、提出前の徹底した人手校正が必須。人手レビューを経ていないと疑われる生成 AI・機械翻訳の PR はクローズされると明記。"
+      "kind": "repository",
+      "url": "https://github.com/tldr-pages/tldr/blob/95c03a75306d1a664cb25628148c089d4c666bb5/pages/common/adb-devices.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語ページの対象は接続済みAndroid端末の一覧と -l による詳細表示。両方の使用例を確認した。"
     },
     {
-      "url": "https://github.com/tldr-pages/tldr/pull/22047",
+      "kind": "repository",
+      "url": "https://github.com/tldr-pages/tldr/tree/95c03a75306d1a664cb25628148c089d4c666bb5/pages.ja/common",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語ディレクトリを再帰的に照合し、adb-devices.md が未作成であることを確認した。"
+    },
+    {
+      "kind": "issue",
+      "url": "https://github.com/tldr-pages/tldr/issues/13997",
+      "observed_at": "2026-11-13",
+      "note_ja": "adb関連の原文を扱う一覧で、日本語版の担当宣言は確認されない。adb-devicesを含むopen PRの検索も0件。"
+    },
+    {
       "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "2026-04-27 に日本語翻訳追加 PR（pbcopy, pbpaste）が merge。日本語翻訳の PR が現在も受け入れられている実例。2026-02-20 には日本語訳の一括修正 PR (#21193) も merge。"
+      "url": "https://github.com/tldr-pages/tldr/pulls?q=is%3Apr+is%3Aopen",
+      "observed_at": "2026-11-13",
+      "note_ja": "確認時のopen PR 69件を調べ、対象の日本語ページを追加する変更は見当たらなかった。変更の多い2件はPRの先頭コミットに対象ファイルがないことも確認した。"
     },
     {
-      "url": "https://github.com/tldr-pages/tldr/commits/main/pages.ja",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "pages.ja は 2026-08-01 の同期コミット (#23471) まで毎月更新が継続。直近90日以内（2026-05〜08）に複数の翻訳同期・表記統一コミットがあり、日本語まわりの活動は活発。"
+      "url": "https://github.com/tldr-pages/tldr/commit/4864ee6dba42d4026427138cdd55da1c91c07192",
+      "observed_at": "2026-11-13",
+      "note_ja": "11月11日にbugreportz・msbuid・iwの日本語ヘルプとバージョンの表記を同期する変更が取り込まれた。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/tldr-pages/tldr/commit/95c03a75306d1a664cb25628148c089d4c666bb5",
+      "observed_at": "2026-11-13",
+      "note_ja": "tldr-pages/tldr の調査対象の原文をこのコミットで確認。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "structure",
+      "description_ja": "英語版と同じ見出し・2つの使用例を保持し、コマンド adb devices と adb devices -l が改変されていないことを比較する。"
+    },
+    {
+      "kind": "semantic_review",
+      "description_ja": "通常の一覧と詳細情報つきの一覧の違いが日本語で明確かを校正する。公開前に担当・PRの重複を再確認する。"
+    }
+  ],
   "credit": {
     "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -108,7 +124,7 @@
     "team_url": "https://lukwebsforge.github.io/tldri18n/"
   },
   "metrics": {
-    "stars": 63270,
-    "observed_at": "2026-08-03"
+    "stars": 64197,
+    "observed_at": "2026-11-13"
   }
 }

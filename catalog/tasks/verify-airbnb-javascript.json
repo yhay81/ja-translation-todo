@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-airbnb-javascript",
   "kind": "verification",
-  "status": "ready",
+  "status": "ask_first",
   "title": {
-    "ja": "Airbnb JavaScript スタイルガイド日本語訳の追従更新",
-    "en": "Update the Japanese translation of the Airbnb JavaScript style guide"
+    "ja": "Airbnb スタイルガイドの既存日本語訳を更新",
+    "en": "Maintain the existing Japanese Airbnb JavaScript style guide"
   },
   "project": {
     "repository": "airbnb/javascript",
     "url": "https://github.com/airbnb/javascript",
     "category": "JavaScript",
-    "summary_ja": "JavaScript のスタイルガイド。README の Translation 節で各言語のコミュニティ翻訳リポジトリが公式にリンクされており、日本語版は mitsuruog/javascript-style-guide がリンク済み。日本語リポジトリは PR を受け付けて merge している実績があるが 2026-01 以降更新が止まっており、upstream の 2026-04 更新分への追従余地がある。",
+    "summary_ja": "本家 README が案内する日本語訳は別リポジトリで管理されている。2026年1月に訳文が更新された。修正したい箇所を英語版と突き合わせ、既存の日本語版で変更の受付状況を確認する。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "8ed19247bef145e3cc41b24a02dd1fe6d9b5e681",
     "paths": [
       "README.md",
       "react/README.md",
@@ -34,7 +34,7 @@
     "pull_request": "allowed"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -44,28 +44,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/airbnb/javascript",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    },
-    {
       "url": "https://github.com/airbnb/javascript#translation",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "README の Translation 節に「This style guide is also available in other languages」とあり、日本語版として mitsuruog/javascript-style-guide が公式にリンクされている。翻訳はコミュニティのフォークリポジトリでホストし、upstream にはリンクのみを載せる方式。AI 利用方針の明記はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "本家の言語一覧で日本語版として mitsuruog/javascript-style-guide を案内。"
     },
     {
-      "url": "https://github.com/airbnb/javascript",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "upstream はアーカイブされておらず 2026-04-16 まで更新あり(Star 148,085、MIT)。本文はルート README.md(ES2015+ ガイド)が中心で、react/ と css-in-javascript/ に別ガイドがある。"
+      "url": "https://github.com/mitsuruog/javascript-style-guide/blob/HEAD/CONTRIBUTING.md",
+      "kind": "translation_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版は PR 前に npm install と npm test を実行する手順を掲載。"
     },
     {
-      "url": "https://github.com/mitsuruog/javascript-style-guide",
+      "url": "https://github.com/mitsuruog/javascript-style-guide/commit/25b0c77b3655188b9de02408ec2ff1d0e560b9a4",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "日本語訳リポジトリ(Star 342)の最終更新は 2026-01-10(PR #40「Update translations」を merge)。外部コントリビューターの PR を受け付けて merge している実績があるが、調査日から直近90日の活動はなく inactive。upstream の 2026-04 更新分への追従と誤訳修正の余地があり、重複作業のリスクは低い。"
+      "observed_at": "2026-11-13",
+      "note_ja": "1月10日に日本語訳を更新。その後の翻訳更新や新規担当募集は確認できなかった。"
+    },
+    {
+      "url": "https://github.com/airbnb/javascript/commit/8ed19247bef145e3cc41b24a02dd1fe6d9b5e681",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
   "validation": [],
@@ -74,14 +74,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": "https://github.com/airbnb/javascript",
+    "platform_url": "https://github.com/mitsuruog/javascript-style-guide",
     "translation_repo": "mitsuruog/javascript-style-guide"
   },
   "content_type": "official_docs",
@@ -94,21 +94,11 @@
     }
   },
   "metrics": {
-    "stars": 148085,
-    "observed_at": "2026-08-03"
+    "stars": 148008,
+    "observed_at": "2026-11-13"
   },
   "community": {
     "japanese_team": "inactive",
     "team_url": "https://github.com/mitsuruog/javascript-style-guide"
-  },
-  "legacy": {
-    "概要": "JavaScript のスタイルガイド",
-    "作者": "[airbnb](https://github.com/airbnb)",
-    "開始年月": "2012/11",
-    "ライセンス": "MIT",
-    "やり方": "[Mitsuru Ogawa](https://github.com/mitsuruog) さんの[リポジトリ](https://github.com/mitsuruog/javascript-style-guide)にプルリク",
-    "状態": "[Mitsuru Ogawa](https://github.com/mitsuruog) さんの[リポジトリ](https://github.com/mitsuruog/javascript-style-guide)へのリンクが既に張られている。更新は滞っている。",
-    "文章量": "中",
-    "Star": "148,011 (日本語リポジトリは340)"
   }
 }

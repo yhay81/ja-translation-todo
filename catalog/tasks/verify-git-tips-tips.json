@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "git-tips の日本語版フォーク翻訳と README リンク掲載の検証",
-    "en": "Verify the fork-based Japanese translation and README link workflow for git-tips/tips"
+    "ja": "Git Tips の既存日本語フォークを更新できるか確認する",
+    "en": "Check whether the existing Japanese Git Tips fork accepts updates"
   },
   "project": {
     "repository": "git-tips/tips",
     "url": "https://github.com/git-tips/tips",
     "category": "Command Line Tools",
-    "summary_ja": "よく使われる Git コマンド集。翻訳は各言語の有志が自分のリポジトリで全体を翻訳し、本家 README の言語リンクに追加してもらう方式。日本語版(isotai/git-tips)は README からリンクされているが 2020-10 以降更新が止まっており、本家は更新が続いているため内容が古い。更新・引き継ぎには本家メンテナと既存訳者への相談が前提。",
+    "summary_ja": "本家 README に掲載済みの日本語訳がある。新たに全訳する前に、このフォークに取り込み可能な修正があるか、具体的な差分とともに既存訳者へ相談する。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "727551c5dab24c7b1d63814222a06f9d01546bc4",
     "paths": [
       "tips.json",
       "README.md"
@@ -23,7 +23,9 @@
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "README.md"
+    ]
   },
   "permissions": {
     "translation": "implied",
@@ -31,7 +33,7 @@
     "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -41,28 +43,22 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/git-tips/tips",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "リポジトリは非アーカイブで活動継続(最終 push 2026-05-23、Star 21,720、既定ブランチ master、MIT)。contributing.md は tips.json への追記手順のみで翻訳手順の記載はない。"
-    },
-    {
       "url": "https://github.com/git-tips/tips/blob/master/README.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "明文の翻訳ガイドはないが、README 冒頭で中国語・ロシア語・韓国語・ベトナム語・日本語など各言語版の外部リポジトリをリンクしており、「自リポジトリで全訳しリンクを PR する」方式が慣行として成立(implied)。日本語リンク先は isotai/git-tips。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版へのリンクは isotai/git-tips を指す。"
     },
     {
-      "url": "https://github.com/isotai/git-tips",
+      "url": "https://github.com/isotai/git-tips/commit/fbcc87e307996dcf442b6f79d3529dbedb2554a6",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "既存の日本語版 isotai/git-tips は最終 push 2020-10-22 で停滞(Star 236)。本家は 2026 年も更新されており日本語版は追従していない。更新再開・差し替えは既存訳者と本家メンテナへの相談が必要。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語フォークの既定ブランチでは2019年1月が直近のコミットで、新規変更のレビュー受付は確認できていない。"
     },
     {
-      "url": "https://github.com/git-tips/tips",
+      "url": "https://github.com/git-tips/tips/commit/727551c5dab24c7b1d63814222a06f9d01546bc4",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
   "validation": [],
@@ -71,14 +67,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": "https://github.com/git-tips/tips/blob/master/README.md",
+    "platform_url": "https://github.com/isotai/git-tips",
     "translation_repo": "isotai/git-tips"
   },
   "content_type": "tutorial",
@@ -95,17 +91,7 @@
     "team_url": "https://github.com/isotai/git-tips"
   },
   "metrics": {
-    "stars": 21720,
-    "observed_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "よく使われているGitの使い方",
-    "作者": "[git-tips](https://github.com/git-tips)",
-    "開始年月": "2015/07",
-    "ライセンス": "MIT",
-    "やり方": "全体書き換え、リンクだけプルリク",
-    "状態": "中国、ロシア、ベトナムがある",
-    "文章量": "少",
-    "Star": "21,683"
+    "stars": 21723,
+    "observed_at": "2026-11-13"
   }
 }

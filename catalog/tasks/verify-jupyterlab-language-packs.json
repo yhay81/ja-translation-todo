@@ -1,27 +1,29 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-jupyterlab-language-packs",
-  "kind": "verification",
+  "kind": "translation",
   "status": "ready",
   "title": {
-    "ja": "JupyterLab UI (言語パック) の Crowdin 日本語翻訳",
+    "ja": "JupyterLab と拡張機能の UI を Crowdin で日本語に訳す",
     "en": "Translate JupyterLab UI strings to Japanese via Crowdin"
   },
   "project": {
     "repository": "jupyterlab/language-packs",
     "url": "https://github.com/jupyterlab/language-packs",
     "category": "Python",
-    "summary_ja": "JupyterLab エコシステムの UI 文字列翻訳。Crowdin (crowdin.com/project/jupyterlab) で制度化され、翻訳が自動 PR として language-packs に取り込まれ ja-JP パックとして PyPI / conda-forge 配布される。ja-JP パックは直近も Crowdin 同期で更新されており、翻訳率の向上と拡張機能カタログの追従が機会。翻訳はCrowdin 経由のみで、リポジトリへの翻訳内容の直接 PR は経路ではない。",
+    "summary_ja": "日本語言語パックでは jupyter_collaboration の共有リンク設定などに空の訳文が残る。Crowdin の日本語プロジェクトで該当する文字列の訳案を確認して参加する。11月5日にも GitHub へ翻訳が自動同期されている。",
     "license": "BSD-3-Clause"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "2e278fb470ebbb241267bd1fce8994cd5ca6fc2c",
+    "paths": [
+      "extensions/jupyter_collaboration/locale/jupyter_collaboration.pot"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": [
-      "language-packs/jupyterlab-language-pack-ja-JP"
+      "language-packs/jupyterlab-language-pack-ja-JP/jupyterlab_language_pack_ja_JP/locale/ja_JP/LC_MESSAGES/jupyter_collaboration.po"
     ]
   },
   "permissions": {
@@ -35,49 +37,68 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/jupyterlab/language-packs",
+      "url": "https://github.com/jupyterlab/language-packs/tree/2e278fb470ebbb241267bd1fce8994cd5ca6fc2c",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/jupyterlab/language-packs/blob/main/README.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "README の Contributing 節で「Please visit Crowdin to contribute to a language pack」と明記。翻訳は Crowdin で行い、bot が翻訳成果を自動 PR としてリポジトリに取り込み、完成した言語パックが PyPI / conda-forge へリリースされる体制。翻訳内容をリポジトリへ直接 PR する経路は案内されていない。AI 利用への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "拡張機能のカタログを Crowdin に登録し、言語パックへ反映する仕組みを説明。"
     },
     {
-      "url": "https://crowdin.com/project/jupyterlab",
+      "url": "https://crowdin.com/project/jupyterlab/ja",
       "kind": "platform",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式翻訳プラットフォーム。公開プロジェクトで日本語ロケールが有効。JupyterLab 本体に加え jupyterlab-git 等の拡張機能カタログも翻訳対象。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語プロジェクトの参加画面を確認。"
     },
     {
       "url": "https://github.com/jupyterlab/language-packs/commits/main/language-packs/jupyterlab-language-pack-ja-JP",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "ja-JP パックは 2026-05〜06 にも Crowdin 同期 PR (#924, #928, #932, #933) で更新されており、直近90日内に日本語翻訳の活動あり。組織化された日本語チームは確認できず、Crowdin 上の個人貢献ベース。"
+      "observed_at": "2026-11-13",
+      "note_ja": "10月29日、11月1日、11月5日に日本語パックへ Crowdin の変更を取り込み。"
+    },
+    {
+      "kind": "validation",
+      "url": "https://github.com/jupyterlab/language-packs/blob/main/language-packs/jupyterlab-language-pack-ja-JP/jupyterlab_language_pack_ja_JP/locale/ja_JP/LC_MESSAGES/jupyter_collaboration.po",
+      "observed_at": "2026-11-13",
+      "note_ja": "Shared link settings と Shared link の msgstr が空。Crowdin の該当エントリで同期前の訳案も確認する。"
+    },
+    {
+      "kind": "issue",
+      "url": "https://github.com/jupyterlab/language-packs/issues?q=is%3Aopen+%22jupyter_collaboration%22+%22Japanese%22",
+      "observed_at": "2026-11-13",
+      "note_ja": "指定した機能・章名を含む日本語の既存 issue・PR を検索した時点で該当なし。タイトル・本文の検索だけでは、作業中のすべての変更を把握できない。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "structure",
+      "command": null,
+      "description_ja": "Crowdin 上で対象の拡張機能、文字列の文脈、変数のプレースホルダーを原文と照合する。"
+    }
+  ],
   "credit": {
     "expected": "unknown",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "crowdin",
-    "platform_url": "https://crowdin.com/project/jupyterlab",
+    "platform_url": "https://crowdin.com/project/jupyterlab/ja",
     "translation_repo": null
   },
   "content_type": "ui_strings",
@@ -90,8 +111,8 @@
     }
   },
   "metrics": {
-    "stars": 93,
-    "observed_at": "2026-08-03"
+    "stars": 95,
+    "observed_at": "2026-11-13"
   },
   "community": {
     "japanese_team": "active",

@@ -1,22 +1,24 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-kubernetes-minikube",
-  "kind": "verification",
+  "kind": "translation",
   "status": "ready",
   "title": {
-    "ja": "minikube CLIメッセージの日本語化（translations/ja.json）",
+    "ja": "minikube CLI の未訳メッセージを日本語にする",
     "en": null
   },
   "project": {
     "repository": "kubernetes/minikube",
     "url": "https://github.com/kubernetes/minikube",
     "category": "Infrastructure",
-    "summary_ja": "ローカルKubernetes実行ツール。CLI出力メッセージの翻訳基盤(translations/ja.json)があり日本語が公式対象。make extractで未翻訳文字列を抽出して貢献できる。",
+    "summary_ja": "translations/ja.json に空の訳文が残っている。たとえば vfkit のネットワーク設定エラーは英語のみ。原文のキーとテンプレート変数を保って訳を記入し、日本語設定で該当メッセージを確認する。",
     "license": "Apache-2.0"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "e4348403bb6c8416c5b2f4405934ea18454554bf",
+    "paths": [
+      "translations/ja.json"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -35,45 +37,58 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/kubernetes/minikube",
+      "url": "https://github.com/kubernetes/minikube/tree/e4348403bb6c8416c5b2f4405934ea18454554bf",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://minikube.sigs.k8s.io/docs/contrib/translations/",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式コントリビュートガイドが翻訳手順を明記。translations/ 配下のロケール別 JSON（ja.json は既存対象言語）に英語文字列をキー・訳文を値として追加し、make extract で未翻訳文字列を抽出、go test で構文検証して PR を送る。AI 利用への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "既存言語の JSON を編集し、make extract とローカルでの翻訳確認を行う手順。"
+    },
+    {
+      "url": "https://github.com/kubernetes/minikube/blob/master/translations/ja.json",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "vfkit の --network 引数に関するエラーなどに空の訳文がある。"
     },
     {
       "url": "https://github.com/kubernetes/minikube/commits/master/translations/ja.json",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "ja.json は minikube-bot による文字列抽出更新が直近90日内に複数回（2026-08-01、07-09 ほか）。専任の日本語チームはなく個人 PR ベースで、抽出更新のたびに未翻訳文字列が発生するため着手余地がある。"
+      "observed_at": "2026-11-13",
+      "note_ja": "10月30日に翻訳ファイルを更新。自動生成コミットで、専任日本語チームの有無までは確認できない。"
     },
     {
-      "url": "https://api.github.com/repos/kubernetes/minikube",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "master ブランチが活発（最終 push 2026-08-01）、Star 31,999、Apache-2.0、アーカイブされていないことを確認。"
+      "kind": "issue",
+      "url": "https://github.com/kubernetes/minikube/issues?q=is%3Aopen+%22vfkit%22+%22Japanese%22",
+      "observed_at": "2026-11-13",
+      "note_ja": "指定した機能・章名を含む日本語の既存 issue・PR を検索した時点で該当なし。タイトル・本文の検索だけでは、作業中のすべての変更を把握できない。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "command",
+      "command": "make extract",
+      "description_ja": "抽出後の日本語 JSON のキーとテンプレート変数を確認する。"
+    }
+  ],
   "credit": {
     "expected": "unknown",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -90,11 +105,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "unknown",
     "team_url": null
   },
   "metrics": {
-    "stars": 31999,
-    "observed_at": "2026-08-03"
+    "stars": 32242,
+    "observed_at": "2026-11-13"
   }
 }

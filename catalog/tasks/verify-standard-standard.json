@@ -2,22 +2,22 @@
   "schema_version": "translation-task/v1",
   "id": "verify-standard-standard",
   "kind": "verification",
-  "status": "ready",
+  "status": "needs_verification",
   "title": {
-    "ja": "JavaScript Standard Style の日本語ドキュメント更新",
-    "en": "Update the Japanese docs (README-ja / RULES-ja) of standard/standard"
+    "ja": "JavaScript Standard Style 日本語版の差分を確認する",
+    "en": null
   },
   "project": {
     "repository": "standard/standard",
     "url": "https://github.com/standard/standard",
     "category": "JavaScript",
-    "summary_ja": "JavaScript の標準的なスタイルガイド・リンター・フォーマッター。README が10言語の翻訳版(docs/README-*.md, RULES-*.md)へリンクしており、翻訳は同リポジトリへの直接 PR で維持される。docs/README-ja.md と docs/RULES-ja.md は存在するが、日本語の実質的な更新は2022年以降止まっており、英語版への追随更新が機会。",
+    "summary_ja": "英語と日本語のREADME・ルール集が同じdocsディレクトリにある。日本語READMEの直近の変更は2025年7月の整形。現在募集されている具体的な翻訳箇所は確認できず、対応する英語節を照合して差分を特定してから提案する。",
     "license": "MIT"
   },
   "source": {
-    "revision": "753309b21bfd",
+    "revision": "753309b21bfd7c98e208e3fb45910ffd1bb95409",
     "paths": [
-      "README.md",
+      "docs/README-en.md",
       "docs/RULES-en.md"
     ]
   },
@@ -31,10 +31,10 @@
   "permissions": {
     "translation": "implied",
     "ai_assistance": "unknown",
-    "pull_request": "allowed"
+    "pull_request": "unknown"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -44,28 +44,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/standard/standard",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "url": "https://github.com/standard/standard/tree/753309b21bfd7c98e208e3fb45910ffd1bb95409/docs",
+      "observed_at": "2026-11-13",
+      "note_ja": "README-en.md・RULES-en.mdと、日本語のREADME-ja.md・RULES-ja.mdを確認。"
     },
     {
-      "url": "https://github.com/standard/standard/tree/master/docs",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "master (753309b21bfd, 2025-07-11 push) を確認。docs/ に ja を含む10言語の README/RULES 翻訳が同居。リポジトリ自体の活動は 2025-07 が最後で緩やか。"
-    },
-    {
-      "url": "https://github.com/standard/standard#readme",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "明文の翻訳ガイドはないが、README 冒頭の言語スイッチャーが「日本語 (Japanese)」として docs/README-ja.md へリンクしており、翻訳版は一次コンテンツとして直接 PR で受け入れ・維持されてきた(旧一覧でも「docs/README-ja.md, docs/RULES-ja.md を更新してプルリク」と案内)。"
+      "url": "https://github.com/standard/standard/blob/753309b21bfd7c98e208e3fb45910ffd1bb95409/README.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "プロジェクトのREADMEが日本語版を含む各言語へのリンクを掲載している。"
     },
     {
-      "url": "https://github.com/standard/standard/commits/master/docs/README-ja.md",
-      "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "README-ja.md の履歴を確認。日本語の実質的な翻訳更新は 2022-01 (#1754) が最後で、2025-07 の変更はメンテナによる整形のみ。open の日本語関連 PR / issue は見当たらず、重複作業なし。英語版との差分追随が未着手領域。"
+      "kind": "team_activity",
+      "url": "https://github.com/standard/standard/commit/753309b21bfd7c98e208e3fb45910ffd1bb95409",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語READMEの直近のコミットは2025年7月11日の書式修正。翻訳者の募集を示すものではない。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/standard/standard/commit/753309b21bfd7c98e208e3fb45910ffd1bb95409",
+      "observed_at": "2026-11-13",
+      "note_ja": "standard/standard の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -74,25 +74,15 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "JavaScript の標準的なスタイルガイドで、リンターで、フォーマッター",
-    "作者": "[standard](https://github.com/standard)",
-    "開始年月": "2015/01",
-    "ライセンス": "MIT",
-    "やり方": "docs/README-ja.md, docs/RULES-ja.md を更新してプルリク",
-    "状態": "日本語あり",
-    "文章量": "中",
-    "Star": "29,409"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
-    "translation_repo": null
+    "platform_url": "https://github.com/standard/standard/tree/753309b21bfd7c98e208e3fb45910ffd1bb95409/docs",
+    "translation_repo": "standard/standard"
   },
   "content_type": "official_docs",
   "difficulty": {
@@ -108,7 +98,7 @@
     "team_url": null
   },
   "metrics": {
-    "stars": 29429,
-    "observed_at": "2026-08-03"
+    "stars": 29430,
+    "observed_at": "2026-11-13"
   }
 }

@@ -1,26 +1,33 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-hakimel-reveal-js",
-  "kind": "verification",
+  "kind": "translation",
   "status": "ready",
   "title": {
-    "ja": "hakimel/reveal.js の日本語化参加方法を再検証",
-    "en": "Re-verify the Japanese translation workflow for hakimel/reveal.js"
+    "ja": "reveal.js 公式サイトの日本語ロケールを追加する",
+    "en": "Add a Japanese locale to the official reveal.js website"
   },
   "project": {
-    "repository": "hakimel/reveal.js",
-    "url": "https://github.com/hakimel/reveal.js",
+    "repository": "reveal/revealjs.com",
+    "url": "https://github.com/reveal/revealjs.com",
     "category": "JavaScript",
-    "summary_ja": "HTML 製のプレゼン（スライド）フレームワーク。公式ドキュメントサイトのソースは別リポジトリ reveal/revealjs.com にあり、README で翻訳貢献を歓迎、translation-guide.md に手順が明文化されている。既存翻訳は繁体字中国語のみで日本語は未着手。翻訳は revealjs.com リポジトリへの PR で受け付けられる。",
-    "license": "MIT"
+    "summary_ja": "翻訳ガイドに沿って日本語ロケールを登録し、既存の Markdown ページとデモスライドを翻訳する。設定には英語と繁体字中国語があり、日本語ロケールは未登録。作業先はプレゼン本体とは別のサイト用リポジトリ。",
+    "license": null
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "66a163e0681414480993917e62e1ec9273519e21",
+    "paths": [
+      "src"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "src/ja",
+      "src/_data/locales.js",
+      "src/_data/i18n/index.js",
+      "src/_includes/demo.ja.html"
+    ]
   },
   "permissions": {
     "translation": "explicit",
@@ -33,61 +40,66 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/hakimel/reveal.js",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "リポジトリは非アーカイブで活動継続(最終 push 2026-05-21、Star 72,069、MIT)。CONTRIBUTING.md は存在しない(404)。"
-    },
-    {
-      "url": "https://github.com/hakimel/reveal.js/blob/master/README.md",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "本体リポジトリの README はデモ・ドキュメント(revealjs.com)への案内のみで、翻訳・ローカライズへの言及なし。翻訳の受付は本体ではなくドキュメントサイトの別リポジトリ側にある。"
-    },
-    {
       "url": "https://github.com/reveal/revealjs.com/blob/master/translation-guide.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式サイトのソースリポジトリ reveal/revealjs.com に translation-guide.md があり、src/_data/locales.js への言語追加、src/_data/i18n/ の編集、言語フォルダ作成、Markdown ページとデモの翻訳という手順を明文化。README にも「If you would like to help with translations, please follow our Translation Guide」「Contributions are welcome!」と記載。"
-    },
-    {
-      "url": "https://github.com/reveal/revealjs.com/pull/63",
-      "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "サイトの中国語(繁体字)翻訳 PR #63 が 2024-06-04 にマージ済み。翻訳が実際に PR 経由で受け入れられた実績を確認。関連 issue #62(翻訳協力の申し出)も存在。"
+      "observed_at": "2026-11-13",
+      "note_ja": "ロケール一覧・表示文・言語フォルダーを追加し、Markdown とデモを翻訳して提出する流れを公開。"
     },
     {
       "url": "https://github.com/reveal/revealjs.com/blob/master/src/_data/locales.js",
       "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "locales.js に定義済みの言語は en と zh-Hant の2つのみで、日本語(ja)は未着手であることを確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "登録ロケールは en と zh-Hant。ja は未登録。"
     },
     {
-      "url": "https://github.com/hakimel/reveal.js",
+      "url": "https://github.com/reveal/revealjs.com/blob/master/README.md",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-11-13",
+      "note_ja": "公式サイトの README が翻訳参加を歓迎。サイト文書固有のライセンス表記は確認できず、本体の MIT 表記を転用しない。"
+    },
+    {
+      "url": "https://github.com/reveal/revealjs.com/pull/63",
+      "kind": "pull_request",
+      "observed_at": "2026-11-13",
+      "note_ja": "繁体字中国語対応の PR。調査時に open の3件の表題と Japanese の検索結果では、日本語対応の提案は確認できなかった。"
+    },
+    {
+      "url": "https://github.com/reveal/revealjs.com/commit/66a163e0681414480993917e62e1ec9273519e21",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "command",
+      "description_ja": "依存を用意してからサイトをビルドする。",
+      "command": "yarn run production"
+    },
+    {
+      "kind": "semantic_review",
+      "description_ja": "ビルドした日本語ページで言語切替、内部リンク、デモの表示と訳文を確認する。"
+    }
+  ],
   "credit": {
     "expected": "unknown",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/reveal/revealjs.com/blob/master/translation-guide.md",
     "translation_repo": "reveal/revealjs.com"
   },
   "content_type": "official_docs",
@@ -104,16 +116,7 @@
     "team_url": null
   },
   "metrics": {
-    "stars": 72069,
-    "observed_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "HTML 製のプレゼン（スライド）フレームワーク https://revealjs.com",
-    "開始年月": "2011/06",
-    "ライセンス": "MIT",
-    "やり方": "",
-    "状態": "",
-    "文章量": "多",
-    "Star": "70,329"
+    "stars": 124,
+    "observed_at": "2026-11-13"
   }
 }

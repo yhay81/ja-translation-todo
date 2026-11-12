@@ -12,6 +12,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
 
@@ -23,6 +24,26 @@ PUBLIC_SCHEMA = ROOT / "public" / "schema" / SCHEMA_PATH.name
 sys.path.insert(0, str(ROOT / "src"))
 
 from translation_hub.taskschema import TaskValidationError, validate_task  # noqa: E402
+
+
+def check_ready_task(task: dict[str, Any]) -> None:
+    """Check the publication requirements documented in CONTRIBUTING.md."""
+    if task["status"] != "ready":
+        return
+
+    kinds = {entry["kind"] for entry in task["evidence"]}
+    checks = {
+        "translation policy": task["permissions"]["translation"] == "explicit"
+        and "translation_policy" in kinds,
+        "repository evidence": "repository" in kinds,
+        "existing work check": bool(kinds & {"issue", "pull_request", "team_activity"}),
+        "source revision and paths": task["source"]["revision"] and task["source"]["paths"],
+        "validation steps": task["validation"],
+        "verification date": task["provenance"]["last_verified_at"],
+    }
+    missing = [label for label, confirmed in checks.items() if not confirmed]
+    if missing:
+        raise ValueError(f"{task['id']}: ready task is missing {', '.join(missing)}")
 
 
 def load_tasks() -> list[dict[str, object]]:
@@ -46,6 +67,7 @@ def load_tasks() -> list[dict[str, object]]:
             raise ValueError(
                 f"{path.relative_to(ROOT)}: worker-side validator disagrees: {exc}"
             ) from exc
+        check_ready_task(task)
         task_id = str(task["id"])
         if task_id in seen:
             raise ValueError(f"duplicate task id: {task_id}")

@@ -1,0 +1,94 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-obsproject-obs-studio",
+  "kind": "maintenance",
+  "status": "blocked",
+  "title": {
+    "ja": "OBS Studioの日本語UIをCrowdinで改善する",
+    "en": null
+  },
+  "project": {
+    "repository": "obsproject/obs-studio",
+    "url": "https://github.com/obsproject/obs-studio",
+    "category": "Desktop",
+    "summary_ja": "OBS Studioのメニューやダイアログの日本語訳はCrowdinで提案・投票できます。画面の文脈はスクリーンショットや実機で確認します。提出する文章は人が書く必要があり、翻訳PRは受け付けていません。",
+    "license": "GPL-2.0-or-later"
+  },
+  "source": {
+    "revision": "fe1ed7955f300efd17fc59f65938388e43d8bb06",
+    "paths": [
+      "frontend/data/locale/en-US.ini"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "frontend/data/locale/ja-JP.ini"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "forbidden",
+    "pull_request": "forbidden"
+  },
+  "automation": {
+    "level": "blocked",
+    "allowed_actions": []
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/obsproject/obs-studio/tree/fe1ed7955f300efd17fc59f65938388e43d8bb06",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "原文の既定ブランチで対象の構成とライセンスを確認した。"
+    },
+    {
+      "url": "https://github.com/obsproject/obs-studio/wiki/How-To-Contribute-Translations-For-OBS",
+      "kind": "translation_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "Crowdinで言語を選び、未訳の提案や既訳の投票を行う。READMEでも翻訳PRは受け付けないとしている。"
+    },
+    {
+      "url": "https://github.com/obsproject/obs-studio/blob/master/CONTRIBUTING.md#aimachine-learning-policy",
+      "kind": "ai_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "プロジェクトに提出する文章やコンテンツは人間が書くよう定めている。"
+    },
+    {
+      "url": "https://github.com/obsproject/obs-studio/commit/e7f0b0d43c538f5d108aa4cbea473d57b3012a1a",
+      "kind": "team_activity",
+      "observed_at": "2026-11-13",
+      "note_ja": "10月8日のCrowdin同期で日本語UIのロケールファイルを更新した。"
+    }
+  ],
+  "validation": [
+    {
+      "kind": "semantic_review",
+      "description_ja": "Crowdinの文脈画像とOBSの日本語画面を見比べ、プレースホルダーと既存の用語を確認します。"
+    }
+  ],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": false
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-11-13",
+    "last_verified_at": "2026-11-13"
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": "https://crowdin.com/project/obs-studio",
+    "translation_repo": null
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/obsproject/obs-studio/commit/e7f0b0d43c538f5d108aa4cbea473d57b3012a1a"
+  },
+  "content_type": "ui_strings",
+  "metrics": {
+    "stars": 79464,
+    "observed_at": "2026-11-13"
+  }
+}

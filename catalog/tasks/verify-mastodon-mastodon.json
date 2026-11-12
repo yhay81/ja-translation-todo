@@ -1,0 +1,99 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-mastodon-mastodon",
+  "kind": "maintenance",
+  "status": "in_progress",
+  "title": {
+    "ja": "Mastodonの日本語UIをCrowdinで更新する",
+    "en": null
+  },
+  "project": {
+    "repository": "mastodon/mastodon",
+    "url": "https://github.com/mastodon/mastodon",
+    "category": "Web",
+    "summary_ja": "Mastodonの画面や通知の日本語訳はコミュニティがCrowdinで更新し、メンテナが確認して本体に取り込みます。11月11日にも日本語の変更が反映されました。着手前にCrowdin上の未訳・提案を確認してください。",
+    "license": "AGPL-3.0-or-later"
+  },
+  "source": {
+    "revision": "ca8b0ffac86cc5b064a4573f16b8061716c8ab6f",
+    "paths": [
+      "config/locales/en.yml"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "config/locales/ja.yml"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "unknown",
+    "pull_request": "unknown"
+  },
+  "automation": {
+    "level": "discover_only",
+    "allowed_actions": [
+      "inspect_public_metadata",
+      "find_translation_policy",
+      "find_existing_work",
+      "report_evidence"
+    ]
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/mastodon/mastodon/tree/ca8b0ffac86cc5b064a4573f16b8061716c8ab6f",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "原文の既定ブランチで対象の構成とライセンスを確認した。"
+    },
+    {
+      "url": "https://github.com/mastodon/mastodon/blob/main/CONTRIBUTING.md#translations",
+      "kind": "translation_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳の受付先はCrowdin。コミュニティの訳を定期的にレビューして取り込む。"
+    },
+    {
+      "url": "https://github.com/mastodon/.github/blob/main/AI_POLICY.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "組織の方針は人による責任とレビューを求める。CrowdinでAI生成訳を提出してよいという明示は確認できず、機械的な提出は対象外。"
+    },
+    {
+      "url": "https://github.com/mastodon/mastodon/commit/bbfbdc326c0497ca47d7c65cb0d5549af67633ec",
+      "kind": "team_activity",
+      "observed_at": "2026-11-13",
+      "note_ja": "11月11日に日本語ロケールを含むCrowdin同期がマージされた。"
+    }
+  ],
+  "validation": [
+    {
+      "kind": "semantic_review",
+      "description_ja": "Crowdin上で既訳との重複、文脈、補間変数を確認し、既存の日本語表現と照合します。"
+    }
+  ],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": false
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-11-13",
+    "last_verified_at": "2026-11-13"
+  },
+  "workflow": {
+    "platform": "crowdin",
+    "platform_url": "https://crowdin.com/project/mastodon",
+    "translation_repo": null
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/mastodon/mastodon/commit/bbfbdc326c0497ca47d7c65cb0d5549af67633ec"
+  },
+  "content_type": "ui_strings",
+  "metrics": {
+    "stars": 50595,
+    "observed_at": "2026-11-13"
+  }
+}

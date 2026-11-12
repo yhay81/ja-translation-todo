@@ -2,28 +2,30 @@
   "schema_version": "translation-task/v1",
   "id": "verify-microsoft-playwright",
   "kind": "verification",
-  "status": "ask_first",
+  "status": "needs_verification",
   "title": {
-    "ja": "Playwright ドキュメント日本語化の検証",
+    "ja": "Playwright 日本語版をコミュニティで維持できるか確認する",
     "en": null
   },
   "project": {
     "repository": "microsoft/playwright",
     "url": "https://github.com/microsoft/playwright",
     "category": "JavaScript",
-    "summary_ja": "E2E テストの標準となった Playwright のドキュメント (playwright.dev) は英語のみ。2025 年の issue #37825 でメンテナが「公式翻訳の維持計画はないがコミュニティ主導の翻訳を妨げるものはない」と回答しており、日本語翻訳はコミュニティ運営(自前ホスティング)前提でメンテナと相談してから始める形になる。",
+    "summary_ja": "Playwright チームは公式ドキュメントの翻訳を管理する予定はないと回答。独立したコミュニティ翻訳には否定的ではないが、現在の日本語チームや継続的な公開先は確認できない。本体への日本語訳 PR の募集としては扱わない。",
     "license": "Apache-2.0"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "bac1f9f67e9cff2a8e7ecbac25d56ec3bb1d15c6",
+    "paths": [
+      "docs/src"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": []
   },
   "permissions": {
-    "translation": "implied",
+    "translation": "unknown",
     "ai_assistance": "unknown",
     "pull_request": "forbidden"
   },
@@ -38,28 +40,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/microsoft/playwright",
+      "url": "https://github.com/microsoft/playwright/tree/bac1f9f67e9cff2a8e7ecbac25d56ec3bb1d15c6",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
-      "url": "https://github.com/microsoft/playwright.dev/issues/410",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "過去に docs の i18n 計画を尋ね日本語翻訳者としての協力を申し出た issue（2021年）が存在したが、現在は取得不可(2026-08-03 訂正: WebFetch で確認したところ実際は HTTP 404 Not Found であり、当初記載の 410 Gone は誤り)。いずれにせよ取得不可であることに変わりはない。GitHub の issue 検索でも playwright.dev に翻訳・i18n 関連の issue は見つからず、翻訳受付経路・方針は確認できない。"
-    },
-    {
-      "url": "https://api.github.com/repos/microsoft/playwright",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "main ブランチが活発（最終 push 2026-07-31）、Star 93,839、Apache-2.0、アーカイブされていないことを確認。playwright.dev のドキュメントは引き続き英語のみで、翻訳受付方針は見つからない。"
-    },
-    {
-      "url": "https://github.com/microsoft/playwright/issues/37825",
+      "url": "https://github.com/microsoft/playwright/issues/37825#issuecomment-3397329812",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "日本からの貢献者が「Playwright ドキュメントの日本語翻訳プロジェクトを始めたい」と提案した issue #37825(2025-10-20 close, completed)で、メンテナ(MEMBER, Skn0tt)が「We don't maintain any translations of our docs and have no plans to start doing so」「I don't see anything that speaks against you starting a community-driven translation. I'll discuss it with the rest of the team though」と回答。公式翻訳の受け入れはないが、コミュニティ主導の翻訳は否定されておらず、開始前にメンテナと相談する余地がある。同文の重複 issue #37826 も存在。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語化の提案に対し、公式チームは翻訳を管理しておらず、公式化の予定はないと回答。外部翻訳への言及はあるが、運営体制の約束はない。"
+    },
+    {
+      "url": "https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md",
+      "kind": "contributing",
+      "observed_at": "2026-11-13",
+      "note_ja": "軽微な文書修正を除き事前の issue を求める。人による監督のない低品質な AI 投稿は閉じる方針。"
+    },
+    {
+      "url": "https://github.com/microsoft/playwright.dev/tree/main",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "サイトの言語別構成は Node.js・Python・Java・.NET 向けで、日本語翻訳チームの窓口は確認できない。"
     }
   ],
   "validation": [],
@@ -68,10 +70,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 3,
+    "revision": 4,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -92,7 +94,7 @@
     "team_url": null
   },
   "metrics": {
-    "stars": 93839,
-    "observed_at": "2026-08-03"
+    "stars": 99982,
+    "observed_at": "2026-11-13"
   }
 }

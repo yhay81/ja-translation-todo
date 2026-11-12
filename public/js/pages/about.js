@@ -10,7 +10,7 @@ const STATUS_DESCRIPTIONS = {
   ready: "許可・対象・重複が確認済みで、着手できる状態。",
   ask_first: "作業前にメンテナへの相談が必要。無断で始めない。",
   in_progress: "誰か(人間またはエージェント)が作業中。",
-  blocked: "upstream の事情等により作業できない。",
+  blocked: "翻訳や AI 利用に制限があります。人手で参加できるかは各タスクの翻訳方針を確認してください。",
   done: "日本語化が完了している。",
   stale: "情報が失効しており、証拠の再収集が必要。",
 };
@@ -30,6 +30,13 @@ export async function renderAbout(outlet) {
         <p>
           ソースコード: <a href="https://github.com/yhay81/ja-translation-todo" target="_blank" rel="noopener noreferrer">github.com/yhay81/ja-translation-todo</a>
         </p>
+      </section>
+
+      <section>
+        <h2>日本語訳の表記に迷ったら</h2>
+        <p>まず参加先の日本語チームの用語集と表記ルールを確認してください。共通の参考資料として、
+          <a href="https://www.jtf.jp/tips/styleguide">JTF日本語標準スタイルガイド</a>で数字・記号・送り仮名の表記を、
+          <a href="https://mozilla-l10n.github.io/styleguides/ja/">Mozillaの日本語ガイド</a>でソフトウェアの訳語や文体を調べられます。</p>
       </section>
 
       <section>
@@ -60,10 +67,10 @@ export async function renderAbout(outlet) {
           <strong>Pull Request</strong>で受け付けます。
         </p>
         <ol>
-          <li><a href="/">タスク一覧</a>から、状態が「${esc(STATUS_LABELS.ready)}」のタスクを探す(検証から始める場合は他の状態でもよい)。</li>
+          <li><a href="/">タスク一覧</a>で関心のあるプロジェクトを検索する。調査、事前相談、翻訳のどこから参加できるかは、タスクの状態で確認できます。</li>
           <li>詳細ページで許可の状態・証拠・検証手順を確認する。</li>
           <li>公開情報(リポジトリのCONTRIBUTING、ライセンス、既存のissue/PRなど)でタスクの現状を検証する。</li>
-          <li>対象プロジェクトのコントリビューションガイドに従って翻訳・PRを行う。</li>
+          <li>翻訳を受け付けている場合は、参加先が指定する窓口（翻訳サービス、GitHubなど）を使う。事前相談が必要なときは、担当者と対象範囲を確認してから作業を始める。</li>
           <li>タスクの状態や証拠に更新があれば、<code>catalog/tasks/*.json</code> を編集するPRを
             <a href="https://github.com/yhay81/ja-translation-todo/blob/master/docs/verification-playbook.md" target="_blank" rel="noopener noreferrer">検証プレイブック</a>の規則に従って送る。</li>
           <li>メンテナがPRをレビューする。特に <code>ready</code> への昇格には人間によるレビューが必須。</li>
@@ -73,7 +80,7 @@ export async function renderAbout(outlet) {
       <section>
         <h2>AIエージェントとして参加する</h2>
         <ol>
-          <li>エージェントはMCPまたはREST APIでタスクを取得し、<code>automation.level</code> と <code>allowed_actions</code> を必ず守る。</li>
+          <li>エージェントはMCPまたはREST APIでタスクを取得し、<code>automation.level</code> と <code>automation.allowed_actions</code> を必ず守る。</li>
           <li>公開情報のみで検証し、結果は <code>catalog/tasks/*.json</code> を編集するPull Requestとして証拠付きで報告する。PRは人間のレビューを経てのみカタログへ反映される。</li>
           <li>外部PRではAI支援の利用を開示する。</li>
         </ol>
@@ -97,7 +104,7 @@ export async function renderAbout(outlet) {
         <ul>
           <li>自動mergeは行いません。カタログへの反映は常に人間のレビューを挟みます。</li>
           <li><code>automation.level</code> が <code>discover_only</code> のタスクでは、公開情報の調査と報告のみが許可されます。</li>
-          <li>翻訳・AI利用の方針が不明(<code>unknown</code>)・禁止(<code>forbidden</code>)・要相談(<code>ask_first</code>)の場合、エージェントは外部アクションを行いません。</li>
+          <li><code>draft_only</code> の上限はローカルでの下書きです。実行できるのは各タスクで許可された操作に限られます。翻訳やAI利用の許可を確認できないときは、翻訳先に訳文・Issue・PRを提出しません。</li>
           <li>エージェントの報告(PR)は「信頼できない入力」として扱われ、人間のレビュー承認までカタログを変更しません。</li>
           <li>外部PRではAI支援の利用を開示します。非公開リポジトリへはアクセスしません。</li>
         </ul>

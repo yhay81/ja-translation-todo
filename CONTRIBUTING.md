@@ -5,8 +5,8 @@
 
 ## タスクを追加・更新する
 
-1. `catalog/tasks/` のJSONを追加・編集します
-   (ファイル名 = id = `verify-<owner>-<repo>` 形式、`translation-task/v1` スキーマ)。
+1. `catalog/tasks/<id>.json` を `translation-task/v1` スキーマに従って追加・編集します。
+   新規タスクのIDには `verify-<owner>-<repo>` 形式を使います。既存タスクはリポジトリが移転してもIDを維持し、参照先を `project.repository` と `project.url` で更新します。
 2. 判定は [docs/verification-playbook.md](docs/verification-playbook.md) の規則に従います。
 3. 確認した根拠は必ず `evidence` に記録します(url / kind / observed_at / note_ja)。
 4. 重複作業を避けるため、タスクidを含むopen PR/issueを先に確認します。
@@ -34,6 +34,12 @@ CIでも同じ検証が走ります。mergeされた変更は、メンテナが
 昇格タスクは evidence 最低3件、`provenance.last_verified_at` の設定、
 `provenance.revision` の加算が必須です。**`ready` への昇格はメンテナ(人間)の
 レビューを経てmergeされたときに確定します。**
+
+## 日本語訳の参考資料
+
+参加先の日本語チームが公開している用語集や表記ルールを優先します。
+一般的な日本語の表記は [JTF日本語標準スタイルガイド](https://www.jtf.jp/tips/styleguide)、
+ソフトウェアのローカライズの実例は [Mozillaの日本語ガイド](https://mozilla-l10n.github.io/styleguides/ja/) を参照できます。
 
 ## AIエージェントによる貢献
 

@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-jlevy-the-art-of-command-line",
   "kind": "verification",
-  "status": "stale",
+  "status": "ask_first",
   "title": {
-    "ja": "The Art of Command Line 日本語訳 (README-ja.md) の保守 — 上流停滞のため保留",
+    "ja": "The Art of Command Line 日本語訳の未処理 PR を確認する",
     "en": "Maintain the Japanese translation (README-ja.md) of The Art of Command Line (upstream dormant)"
   },
   "project": {
     "repository": "jlevy/the-art-of-command-line",
     "url": "https://github.com/jlevy/the-art-of-command-line",
     "category": "Command Line Tools",
-    "summary_ja": "1ページでコマンドラインをマスターするガイド。CONTRIBUTING.md に翻訳の受付方針 (言語別ファイルへの直接 PR、言語ごとのメンテナ制) が明記されているが、リポジトリ自体が 2024-06 を最後に更新が止まり、open PR が100件以上未処理のまま滞留しており、現状は翻訳 PR を送ってもマージされる見込みが低い。",
+    "summary_ja": "言語別 README を PR で修正するガイドはあるが、日本語ファイルの既定ブランチの最終更新は2020年。日本語訳改善の PR #879 が開いたままで、追加作業の前に既存 PR の範囲とレビュー担当者を確認したい。",
     "license": "CC-BY-SA-4.0"
   },
   "source": {
-    "revision": null,
+    "revision": "6b50745d2e788add2e8f1ed29010e72659a9a074",
     "paths": [
       "README.md"
     ]
@@ -32,7 +32,7 @@
     "pull_request": "allowed"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,28 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/jlevy/the-art-of-command-line",
+      "url": "https://github.com/jlevy/the-art-of-command-line/tree/6b50745d2e788add2e8f1ed29010e72659a9a074",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/jlevy/the-art-of-command-line/blob/master/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「translations, are welcome!」と明記。既存翻訳の改善は当該言語ファイル (README-ja.md) への直接 PR、言語ごとにメンテナがレビューし @jlevy がマージする体制。PR タイトルに言語コード接頭辞を付ける慣習。AI 利用への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "言語ごとのメンテナが訳文をレビューする運用を説明。"
     },
     {
-      "url": "https://github.com/jlevy/the-art-of-command-line/pulls",
+      "url": "https://github.com/jlevy/the-art-of-command-line/pull/879",
       "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "リポジトリの最終 push は 2024-06-25 で、以後2年以上マージがなく open PR が100件以上滞留 (翻訳追加 PR 含む)。受付方針は存在するが受付経路が事実上機能しておらず stale と判定。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版の既存改善 PR が open。"
     },
     {
       "url": "https://github.com/jlevy/the-art-of-command-line/commits/master/README-ja.md",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "README-ja.md の最終更新は 2023-06-20。日本語版は存在するが専任メンテナの近況は確認できず、直近90日の日本語関連の活動もなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語 README の最新コミットは2020年3月。"
     }
   ],
   "validation": [],
@@ -72,10 +72,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -92,21 +92,11 @@
     }
   },
   "metrics": {
-    "stars": 161990,
-    "observed_at": "2026-08-03"
+    "stars": 162748,
+    "observed_at": "2026-11-13"
   },
   "community": {
     "japanese_team": "inactive",
-    "team_url": null
-  },
-  "legacy": {
-    "概要": "１ページでコマンドラインをマスターする",
-    "作者": "[Joshua Levy](https://github.com/jlevy)",
-    "開始年月": "2015/05",
-    "ライセンス": "[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)",
-    "やり方": "README-ja.mdを編集してプルリク",
-    "状態": "日本語あり（README-ja.md）",
-    "文章量": "少",
-    "Star": "159,292"
+    "team_url": "https://github.com/jlevy/the-art-of-command-line/pull/879"
   }
 }
