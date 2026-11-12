@@ -2,33 +2,35 @@
   "schema_version": "translation-task/v1",
   "id": "verify-scikit-learn-scikit-learn",
   "kind": "verification",
-  "status": "ask_first",
+  "status": "needs_verification",
   "title": {
-    "ja": "scikit-learn のドキュメント日本語化の検証",
+    "ja": "scikit-learn のコミュニティ翻訳への参加先を確認する",
     "en": null
   },
   "project": {
     "repository": "scikit-learn/scikit-learn",
     "url": "https://github.com/scikit-learn/scikit-learn",
     "category": "Python",
-    "summary_ja": "機械学習ライブラリの定番。公式ドキュメントは英語のみだが、related_projects でコミュニティ翻訳(中国語・ペルシャ語・スペイン語・韓国語)を公認掲載しており日本語は未着手。立ち上げは issue / Discussion での事前相談が前提。",
+    "summary_ja": "公式サイトは英語を正本とし、各翻訳は独立したコミュニティの管理としている。掲載中の翻訳に日本語の窓口は見当たらない。日本語版の引受先と継続的な管理方法を確認する段階。",
     "license": "BSD-3-Clause"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "7b2b14e0a89eedfa514dc9885e35a0ecade20cd0",
+    "paths": [
+      "doc"
+    ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": []
   },
   "permissions": {
-    "translation": "implied",
+    "translation": "unknown",
     "ai_assistance": "unknown",
     "pull_request": "unknown"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -38,28 +40,16 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/scikit-learn/scikit-learn",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://scikit-learn.org/stable/related_projects.html",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式ドキュメントの Translations 節に中国語・ペルシャ語・スペイン語・韓国語のコミュニティ翻訳を掲載。「翻訳はコミュニティのイニシアティブであり公式の管理外」「公式ドキュメントは英語版のみ」と明記。外部ホストのコミュニティ翻訳は容認されており、日本語は未掲載で空きがある。"
+      "url": "https://github.com/scikit-learn/scikit-learn/blob/7b2b14e0a89eedfa514dc9885e35a0ecade20cd0/doc/related_projects.rst",
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳ページは公開中の他言語版を紹介し、訳文の提案・報告は各翻訳の著者に連絡するよう案内する。日本語版への参加リンクはない。"
     },
     {
-      "url": "https://github.com/scikit-learn/scikit-learn/discussions/28105",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "サイト主要ページの多言語化 (Crowdin, Quansight/CZI 提案) の Discussion。メンテナは好意的だったが最終コメントは 2024-02-27 で停滞し、公式の翻訳受付制度は未整備のまま。過去の中国語翻訳 (#13400) も issue で許可を求める文化。"
-    },
-    {
-      "url": "https://github.com/orgs/Scientific-Python-Translations/repositories",
       "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "Scientific-Python-Translations org (numpy.org / scipy.org / pandas 等の翻訳基盤) に scikit-learn は含まれておらず、同基盤経由の翻訳ルートも現状存在しない。"
+      "url": "https://github.com/scikit-learn/scikit-learn/commit/7b2b14e0a89eedfa514dc9885e35a0ecade20cd0",
+      "observed_at": "2026-11-13",
+      "note_ja": "scikit-learn/scikit-learn の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -68,14 +58,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://scikit-learn.org/stable/related_projects.html",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -88,11 +78,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "unknown",
     "team_url": null
   },
   "metrics": {
-    "stars": 66852,
-    "observed_at": "2026-08-03"
+    "stars": 68154,
+    "observed_at": "2026-11-13"
   }
 }

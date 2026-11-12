@@ -4,26 +4,26 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "TypeScript 公式サイト日本語化の検証",
+    "ja": "TypeScript Handbook の日本語翻訳範囲を相談する",
     "en": null
   },
   "project": {
     "repository": "microsoft/TypeScript-Website",
     "url": "https://github.com/microsoft/TypeScript-Website",
     "category": "JavaScript",
-    "summary_ja": "typescriptlang.org のハンドブック等の翻訳は専用リポジトリ TypeScript-Website-Localizations で受け付けている。docs/documentation/ja/ に同一パスで訳文を置いて PR する方式で、日本語は未翻訳分が多い。ただし翻訳リポジトリは最終マージが2023年で、2026年のPRも未レビューのまま滞留しており、着手前にメンテナの応答性確認が必要。",
-    "license": null
+    "summary_ja": "TypeScript-Website-Localizations で日本語訳を管理する。英語版を取得して同じ階層に日本語ファイルを作り、yarn lint 後に専用リポジトリへ PR する。日本語ドキュメントの既定ブランチの最終変更は2021年のため、広い範囲を訳す前に担当者の応答と既存 PR を確認する。",
+    "license": "文書: CC-BY-4.0、コード: MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "a93dd416c393cbc7570b829a9e0c753b2678249f",
     "paths": [
-      "docs/documentation/en/"
+      "packages/documentation/copy/en"
     ]
   },
   "target": {
     "locale": "ja-JP",
     "paths": [
-      "docs/documentation/ja/"
+      "docs/documentation/ja"
     ]
   },
   "permissions": {
@@ -32,7 +32,7 @@
     "pull_request": "allowed"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,35 +42,35 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/microsoft/TypeScript-Website",
+      "url": "https://github.com/microsoft/TypeScript-Website/tree/a93dd416c393cbc7570b829a9e0c753b2678249f",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
-      "url": "https://github.com/microsoft/TypeScript-Website-Localizations",
+      "url": "https://github.com/microsoft/TypeScript-Website-Localizations/blob/main/README.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "README に翻訳手順を明記: yarn pull-en で英語ファイルを取得し、同一パス構造で ja フォルダに訳文を置いて PR。yarn lint で検証。日本語 (ja) は正式サポート言語で、言語オーナーには self-merge 権限がある。AI/機械翻訳の言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "yarn pull-en で英語ファイルを取得し、言語フォルダを作って検証・PR を送る手順。文書は CC BY 4.0、コードは MIT。"
     },
     {
-      "url": "https://api.github.com/repos/microsoft/TypeScript-Website-Localizations",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "翻訳リポジトリは archived=false だが pushed_at は 2024-07-24、既定ブランチの最終マージは 2023-06。open issues 84 件でメンテナンスが停滞している。"
+      "url": "https://github.com/microsoft/TypeScript-Website-Localizations/commits/main/docs/documentation/ja",
+      "kind": "team_activity",
+      "observed_at": "2026-11-13",
+      "note_ja": "docs/documentation/ja の既定ブランチの最新コミットは2021年2月。"
     },
     {
       "url": "https://github.com/microsoft/TypeScript-Website-Localizations/pulls",
       "kind": "pull_request",
-      "observed_at": "2026-08-02",
-      "note_ja": "オープン PR は 2026-05〜06 作成のポルトガル語翻訳 6 件のみで、約 2 か月レビューされずに滞留。日本語の進行中 PR は無く重複リスクは低いが、PR がマージされる見込みを issue で確認してから着手すべき。"
+      "observed_at": "2026-11-13",
+      "note_ja": "言語をまたぐ変更 #266 が open。対象ファイルと作業の重複を確認する。"
     }
   ],
   "validation": [
     {
       "kind": "command",
       "command": "yarn lint",
-      "description_ja": "翻訳リポジトリ同梱の lint で訳文ファイルの構造を検証する。"
+      "description_ja": "翻訳専用リポジトリで原文の階層と翻訳ファイルの整合を確認する。"
     }
   ],
   "credit": {
@@ -78,14 +78,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/microsoft/TypeScript-Website-Localizations/blob/main/README.md",
     "translation_repo": "microsoft/TypeScript-Website-Localizations"
   },
   "content_type": "official_docs",
@@ -98,7 +98,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "inactive",
     "team_url": null
+  },
+  "metrics": {
+    "stars": 2560,
+    "observed_at": "2026-11-13"
   }
 }

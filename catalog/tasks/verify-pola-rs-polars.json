@@ -2,22 +2,22 @@
   "schema_version": "translation-task/v1",
   "id": "verify-pola-rs-polars",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "blocked",
   "title": {
-    "ja": "Polars のドキュメント日本語化の検証",
+    "ja": "Polars ユーザーガイドの日本語訳と AI 利用制限を確認する",
     "en": null
   },
   "project": {
     "repository": "pola-rs/polars",
     "url": "https://github.com/pola-rs/polars",
     "category": "Python",
-    "summary_ja": "Rust 製の高速 DataFrame ライブラリ。本家に公式の翻訳受付方針は確認できず、ユーザーガイドの日本語訳はコミュニティの polars-ja/docs-ja が担っていたが2024年7月以降停滞。翻訳の追随・再活性化や公式化の交渉余地があるものの、確立した貢献経路は未確認。",
+    "summary_ja": "日本語コミュニティの旧訳は polars-ja/docs-ja にあり、既定ブランチの最後の更新は2024年5月。現行ガイド向けの公式日本語受付先は確認できない。本体はコード以外の AI 生成テキストと、エージェントによる issue・PR 等の投稿を禁止している。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "8ecd1ca9b9b33fcc0a082660ec84cd3976131743",
     "paths": [
-      "docs"
+      "docs/source/user-guide"
     ]
   },
   "target": {
@@ -26,42 +26,43 @@
   },
   "permissions": {
     "translation": "unknown",
-    "ai_assistance": "unknown",
+    "ai_assistance": "forbidden",
     "pull_request": "unknown"
   },
   "automation": {
-    "level": "discover_only",
-    "allowed_actions": [
-      "inspect_public_metadata",
-      "find_translation_policy",
-      "find_existing_work",
-      "report_evidence"
-    ]
+    "level": "blocked",
+    "allowed_actions": []
   },
   "evidence": [
     {
-      "url": "https://github.com/pola-rs/polars",
+      "url": "https://github.com/pola-rs/polars/tree/8ecd1ca9b9b33fcc0a082660ec84cd3976131743",
       "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "リポジトリは活発(最終push 2026-08-01、非archived、MIT)。issue検索では翻訳・日本語化に関する方針や受付窓口は見当たらず、公式のローカライズ制度は確認できない。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/polars-ja/docs-ja",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "コミュニティ日本語訳リポジトリ polars-ja/docs-ja の最終pushは2024-07-02で1年以上停滞。活発な日本語チームは確認できない。"
+      "observed_at": "2026-11-13",
+      "note_ja": "コミュニティの日本語訳が存在する。現行の上流が運営する翻訳先とは確認できない。"
+    },
+    {
+      "url": "https://github.com/polars-ja/docs-ja/commits/main",
+      "kind": "team_activity",
+      "observed_at": "2026-11-13",
+      "note_ja": "既定ブランチ上の最終更新は2024年5月。現行版に追従しているとの根拠はない。"
+    },
+    {
+      "url": "https://github.com/pola-rs/polars/blob/main/AI_POLICY.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "本体ではコード以外の AI 生成テキストを認めず、エージェントによる issue や PR の作成も禁止。"
     },
     {
       "url": "https://docs.pola.rs/",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式ドキュメントサイトに言語切替や翻訳版へのリンク、localization への言及はなし。英語のみ。"
-    },
-    {
-      "url": "https://github.com/pola-rs/polars-book-cn",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式 org (pola-rs) 配下に中国語訳リポジトリ polars-book-cn が存在 (Star 30) するが最終 push 2024-01-02 で停滞。org が過去にコミュニティ翻訳リポジトリを受け入れた前例はあるものの、日本語版はなく、公式の翻訳受付経路は確認できなかった (2026-08-03)。"
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "現在の公式ユーザーガイド。日本語チームや翻訳投稿先の案内はこの入口では確認できない。"
     }
   ],
   "validation": [],
@@ -70,10 +71,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -90,8 +91,8 @@
     }
   },
   "metrics": {
-    "stars": 39163,
-    "observed_at": "2026-08-03"
+    "stars": 40335,
+    "observed_at": "2026-11-13"
   },
   "community": {
     "japanese_team": "inactive",

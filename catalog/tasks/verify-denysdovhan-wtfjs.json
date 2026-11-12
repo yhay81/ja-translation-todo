@@ -1,21 +1,21 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-denysdovhan-wtfjs",
-  "kind": "verification",
+  "kind": "translation",
   "status": "ready",
   "title": {
-    "ja": "wtfjs README の日本語訳を作成",
-    "en": "Create the Japanese README translation for wtfjs"
+    "ja": "wtfjs の日本語版 README を翻訳・相互レビューする",
+    "en": "Translate and peer-review a Japanese README for wtfjs"
   },
   "project": {
     "repository": "denysdovhan/wtfjs",
     "url": "https://github.com/denysdovhan/wtfjs",
     "category": "JavaScript",
-    "summary_ja": "JavaScript の奇妙で面白い挙動を集めた人気リポジトリ。CONTRIBUTING が「翻訳が欲しければ自分で作って PR を送る」ことを明示しており、README-<lang>.md 形式で8言語版が既に存在する。日本語版 README は未作成で、進行中の日本語 PR もないため新規参入の余地がある。ネイティブスピーカーによる検証が推奨されている。",
+    "summary_ja": "翻訳 PR を歓迎しており、言語別 README に日本語版はまだ掲載されていない。提出前に同じ言語の PR を確認し、日本語ネイティブの別の人に訳文を読んで検証してもらう。",
     "license": "WTFPL"
   },
   "source": {
-    "revision": null,
+    "revision": "a2c83226a15890004758971264211f116fff367a",
     "paths": [
       "README.md"
     ]
@@ -37,59 +37,65 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/denysdovhan/wtfjs",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    },
-    {
-      "url": "https://github.com/denysdovhan/wtfjs",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "最終 push 2026-07-03 と活発。Star 約37,675。既存の言語版は README-fr-fr / hi / it-it / kr / pl-pl / pt-br / si / zh-cn の8種で、日本語版(README-ja.md)は存在しない。"
-    },
-    {
-      "url": "https://github.com/denysdovhan/wtfjs/blob/master/CONTRIBUTING.md",
+      "url": "https://github.com/denysdovhan/wtfjs/blob/master/CONTRIBUTING.md#translations",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「If you want a translation, please, make one. Issues with translation requests will be closed in favor of PRs.」と翻訳 PR を明示的に歓迎。送付前に既存の翻訳 PR の有無を確認し、ネイティブスピーカーによる検証を求める記載あり。AI 利用への言及はない。"
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳は PR で受け付ける。重複確認と、対象言語のネイティブによる事前検証が必須。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/wtfjs/tree/master",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "ルートの言語別 README と原文の Translations 一覧に日本語ファイルなし。"
     },
     {
       "url": "https://github.com/denysdovhan/wtfjs/issues/125",
       "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "2019 年の日本語翻訳リクエスト issue(Translation Request: Japanese)は 2021 年に close 済みだが、対応する日本語版 README は現在も存在せず、進行中の重複作業は確認できなかった。"
+      "observed_at": "2026-11-13",
+      "note_ja": "過去の日本語訳要望は closed。調査時点の open PR と言語一覧では日本語訳を確認できない。"
+    },
+    {
+      "url": "https://github.com/denysdovhan/wtfjs/commit/a2c83226a15890004758971264211f116fff367a",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
+    },
+    {
+      "kind": "pull_request",
+      "url": "https://github.com/denysdovhan/wtfjs/pulls",
+      "observed_at": "2026-11-13",
+      "note_ja": "公開中の26件で日本語訳を提案する PR を確認できなかった。翻訳作業の PR #273 はポルトガル語。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "structure",
+      "description_ja": "言語別 README のファイル名と見出し・コード例を原文に照らす。"
+    },
+    {
+      "kind": "semantic_review",
+      "description_ja": "日本語を母語とする別の人が、各例の説明と挙動を確認する。"
+    }
+  ],
   "credit": {
     "expected": "commit_author",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "不思議で面白い JavaScript のサンプルのリスト",
-    "作者": "[Denys Dovhan](https://github.com/denysdovhan)",
-    "開始年月": "2017/07",
-    "ライセンス": "WTFPL",
-    "やり方": "翻訳用フォルダ内に作成。[中国語のプルリク](https://github.com/denysdovhan/wtfjs/pull/21)参照",
-    "状態": "中国語がプルリク送ってる途中",
-    "文章量": "中",
-    "Star": "37,547"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/denysdovhan/wtfjs/blob/master/CONTRIBUTING.md#translations",
     "translation_repo": null
   },
   "content_type": "readme",
@@ -106,7 +112,7 @@
     "team_url": null
   },
   "metrics": {
-    "stars": 37675,
-    "observed_at": "2026-08-03"
+    "stars": 37693,
+    "observed_at": "2026-11-13"
   }
 }

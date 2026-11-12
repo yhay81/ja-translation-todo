@@ -32,6 +32,15 @@ function readInitialData(taskId) {
   return data && data.id === taskId ? data : null;
 }
 
+const ACTION_LABELS = {
+  inspect_public_metadata: "公開情報を調べる",
+  find_translation_policy: "翻訳方針を確認する",
+  find_existing_work: "既存の作業を探す",
+  report_evidence: "調査結果を報告する",
+  prepare_local_draft: "手元で訳文を下書きする",
+  prepare_local_pr_draft: "手元で PR を下書きする",
+};
+
 const CREDIT_LABELS = {
   unknown: "不明",
   commit_author: "コミット作者として記録",
@@ -44,6 +53,7 @@ const CREDIT_LABELS = {
 // credit オブジェクトを人が読める1行にする
 function creditText(credit) {
   const expected = CREDIT_LABELS[credit.expected] || credit.expected || "不明";
+  if (credit.expected === "unknown") return "記載方法は未確認";
   const attribution = credit.public_attribution ? "公開クレジットあり" : "公開クレジットなし";
   return `${expected} / ${attribution}`;
 }
@@ -125,7 +135,7 @@ function view(t) {
             Array.isArray(t.automation?.allowed_actions) && t.automation.allowed_actions.length > 0
               ? `<h3>許可されている自動化アクション</h3>
                  <div class="chip-row">${t.automation.allowed_actions
-                   .map((a) => `<span class="chip"><code>${esc(a)}</code></span>`)
+                   .map((a) => `<span class="chip">${esc(ACTION_LABELS[a] ?? a)}</span>`)
                    .join("")}</div>`
               : ""
           }

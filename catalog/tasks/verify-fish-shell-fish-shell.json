@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-fish-shell-fish-shell",
   "kind": "verification",
-  "status": "ready",
+  "status": "blocked",
   "title": {
-    "ja": "fish shell メッセージカタログの日本語化",
-    "en": "Japanese localization of fish shell message catalogs"
+    "ja": "fish の日本語メッセージを人手で校正する",
+    "en": "Proofread the Japanese fish shell messages without generative AI"
   },
   "project": {
     "repository": "fish-shell/fish-shell",
     "url": "https://github.com/fish-shell/fish-shell",
     "category": "Command Line Tools",
-    "summary_ja": "ユーザーフレンドリーな対話的シェル。gettext(po)と Fluent(ftl)の2系統の翻訳基盤を持ち、CONTRIBUTING.rst に翻訳貢献の手順が明記され PR で受け入れられる。2026年3月に初期の日本語カタログ(ja_JP.po / ja_JP.ftl)が取り込まれたばかりで、拡充の余地が大きい。",
+    "summary_ja": "既存の日本語カタログは Fluent と gettext の2種類。未訳メッセージを確認し、人手で訳して動作を確かめる。ガイドが生成AIによる投稿を禁止しており、AIで作った訳文・PR・コメントは提出できない。",
     "license": "GPL-2.0-only"
   },
   "source": {
-    "revision": null,
+    "revision": "4da2a20801914288ded72e2614dd8e0b6e2ccd1a",
     "paths": [
       "localization/fluent/en.ftl"
     ]
@@ -29,42 +29,43 @@
   },
   "permissions": {
     "translation": "explicit",
-    "ai_assistance": "unknown",
+    "ai_assistance": "forbidden",
     "pull_request": "allowed"
   },
   "automation": {
-    "level": "draft_only",
-    "allowed_actions": [
-      "inspect_public_metadata",
-      "find_translation_policy",
-      "find_existing_work",
-      "report_evidence"
-    ]
+    "level": "blocked",
+    "allowed_actions": []
   },
   "evidence": [
     {
-      "url": "https://github.com/fish-shell/fish-shell",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://github.com/fish-shell/fish-shell",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブされておらず活発(最終push 2026-08-01)。localization/po に ja_JP.po、localization/fluent に ja_JP.ftl が存在することを確認。"
+      "url": "https://github.com/fish-shell/fish-shell/blob/master/CONTRIBUTING.rst",
+      "kind": "translation_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "既存の翻訳を変更する手順と、未訳メッセージを確認するコマンドを掲載。新規メッセージは Fluent が基本。"
     },
     {
       "url": "https://github.com/fish-shell/fish-shell/blob/master/CONTRIBUTING.rst",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「Contributing Translations」節で翻訳貢献の手順を明記。gettext(localization/po/ll_CC.po)と Fluent(localization/fluent/ll_CC.ftl)を併用中で Fluent へ移行途上。Rust ソース由来のメッセージを優先して翻訳するよう案内。通常の PR で受付。AI 利用への言及はなし。"
+      "kind": "ai_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "生成AIによる PR、Issue、コメントなどの貢献を受け付けない。"
     },
     {
       "url": "https://github.com/fish-shell/fish-shell/pull/12499",
       "kind": "pull_request",
-      "observed_at": "2026-08-03",
-      "note_ja": "2026年3月の「l10n: add initial Japanese translation」PR。メンテナ(krobelus)が「happy to merge」と歓迎し、初期日本語カタログが main に取り込み済み。tier1 メッセージ中心の初期段階で、未翻訳領域が広く残る。組織的な日本語チームは存在せず個人貢献ベース。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語 gettext・Fluent カタログの初期翻訳を取り込み済み。"
+    },
+    {
+      "url": "https://github.com/fish-shell/fish-shell/commit/6269902fbb4bf49a19024014857f78fd0681e7ae",
+      "kind": "team_activity",
+      "observed_at": "2026-11-13",
+      "note_ja": "9月に日本語 Fluent カタログを含む更新を確認。"
+    },
+    {
+      "url": "https://github.com/fish-shell/fish-shell/commit/4da2a20801914288ded72e2614dd8e0b6e2ccd1a",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
   "validation": [],
@@ -73,14 +74,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/fish-shell/fish-shell/blob/master/CONTRIBUTING.rst",
     "translation_repo": null
   },
   "content_type": "ui_strings",
@@ -93,11 +94,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
-    "team_url": null
+    "japanese_team": "unknown",
+    "team_url": "https://github.com/fish-shell/fish-shell/pull/12499"
   },
   "metrics": {
-    "stars": 33966,
-    "observed_at": "2026-08-03"
+    "stars": 34456,
+    "observed_at": "2026-11-13"
   }
 }

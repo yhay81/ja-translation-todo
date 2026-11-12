@@ -9,7 +9,7 @@
     "level": "discover_only"
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "unknown",
     "team_url": null
   },
   "content_type": "book",
@@ -27,74 +27,60 @@
   },
   "evidence": [
     {
-      "kind": "repository",
-      "note_ja": "アーカイブされておらず main ブランチが活発 (最終 push 2026-07-29、141,486 stars、MIT)。トップレベルに i18n / 翻訳用ディレクトリは見当たらない。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/tech-interview-handbook"
-    },
-    {
       "kind": "contributing",
-      "note_ja": "CONTRIBUTING に翻訳・多言語化への言及なし (issue での事前相談・スタイル・行動規範のみ)。AGENTS.md も開発ツール (Vite+) の操作手順のみで AI 貢献や翻訳の方針は含まない。翻訳受付方針は不明のまま。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/tech-interview-handbook/blob/main/CONTRIBUTING.md"
+      "url": "https://github.com/yangshun/tech-interview-handbook/blob/e1d28e8886c0b6ff3e50da991ce0e895134ddc59/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "軽微でない変更は作業前にIssueで相談する方針。翻訳固有の手順は掲載されていない。"
     },
     {
       "kind": "issue",
-      "note_ja": "他言語版の提供を求める issue (2022 年更新) が open のままメンテナの回答なし。過去のスペイン語翻訳 PR (#75, #98) は未マージでクローズ。日本語の既存作業・進行中の翻訳は見当たらない。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/tech-interview-handbook/issues/148"
+      "url": "https://github.com/yangshun/tech-interview-handbook/issues/148",
+      "observed_at": "2026-11-13",
+      "note_ja": "中国語化の提案に対して他言語の協力希望も寄せられた。日本語版の合意や受け入れ手順は確認できなかった。"
     },
     {
       "kind": "repository",
-      "note_ja": "リポジトリは pnpm workspace へ再構成され、サイト本体は apps/website(Docusaurus)。apps/website/docusaurus.config.js に i18n / locale 設定は存在せず、サイト側の多言語化基盤は未整備。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/tech-interview-handbook/tree/main/apps/website"
+      "url": "https://github.com/yangshun/tech-interview-handbook/commit/e1d28e8886c0b6ff3e50da991ce0e895134ddc59",
+      "observed_at": "2026-11-13",
+      "note_ja": "yangshun/tech-interview-handbook の調査対象の原文をこのコミットで確認。"
     },
     {
-      "kind": "translation_policy",
-      "note_ja": "サイト構成・CONTRIBUTING・issue/PR 履歴を横断しても、公式の翻訳受付経路は確認できなかった（2026-08-03）。needs_verification を維持。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/tech-interview-handbook"
+      "url": "https://github.com/yangshun/tech-interview-handbook/blob/e1d28e8886c0b6ff3e50da991ce0e895134ddc59/apps/website/contents/behavioral-interview.md",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "サイトの英語記事が apps/website/contents にあり、行動面接のガイド原稿を確認。日本語版の担当と運用は引き続き未確認。"
     }
   ],
   "id": "verify-yangshun-tech-interview-handbook",
   "kind": "verification",
-  "legacy": {
-    "Star": "136,508",
-    "やり方": "多分専用のフォルダ作ってくれる",
-    "ライセンス": "MIT",
-    "作者": "[Yangshun Tay](https://github.com/yangshun)",
-    "文章量": "中",
-    "概要": "アルゴリズムの学習と行動面接対策",
-    "状態": "何も進んでない",
-    "開始年月": "2016/07"
-  },
   "metrics": {
-    "observed_at": "2026-08-03",
-    "stars": 141486
+    "stars": 143276,
+    "observed_at": "2026-11-13"
   },
   "permissions": {
+    "translation": "unknown",
     "ai_assistance": "unknown",
-    "pull_request": "unknown",
-    "translation": "unknown"
+    "pull_request": "ask_first"
   },
   "project": {
     "category": "Learning",
     "license": "MIT",
     "repository": "yangshun/tech-interview-handbook",
-    "summary_ja": "アルゴリズムの学習と行動面接対策のハンドブック。リポジトリは活発だが翻訳・多言語化の受付方針は文書化されておらず、i18n の仕組みも見当たらない。過去の翻訳 PR は未マージでクローズされており、日本語化にはメンテナへの打診と合意形成が前提となる。受付可否の判断材料が不足。",
+    "summary_ja": "多言語化への関心を募ったIssue #148はopenだが、コメントは主に各言語の希望表明で、日本語の担当・提出先は確認できない。大きな変更は先にIssueで相談するという方針に従い、日本語版の保守や受付条件を確認する。",
     "url": "https://github.com/yangshun/tech-interview-handbook"
   },
   "provenance": {
     "imported_at": "2026-07-25",
     "imported_from": "docs/legacy-list.md",
-    "last_verified_at": null,
-    "revision": 2
+    "last_verified_at": "2026-11-13",
+    "revision": 3
   },
   "schema_version": "translation-task/v1",
   "source": {
-    "paths": [],
-    "revision": null
+    "paths": [
+      "apps/website/contents"
+    ],
+    "revision": "e1d28e8886c0b6ff3e50da991ce0e895134ddc59"
   },
   "status": "needs_verification",
   "target": {
@@ -102,13 +88,13 @@
     "paths": []
   },
   "title": {
-    "en": "Re-verify the Japanese translation workflow for yangshun/tech-interview-handbook",
-    "ja": "yangshun/tech-interview-handbook の日本語化参加方法を再検証"
+    "ja": "Tech Interview Handbook の日本語化を受け付けるか確認する",
+    "en": null
   },
   "validation": [],
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/yangshun/tech-interview-handbook/issues/148",
     "translation_repo": null
   }
 }

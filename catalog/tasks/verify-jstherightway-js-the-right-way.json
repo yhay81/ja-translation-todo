@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "JS: The Right Way 日本語版 (i18n/ja-jp) の新規追加",
+    "ja": "JS: The Right Way の日本語版新設について受付状況を確認する",
     "en": "Add a Japanese translation (i18n/ja-jp) to JS: The Right Way"
   },
   "project": {
     "repository": "jstherightway/js-the-right-way",
     "url": "https://github.com/jstherightway/js-the-right-way",
     "category": "JavaScript",
-    "summary_ja": "JS のベストプラクティスをまとめたリファレンスサイト。i18n/README.md で翻訳貢献を明示的に歓迎しており、en-us ディレクトリを複製して翻訳する方式で10言語が存在するが日本語は未着手。ただしマージされた PR は 2021 年が最後で、2020 年の日本語翻訳の申し出 issue も無応答のまま 2026-07 に close されており、着手前にメンテナの受け入れ意思の確認が必要。",
+    "summary_ja": "翻訳ガイドは en-us を複製する手順を公開している。i18n に日本語はなく、日本語化を申し出た #332 は2026年7月に not planned で終了。新規日本語版を作る前に、現在の受け入れ意思を確認する。",
     "license": "CC-BY-NC-SA-3.0"
   },
   "source": {
-    "revision": null,
+    "revision": "8faad24536f2687826eb300baf05d83c6b9f39be",
     "paths": [
       "i18n/en-us"
     ]
@@ -29,10 +29,10 @@
   "permissions": {
     "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "allowed"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,28 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/jstherightway/js-the-right-way",
+      "url": "https://github.com/jstherightway/js-the-right-way/tree/8faad24536f2687826eb300baf05d83c6b9f39be",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/jstherightway/js-the-right-way/blob/master/i18n/README.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「Do you want this project in your language? Feel free to contribute!」と明記。en-us ディレクトリを複製して翻訳し、ディレクトリ名と同名の .json を用意する方式。i18n/ 配下に10言語があり日本語 (ja-jp) は未着手。AI 利用への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "既存の英語ディレクトリをコピーし、同名 JSON の構造を用いて訳す方法を掲載。"
     },
     {
       "url": "https://github.com/jstherightway/js-the-right-way/issues/332",
       "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "2020-12 に日本語翻訳の許可を求める issue が立てられたが、メンテナの応答がないまま 2026-07-29 に close。重複する進行中の日本語作業はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語翻訳の申し出が not planned で終了。現在の募集を示す合意ではない。"
     },
     {
-      "url": "https://github.com/jstherightway/js-the-right-way/commits/master",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "PR のマージは 2021-01 が最後。2026-07-29 に旧ドメイン整理のメンテナンスコミットがあり完全放置ではないが、翻訳 PR がレビューされるかは不明のため、issue でメンテナ合意を得てから着手すべき。"
+      "url": "https://github.com/jstherightway/js-the-right-way/tree/master/i18n",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "言語フォルダに en-us、ko-kr、zh-cn などがあり、日本語ディレクトリはない。"
     }
   ],
   "validation": [],
@@ -72,10 +72,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -92,21 +92,11 @@
     }
   },
   "metrics": {
-    "stars": 8679,
-    "observed_at": "2026-08-03"
+    "stars": 8666,
+    "observed_at": "2026-11-13"
   },
   "community": {
     "japanese_team": "none",
     "team_url": null
-  },
-  "legacy": {
-    "概要": "JSの良い方法のリファレンス",
-    "作者": "[BrazilJS](https://github.com/braziljs)",
-    "開始年月": "2012/08",
-    "ライセンス": "[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)",
-    "やり方": "専用フォルダがある。",
-    "状態": "いろんな言語である。日本語はない。",
-    "文章量": "中",
-    "Star": "8,714"
   }
 }

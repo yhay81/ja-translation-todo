@@ -1,0 +1,95 @@
+{
+  "schema_version": "translation-task/v1",
+  "id": "verify-godotengine-godot-docs",
+  "kind": "maintenance",
+  "status": "blocked",
+  "title": {
+    "ja": "GodotのマニュアルをWeblateで日本語化する",
+    "en": null
+  },
+  "project": {
+    "repository": "godotengine/godot-docs",
+    "url": "https://github.com/godotengine/godot-docs",
+    "category": "Game Development",
+    "summary_ja": "Godotのエディターマニュアルとチュートリアルの翻訳はWeblateで受け付けています。日本語版の既存の訳を確認して、人が原文のマークアップを保って訳します。利用者向け文書を生成AIに書かせることは禁止されています。",
+    "license": "CC-BY-3.0 (manual); MIT (classes/)"
+  },
+  "source": {
+    "revision": "c5b3485cb4b6e14ae3d8a45271bcddac7caad66a",
+    "paths": [
+      "getting_started/",
+      "tutorials/"
+    ]
+  },
+  "target": {
+    "locale": "ja-JP",
+    "paths": [
+      "sphinx/po/ja/LC_MESSAGES/"
+    ]
+  },
+  "permissions": {
+    "translation": "explicit",
+    "ai_assistance": "forbidden",
+    "pull_request": "forbidden"
+  },
+  "automation": {
+    "level": "blocked",
+    "allowed_actions": []
+  },
+  "evidence": [
+    {
+      "url": "https://github.com/godotengine/godot-docs/tree/c5b3485cb4b6e14ae3d8a45271bcddac7caad66a",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "原文の既定ブランチで対象の構成とライセンスを確認した。"
+    },
+    {
+      "url": "https://contributing.godotengine.org/en/latest/development/translations.html",
+      "kind": "translation_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "マニュアルの参加先はWeblate。翻訳ファイルの直接PRは受け付けず、メンテナが同期する。"
+    },
+    {
+      "url": "https://contributing.godotengine.org/en/latest/development/contribution_rules.html#ai-assisted-contributions",
+      "kind": "ai_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "利用者向け文書のAI生成とエージェントによるPRを禁止。人同士の連絡の機械翻訳に関する例外とは用途が異なる。"
+    },
+    {
+      "url": "https://github.com/godotengine/godot-docs-l10n/commit/efbf774202c650a0a2bc0e1aa6343fdadbe1b600",
+      "kind": "team_activity",
+      "observed_at": "2026-11-13",
+      "note_ja": "11月3日のWeblate同期で日本語マニュアルの翻訳ファイルが更新された。"
+    }
+  ],
+  "validation": [
+    {
+      "kind": "semantic_review",
+      "description_ja": "Weblateの既訳と用語を照合し、reStructuredTextの参照先とインラインコードを保っているかプレビューで確認します。"
+    }
+  ],
+  "credit": {
+    "expected": "unknown",
+    "public_attribution": false
+  },
+  "provenance": {
+    "revision": 1,
+    "imported_from": null,
+    "imported_at": "2026-11-13",
+    "last_verified_at": "2026-11-13"
+  },
+  "workflow": {
+    "platform": "weblate",
+    "platform_url": "https://hosted.weblate.org/projects/godot-engine/godot-docs/",
+    "translation_repo": "godotengine/godot-docs-l10n"
+  },
+  "community": {
+    "japanese_team": "active",
+    "team_url": "https://github.com/godotengine/godot-docs-l10n/commit/efbf774202c650a0a2bc0e1aa6343fdadbe1b600"
+  },
+  "content_type": "official_docs",
+  "metrics": {
+    "stars": 5905,
+    "observed_at": "2026-11-13"
+  }
+}

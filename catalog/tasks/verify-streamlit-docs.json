@@ -4,19 +4,23 @@
   "kind": "verification",
   "status": "needs_verification",
   "title": {
-    "ja": "Streamlit のドキュメント日本語化の検証",
+    "ja": "Streamlit ドキュメントの日本語版を受け付けるか確認する",
     "en": null
   },
   "project": {
     "repository": "streamlit/docs",
     "url": "https://github.com/streamlit/docs",
     "category": "Python",
-    "summary_ja": "データアプリ構築フレームワークの公式ドキュメントリポジトリ。日本語版を求める issue（#102）は2021年起票のまま open で、当時 docs チームは関心を示したが、翻訳受付方針や i18n 基盤は現在も確認できず、計画段階からの交渉が必要。",
+    "summary_ja": "日本語版を提案したIssue #102は現在もopen。文書チームは2021年に関心を示したが、担当者や現行版への反映手順は掲載されていない。関心表明から翻訳・PRの許可は判断できないため、まずこのIssueで状況を確認する。",
     "license": "Apache-2.0"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "48174ff5cdb996239e8212b0242984a690efd291",
+    "paths": [
+      "content/get-started",
+      "content/develop",
+      "content/deploy"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -25,7 +29,7 @@
   "permissions": {
     "translation": "unknown",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
     "level": "discover_only",
@@ -38,40 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/streamlit/docs",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://github.com/streamlit/docs",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "最終 push 2026-07-22、アーカイブなし、ライセンス Apache-2.0。README に翻訳・i18n への言及はなし。"
-    },
-    {
-      "url": "https://github.com/streamlit/docs/issues/102",
       "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "日本語版ドキュメント要望 issue（2021年起票、international ラベル付きで open のまま）。当時 docs チームが関心を示し有志と個別連絡まで進んだが、その後の公式方針・i18n 基盤の整備は確認できない。日本語チームは存在しない。"
+      "url": "https://github.com/streamlit/docs/issues/102",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語化と継続保守を提案するIssue。現行版の作業割り当てや合意は確認できない。"
     },
     {
-      "url": "https://docs.streamlit.io/",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式 docs サイトのフッターは Home / Contact / Community(forum) / GitHub / SNS のみで、言語切替や翻訳・localization への言及はなし。サイト側にも翻訳受付経路は存在しない。"
+      "url": "https://github.com/streamlit/docs/issues/102#issuecomment-847920485",
+      "observed_at": "2026-11-13",
+      "note_ja": "当時の文書担当者は今後の変更には翻訳を含めないと説明した上で、協力者との相談を提案した。"
     },
     {
-      "url": "https://github.com/streamlit/30days-i18n",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "streamlit org 配下に「30 Days of Streamlit」のコミュニティ翻訳リポジトリがあり、日本語を含む11言語の README が存在。過去にコミュニティ翻訳を受け入れた実績はあるが、対象はチャレンジ企画のコンテンツで docs 本体ではなく、最終 push は 2024-10-16 で停滞。"
-    },
-    {
-      "url": "https://github.com/streamlit/docs",
       "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式サイト・org 配下リポジトリ・issue を横断して調査したが、docs 本体の公式な翻訳受付経路は確認できなかった（2026-08-03）。needs_verification を維持。"
+      "url": "https://github.com/streamlit/docs/commit/48174ff5cdb996239e8212b0242984a690efd291",
+      "observed_at": "2026-11-13",
+      "note_ja": "streamlit/docs の調査対象の原文をこのコミットで確認。"
+    },
+    {
+      "url": "https://github.com/streamlit/docs/blob/48174ff5cdb996239e8212b0242984a690efd291/content/get-started/fundamentals/main-concepts.md",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語版の概要を記述する Markdown と、開発・デプロイ文書のディレクトリを確認。原稿の所在は日本語版の受付を保証しない。"
     }
   ],
   "validation": [],
@@ -80,14 +72,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/streamlit/docs/issues/102",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -100,11 +92,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "unknown",
     "team_url": null
   },
   "metrics": {
-    "stars": 176,
-    "observed_at": "2026-08-03"
+    "stars": 179,
+    "observed_at": "2026-11-13"
   }
 }

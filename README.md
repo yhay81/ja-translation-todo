@@ -33,7 +33,8 @@ OSSの日本語化機会を、人間とAIエージェントが安全に発見・
 | `done` | 翻訳が取り込まれた |
 | `stale` | 根拠の有効期限を過ぎた |
 
-`automation.level=discover_only` のタスクで、翻訳やPR提出を行ってはいけません。
+エージェントは `discover_only` のタスクでは公開情報を調査し、このレジストリへのPRで根拠を報告できます。
+翻訳や、翻訳先へのIssue・PRの提出は対象外です。
 判定規則の詳細は [docs/verification-playbook.md](docs/verification-playbook.md) を参照。
 
 ## タスクを更新するには(人間・AIエージェント共通)

@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "Svelte 公式ドキュメント日本語化の検証",
+    "ja": "Svelte 日本語版の翻訳改善を日本語チームと調整する",
     "en": null
   },
   "project": {
     "repository": "sveltejs/svelte.dev",
     "url": "https://github.com/sveltejs/svelte.dev",
     "category": "JavaScript",
-    "summary_ja": "Svelte/SvelteKit 公式サイト svelte.dev の日本語版 svelte.jp を Svelte Japan コミュニティが svelte-jp/svelte.dev で運営。upstream 同期が 2026 年も継続する活発なチームで、未着手 issue に「翻訳者募集中」ラベルを付けて翻訳者を募集している。着手前に issue での宣言と運営の確認が必須。",
-    "license": "MIT"
+    "summary_ja": "日本語版は svelte-jp/svelte.dev で管理する。翻訳者募集の手順はあるが、確認時にそのラベルのopen Issueは見つからなかった。入力バインディングの訳には既にPR #80があるため、重複を避け、手伝えるIssueをチームに確認する。",
+    "license": null
   },
   "source": {
-    "revision": null,
+    "revision": "1e84ecd7397039e45f106eb293d1ee4e5a53f226",
     "paths": [
       "apps/svelte.dev/content/"
     ]
@@ -32,7 +32,7 @@
     "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,22 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/sveltejs/svelte.dev",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://github.com/svelte-jp/svelte.dev/blob/main/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "翻訳貢献を歓迎する明示的ガイドあり。未着手 issue の「翻訳者募集中」ラベルにコメントで宣言し、運営の確認後に着手して issue 番号付きで PR を出す方式。誤訳報告や改善提案も受付。AI/機械翻訳の明示的な方針記載はなし。"
+      "url": "https://github.com/svelte-jp/svelte.dev/blob/84e30ce01fb51e8e5bb4e563afc85f7b506557f3/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳の流れ、対象の選び方と担当確認、Svelte日本Discordの窓口を確認。"
     },
     {
-      "url": "https://api.github.com/repos/svelte-jp/svelte.dev/commits?per_page=5",
-      "kind": "team_activity",
-      "observed_at": "2026-08-02",
-      "note_ja": "直近コミットは 2026-05-19 の upstream 同期 PR マージ(調査日から約75日以内)。svelte/kit/cli ドキュメントの同期が継続しており日本語チームは活発。参加窓口は Svelte 日本の Discord #ドキュメント翻訳 チャンネル。"
+      "kind": "issue",
+      "url": "https://github.com/svelte-jp/svelte.dev/issues/79",
+      "observed_at": "2026-11-13",
+      "note_ja": "テキスト入力の訳の改善要望。"
+    },
+    {
+      "kind": "pull_request",
+      "url": "https://github.com/svelte-jp/svelte.dev/pull/80",
+      "observed_at": "2026-11-13",
+      "note_ja": "同じテキスト入力の訳漏れを修正するPRが開いている。既存作業の確認が必要。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/sveltejs/svelte.dev/commit/1e84ecd7397039e45f106eb293d1ee4e5a53f226",
+      "observed_at": "2026-11-13",
+      "note_ja": "sveltejs/svelte.dev の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -66,14 +72,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/svelte-jp/svelte.dev/issues",
     "translation_repo": "svelte-jp/svelte.dev"
   },
   "content_type": "official_docs",
@@ -86,7 +92,11 @@
     }
   },
   "community": {
-    "japanese_team": "active",
+    "japanese_team": "unknown",
     "team_url": "https://github.com/svelte-jp/svelte.dev"
+  },
+  "metrics": {
+    "stars": 335,
+    "observed_at": "2026-11-13"
   }
 }

@@ -4,19 +4,23 @@
   "kind": "verification",
   "status": "needs_verification",
   "title": {
-    "ja": "PyTorch Tutorials のドキュメント日本語化の検証",
+    "ja": "PyTorch Tutorials の現行版を日本語に翻訳する窓口を確認する",
     "en": null
   },
   "project": {
     "repository": "pytorch/tutorials",
     "url": "https://github.com/pytorch/tutorials",
     "category": "Python",
-    "summary_ja": "PyTorch 公式チュートリアル集。既存の日本語訳はコミュニティのフォーク（1.8 時点）で止まっており、最新版への追随や公式への受け入れ経路の交渉余地がある。",
-    "license": "BSD-3-Clause"
+    "summary_ja": "公開されているコミュニティ訳はPyTorch 1.8.0が対象で、著者は日本語訳の利用を個人学習用としている。現行版の公式ガイドで日本語訳の募集を確認できず、旧訳を再配布できるとも判断できない。著者と上流への確認が必要。",
+    "license": "BSD-3-Clause（原文）"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "5277794075fd393cf24f139ac978f96bc06b5aa3",
+    "paths": [
+      "beginner_source",
+      "intermediate_source",
+      "advanced_source"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -38,34 +42,34 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/pytorch/tutorials",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "kind": "contributing",
+      "url": "https://github.com/pytorch/tutorials/blob/5277794075fd393cf24f139ac978f96bc06b5aa3/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語チュートリアルへの修正・追加のPRとCLAは案内されているが、日本語版の提出手順は確認できなかった。"
     },
     {
-      "url": "https://github.com/pytorch/tutorials/blob/main/CONTRIBUTING.md",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "本家は活発 (直近 push 2026-07-31、Star 9,264) だが、CONTRIBUTING に翻訳・多言語化に関する記載はなし。issue / PR 検索でも翻訳受付方針や公式 i18n 経路は確認できず、翻訳可否は依然不明。"
+      "kind": "translation_policy",
+      "url": "https://github.com/YutaroOgawa/pytorch_tutorials_jp/blob/91ccf91d15078fec1caa425170a06f280fa2748e/README.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "旧版は英語1.8.0が底本。英語原文のライセンスとは別に、日本語訳は個人学習目的の利用について記載がある。"
     },
     {
-      "url": "https://github.com/YutaroOgawa/pytorch_tutorials_jp",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "コミュニティ日本語訳 (PyTorch 1.8 時点、Google Colab ノートブック形式、Star 219) は最終更新 2021-10-14 のまま休止。活動中の日本語翻訳チームは確認できない。"
+      "url": "https://github.com/YutaroOgawa/pytorch_tutorials_jp/commit/91ccf91d15078fec1caa425170a06f280fa2748e",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語リポジトリの既定ブランチで確認できた直近の変更は2021年10月の誤訳修正。"
     },
     {
-      "url": "https://github.com/PyTorchKorea/tutorials-kr",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "韓国語コミュニティ (PyTorchKorea org) のチュートリアル翻訳リポジトリは活発 (最終 push 2026-07-28、Star 380)。公式 org 外の独立コミュニティ org で継続する前例があり、日本語でも同形式の再活性化余地はあるとみられるが、本家側の受付経路ではない。"
+      "kind": "repository",
+      "url": "https://github.com/pytorch/tutorials/commit/5277794075fd393cf24f139ac978f96bc06b5aa3",
+      "observed_at": "2026-11-13",
+      "note_ja": "pytorch/tutorials の調査対象の原文をこのコミットで確認。"
     },
     {
-      "url": "https://github.com/pytorch/tutorials/issues?q=translation",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "issue / PR 検索 (translation, japanese translation) でヒットするのは機械翻訳チュートリアル自体の内容に関するもののみで、ドキュメント翻訳の受付方針や i18n 提案へのメンテナ回答は見当たらない。公式の翻訳受付経路は確認できなかった (2026-08-03)。"
+      "url": "https://github.com/pytorch/tutorials/blob/5277794075fd393cf24f139ac978f96bc06b5aa3/beginner_source/basics/autogradqs_tutorial.py",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "現行チュートリアルは難易度別の *_source 以下にあり、入門用の自動微分の原稿も確認。現行原稿の所在と日本語の受け入れ許可は別途判断する。"
     }
   ],
   "validation": [],
@@ -74,14 +78,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/YutaroOgawa/pytorch_tutorials_jp",
     "translation_repo": "YutaroOgawa/pytorch_tutorials_jp"
   },
   "content_type": "tutorial",
@@ -98,7 +102,7 @@
     "team_url": "https://github.com/YutaroOgawa/pytorch_tutorials_jp"
   },
   "metrics": {
-    "stars": 9264,
-    "observed_at": "2026-08-03"
+    "stars": 9428,
+    "observed_at": "2026-11-13"
   }
 }

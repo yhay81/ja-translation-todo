@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-psf-requests",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "Requests ドキュメント日本語訳の受け皿検証(旧 requests-docs-jp は休止)",
+    "ja": "Requests 日本語ドキュメントの新しい受け入れ先に相談する",
     "en": "Assess the current home for a Japanese translation of the Requests documentation"
   },
   "project": {
     "repository": "psf/requests",
     "url": "https://github.com/psf/requests",
     "category": "Python",
-    "summary_ja": "人間のためのHTTPリクエストのPythonライブラリ",
+    "summary_ja": "requests/requests-docs-jp の既定ブランチは2013年以降更新がない。一方、独立した LocalizeTheDocs は Crowdin 経由の翻訳を案内し、未対応言語は issue で追加申請できる。公開言語設定には日本語がないため、まず同プロジェクトで対応可否を確認する。",
     "license": "Apache 2.0"
   },
   "source": {
-    "revision": null,
+    "revision": "3c7baaa05ab4aa49cc819ce3a819d260de19c157",
     "paths": [
       "docs"
     ]
@@ -25,9 +25,9 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
     "level": "discover_only",
@@ -40,40 +40,34 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/psf/requests",
+      "url": "https://github.com/psf/requests/tree/3c7baaa05ab4aa49cc819ce3a819d260de19c157",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    },
-    {
-      "url": "https://github.com/psf/requests",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "本家は活発 (直近 push 2026-07-27、Star 54,200、アーカイブされていない)。リポジトリ内に翻訳受付方針 (TRANSLATING / i18n ガイド等) は見当たらず、公式の翻訳方針は未確認。"
-    },
-    {
-      "url": "https://github.com/requests/requests-docs-jp",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "旧一覧の「専用レポジトリ」だった日本語訳リポジトリは最終更新 2018-04-30 のまま休止 (Star 5)。日本語翻訳チームの活動は確認できない。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/psf/requests/issues/7357",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "2026-04-13 に第三者 (localizethedocs org) が Crowdin ベースの requests-docs-l10n プロジェクトを告知する open issue。メンテナの応答や公式な承認は確認できず、公式経路とは言えない。"
-    },
-    {
-      "url": "https://requests.readthedocs.io/en/latest/",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式ドキュメント (v2.34.2) のトップページ・サイドバー・Contributor's Guide 目次に他言語版へのリンクや翻訳への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "LocalizeTheDocs が Requests 上流の issue で、翻訳プロジェクトと新しい言語の申請方法を案内。上流公式化の合意までは示していない。"
     },
     {
       "url": "https://github.com/localizethedocs/requests-docs-l10n/blob/main/languages.json",
+      "kind": "platform",
+      "observed_at": "2026-11-13",
+      "note_ja": "現行の言語設定は英語・簡体字中国語・繁体字中国語。日本語は未登録。"
+    },
+    {
+      "url": "https://github.com/requests/requests-docs-jp/commits/master",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "第三者の requests-docs-l10n は活動中 (最終 push 2026-08-03) だが、languages.json の対応言語は en_US / zh_CN / zh_TW のみで日本語は未対応。psf 側の公認も確認できず、公式の翻訳受付経路は確認できなかった (2026-08-03)。"
+      "observed_at": "2026-11-13",
+      "note_ja": "旧日本語リポジトリの既定ブランチの最終変更は2013年1月。"
+    },
+    {
+      "url": "https://github.com/psf/requests/blob/main/.github/AI_POLICY.md",
+      "kind": "ai_policy",
+      "observed_at": "2026-11-13",
+      "note_ja": "Requests 本体は無監督エージェントの投稿を禁じ、人が権利と内容に責任を持つことを求める。別の翻訳プロジェクトの AI 許可は未確認。"
     }
   ],
   "validation": [],
@@ -82,25 +76,15 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "人間のためのHTTPリクエストのPythonライブラリ",
-    "作者": "[psf](https://github.com/psf)",
-    "開始年月": "2011/02",
-    "ライセンス": "Apache 2.0",
-    "やり方": "[専用レポジトリ](https://github.com/requests/requests-docs-jp) がある",
-    "状態": "日本語 docs は途中まで（requests-docs-jp / 最終更新: 2018/04）",
-    "文章量": "多",
-    "Star": "53,609"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
-    "platform": "github",
-    "platform_url": null,
-    "translation_repo": "requests/requests-docs-jp"
+    "platform": "crowdin",
+    "platform_url": "https://localizethedocs.crowdin.com/requests-docs-l10n",
+    "translation_repo": "localizethedocs/requests-docs-l10n"
   },
   "content_type": "official_docs",
   "difficulty": {
@@ -112,11 +96,11 @@
     }
   },
   "community": {
-    "japanese_team": "inactive",
-    "team_url": "https://github.com/requests/requests-docs-jp"
+    "japanese_team": "unknown",
+    "team_url": "https://github.com/localizethedocs/requests-docs-l10n/issues"
   },
   "metrics": {
-    "stars": 54200,
-    "observed_at": "2026-08-03"
+    "stars": 54685,
+    "observed_at": "2026-11-13"
   }
 }

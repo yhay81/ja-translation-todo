@@ -2,21 +2,23 @@
   "schema_version": "translation-task/v1",
   "id": "verify-semantic-org-semantic-ui",
   "kind": "verification",
-  "status": "stale",
+  "status": "needs_verification",
   "title": {
-    "ja": "Semantic UI の日本語化検証(上流の開発停滞)",
-    "en": "Verify Japanese translation opportunity for Semantic-UI (upstream dormant)"
+    "ja": "Semantic UI 公式サイトの翻訳受付状況を確認する",
+    "en": null
   },
   "project": {
-    "repository": "Semantic-Org/Semantic-UI",
-    "url": "https://github.com/Semantic-Org/Semantic-UI",
+    "repository": "Semantic-Org/Semantic-UI-Docs",
+    "url": "https://github.com/Semantic-Org/Semantic-UI-Docs",
     "category": "CSS",
-    "summary_ja": "自然言語の考え方を取り入れた UI コンポーネントフレームワーク https://semantic-ui.com 。最終リリースは 2.5.0 (2022-10) で、本体の最終コミットも 2024-11 と開発が停滞しており、公式の翻訳受付方針や i18n 体制も確認できない。コミュニティは後継フォークの Fomantic-UI に移っており、現時点では翻訳タスクとしての実効性が低い。",
-    "license": "MIT"
+    "summary_ja": "文書リポジトリは既存ページの誤記修正やフォークの作り方を案内している。日本語ロケールの追加手順や担当者は確認できず、既定ブランチの更新も2025年2月まで。新規翻訳を始める前に受付先の再確認が必要。",
+    "license": null
   },
   "source": {
-    "revision": "597843ab84d5",
-    "paths": []
+    "revision": "b11907194e22038c2920bfa0c3a7dbb24590f6ee",
+    "paths": [
+      "server/documents"
+    ]
   },
   "target": {
     "locale": "ja-JP",
@@ -38,22 +40,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/Semantic-Org/Semantic-UI",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "kind": "contributing",
+      "url": "https://github.com/Semantic-Org/Semantic-UI-Docs/blob/b11907194e22038c2920bfa0c3a7dbb24590f6ee/README.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "公式サイト用のテンプレート、ローカルビルド、誤字修正の方法はあるが、日本語訳の募集要項は確認できない。"
     },
     {
-      "url": "https://github.com/Semantic-Org/Semantic-UI/releases",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブはされていないが、最終リリースは 2.5.0 (2022-10-06)、最終 push は 2024-11-27 (597843ab84d5) で開発は事実上停止。CONTRIBUTING や docs リポジトリ (Semantic-Org/Semantic-UI-Docs) にも翻訳受付方針は見当たらない。"
+      "kind": "team_activity",
+      "url": "https://github.com/Semantic-Org/Semantic-UI-Docs/commit/b11907194e22038c2920bfa0c3a7dbb24590f6ee",
+      "observed_at": "2026-11-13",
+      "note_ja": "文書リポジトリの既定ブランチ先頭は2025年2月14日のPR統合。"
     },
     {
-      "url": "https://github.com/Semantic-Org/Semantic-UI/issues/577",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "過去の中国語訳は公式体制ではなく非公式ミラーサイトで行われ、広告問題が指摘されていた (2014)。公式の翻訳ワークフローが存在した形跡はない。"
+      "kind": "repository",
+      "url": "https://github.com/Semantic-Org/Semantic-UI-Docs/commit/b11907194e22038c2920bfa0c3a7dbb24590f6ee",
+      "observed_at": "2026-11-13",
+      "note_ja": "Semantic-Org/Semantic-UI-Docs の調査対象の原文をこのコミットで確認。"
+    },
+    {
+      "url": "https://github.com/Semantic-Org/Semantic-UI-Docs/blob/b11907194e22038c2920bfa0c3a7dbb24590f6ee/server/documents/introduction/getting-started.html.eco",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "公式サイトの導入ガイドは server/documents/introduction の HTML テンプレートに記述されている。日本語版を新設する手順は引き続き未確認。"
     }
   ],
   "validation": [],
@@ -62,23 +70,14 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "自然言語の考え方を取り入れた UI コンポーネントフレームワーク https://semantic-ui.com",
-    "開始年月": "2013/04",
-    "ライセンス": "MIT",
-    "やり方": "",
-    "状態": "",
-    "文章量": "",
-    "Star": "51,180"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
+    "platform_url": "https://github.com/Semantic-Org/Semantic-UI-Docs",
     "translation_repo": null
   },
   "content_type": "official_docs",
@@ -91,11 +90,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
+    "japanese_team": "unknown",
     "team_url": null
   },
   "metrics": {
-    "stars": 51035,
-    "observed_at": "2026-08-03"
+    "stars": 313,
+    "observed_at": "2026-11-13"
   }
 }

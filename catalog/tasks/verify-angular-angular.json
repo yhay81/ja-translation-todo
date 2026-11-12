@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "Angular 公式ドキュメント日本語化の検証",
-    "en": null
+    "ja": "Angular 日本語ドキュメントの担当を宣言して翻訳する",
+    "en": "Coordinate a Japanese translation of the Angular docs"
   },
   "project": {
     "repository": "angular/angular",
     "url": "https://github.com/angular/angular",
     "category": "JavaScript",
-    "summary_ja": "Angular 公式ドキュメントの日本語版 angular.jp を管理する angular/angular-ja。CONTRIBUTING と Discord の翻訳チャンネルで作業手順が整備され、未翻訳ページの翻訳協力を継続的に募集している。",
+    "summary_ja": "Angular 日本語版は Translation Checkout の Issue で担当を宣言する。英語原文と日本語訳を対で管理し、既存担当との重複を避けて変更を提案する。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "8be02a66d383b2762d35610d4208b19775894bbc",
     "paths": [
       "adev/src/content"
     ]
@@ -23,16 +23,16 @@
   "target": {
     "locale": "ja-JP",
     "paths": [
-      "adev-ja"
+      "adev-ja/src/content"
     ]
   },
   "permissions": {
     "translation": "explicit",
     "ai_assistance": "explicit",
-    "pull_request": "allowed"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_pr",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,28 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/angular/angular",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
       "url": "https://github.com/angular/angular-ja/blob/main/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "翻訳協力を明示的に募集。新規翻訳は Translation Checkout のイシューを作成しテンプレートに従って宣言してから着手。軽微な修正のみ直接 PR 可。対象は adev-ja 配下(origin は angular/angular の submodule、原文 xxx.en.md と翻訳 .md を管理)。"
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳開始前に Translation Checkout ラベルを確認して Issue を作成。adev-ja に日本語文書と対応する .en.md を置く。"
     },
     {
-      "url": "https://github.com/angular/angular-ja/blob/main/CONTRIBUTING.md",
+      "url": "https://github.com/angular/angular-ja/blob/main/docs/TRANSLATION_WITH_AI.md",
       "kind": "ai_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "Gemini API を使った AI 翻訳を公式に導入(詳細は TRANSLATION_WITH_AI.md)。機械翻訳をベースに人手で修正するアプローチが推奨されている。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語チームは Gemini を使う翻訳手順を公開し、出力の確認・修正を担当者に求める。"
     },
     {
-      "url": "https://github.com/angular/angular-ja/commits/main",
+      "url": "https://github.com/angular/angular-ja/commit/76a29ec3d3c5144404b9968d2f5ac981de760724",
       "kind": "team_activity",
-      "observed_at": "2026-08-02",
-      "note_ja": "直近 merged PR 2026-07-20 (guide/aria/combobox の日本語訳) など直近90日以内に翻訳 PR がマージされており、日本語チームは活発。Discord の #翻訳 チャンネルで議論が進行。"
+      "observed_at": "2026-11-13",
+      "note_ja": "10月25日に元の Angular ドキュメントを同期。進行中の翻訳は担当宣言 Issue で確認する。"
+    },
+    {
+      "url": "https://github.com/angular/angular/commit/8be02a66d383b2762d35610d4208b19775894bbc",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
   "validation": [],
@@ -72,10 +72,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -94,5 +94,9 @@
   "community": {
     "japanese_team": "active",
     "team_url": "https://github.com/angular/angular-ja"
+  },
+  "metrics": {
+    "stars": 101483,
+    "observed_at": "2026-11-13"
   }
 }

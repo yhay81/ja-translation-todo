@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "Vite 公式ドキュメント日本語化の検証",
+    "ja": "Vite 日本語版の原文追従・校正に参加する",
     "en": null
   },
   "project": {
     "repository": "vitejs/vite",
     "url": "https://github.com/vitejs/vite",
     "category": "JavaScript",
-    "summary_ja": "Vite 公式ドキュメントの日本語訳リポジトリ vitejs/docs-ja が vitejs 組織下にあり、翻訳ガイド付きで運用中。本家更新への追従翻訳タスクが継続的に発生している。",
+    "summary_ja": "日本語チームは sync ラベルの未担当Issueで希望を伝え、メンテナのリアクションを受けてから作業する。11月12日にも日本語版に設定リファレンスの更新が入った。確認時に募集中のsync Issueは見当たらず、参加時に最新の一覧を確認する。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "61622b8df68b7a8e657caa6f98d9b70069643abf",
     "paths": [
       "docs"
     ]
@@ -32,10 +32,10 @@
   "permissions": {
     "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "allowed"
+    "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -45,28 +45,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/vitejs/vite",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://github.com/vitejs/docs-ja/blob/main/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "翻訳参加ガイドあり。issue の翻訳タスクに「対応します!」とコメントして宣言し、メンテナのアサイン後にフォークして PR を送る方式。文体(ですます調)・用語統一・原文と行数を揃える等の詳細ルールあり。AI/機械翻訳への言及はなし。"
+      "url": "https://github.com/vitejs/docs-ja/blob/7de9697a85c57cde21edd3e762a759c13b8a74a6/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "未担当のsync Issueを選び、担当希望をコメントしてメンテナのリアクションを待つ。日本語版mainへのPRとtextlintの手順を確認。"
     },
     {
-      "url": "https://github.com/vitejs/docs-ja/issues",
       "kind": "issue",
-      "observed_at": "2026-08-02",
-      "note_ja": "（2026-08-03 再検証）GitHub Search API で確認したところ累計issue数は1000件超で、直近（2026-07-31作成、#2757等）も作成後1〜2時間程度で closed になっており、open issue が常に0件に近いのはissueが即座に消化されているため。本家 docs の更新ごとに翻訳タスク issue が起票され(yuki-no による追従運用)、宣言式でアサインされる運用は継続していると確認。着手前に issue 検索で重複確認が必要。"
+      "url": "https://github.com/vitejs/docs-ja/issues?q=is%3Aissue+is%3Aopen+label%3Async",
+      "observed_at": "2026-11-13",
+      "note_ja": "確認時にopenかつsyncラベルのIssueは見当たらなかった。"
     },
     {
-      "url": "https://github.com/vitejs/docs-ja/commits/main",
       "kind": "team_activity",
-      "observed_at": "2026-08-02",
-      "note_ja": "直近コミット・merged PR 2026-07-31(直近90日以内に多数)。日本語チームは活発に本家へ追従中。"
+      "url": "https://github.com/vitejs/docs-ja/commit/7de9697a85c57cde21edd3e762a759c13b8a74a6",
+      "observed_at": "2026-11-13",
+      "note_ja": "11月12日にconfigLoader関連の文書変更が日本語版に取り込まれた。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/vitejs/vite/commit/61622b8df68b7a8e657caa6f98d9b70069643abf",
+      "observed_at": "2026-11-13",
+      "note_ja": "vitejs/vite の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -75,10 +75,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 3,
+    "revision": 4,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -97,5 +97,9 @@
   "community": {
     "japanese_team": "active",
     "team_url": "https://github.com/vitejs/docs-ja"
+  },
+  "metrics": {
+    "stars": 83887,
+    "observed_at": "2026-11-13"
   }
 }

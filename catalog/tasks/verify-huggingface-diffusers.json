@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "Hugging Face Diffusers のドキュメント日本語化の検証",
+    "ja": "Diffusers の日本語ドキュメントで担当する章を選ぶ",
     "en": null
   },
   "project": {
     "repository": "huggingface/diffusers",
     "url": "https://github.com/huggingface/diffusers",
     "category": "Python",
-    "summary_ja": "画像生成など拡散モデルのライブラリ。docs/source/ja に 2023 年追加のクイックツアー等が残るが以後の実質更新はなく、英語ドキュメントとの乖離が大きい。docs/TRANSLATING.md の手順(issue で担当章を宣言 → fork → 翻訳 PR)に従えば未訳ページの翻訳 PR を出せるが、着手前に issue での宣言とメンテナ反応の確認が前提。",
+    "summary_ja": "日本語版はインストール・クイックツアーなど一部のページが対象。日本語の進行表 #6309 で未担当の章と重複を確認し、担当を伝えてから翻訳する。11月の日本語ディレクトリの更新はリリース作業で、翻訳者の活動とは区別できる。",
     "license": "Apache-2.0"
   },
   "source": {
-    "revision": null,
+    "revision": "396d7a4696bff6b0bc2baa7d9e41965b8383f017",
     "paths": [
       "docs/source/en"
     ]
@@ -32,7 +32,7 @@
     "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,28 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/huggingface/diffusers",
+      "url": "https://github.com/huggingface/diffusers/tree/396d7a4696bff6b0bc2baa7d9e41965b8383f017",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/huggingface/diffusers/blob/main/docs/TRANSLATING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "翻訳手順が明示: 「🌐 Translating a New Language?」テンプレートで issue を立てて担当章をコメント宣言 → fork → docs/source/<lang> に英語ファイルを複製 → _toctree.yml から翻訳 → メンテナ(@patrickvonplaten 等)へレビュー依頼。AI/機械翻訳への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "既存の言語別 issue で協力し、英語版の構成を保って翻訳する手順を案内。"
     },
     {
-      "url": "https://github.com/huggingface/diffusers/pull/5478",
-      "kind": "pull_request",
-      "observed_at": "2026-08-02",
-      "note_ja": "日本語ドキュメント追加 PR「Japanese docs」は 2023-10-22 にマージ済み。以後の日本語翻訳 PR は 2023-11 の sdxl 参照追加が最後で、重複しうる進行中の日本語作業は確認されない。"
+      "url": "https://github.com/huggingface/diffusers/issues/6309",
+      "kind": "issue",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語用の進行表は open。着手するファイルをコメントで知らせる。"
     },
     {
       "url": "https://github.com/huggingface/diffusers/commits/main/docs/source/ja",
       "kind": "team_activity",
-      "observed_at": "2026-08-02",
-      "note_ja": "docs/source/ja の直近コミット(2026-07 の JAX/Flax 削除・dtype 変更など)はすべて英語メンテナによる横断メンテで、日本語翻訳者コミュニティとしての活動は 2023 年以降観測されない。日本語チームは実質不在。"
+      "observed_at": "2026-11-13",
+      "note_ja": "11月12日の更新はリリース後の修正。履歴だけでは日本語チームの現在の応答状況は分からない。"
     }
   ],
   "validation": [],
@@ -72,10 +72,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -92,7 +92,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
-    "team_url": null
+    "japanese_team": "unknown",
+    "team_url": "https://github.com/huggingface/diffusers/issues/6309"
+  },
+  "metrics": {
+    "stars": 34914,
+    "observed_at": "2026-11-13"
   }
 }

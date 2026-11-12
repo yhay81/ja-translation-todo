@@ -1,21 +1,21 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-nodejs-nodejs-org",
-  "kind": "verification",
-  "status": "ready",
+  "kind": "translation",
+  "status": "in_progress",
   "title": {
-    "ja": "Node.js 公式サイト (nodejs.org) の Crowdin 日本語翻訳",
+    "ja": "Node.js 公式サイトの日本語翻訳を Crowdin で更新する",
     "en": "Japanese translation of the Node.js website via Crowdin"
   },
   "project": {
     "repository": "nodejs/nodejs.org",
     "url": "https://github.com/nodejs/nodejs.org",
     "category": "JavaScript",
-    "summary_ja": "Node.js 公式サイト (nodejs.org)。翻訳は Crowdin プロジェクト nodejs-web に一本化され、ja ロケールが有効。翻訳結果は自動 crowdin sync PR でリポジトリへ反映される。Learn ページ等の新規・更新コンテンツの日本語化に Crowdin 経由で参加できる。",
+    "summary_ja": "Web サイトの翻訳は nodejs-web の Crowdin プロジェクトで受付中。参加申請後に日本語を選び、Learn ページなどの対象ファイルを翻訳する。11月7日に日本語ページへ Crowdin の翻訳が同期された。対象は公式サイトで、Node.js 本体の API リファレンスは別管理。 英語と日本語の現行 UI 用 JSON のキーは揃っており、具体的な未訳文字列は Crowdin で確認する。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "48bd7b54a8fa902f2e8c158fca8ae610ec1fe2fc",
     "paths": [
       "apps/site/pages/en/",
       "packages/i18n/src/locales/en.json"
@@ -39,55 +39,58 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/nodejs/nodejs.org",
+      "url": "https://github.com/nodejs/nodejs.org/tree/48bd7b54a8fa902f2e8c158fca8ae610ec1fe2fc",
       "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「We use Crowdin to translate the Node.js Website」と明記。参加手順は Crowdin プロジェクト nodejs-web への join 申請 → 言語選択 → 翻訳。翻訳は Crowdin 翻訳者が担うとされ、翻訳コンテンツをリポジトリへ直接 PR する経路は案内されていない (pull_request: forbidden 判定)。"
+      "observed_at": "2026-11-13",
+      "note_ja": "Crowdin で参加申請し、対象言語を選ぶ手順と、訳語の相談に使えるディスカッションを案内。"
     },
     {
-      "url": "https://github.com/nodejs/nodejs.org",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブされておらず活発 (最終 push 2026-08-02)。packages/i18n/src/config.json で ja が enabled、apps/site/pages/ja が存在。crowdin.yml で apps/site/pages/en/**/*.md → 各ロケールへの同期パスを定義 (blog と download の一部は翻訳対象外)。"
-    },
-    {
-      "url": "https://github.com/nodejs/nodejs.org/pull/9014",
+      "url": "https://github.com/nodejs/nodejs.org/commits/main/apps/site/pages/ja",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "自動「[automated]: crowdin sync」PR が 2026-07-24 にマージされ同期は稼働中。ja ページも 2026-07-10 マージの sync (#8956) で更新されており、日本語翻訳は直近 90 日で活動あり (japanese_team: active)。open PR にも #9053 の sync が存在し重複作業の恐れは低い。"
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語の公開用ディレクトリへ10月27日と11月7日に Crowdin の変更を反映。"
+    },
+    {
+      "url": "https://github.com/nodejs/i18n",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "旧 i18n ワーキンググループのリポジトリはアーカイブ済み。現在の Web サイト用窓口は nodejs-web。"
+    },
+    {
+      "kind": "validation",
+      "url": "https://github.com/nodejs/nodejs.org/blob/main/crowdin.yml",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語のページと UI 原稿が同期対象。一部のブログ記事は明示的に除外されているため、日本語ファイルが存在しないだけでは未訳案件とは判定できない。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "structure",
+      "command": null,
+      "description_ja": "Crowdin で対象ページと公開中の日本語版を比較し、Markdown リンクやコード部分を保つ。"
+    }
+  ],
   "credit": {
     "expected": "unknown",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "Node.js 公式サイト（nodejs.org）",
-    "作者": "[nodejs](https://github.com/nodejs)",
-    "開始年月": "2015/06",
-    "ライセンス": "MIT",
-    "やり方": "Crowdin で翻訳（ポリシー: https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md）",
-    "状態": "日本語あり",
-    "文章量": "中",
-    "Star": "6,771"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "crowdin",
@@ -108,7 +111,7 @@
     "team_url": "https://crowdin.com/project/nodejs-web"
   },
   "metrics": {
-    "stars": 6859,
-    "observed_at": "2026-08-03"
+    "stars": 6877,
+    "observed_at": "2026-11-13"
   }
 }

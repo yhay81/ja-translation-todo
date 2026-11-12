@@ -6,7 +6,7 @@
       "find_existing_work",
       "report_evidence"
     ],
-    "level": "draft_only"
+    "level": "discover_only"
   },
   "community": {
     "japanese_team": "inactive",
@@ -27,70 +27,60 @@
   },
   "evidence": [
     {
-      "kind": "repository",
-      "note_ja": "アーカイブされておらず活動継続 (最終 push 2026-05-28、43,980 stars、MIT)。README に日本語版 (frontendinterviewhandbook.com/jp/) を含む多言語リンクあり。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/front-end-interview-handbook"
+      "kind": "translation_policy",
+      "url": "https://github.com/yangshun/front-end-interview-handbook/blob/75ee62afc63bb9b48be160b0710bfcba6ab01a75/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳は質問・回答に限定。参加希望をIssueで表明し、翻訳者は原文の変更への追従にも責任を持つ。"
     },
     {
-      "kind": "translation_policy",
-      "note_ja": "質問・解答の翻訳を歓迎すると明記。翻訳に興味がある場合はまず issue を立てて意思表明し、その後 PR で提出する方式。原文 (master copy) の更新に合わせた翻訳の保守は翻訳者側の責任とされる。AI / LLM 利用への言及はなし。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/front-end-interview-handbook/blob/main/CONTRIBUTING.md"
+      "kind": "repository",
+      "url": "https://github.com/yangshun/front-end-interview-handbook/tree/75ee62afc63bb9b48be160b0710bfcba6ab01a75/website/i18n/ja-JP",
+      "observed_at": "2026-11-13",
+      "note_ja": "サイトの日本語ロケールを確認。"
     },
     {
       "kind": "team_activity",
-      "note_ja": "日本語ロケール website/i18n/ja-JP が存在するが、最終更新は 2025-06-17 (メンテナの一括修正) で直近 90 日の日本語翻訳活動はなし。日本語チームは停滞と判断。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/front-end-interview-handbook/tree/main/website/i18n/ja-JP"
+      "url": "https://github.com/yangshun/front-end-interview-handbook/commit/db0a21595f2b0f465ec5a8f3ed5afd25b5567323",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語ロケールの直近の変更は2025年6月17日。新しい担当希望の受け付け状況はIssueで確認する。"
     },
     {
-      "kind": "pull_request",
-      "note_ja": "過去の日本語訳 PR (改善・補完) は 2018〜2021 年に多数 merge された実績あり (#84, #97, #286, #325 など)。現在進行中の日本語作業は見当たらず、重複リスクは低い。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/yangshun/front-end-interview-handbook/pull/325"
+      "kind": "repository",
+      "url": "https://github.com/yangshun/front-end-interview-handbook/commit/75ee62afc63bb9b48be160b0710bfcba6ab01a75",
+      "observed_at": "2026-11-13",
+      "note_ja": "yangshun/front-end-interview-handbook の調査対象の原文をこのコミットで確認。"
     }
   ],
   "id": "verify-yangshun-front-end-interview-handbook",
   "kind": "verification",
-  "legacy": {
-    "Star": "43,770",
-    "やり方": "専用フォルダがある（チームに入れてもらって直接プッシュ）",
-    "ライセンス": "MIT",
-    "作者": "[Yangshun Tay](https://github.com/yangshun)",
-    "文章量": "中",
-    "概要": "[Front-end Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions) の解答集",
-    "状態": "日中韓で進行中",
-    "開始年月": "2018/01"
-  },
   "metrics": {
-    "observed_at": "2026-08-03",
-    "stars": 43980
+    "stars": 44003,
+    "observed_at": "2026-11-13"
   },
   "permissions": {
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "allowed",
-    "translation": "explicit"
+    "pull_request": "ask_first"
   },
   "project": {
     "category": "Learning",
     "license": "MIT",
     "repository": "yangshun/front-end-interview-handbook",
-    "summary_ja": "フロントエンド面接の質問と解答集。サイトは Docusaurus の i18n で多言語化されており日本語 (frontendinterviewhandbook.com/jp/) が存在するが、日本語ロケールの更新は 2025-06 を最後に停滞。CONTRIBUTING は翻訳貢献を歓迎しており、まず issue で意思表明してから PR を送る方式。原文更新への追随・訳の改善余地が大きい。",
+    "summary_ja": "ガイドが翻訳を募集しているのは面接の質問と回答。Issueで参加希望を伝えてから翻訳し、レビュー付きPRを提出する。日本語ロケールは既に存在するため、英語の同じ質問・回答と突き合わせて更新候補を絞る。",
     "url": "https://github.com/yangshun/front-end-interview-handbook"
   },
   "provenance": {
     "imported_at": "2026-07-25",
     "imported_from": "docs/legacy-list.md",
-    "last_verified_at": "2026-08-03",
-    "revision": 3
+    "last_verified_at": "2026-11-13",
+    "revision": 4
   },
   "schema_version": "translation-task/v1",
   "source": {
     "paths": [
       "website/contents/"
     ],
-    "revision": null
+    "revision": "75ee62afc63bb9b48be160b0710bfcba6ab01a75"
   },
   "status": "ask_first",
   "target": {
@@ -100,13 +90,13 @@
     ]
   },
   "title": {
-    "en": "Update and sync the Japanese translation of the Front End Interview Handbook",
-    "ja": "Front End Interview Handbook 日本語訳の更新・原文追随"
+    "ja": "Front End Interview Handbook の質問・回答の日本語訳を更新する",
+    "en": null
   },
   "validation": [],
   "workflow": {
     "platform": "github",
-    "platform_url": null,
-    "translation_repo": null
+    "platform_url": "https://github.com/yangshun/front-end-interview-handbook/blob/75ee62afc63bb9b48be160b0710bfcba6ab01a75/CONTRIBUTING.md",
+    "translation_repo": "yangshun/front-end-interview-handbook"
   }
 }

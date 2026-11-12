@@ -1,21 +1,21 @@
 {
   "schema_version": "translation-task/v1",
   "id": "verify-nushell-nushell-github-io",
-  "kind": "verification",
+  "kind": "translation",
   "status": "ready",
   "title": {
-    "ja": "Nushell Book の日本語化の検証",
+    "ja": "Nushell Book の未訳章と古い日本語訳を更新する",
     "en": null
   },
   "project": {
     "repository": "nushell/nushell.github.io",
     "url": "https://github.com/nushell/nushell.github.io",
     "category": "Command Line Tools",
-    "summary_ja": "構造化データ志向のシェル Nushell の公式ブック・サイト。リポジトリ内に ja 翻訳ディレクトリがあり直接 PR で貢献可能。en の book は 64 ファイルに対し ja/book は 25 ファイルで、未翻訳・更新遅れの章が多い。",
+    "summary_ja": "日本語版に対応ファイルのない章として background_jobs.md などがある。翻訳ガイドの差分検出ツールで対象を選び、訳をプレビューして PR を送る。2026年10月には Bash との比較表の日本語更新がマージされ、別の既存 PR #2264 もある。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
+    "revision": "23271bdcee84688ff16e4dc17640b8715f9ef331",
     "paths": [
       "book/"
     ]
@@ -37,45 +37,69 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/nushell/nushell.github.io",
+      "url": "https://github.com/nushell/nushell.github.io/tree/23271bdcee84688ff16e4dc17640b8715f9ef331",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/nushell/nushell.github.io/blob/main/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "CONTRIBUTING の「Translation Guide」節で翻訳手順を明記。既存翻訳の更新は `nu tools/i18n.nu outdated <locale>` で差分を確認して直接 PR、新規ロケール追加手順もあり。「ファイル名は翻訳しない」等の規約が定められている。"
-    },
-    {
-      "url": "https://github.com/nushell/nushell.github.io",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブされておらず活発 (最終 push 2026-07-28)。ライセンス MIT、Star 258。ja/ ディレクトリが存在し、en の book/ 64 ファイルに対して ja/book/ は 25 ファイルで未着手領域が大きい。"
+      "observed_at": "2026-11-13",
+      "note_ja": "ロケール別の未訳・古い訳の検出、プレビュー、i18n-meta.json に原文コミットを記す方法を掲載。"
     },
     {
       "url": "https://github.com/nushell/nushell.github.io/commits/main/ja",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "ja/ の最終更新は 2025-09-06 で、直近 90 日の日本語翻訳活動はなし (japanese_team: inactive)。open PR に日本語関連は見当たらず、重複作業の恐れは低い。"
+      "observed_at": "2026-11-13",
+      "note_ja": "10月23日に日本語ページの Bash 比較表の更新 #2270 をマージ。"
+    },
+    {
+      "url": "https://github.com/nushell/nushell.github.io/pull/2264",
+      "kind": "pull_request",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語版の loading data の修正 PR が open。該当部分は重複を避ける。"
+    },
+    {
+      "kind": "issue",
+      "url": "https://github.com/nushell/nushell.github.io/issues?q=is%3Aopen+%22background_jobs%22+%22ja%22",
+      "observed_at": "2026-11-13",
+      "note_ja": "指定した機能・章名を含む日本語の既存 issue・PR を検索した時点で該当なし。タイトル・本文の検索だけでは、作業中のすべての変更を把握できない。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/nushell/nushell.github.io/tree/main/ja/book",
+      "observed_at": "2026-11-13",
+      "note_ja": "英語 book/background_jobs.md に対応する日本語ファイルは ja/book にない。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "command",
+      "command": "nu tools/i18n.nu outdated ja",
+      "description_ja": "原文更新と日本語ファイルの差を確認する。"
+    },
+    {
+      "kind": "command",
+      "command": "npm run dev",
+      "description_ja": "対象ページを日本語でプレビューする。"
+    }
+  ],
   "credit": {
     "expected": "unknown",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -92,11 +116,11 @@
     }
   },
   "community": {
-    "japanese_team": "inactive",
-    "team_url": null
+    "japanese_team": "active",
+    "team_url": "https://github.com/nushell/nushell.github.io/commits/main/ja"
   },
   "metrics": {
-    "stars": 258,
-    "observed_at": "2026-08-03"
+    "stars": 263,
+    "observed_at": "2026-11-13"
   }
 }

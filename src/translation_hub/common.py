@@ -10,6 +10,12 @@ from hayate import Context
 
 CANONICAL_ORIGIN = "https://ja.yhay81.com"
 LEGACY_HOSTS = frozenset({"ja.yusuke-hayashi.com"})
+# Retired IDs with the same translation destination as an active task.
+TASK_ALIASES = {
+    "verify-reactjs-react-dev": "verify-facebook-react",
+    "verify-python-doc-ja-python-doc-ja": "verify-python-cpython",
+    "verify-nodejs-node": "verify-nodejs-nodejs-org",
+}
 GITHUB_REPO_URL = "https://github.com/yhay81/ja-translation-todo"
 
 

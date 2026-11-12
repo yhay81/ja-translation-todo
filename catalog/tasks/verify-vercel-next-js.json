@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-vercel-next-js",
   "kind": "verification",
-  "status": "needs_verification",
+  "status": "ask_first",
   "title": {
-    "ja": "Next.js ドキュメント日本語化の検証",
+    "ja": "Next.js のコミュニティ日本語訳への参加方法を確認する",
     "en": null
   },
   "project": {
     "repository": "vercel/next.js",
     "url": "https://github.com/vercel/next.js",
     "category": "JavaScript",
-    "summary_ja": "Next.js 公式ドキュメントには公式の翻訳・i18n 受付方針がなく、非公式の Nextjs-ja-translation コミュニティが翻訳サイトを運営してきたが、翻訳リポジトリは 2023-04 を最後に停止。現行 docs（App Router 世代）への公式な翻訳経路は確認できず、着手には Vercel 側への確認か新体制の立ち上げが必要。",
-    "license": "MIT"
+    "summary_ja": "OpenStandia の日本語訳は App Router の文書を公開し、翻訳者向けにIssueとPRの手順を案内している。既定ブランチの同期は2025年4月までで、後続の同期PRが保留中。取りかかる前に対象バージョンとレビュー担当を確認する。",
+    "license": "MIT（Next.js）、CC-BY-SA-4.0（OpenStandia 日本語訳）"
   },
   "source": {
-    "revision": null,
+    "revision": "c5ba5cef4a174883c5842864ada1f6bd6ad13298",
     "paths": [
       "docs"
     ]
@@ -25,9 +25,9 @@
     "paths": []
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "unknown"
+    "pull_request": "ask_first"
   },
   "automation": {
     "level": "discover_only",
@@ -40,34 +40,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/vercel/next.js",
+      "kind": "translation_policy",
+      "url": "https://github.com/openstandia/Nextjs-docs-ja/blob/8dc97ba03ef4557218f1c7d0d5c5e41ab7bd2466/Contributing.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳用のIssueに対応したファイルを編集し、PR本文からIssueを参照して管理者の承認を受ける。"
+    },
+    {
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "url": "https://github.com/openstandia/Nextjs-docs-ja/blob/8dc97ba03ef4557218f1c7d0d5c5e41ab7bd2466/README.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "コミュニティの公開先はja.next-community-docs.dev。日本語訳リポジトリのライセンスはCC BY-SA 4.0。"
     },
     {
-      "url": "https://nextjs.org/docs/community/contribution-guide",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式 Docs 貢献ガイド（2026-06-23 更新）を確認したが、翻訳・localization・i18n への言及はなく、公式の翻訳受付方針は確認できない。docs のソースは vercel/next.js の docs/ 配下（実体は private リポジトリから同期）で、英語での改善 PR のみ想定されている。"
+      "kind": "pull_request",
+      "url": "https://github.com/openstandia/Nextjs-docs-ja/pull/399",
+      "observed_at": "2026-11-13",
+      "note_ja": "原文との差分を取り込む同期PRがopen。レビュー状況と反映可能な原文の版を確認したい。"
     },
     {
-      "url": "https://github.com/Nextjs-ja-translation/Nextjs-ja-translation-docs",
-      "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "非公式日本語翻訳リポジトリ（Star 162）の最終 push は 2023-04-02 で3年以上停止（アーカイブはされていない）。旧世代ドキュメントがベースのため、現行の App Router 世代 docs には追従していない。日本語チームは休眠状態。"
-    },
-    {
-      "url": "https://nextjs.org/docs",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式 docs トップに言語切替や翻訳版へのリンクは存在せず、英語のみ。Internationalization ガイドはアプリ開発者向け機能の解説で、docs 自体の翻訳とは無関係。"
-    },
-    {
-      "url": "https://github.com/vercel/next.js/discussions",
-      "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "GitHub Discussions を「docs translation / translate documentation japanese」で検索したが、docs 翻訳の提案・受付に関するスレッドは確認できず（ヒットは i18n ルーティング等の機能に関する議論のみ）。公式の翻訳受付経路は確認できなかった（2026-08-03）。needs_verification を維持。"
+      "kind": "repository",
+      "url": "https://github.com/vercel/next.js/commit/c5ba5cef4a174883c5842864ada1f6bd6ad13298",
+      "observed_at": "2026-11-13",
+      "note_ja": "vercel/next.js の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -76,15 +70,15 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 1,
+    "revision": 2,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": null
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
-    "translation_repo": "Nextjs-ja-translation/Nextjs-ja-translation-docs"
+    "platform_url": "https://github.com/openstandia/Nextjs-docs-ja/blob/8dc97ba03ef4557218f1c7d0d5c5e41ab7bd2466/Contributing.md",
+    "translation_repo": "openstandia/Nextjs-docs-ja"
   },
   "content_type": "official_docs",
   "difficulty": {
@@ -97,10 +91,10 @@
   },
   "community": {
     "japanese_team": "inactive",
-    "team_url": "https://github.com/Nextjs-ja-translation/Nextjs-ja-translation-docs"
+    "team_url": "https://github.com/openstandia/Nextjs-docs-ja"
   },
   "metrics": {
-    "stars": 141225,
-    "observed_at": "2026-08-03"
+    "stars": 143488,
+    "observed_at": "2026-11-13"
   }
 }

@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "in_progress",
   "title": {
-    "ja": "Python 公式ドキュメント日本語訳 (python-docs-ja) への参加",
+    "ja": "Python 3.15 公式ドキュメントの日本語訳に参加する",
     "en": null
   },
   "project": {
     "repository": "python/cpython",
     "url": "https://github.com/python/cpython",
     "category": "Python",
-    "summary_ja": "Python公式ドキュメントの日本語訳はpython org公認のpython-docs-jaで運営され、Transifexで翻訳を受け付ける制度化された体制。新バージョン追従の未翻訳分が常にある。",
-    "license": "Python-2.0"
+    "summary_ja": "日本語チームは Python.jp Discord の #python-doc-ja で参加を受け付ける。招待後、Transifex の python-newest で未訳や誤訳を直す。GitHub は問題報告と翻訳データの保管に使い、訳文の直接PRは受け付けていない。",
+    "license": "PSF License"
   },
   "source": {
-    "revision": null,
+    "revision": "beff3c022fe787f6879c7e38a6b8a64243184ab3",
     "paths": [
       "Doc"
     ]
@@ -26,7 +26,7 @@
   },
   "permissions": {
     "translation": "explicit",
-    "ai_assistance": "disclose",
+    "ai_assistance": "explicit",
     "pull_request": "forbidden"
   },
   "automation": {
@@ -35,39 +35,40 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ]
   },
   "evidence": [
     {
-      "url": "https://github.com/python/cpython",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
-    },
-    {
-      "url": "https://devguide.python.org/documentation/translations/translating/",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "devguide が言語別の公式翻訳チームを掲載。日本語チームはコーディネーター cocoatomo / atsuoishimoto、リポジトリ python/python-docs-ja。PO ファイルを Transifex (python-doc/python-newest) 経由で翻訳する制度化された受付体制。"
+      "url": "https://github.com/python-doc-ja/python-doc-ja/blob/c4b5c812bee26152afb4a97ed29031c022754a32/README.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "参加連絡先とTransifexへの加入方法を確認。翻訳著作権の帰属とPSFライセンスも案内している。"
     },
     {
-      "url": "https://github.com/python/python-docs-ja/blob/3.14/.github/CONTRIBUTING.md",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "python-docs-ja は Transifex から生成された .po の保存用で、直接 PR は受け付けない(マージしても Transifex に反映されないため)。誤訳報告などの issue は python-doc-ja/python-doc-ja に集約。参加は Python.jp Discord の #python-doc-ja チャンネルで連絡し Transifex チームに追加してもらう。"
+      "kind": "contributing",
+      "url": "https://github.com/python/python-docs-ja/blob/4b5881be22c1a20ed8a6709c6fc91fd78950a489/.github/CONTRIBUTING.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "3.15ブランチの案内は、問題報告先をpython-doc-jaのIssuesとし、POへの直接PRを受理しない。"
     },
     {
-      "url": "https://devguide.python.org/documentation/translations/translating/",
       "kind": "ai_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「機械翻訳のみに頼らないこと。作業の高速化には有用だが不正確・誤解を招く結果を生むことがあり、人間によるレビューが必要」と明記。AI/機械翻訳は人間の検証を条件に補助利用が許容される。"
+      "url": "https://devguide.python.org/documentation/translations/translating/#translation-quality",
+      "observed_at": "2026-11-13",
+      "note_ja": "機械翻訳は作業の補助として使えるが、人による内容確認が必要。"
     },
     {
-      "url": "https://github.com/python/python-docs-ja/commits/3.14",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "Transifex からの自動同期コミットがほぼ毎日実行され、直近 2026-08-02 のコミットも .po に実質的な差分(+824/-1115、6ファイル)を含む。日本語翻訳チームは直近90日以内も継続的に活動中。"
+      "url": "https://github.com/python/python-docs-ja/commit/4b5881be22c1a20ed8a6709c6fc91fd78950a489",
+      "observed_at": "2026-11-13",
+      "note_ja": "11月11日にTransifexの翻訳が日本語版へ同期された。"
+    },
+    {
+      "kind": "repository",
+      "url": "https://github.com/python/cpython/commit/beff3c022fe787f6879c7e38a6b8a64243184ab3",
+      "observed_at": "2026-11-13",
+      "note_ja": "python/cpython の調査対象の原文をこのコミットで確認。"
     }
   ],
   "validation": [],
@@ -76,10 +77,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "transifex",
@@ -97,10 +98,10 @@
   },
   "community": {
     "japanese_team": "active",
-    "team_url": "https://github.com/python/python-docs-ja"
+    "team_url": "https://github.com/python-doc-ja/python-doc-ja"
   },
   "metrics": {
-    "stars": 74013,
-    "observed_at": "2026-08-03"
+    "stars": 78187,
+    "observed_at": "2026-11-13"
   }
 }

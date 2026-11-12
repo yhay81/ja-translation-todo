@@ -40,6 +40,20 @@ async def test_legacy_host_redirects_to_new_domain():
     assert response.headers.get("location") == "https://ja.yhay81.com/api/v2/tasks?q=react"
 
 
+async def test_merged_task_links_resolve_to_the_active_task():
+    env = make_env()
+    canonical = "verify-python-cpython"
+    old = "verify-python-doc-ja-python-doc-ja"
+    await seed(env.CATALOG_STORE, sample_task(canonical))
+    page = await api(env, f"/tasks/{old}?from=bookmark")
+    assert page.status == 301
+    assert page.headers.get("location") == f"/tasks/{canonical}?from=bookmark"
+    for suffix in ("", "/bundle"):
+        bundle = await api(env, f"/api/v2/tasks/{old}{suffix}")
+        assert bundle.status == 200
+        assert (await bundle.json())["id"] == canonical
+
+
 async def test_api_v1_is_gone():
     env = await seeded_env()
     response = await api(env, "/api/v1/tasks")

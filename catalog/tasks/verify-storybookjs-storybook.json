@@ -4,26 +4,30 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "Storybook ドキュメント日本語化の検証",
+    "ja": "Intro to Storybook の React 版チュートリアルの日本語訳を更新する",
     "en": null
   },
   "project": {
-    "repository": "storybookjs/storybook",
-    "url": "https://github.com/storybookjs/storybook",
+    "repository": "chromaui/learnstorybook.com",
+    "url": "https://github.com/chromaui/learnstorybook.com",
     "category": "JavaScript",
-    "summary_ja": "UI コンポーネント開発環境 Storybook のドキュメントは英語のみ。2022年にメンテナが「翻訳はチュートリアルのみで公式 docs は対象外」と回答しており、公式チュートリアルには日本語版が存在する。docs 本体の翻訳はメンテナへの打診と合意が前提。",
+    "summary_ja": "公式チュートリアルのREADMEがReact版・Angular版の日本語を更新対象として掲載している。React版は章ごとに英日ファイルが揃っている。翻訳募集Issue #3で希望する章を伝え、最新の例と日本語の説明を照合する。",
     "license": "MIT"
   },
   "source": {
-    "revision": null,
-    "paths": []
+    "revision": "0435e7252827da5e8cd9dd012e538892a30d3f78",
+    "paths": [
+      "content/intro-to-storybook/react/en"
+    ]
   },
   "target": {
     "locale": "ja-JP",
-    "paths": []
+    "paths": [
+      "content/intro-to-storybook/react/ja"
+    ]
   },
   "permissions": {
-    "translation": "unknown",
+    "translation": "explicit",
     "ai_assistance": "unknown",
     "pull_request": "ask_first"
   },
@@ -38,65 +42,58 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/storybookjs/storybook",
-      "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "kind": "translation_policy",
+      "url": "https://github.com/chromaui/learnstorybook.com/blob/0435e7252827da5e8cd9dd012e538892a30d3f78/README.md",
+      "observed_at": "2026-11-13",
+      "note_ja": "Current Guide StatusのReact版日本語は更新未完了。参加者に翻訳募集Issueへのコメントを呼びかけている。"
     },
     {
-      "url": "https://github.com/storybookjs/storybook/tree/next/docs",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "next ブランチ (2026-08-01 push、活動活発、Star 約90,700) を確認。docs/ は英語のみでロケールディレクトリや i18n 設定は存在しない。"
-    },
-    {
-      "url": "https://github.com/storybookjs/storybook/tree/next/docs/contribute",
-      "kind": "contributing",
-      "observed_at": "2026-08-03",
-      "note_ja": "貢献ガイド (docs/contribute) にはコード・ドキュメント・フレームワーク貢献の手順のみで、翻訳の受付経路や i18n 方針の記載はない。"
-    },
-    {
-      "url": "https://github.com/storybookjs/storybook/issues?q=is%3Aissue+translation+documentation",
       "kind": "issue",
-      "observed_at": "2026-08-03",
-      "note_ja": "issue 検索でもドキュメント翻訳の公式方針・進行中の日本語化作業は確認できず。翻訳可否をメンテナに確認する材料が揃っておらず、needs_verification を維持。"
+      "url": "https://github.com/chromaui/learnstorybook.com/issues/3",
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳希望者の調整窓口「Translations wanted」はopen。"
     },
     {
-      "url": "https://github.com/storybookjs/storybook/issues/17287",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "韓国語への公式ドキュメント翻訳を申し出た issue（2022-01-20 close）に対し、コアメンバー shilman が「we are currently only translating the tutorials, not the official documentation at this time」と回答して close。公式 docs の翻訳は当時受け付けておらず、チュートリアルのみ翻訳対象という方針が確認できた（4年以上前の回答のため、現在の方針は再打診が必要とみられる）。"
+      "kind": "repository",
+      "url": "https://github.com/chromaui/learnstorybook.com/tree/0435e7252827da5e8cd9dd012e538892a30d3f78/content/intro-to-storybook/react/ja",
+      "observed_at": "2026-11-13",
+      "note_ja": "日本語の導入、コンポーネント、画面、デプロイ等の章が存在する。"
     },
     {
-      "url": "https://storybook.js.org/tutorials/intro-to-storybook/",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式チュートリアル（Intro to Storybook）は English / Español / 日本語 / Português など12言語で提供されており、日本語版が既に存在する。チュートリアル側には翻訳受け入れの実績がある。"
+      "url": "https://github.com/chromaui/learnstorybook.com/commit/98c811d0506e2633be9e6456aed2c2b9c56b84f0",
+      "observed_at": "2026-11-13",
+      "note_ja": "Reactチュートリアル日本語ディレクトリに対する7月14日のリンク修正を確認。"
     },
     {
-      "url": "https://storybook.js.org/community/",
-      "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "公式サイトの Community ページに翻訳・localization・i18n への言及はなし。docs 本体の翻訳経路は公式サイト側にも存在しない。docs 翻訳はメンテナへの打診と合意が前提のため ask_first とする。"
+      "kind": "repository",
+      "url": "https://github.com/chromaui/learnstorybook.com/commit/0435e7252827da5e8cd9dd012e538892a30d3f78",
+      "observed_at": "2026-11-13",
+      "note_ja": "chromaui/learnstorybook.com の調査対象の原文をこのコミットで確認。"
     }
   ],
-  "validation": [],
+  "validation": [
+    {
+      "kind": "semantic_review",
+      "description_ja": "更新する章の英語版と日本語版を見比べ、コード例、画面操作とリンクを確認する。"
+    }
+  ],
   "credit": {
     "expected": "unknown",
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-03"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
-    "platform_url": null,
-    "translation_repo": null
+    "platform_url": "https://github.com/chromaui/learnstorybook.com/issues/3",
+    "translation_repo": "chromaui/learnstorybook.com"
   },
-  "content_type": "official_docs",
+  "content_type": "tutorial",
   "difficulty": {
     "score": 4,
     "factors": {
@@ -106,11 +103,11 @@
     }
   },
   "community": {
-    "japanese_team": "none",
-    "team_url": null
+    "japanese_team": "unknown",
+    "team_url": "https://github.com/chromaui/learnstorybook.com/issues/3"
   },
   "metrics": {
-    "stars": 90748,
-    "observed_at": "2026-08-03"
+    "stars": 2413,
+    "observed_at": "2026-11-13"
   }
 }

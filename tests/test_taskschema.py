@@ -2,12 +2,32 @@ from __future__ import annotations
 
 import pytest
 
+from build_catalog import check_ready_task
 from helpers import sample_task
 from translation_hub.taskschema import TaskValidationError, validate_task
 
 
+def test_ready_requires_a_verifiable_translation_task():
+    task = sample_task(status="ready")
+    with pytest.raises(ValueError, match="source revision and paths"):
+        check_ready_task(task)
+    task["permissions"]["translation"] = "explicit"
+    task["source"] = {"revision": "v1.2", "paths": ["README.md"]}
+    task["provenance"]["last_verified_at"] = "2026-11-13"
+    task["validation"] = [{"kind": "structure", "description_ja": "見出しを照合する"}]
+    task["evidence"] += [
+        {**task["evidence"][0], "kind": kind} for kind in ("translation_policy", "pull_request")
+    ]
+    check_ready_task(task)
+
+
 def test_sample_task_is_valid():
     assert validate_task(sample_task())["id"] == "verify-example-repo"
+
+
+def test_manual_validation_can_omit_command():
+    task = sample_task(validation=[{"kind": "semantic_review", "description_ja": "訳語を確認する"}])
+    assert validate_task(task) == task
 
 
 def test_optional_extensions_are_accepted():

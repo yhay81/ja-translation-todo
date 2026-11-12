@@ -4,13 +4,14 @@
       "inspect_public_metadata",
       "find_translation_policy",
       "find_existing_work",
-      "report_evidence"
+      "report_evidence",
+      "prepare_local_draft"
     ],
     "level": "draft_only"
   },
   "community": {
     "japanese_team": "active",
-    "team_url": "https://hosted.weblate.org/languages/ja/weblate/"
+    "team_url": "https://hosted.weblate.org/projects/weblate/-/ja/"
   },
   "content_type": "ui_strings",
   "credit": {
@@ -27,58 +28,67 @@
   },
   "evidence": [
     {
-      "kind": "repository",
-      "note_ja": "アーカイブされておらず main ブランチが活発 (最終 push 2026-08-02、6,009 stars、GPL-3.0)。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/WeblateOrg/weblate"
+      "kind": "translation_policy",
+      "url": "https://weblate.org/en/contribute/",
+      "observed_at": "2026-11-13",
+      "note_ja": "翻訳希望者には、Weblate本体をhosted.weblate.orgで翻訳するよう案内している。"
     },
     {
-      "kind": "translation_policy",
-      "note_ja": "公式コントリビュートガイド。Weblate 本体の翻訳は hosted.weblate.org 上の Weblate 自身で行うと明記され、多言語化への参加を歓迎。ソース文字列の誤りはコメントで指摘するか PR で修正可能。翻訳貢献における AI / 機械翻訳の方針への言及はなし。",
-      "observed_at": "2026-08-03",
-      "url": "https://docs.weblate.org/en/latest/contributing/index.html"
+      "kind": "contributing",
+      "url": "https://docs.weblate.org/en/latest/contributing/index.html#translating-weblate",
+      "observed_at": "2026-11-13",
+      "note_ja": "訳文はWeblateの編集画面から提出する。原文の誤りに対してはコメントまたは元ソースへの修正PRを案内している。訳文PRの禁止を明記した条項は確認できない。"
     },
     {
       "kind": "team_activity",
-      "note_ja": "日本語ロケールファイルが 2026-08-01 (人間の翻訳者 Yoshihoko)、2026-07-31 (自動化・Hosted Weblate 同期) と直近 90 日以内に継続更新。日本語翻訳は活発に維持されている。",
-      "observed_at": "2026-08-03",
-      "url": "https://github.com/WeblateOrg/weblate/commits/main/weblate/locale/ja/LC_MESSAGES/django.po"
+      "url": "https://github.com/WeblateOrg/weblate/commit/aa67d66406f1e4d156183d37b18e0a5b066b7bbb",
+      "observed_at": "2026-11-13",
+      "note_ja": "11月6日に日本語のdjango.poの訳文更新を確認した。"
     },
     {
-      "kind": "platform",
-      "note_ja": "参加窓口となる Hosted Weblate のプロジェクトページ。自動アクセスには 403 を返すためブラウザでのアカウント登録・参加が必要。日本語の未翻訳・要レビュー文字列の正確な件数は未取得。",
-      "observed_at": "2026-08-03",
-      "url": "https://hosted.weblate.org/projects/weblate/"
+      "kind": "repository",
+      "url": "https://github.com/WeblateOrg/weblate/commit/0c855eecb8f9a43cec69d0f52b452f1192f17714",
+      "observed_at": "2026-11-13",
+      "note_ja": "WeblateOrg/weblate の調査対象の原文をこのコミットで確認。"
+    },
+    {
+      "url": "https://github.com/WeblateOrg/weblate/blob/0c855eecb8f9a43cec69d0f52b452f1192f17714/weblate/locale/django.pot",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "本体 UI と JavaScript の英語メッセージを抽出した gettext テンプレートを確認。文書翻訳とは別のカタログを使う。"
     }
   ],
   "id": "verify-weblateorg-weblate",
   "kind": "verification",
   "metrics": {
-    "observed_at": "2026-08-03",
-    "stars": 6009
+    "stars": 6167,
+    "observed_at": "2026-11-13"
   },
   "permissions": {
+    "translation": "explicit",
     "ai_assistance": "unknown",
-    "pull_request": "forbidden",
-    "translation": "explicit"
+    "pull_request": "unknown"
   },
   "project": {
     "category": "DevTools",
     "license": "GPL-3.0-or-later",
     "repository": "WeblateOrg/weblate",
-    "summary_ja": "OSS 翻訳プラットフォーム Weblate 自身の UI 翻訳。Hosted Weblate 上で受付が完全に制度化されており日本語も対象。日本語ロケールは人間の翻訳者と自動化により継続的に更新されて活発。新規文字列・要レビュー文字列への貢献は Hosted Weblate 経由で随時可能 (翻訳ファイルへの直接 PR は行わない)。",
+    "summary_ja": "公式の参加案内からHosted Weblateに移り、日本語のアプリ用コンポーネントを選ぶ。11月6日に日本語カタログの更新が取り込まれている。実際に翻訳・レビューを要する文字列は作業時のコンポーネント画面で確認する。",
     "url": "https://github.com/WeblateOrg/weblate"
   },
   "provenance": {
     "imported_at": "2026-08-02",
     "imported_from": null,
-    "last_verified_at": "2026-08-03",
-    "revision": 3
+    "last_verified_at": "2026-11-13",
+    "revision": 4
   },
   "schema_version": "translation-task/v1",
   "source": {
-    "paths": [],
-    "revision": null
+    "paths": [
+      "weblate/locale/django.pot",
+      "weblate/locale/djangojs.pot"
+    ],
+    "revision": "0c855eecb8f9a43cec69d0f52b452f1192f17714"
   },
   "status": "in_progress",
   "target": {
@@ -88,8 +98,8 @@
     ]
   },
   "title": {
-    "en": "Contribute to the Japanese UI translation of Weblate on Hosted Weblate",
-    "ja": "Weblate 本体 UI の日本語翻訳 (Hosted Weblate) への参加"
+    "ja": "Weblate 本体UIの日本語訳・レビューに参加する",
+    "en": null
   },
   "validation": [],
   "workflow": {

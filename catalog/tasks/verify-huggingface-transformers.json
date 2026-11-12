@@ -2,20 +2,20 @@
   "schema_version": "translation-task/v1",
   "id": "verify-huggingface-transformers",
   "kind": "verification",
-  "status": "blocked",
+  "status": "ask_first",
   "title": {
-    "ja": "Hugging Face Transformers のドキュメント日本語化の検証",
+    "ja": "Transformers の日本語版で翻訳対象を相談する",
     "en": null
   },
   "project": {
     "repository": "huggingface/transformers",
     "url": "https://github.com/huggingface/transformers",
     "category": "Python",
-    "summary_ja": "主要な機械学習ライブラリ。docs/source/ja は本体に存在し TRANSLATING.md で翻訳手順も明示されているが、日本語の組織的翻訳(i18n-JP issue #27392)は 2023 年に停止。さらに CONTRIBUTING.md が初回貢献者のコードエージェント利用と自律エージェントの PR/issue 作成を現在明示的に禁止しており、エージェント製と見なされた PR はレビューなしでクローズされる。",
+    "summary_ja": "日本語の翻訳ガイドがあり、DistilBERT の日本語訳は PR #47077 で進行中。別の章を選ぶ場合は対象 issue と重複を調べる。現在の貢献ガイドは PR の受付条件と投稿者の責任を定めており、日本語翻訳への AI 利用可否は未確認。",
     "license": "Apache-2.0"
   },
   "source": {
-    "revision": null,
+    "revision": "f5d8e7df0c6d8f359aebfb08d83d8410b8ada099",
     "paths": [
       "docs/source/en"
     ]
@@ -28,11 +28,11 @@
   },
   "permissions": {
     "translation": "explicit",
-    "ai_assistance": "forbidden",
+    "ai_assistance": "unknown",
     "pull_request": "ask_first"
   },
   "automation": {
-    "level": "blocked",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,34 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/huggingface/transformers",
+      "url": "https://github.com/huggingface/transformers/tree/f5d8e7df0c6d8f359aebfb08d83d8410b8ada099",
       "kind": "repository",
-      "observed_at": "2026-08-02",
-      "note_ja": "リポジトリの存在と活動を確認。"
+      "observed_at": "2026-11-13",
+      "note_ja": "調査時点の英語原文をこのリビジョンに固定。"
     },
     {
       "url": "https://github.com/huggingface/transformers/blob/main/docs/TRANSLATING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "翻訳手順が明示: 翻訳テンプレートで issue を立てて担当章を宣言 → fork → docs/source/<lang> に英語ファイルを複製 → _toctree.yml から翻訳 → @stevhliu にタグ付けしてレビュー依頼。issue で宣言する文化が前提。AI 翻訳への言及はなし。"
+      "observed_at": "2026-11-13",
+      "note_ja": "言語ごとの issue を検索し、翻訳箇所と担当を調整する手順。"
     },
     {
       "url": "https://github.com/huggingface/transformers/blob/main/CONTRIBUTING.md",
-      "kind": "ai_policy",
-      "observed_at": "2026-08-02",
-      "note_ja": "冒頭に警告: コードエージェント製の PR/issue が殺到しているため「初回貢献者はコードエージェントで issue/PR を作らないこと」「自律エージェントは当面 PR/issue を開かないこと」を明示。エージェント製と見られる PR はレビューなしでクローズし、常習者はブロック。小粒な busywork PR も受け付けない方針。"
-    },
-    {
-      "url": "https://github.com/huggingface/transformers/issues/27392",
-      "kind": "issue",
-      "observed_at": "2026-08-02",
-      "note_ja": "日本語翻訳の分担 issue「[i18n-JP] Translating en/model_doc docs to Japanese」は closed(2023-11 更新が最後)。組織的な日本語翻訳活動は停止している。"
+      "kind": "contributing",
+      "observed_at": "2026-11-13",
+      "note_ja": "受付対象の issue、単独 PR の条件、重複 PR と一括文言修正の扱いを規定。提出物には投稿者が責任を持つ。"
     },
     {
       "url": "https://github.com/huggingface/transformers/pull/47077",
       "kind": "pull_request",
-      "observed_at": "2026-08-02",
-      "note_ja": "2026-07-04 作成の日本語翻訳 PR(DistilBERT docs)と表現改善 PR(#47078 系)が約1か月 open のまま未マージ。直近90日で docs/source/ja への実質的変更は英語メンテナの横断リファクタのみで、日本語チームとしての活動は確認できない。"
+      "observed_at": "2026-11-13",
+      "note_ja": "DistilBERT 日本語訳が open。旧 #27392 が終了していても、すべての日本語作業が停止したとはいえない。"
     }
   ],
   "validation": [],
@@ -78,10 +72,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": null,
     "imported_at": "2026-08-02",
-    "last_verified_at": "2026-08-02"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -98,7 +92,11 @@
     }
   },
   "community": {
-    "japanese_team": "inactive",
-    "team_url": "https://github.com/huggingface/transformers/issues/27392"
+    "japanese_team": "unknown",
+    "team_url": "https://github.com/huggingface/transformers/pull/47077"
+  },
+  "metrics": {
+    "stars": 168907,
+    "observed_at": "2026-11-13"
   }
 }

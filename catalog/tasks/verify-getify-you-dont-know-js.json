@@ -4,18 +4,18 @@
   "kind": "verification",
   "status": "ask_first",
   "title": {
-    "ja": "You Don't Know JS (第2版) の日本語訳(要事前相談・全訳前提)",
-    "en": "Japanese translation of You Don't Know JS 2nd edition (ask first, whole-book minimum)"
+    "ja": "You Don’t Know JS 第2版の日本語翻訳を相談する",
+    "en": "Coordinate a Japanese translation of the second edition of You Don’t Know JS"
   },
   "project": {
     "repository": "getify/You-Dont-Know-JS",
     "url": "https://github.com/getify/You-Dont-Know-JS",
     "category": "JavaScript",
-    "summary_ja": "JavaScriptの書籍シリーズ。本文への貢献は締め切られているが、第2版(既刊3冊)の外国語訳のみ明示的に受付。フォークで最低1冊を全訳→issue で言語ブランチ作成を依頼→PR でマージ→翻訳者がブランチのメンテナに昇格、という手順。無償公開・非収益化が条件。日本語ブランチは未着手。",
-    "license": "Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License"
+    "summary_ja": "ガイドは第2版の刊行3冊を翻訳対象に指定。最低1冊の全訳をフォークで用意し、言語別ブランチの作成を依頼する流れ。本文は改変禁止条項のあるライセンスなので、翻訳ガイドの条件と公開方法を著者に確認する。",
+    "license": "CC-BY-NC-ND-4.0"
   },
   "source": {
-    "revision": null,
+    "revision": "7a83c851af26c422893219d41c53f607a2f1bfe0",
     "paths": [
       "get-started",
       "scope-closures",
@@ -32,7 +32,7 @@
     "pull_request": "ask_first"
   },
   "automation": {
-    "level": "draft_only",
+    "level": "discover_only",
     "allowed_actions": [
       "inspect_public_metadata",
       "find_translation_policy",
@@ -42,28 +42,28 @@
   },
   "evidence": [
     {
-      "url": "https://github.com/getify/You-Dont-Know-JS",
-      "kind": "repository",
-      "observed_at": "2025-12-31",
-      "note_ja": "旧一覧に掲載されていたrepository。翻訳方針の根拠としては未検証。"
-    },
-    {
-      "url": "https://github.com/getify/You-Dont-Know-JS",
-      "kind": "repository",
-      "observed_at": "2026-08-03",
-      "note_ja": "アーカイブされていない(最終push 2026-02-15)。デフォルトブランチは 2nd-ed。書籍は完結済みで本文への貢献は受付終了。ライセンスは CC BY-NC-ND 4.0 だが、翻訳は CONTRIBUTING の条件下で明示的に許可されている。"
-    },
-    {
       "url": "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/CONTRIBUTING.md",
       "kind": "translation_policy",
-      "observed_at": "2026-08-03",
-      "note_ja": "「Translations」節で外国語訳の手順を明記: 第2版の3冊のみ対象、翻訳は本リポジトリに無償公開し収益化しないことが条件。フォークで最低1冊全訳→issue で ISO 言語コードのブランチ作成を依頼→ブランチへ PR→マージ後に翻訳者をメンテナへ昇格。第1版の新規翻訳は不可。着手前に issue での相談が必須のため ask_first。"
+      "observed_at": "2026-11-13",
+      "note_ja": "外国語訳は第2版の刊行3冊のみ対象。最低1冊の全訳後に専用ブランチを依頼し、取り込み後は訳者が保守する。"
+    },
+    {
+      "url": "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/LICENSE.txt",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "書籍本文は CC BY-NC-ND 4.0。公開範囲は著者が別途示す翻訳手順を参照。"
     },
     {
       "url": "https://github.com/getify/You-Dont-Know-JS/branches",
       "kind": "team_activity",
-      "observed_at": "2026-08-03",
-      "note_ja": "既存の言語ブランチは 1ed-zh-CN / 2ed-uk / 2ed-zh-CN のみで、日本語(ja)ブランチは存在しない。日本語の既存作業・重複は確認されず未着手。"
+      "observed_at": "2026-11-13",
+      "note_ja": "公開ブランチ一覧には第2版の中国語とウクライナ語のブランチがあり、日本語ブランチは確認できなかった。"
+    },
+    {
+      "url": "https://github.com/getify/You-Dont-Know-JS/commit/7a83c851af26c422893219d41c53f607a2f1bfe0",
+      "kind": "repository",
+      "observed_at": "2026-11-13",
+      "note_ja": "調査対象の原文リポジトリとコミットを確認。"
     }
   ],
   "validation": [],
@@ -72,20 +72,10 @@
     "public_attribution": true
   },
   "provenance": {
-    "revision": 2,
+    "revision": 3,
     "imported_from": "docs/legacy-list.md",
     "imported_at": "2026-07-25",
-    "last_verified_at": "2026-08-03"
-  },
-  "legacy": {
-    "概要": "JavaScriptの書籍",
-    "作者": "[Kyle Simpson](https://github.com/getify)",
-    "開始年月": "2013/11",
-    "ライセンス": "Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License",
-    "やり方": "まずイシュー立てて相談かな？",
-    "状態": "中国語版が別ブランチになっている",
-    "文章量": "多",
-    "Star": "184,187"
+    "last_verified_at": "2026-11-13"
   },
   "workflow": {
     "platform": "github",
@@ -106,7 +96,7 @@
     "team_url": null
   },
   "metrics": {
-    "stars": 184630,
-    "observed_at": "2026-08-03"
+    "stars": 184844,
+    "observed_at": "2026-11-13"
   }
 }

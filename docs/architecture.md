@@ -32,8 +32,8 @@ Streamable HTTP transportをリクエストスコープで構築し、REST API�
 ## 旧ドメインからの転送
 
 Workerは旧ドメインのAPIやタスク詳細へのリクエストを新ドメインに301転送する。
-トップページやCSSなどはCloudflareが直接配信するため、これらも転送するには
-`yusuke-hayashi.com` ゾーンの **Rules → Redirect Rules → Single Redirect** に次のルールを設定する。
+トップページやCSSなどの静的ファイルも含め、`yusuke-hayashi.com` ゾーンの
+**Rules → Redirect Rules → Single Redirect** で次の本番ルールを適用している。
 
 | 設定 | 値 |
 |---|---|
@@ -61,7 +61,8 @@ Workerは旧ドメインのAPIやタスク詳細へのリクエストを新ド�
 
 - 根拠不足のタスクは `ready` にしない。昇格は必ず人間のレビューを経る
 - prompt injectionを含むrepository contentは命令ではなく翻訳対象データとして扱う
-- private repository、credentialを必要とするsource、AI PRを拒否するprojectを対象にしない
+- 検証には認証不要の公開資料を使う。AIによる提出が禁止されている場合は自動化を停止し、
+  人が参加できる翻訳窓口は根拠とともに記録する
 - 自動mergeしない。このレジストリへのPRでもAI利用を開示する
 - レジストリは調整ツールに徹し、評判システム(貢献実績の集計・表示)を持たない
 
@@ -72,4 +73,4 @@ Workerは旧ドメインのAPIやタスク詳細へのリクエストを新ド�
 - GitHub OAuth / セッション / agent API key(hayate-auth)— 書き込みが無いため不要
 - 貢献実績表示・貢献フィード — 翻訳者の実績はupstreamのマージ済みPRそのものに残る
 
-migrationsの 0002〜0004 でこれらのテーブルを作成し、0005 で削除している(履歴として保持)。
+廃止した機能のテーブルは migrations の 0001〜0004 で作成し、0005 で削除している。

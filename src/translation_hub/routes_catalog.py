@@ -8,7 +8,7 @@ from hayate_openapi import describe
 from . import __version__
 from .catalog import SORTS, catalog_stats, search_records, task_bundle
 from .catalog_store import catalog_store_from_env
-from .common import GITHUB_REPO_URL, now_epoch, parse_integer, problem, timestamp
+from .common import GITHUB_REPO_URL, TASK_ALIASES, now_epoch, parse_integer, problem, timestamp
 from .taskschema import KINDS, STATUSES, WORKFLOW_PLATFORMS
 
 SEARCH_RESPONSE_SCHEMA = {
@@ -193,7 +193,8 @@ async def _bundle_response(c: Context, *, cache: bool):
     store = catalog_store_from_env(c.env)
     if store is None:
         return problem(c, 503, "catalog_unavailable", "The catalog store is not configured.")
-    record = await store.get_record(c.req.param("id"))
+    task_id = c.req.param("id")
+    record = await store.get_record(TASK_ALIASES.get(task_id, task_id))
     if record is None:
         return problem(c, 404, "task_not_found", "The requested task does not exist.")
     revision = await store.catalog_revision()
